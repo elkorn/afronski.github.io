@@ -1,0 +1,11 @@
+---
+layout: post
+title: Test
+category: posts
+---
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro explicabo expedita eius soluta natus quod aliquid fuga numquam deleniti consequatur modi omnis quam nesciunt sequi dicta rem necessitatibus iste sapiente.
+
+---
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit quae in eius aspernatur odit cum harum temporibus pariatur dolore similique consectetur mollitia iusto possimus tempora animi. Nemo quisquam libero officiis.
