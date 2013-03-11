@@ -1,28 +1,4 @@
-# Left
-
-Left is a clean, whitespace-happy layout for [Jekyll](https://github.com/mojombo/jekyll).
-
-This is designed to be an easy layout to modify for your own blog. It was
-extracted from [zachholman.com](http://zachholman.com/), which means it was
-battle-hardened from years of posting serious blog posts about emoji and swear
-words.
-
-![Left](http://cl.ly/image/3S2r1p2C0E2B/content)
-
-## Installation
-
-- Install Jekyll: `gem install jekyll`
-- Fork this repository
-- Clone it: `git clone https://github.com/YOUR-USER/left`
-- Run the jekyll server: `jekyll --server`
-
-You should have a server up and running locally at <http://localhost:4000>.
-
 ## Customization
-
-Next you'll want to change a few things. Most of them can be changed directly in
-[_config.yml](https://github.com/holman/left/blob/master/_config.yml). That's
-where we'll pull your name, Twitter username, and things like that.
 
 There's a few other places that you'll want to change, too:
 
@@ -36,21 +12,3 @@ There's a few other places that you'll want to change, too:
 - [apple-touch-icon.png](https://github.com/holman/left/blob/master/apple-touch-icon.png):
   Again, this is my gravatar, and it shows up in iOS and various other apps
   that use this file as an "icon" for your site.
-
-## Deployment
-
-You should deploy with [GitHub Pages](http://pages.github.com)- it's just
-easier.
-
-All you should have to do is rename your repository on GitHub to be
-`username.github.com`. Since everything is on the `gh-pages` branch, you
-should be able to see your new site at <http://username.github.com>.
-
-## Licensing
-
-This is [MIT](https://github.com/holman/left/blob/master/LICENSE) with no
-added caveats, so feel free to use this on your site without linking back to
-me or using a disclaimer or anything silly like that.
-
-If you'd like give me credit somewhere on your blog or tweet a shout out to
-[@holman](https://twitter.com/holman), well hey, I'll take it.

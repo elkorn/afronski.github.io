@@ -5,9 +5,9 @@ auto: true
 rdiscount:
   extensions: [smart]
 
-name: Zach Holman
-url: http://zachholman.com
-description: A fantastic blog that is fantastic.
-twitter: holman
-github: holman
-gravatar_url: http://gravatar.com/avatar/6f63cde8b16b035280ca615f621a6c8c
+name: Wojciech Gawroński
+url: http://afronski.github.com
+description: A personal blog and about site powered by Jekyll and Zach Holman 'Left' theme.
+twitter: afronski
+github: afronski
+gravatar_url: http://www.gravatar.com/avatar/d758847810384b49ef63c65d4c724507.png
