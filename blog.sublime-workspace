@@ -1,0 +1,2866 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"unlo",
+				"unloadDocument"
+			],
+			[
+				"docu",
+				"documentEntity"
+			],
+			[
+				"document",
+				"documentEntity"
+			],
+			[
+				"do",
+				"documentEntity"
+			],
+			[
+				"ann",
+				"annotationsContext"
+			],
+			[
+				"canvas-",
+				"canvas-container"
+			],
+			[
+				"scro",
+				"scrollTop"
+			],
+			[
+				"page",
+				"pageNumber"
+			],
+			[
+				"clear",
+				"clearHandlers"
+			],
+			[
+				"res",
+				"restoreAnchor"
+			],
+			[
+				"load",
+				"loadedPages"
+			],
+			[
+				"Scr",
+				"ScrollMargin"
+			],
+			[
+				"Sc",
+				"ScrollMargin"
+			],
+			[
+				"prev",
+				"previousPage"
+			],
+			[
+				"scroll",
+				"scrollTopValue"
+			],
+			[
+				"scrt",
+				"scrollTopValue"
+			],
+			[
+				"not",
+				"notLoadedPages"
+			],
+			[
+				"draw",
+				"drawingCanvas"
+			],
+			[
+				"Docue",
+				"DocumentView"
+			],
+			[
+				"cont",
+				"container"
+			],
+			[
+				"upload",
+				"upload-button"
+			],
+			[
+				"Ann",
+				"AnnotationCanvasSelector"
+			],
+			[
+				"canv",
+				"canvasEl"
+			],
+			[
+				"te",
+				"teacherRoleActive"
+			],
+			[
+				"non",
+				"nonEmptyUriResponseWithStatus"
+			],
+			[
+				"get",
+				"getUri"
+			],
+			[
+				"evalu",
+				"evaluateState"
+			],
+			[
+				"pre",
+				"prepareToolbar"
+			],
+			[
+				"par",
+				"parsingResponse"
+			],
+			[
+				"HAn",
+				"HandInController"
+			],
+			[
+				"comm",
+				"commentsHtml"
+			],
+			[
+				"comments",
+				"commentsView"
+			],
+			[
+				"Hand",
+				"HandInController"
+			],
+			[
+				"ev",
+				"evaluationControls"
+			],
+			[
+				"add",
+				"additionalControls"
+			],
+			[
+				"empty",
+				"emptyToolbarInformation"
+			],
+			[
+				"han",
+				"handleHandinState"
+			],
+			[
+				"remove",
+				"removeElementFromSidebar"
+			],
+			[
+				"evalua",
+				"evaluateDocument"
+			],
+			[
+				"che",
+				"checkIfOneSpyIsCalledAndRestNot"
+			],
+			[
+				"State",
+				"StateMachine"
+			],
+			[
+				"firs",
+				"firstForm"
+			],
+			[
+				"Side",
+				"LinksOnSideBarSelector"
+			],
+			[
+				"tem",
+				"templatesToLoad"
+			],
+			[
+				"eva",
+				"evaluateTemplate"
+			],
+			[
+				"dou",
+				"documentView"
+			],
+			[
+				"Ha",
+				"HandInView"
+			],
+			[
+				"Main",
+				"MainHandInView"
+			],
+			[
+				"show",
+				"showLinksOnSidebar"
+			],
+			[
+				"controll",
+				"controller1Activate"
+			],
+			[
+				"change",
+				"changeSpy"
+			],
+			[
+				"chan",
+				"changeSpy"
+			],
+			[
+				"con",
+				"controller1"
+			],
+			[
+				"contr",
+				"controller2"
+			],
+			[
+				"contro",
+				"controller1"
+			],
+			[
+				"cre",
+				"createController"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"calle",
+				"calledOnce"
+			],
+			[
+				"call",
+				"callback"
+			],
+			[
+				"cav",
+				"canvas	Tag"
+			],
+			[
+				"re",
+				"repositionAnnotationCanvas"
+			],
+			[
+				"att",
+				"attachHandlers"
+			],
+			[
+				"attach",
+				"attachHandlersCalled"
+			],
+			[
+				"Doc",
+				"DocumentControlsView"
+			],
+			[
+				"annot",
+				"annotationView"
+			],
+			[
+				"sub",
+				"submitChanges"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"Annota",
+				"AnnotationView"
+			],
+			[
+				"Anno",
+				"Annotation"
+			],
+			[
+				"inst",
+				"instanceof"
+			],
+			[
+				"actual",
+				"actualPage"
+			],
+			[
+				"act",
+				"actualPage"
+			],
+			[
+				"file",
+				"fileName"
+			],
+			[
+				"save",
+				"saveAnnotation"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"set",
+				"setFixedHeaderIfNeeded"
+			],
+			[
+				"lef",
+				"leftPosition"
+			],
+			[
+				"hald",
+				"halfContainerWidth"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"ligh",
+				"lightbox-form"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"backgro",
+				"background"
+			],
+			[
+				"list",
+				"list-style"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"black",
+				"black-button"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"margi",
+				"margin"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"font-",
+				"font-family"
+			],
+			[
+				"border",
+				"border-left"
+			],
+			[
+				"Dialo",
+				"DialogContainerSelector"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"finish",
+				"finishEvaluationTemplate"
+			],
+			[
+				"fini",
+				"finish-evaluation"
+			],
+			[
+				"form",
+				"formData"
+			],
+			[
+				"anno",
+				"annotation"
+			],
+			[
+				"comment",
+				"commentItemTemplate"
+			],
+			[
+				"comme",
+				"commentsContainer"
+			],
+			[
+				"com",
+				"commentItemTemplate"
+			],
+			[
+				"hand",
+				"handleHandinState"
+			],
+			[
+				"finis",
+				"finishEvaluationTemplate"
+			],
+			[
+				"Document",
+				"DocumentView"
+			],
+			[
+				"butt",
+				"buttonOffset"
+			],
+			[
+				"eraser",
+				"eraserSizesEl"
+			],
+			[
+				"brushSizes",
+				"brushSizesEl"
+			],
+			[
+				"pal",
+				"paletteBrush"
+			],
+			[
+				"Form",
+				"FormHandler"
+			],
+			[
+				"hide",
+				"hideButtons"
+			],
+			[
+				"dis",
+				"disableNextButton"
+			],
+			[
+				"vi",
+				"visiblity"
+			],
+			[
+				"visi",
+				"visible"
+			],
+			[
+				"ne",
+				"nextPageButton"
+			],
+			[
+				"DocumentControls",
+				"documentControlsView"
+			],
+			[
+				"Actua",
+				"ActualFileName"
+			],
+			[
+				"actu",
+				"actualAnnotation"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"paddi",
+				"padding-bottom"
+			],
+			[
+				"read",
+				"readWriteOptions"
+			],
+			[
+				"pro",
+				"processContent"
+			],
+			[
+				"src",
+				"srcGlobals"
+			],
+			[
+				"jquer",
+				"jquery-ui"
+			],
+			[
+				"Aler",
+				"AlertBoxItemTemplate"
+			],
+			[
+				"Al",
+				"AlertBoxItemTemplate"
+			],
+			[
+				"mess",
+				"messageCounter"
+			],
+			[
+				"Last",
+				"LastItemInAlertBoxClassName"
+			],
+			[
+				"sh",
+				"showAjaxPreloader"
+			],
+			[
+				"side",
+				"sidebarWidth"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "_layouts/layout.html",
+			"settings":
+			{
+				"buffer_size": 2040,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_layouts/post.html",
+			"settings":
+			{
+				"buffer_size": 1011,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 276,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "readme.markdown",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "CNAME",
+			"settings":
+			{
+				"buffer_size": 11,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "404.html",
+			"settings":
+			{
+				"buffer_size": 150,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "about.html",
+			"settings":
+			{
+				"buffer_size": 298,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "atom.xml",
+			"settings":
+			{
+				"buffer_size": 673,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"ssxm",
+				"Set Syntax: XML"
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"ssxml",
+				"Set Syntax: XML"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"todo",
+				"Show TODOs: Open files only"
+			],
+			[
+				"show",
+				"Show TODOs: Project and open files"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ss",
+				"Set Syntax: HTML"
+			],
+			[
+				"ssja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"sshtm",
+				"Set Syntax: HTML"
+			],
+			[
+				"ssbas",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"sssas",
+				"Set Syntax: Sass"
+			],
+			[
+				"live",
+				"Live CSS: Colorize"
+			],
+			[
+				"ssru",
+				"Set Syntax: Ruby"
+			],
+			[
+				"ss rub",
+				"Set Syntax: Ruby"
+			],
+			[
+				"linter",
+				"SublimeLinter: Disable Linting"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/afronski/Repositories/afronski.github.io/CNAME",
+		"/home/afronski/Repositories/afronski.github.io/_config.yml",
+		"/home/afronski/Repositories/afronski.github.io/_posts/2012-12-12-test.markdown",
+		"/home/afronski/Repositories/afronski.github.io/_posts/2012-12-12-left.markdown",
+		"/home/afronski/Repositories/afronski.github.io/_layouts/layout.html",
+		"/home/afronski/Repositories/afronski.github.io/_layouts/post.html",
+		"/home/afronski/Repositories/afronski.github.io/readme.markdown",
+		"/home/afronski/Repositories/afronski.github.io/css/base.css",
+		"/home/afronski/Repositories/afronski.github.io/404.html",
+		"/home/afronski/Repositories/afronski.github.io/LICENSE",
+		"/home/afronski/Repositories/afronski.github.io/.gitignore",
+		"/home/afronski/Repositories/afronski.github.io/apple-touch-icon.png",
+		"/home/afronski/Repositories/afronski.github.io/blog.sublime-project",
+		"/home/afronski/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/afronski/Repositories/afronski.github.io/css/iphone.css",
+		"/home/afronski/Repositories/afronski.github.io/css/pygments.css",
+		"/home/afronski/Repositories/afronski.github.io/js/application.js",
+		"/home/afronski/Repositories/afronski.github.io/Rakefile",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/utils/input-controller.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/utils/annotation-controller.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/models/document.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/models/annotation.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/utils/common.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/annotation-view.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/cucumber/features/hand-in/performance-step1-submission.feature",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/cucumber/features/caching/reliability.feature",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/document-controls-view.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/views/handins.html.twig",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/document-view.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/controls-view.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/common/client-side/scripts/main-page/edu-common.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/hand-in-view.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/common/client-side/scripts/polyfills/es5.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/common/client-side/scripts/custom-vendor/pdf.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/css/viewer.css",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/views/Student/handins.html.twig",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/views/Student/controls.html.twig",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/hand-in-side-bar-view.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/hand-in-comments-view.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/qunit/runners/handinApplicationLogicRunner.html",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/qunit/test-cases/hand-in/AnnotationController.test.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/qunit/test-cases/hand-in/HandInView.test.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/qunit/test-cases/hand-in/HandInSideBarView.test.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/qunit/runners/handinBusinessLogicRunner.html",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/qunit/runners/eduCommonRunner.html",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/qunit/runners/browserAdvisorRunner.html",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/qunit/test-cases/legacy/functions.test.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/qunit/test-cases/hand-in/HandInCommentsView.test.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/qunit/test-cases/hand-in/HandInMediator.test.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/utils/hand-in-mediator.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/common/client-side/scripts/main-page/edu-common-state-machine.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/common/client-side/scripts/polyfills/form-handler.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/app/AppKernel.php",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/qunit/test-cases/edu-common/EduCommon.StateMachine.test.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/app/Resources/views/base.html.twig",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/views/Teacher/handins.html.twig",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/qunit/test-cases/hand-in/HandInController.test.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/utils/hand-in-controller.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/views/Teacher/controls.html.twig",
+		"/home/afronski/.config/sublime-text-2/Packages/User/JavaScript/QUnit/QUnitModule.sublime-snippet",
+		"/home/afronski/.config/sublime-text-2/Packages/User/JavaScript/QUnit/QUnitTest.sublime-snippet",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/views/handins-list.html.twig",
+		"/home/afronski/.config/sublime-text-2/Packages/User/JavaScript/QUnit/QUnitTestCase.sublime-snippet",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Entity/Annotation.php",
+		"/tmp/.fr-OjAVY7/new-landing-page/landing-page.html",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/LandingPageBundle/Resources/public/js/main.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/doc/ui/new-landing-page/js/main.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/form-handler.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/side-bar-view.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/side-bar-view.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/hand-in-view.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/hand-in-controller.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/controller.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/doc/ui/new-landing-page/sample-htaccess",
+		"/media/documents/Work/KMD/KMD_Education/trunk/doc/ui/new-landing-page/css/footer.css",
+		"/media/documents/Work/KMD/KMD_Education/trunk/doc/ui/new-landing-page/css/landing.css",
+		"/media/documents/Work/KMD/KMD_Education/trunk/doc/ui/new-landing-page/landing-page.html",
+		"/media/documents/Work/KMD/KMD_Education/trunk/doc/ui/new-landing-page/css/landing-subpage.css",
+		"/media/documents/Work/KMD/KMD_Education/trunk/doc/ui/new-landing-page/login-page.html",
+		"/media/documents/Work/KMD/KMD_Education/trunk/doc/ui/new-landing-page/leder-subpage.html",
+		"/media/documents/Work/KMD/KMD_Education/trunk/doc/ui/new-landing-page/laerer-subpage.html",
+		"/media/documents/Work/KMD/KMD_Education/trunk/doc/ui/new-landing-page/elev-subpage.html",
+		"/media/documents/Work/KMD/KMD_Education/trunk/doc/ui/new-landing-page/css/default.css",
+		"/media/documents/Work/KMD/KMD_Education/trunk/doc/ui/new-landing-page/css/login.css",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Validator/Constraints/Base64Validator.php",
+		"/home/afronski/htaccess",
+		"/home/afronski/env.rb",
+		"/home/afronski/demo_steps.rb",
+		"/home/afronski/demo.feature",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/common/client-side/scripts/browser-advisor/browser-advisor.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/cucumber/features/pages/EdudoPage.rb",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/LandingPageBundle/Resources/views/base/landing-base.html.twig",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/LandingPageBundle/Resources/views/teachers-subpage.html.twig",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/LandingPageBundle/Resources/public/css/landing.css",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/LandingPageBundle/Resources/views/base/subpage-base.html.twig",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/LandingPageBundle/Resources/views/login.html.twig",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/LandingPageBundle/Resources/views/base/base.html.twig",
+		"/media/documents/Work/KMD/KMD_Education/trunk/tool/build/client-side/Gruntfile.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/.kmd-education.sublime-workspace",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/handins.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/web/js/021f778.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/edu-common-state-machine.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/app/cache/dev/assetic/assets/09b22962bb6dd711e20cb9eaf88f654d",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/qunit/runners/handinEvaluationRunner.html",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/text-tool-controls-view.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/brush-and-eraser-controls-view.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/models/tool-palette.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/models/text-tool.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/models/text-tool-view-model.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/qunit/libs/es5.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/qunit/runners/eduCommonRuner.html",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/edu-common.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/qunit/runners/functionsRunner.html",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/qunit/test-cases/browser-advisor/CookieManagement.test.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/qunit/test-cases/browser-advisor/BrowserDetection.test.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/test/qunit/test-cases/hand-in/Common.test.js",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/common/client-side/sass/layout/footer.scss",
+		"/media/documents/Work/KMD/KMD_Education/trunk/tool/build/client-side/component.json",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/translations/messages.da.xliff",
+		"/media/documents/Dropbox/School/MSc Thesis/Remarks/Concept.txt",
+		"/media/documents/Dropbox/School/MSc Thesis/Remarks/Questions - First Meeting.txt",
+		"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/utils/compatibility.js",
+		"/home/afronski/Repositories/e-learning/algorithms/part-I/pattern-recognition/Fast.java",
+		"/media/documents/Work/KMD/KMD_Education/trunk/doc/ui/new-landing-page/landing-page-subpage.html",
+		"/home/afronski/Desktop/LandingPage/htaccess",
+		"/media/documents/Work/KMD/KMD_Education/trunk/doc/design/ui/styleguide/.htaccess",
+		"/home/afronski/Desktop/Untitled Folder/htaccess",
+		"/media/documents/Work/KMD/KMD_Education/trunk/doc/ui/htaccess"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/media/documents/Work/KMD/KMD_Education/trunk",
+			"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js",
+			"/media/documents/Work/KMD/KMD_Education/trunk",
+			"/media/documents/Work/KMD/KMD_Education/trunk/edu/do/src",
+			"<project>",
+			"/home/afronski/Work/KMD/trunk/*",
+			"/home/afronski/Work/KMD/trunk/",
+			"/home/afronski/Work/KMD/trunk/edu/do/src",
+			"/home/afronski/Work/KMD/trunk/edu",
+			"",
+			"/home/afronski/Work/KMD/trunk/**/*.rb",
+			"<project> *.rb",
+			"<project>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"restoreAn",
+			"restore",
+			"loadDocument",
+			"loadDoc",
+			"load",
+			"key",
+			"nputController.bind",
+			"container",
+			"drawingCanvas",
+			"update",
+			"set(\"actualPage",
+			"set(\"actual",
+			"loadedPage",
+			"curr",
+			"loadedPageHeight",
+			"updatePageAnchor",
+			"restoreAnchorPosition",
+			"scrollToAnchor",
+			"document",
+			"this.el",
+			"el",
+			"pageId",
+			"canvasEl",
+			"DRAWING_CANVAS_SELECTOR",
+			"CANVAS_ANNOTATIONS_SELECTOR",
+			"CONTAINER_SELECTOR",
+			"INITIAL_SCALE",
+			"TODO",
+			".documentView",
+			"this.",
+			"controller",
+			"HandInController",
+			"controller",
+			"evaluateState",
+			"downloadState",
+			"submitState",
+			"uploadState",
+			"Controller",
+			"controller",
+			"Controller",
+			"control",
+			"controller",
+			"Controller",
+			"controller",
+			"Controller",
+			"controller",
+			"Controller",
+			"controller",
+			"Controller",
+			"TODO",
+			"function(eve",
+			"TODO",
+			"attachSpiesToControllerEvents",
+			"controller",
+			"Controller",
+			"controller",
+			".teacher",
+			"teacher",
+			"TODO",
+			"loadDoc",
+			"TODO",
+			"HandInController",
+			"submitComm",
+			"handleHan",
+			"form-ob",
+			"\"form-object\"",
+			"submitParent",
+			"continuation",
+			"submit",
+			"submitCommentAndFinish",
+			"openAddCommentDialog",
+			"initialization()",
+			"initialization",
+			"span",
+			"div",
+			"getTemplate",
+			"initLinks",
+			"showLinksOnSidebar",
+			"sidebar",
+			"appendTem",
+			"templates",
+			"this",
+			"Commo",
+			"({\n",
+			"SideBarView",
+			"controls",
+			"<a ",
+			"<a",
+			"emptyToo",
+			"$container",
+			"$button",
+			"response.handin.document.uri",
+			"form:first",
+			"getAction",
+			"getHref",
+			"action",
+			"href",
+			"element",
+			"saveWith",
+			"openAdd",
+			"obj",
+			"'",
+			"this.templates",
+			"addCommentDialogTemplate",
+			"commentItemsTemplate",
+			"commentsContainerTemplate",
+			"finishEvaluationTemplate",
+			"downloadDocumentTemplate",
+			"submitDocumentTemplate",
+			"uploadButtonTemplate",
+			"id",
+			"landing.css",
+			"handins",
+			"handins.js",
+			"Exception",
+			"window.Exception",
+			" Backbone.Event);",
+			" Backbone.Events);",
+			" Backbone.Event);",
+			"activate",
+			"html5",
+			"DefaultSuccessMessage",
+			"<a ",
+			"<a",
+			"logo",
+			"- e",
+			"automatyzacji",
+			"controlsView"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"State",
+			"state",
+			"State",
+			"\"",
+			"'",
+			"../img",
+			"\"",
+			" | trans",
+			"\"",
+			"!==",
+			"\"",
+			"  ",
+			"..",
+			"/media/documents/Work/KMD/KMD_Education/trunk",
+			"'",
+			"\""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "_layouts/layout.html",
+					"settings":
+					{
+						"buffer_size": 2040,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								183,
+								183
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"box-model": false,
+								"box-sizing": false,
+								"compatible-vendor-prefixes": false,
+								"ids": false,
+								"import": true,
+								"overqualified-elements": 2,
+								"qualified-headings": false,
+								"star-property-hack": false,
+								"universal-selector": false
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"asi": true,
+								"bitwise": false,
+								"boss": true,
+								"browser": true,
+								"camelcase": true,
+								"couch": false,
+								"curly": true,
+								"debug": true,
+								"devel": false,
+								"dojo": false,
+								"eqeqeq": true,
+								"eqnull": true,
+								"es5": true,
+								"esnext": false,
+								"evil": true,
+								"expr": true,
+								"forin": true,
+								"funcscope": true,
+								"globalstrict": true,
+								"immed": true,
+								"indent": 2,
+								"iterator": true,
+								"jquery": true,
+								"lastsemic": true,
+								"latedef": true,
+								"laxbreak": true,
+								"laxcomma": true,
+								"loopfunc": true,
+								"maxlen": 120,
+								"mootools": false,
+								"multistr": true,
+								"newcap": true,
+								"noarg": true,
+								"node": false,
+								"noempty": true,
+								"nomen": false,
+								"nonstandard": false,
+								"onecase": true,
+								"onevar": true,
+								"passfail": false,
+								"plusplus": false,
+								"predef":
+								[
+									"$",
+									"_",
+									"window",
+									"jQuery",
+									"console",
+									"global",
+									"module",
+									"require",
+									"process",
+									"__dirname"
+								],
+								"proto": true,
+								"prototypejs": false,
+								"quotmark": "double",
+								"regexdash": true,
+								"regexp": false,
+								"rhino": false,
+								"scripturl": true,
+								"shadow": true,
+								"smarttabs": true,
+								"strict": false,
+								"sub": true,
+								"supernew": true,
+								"trailing": true,
+								"undef": true,
+								"unused": true,
+								"validthis": true,
+								"white": false,
+								"worker": false
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"javascript": "/usr/bin/jshint"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "_layouts/post.html",
+					"settings":
+					{
+						"buffer_size": 1011,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"box-model": false,
+								"box-sizing": false,
+								"compatible-vendor-prefixes": false,
+								"ids": false,
+								"import": true,
+								"overqualified-elements": 2,
+								"qualified-headings": false,
+								"star-property-hack": false,
+								"universal-selector": false
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"asi": true,
+								"bitwise": false,
+								"boss": true,
+								"browser": true,
+								"camelcase": true,
+								"couch": false,
+								"curly": true,
+								"debug": true,
+								"devel": false,
+								"dojo": false,
+								"eqeqeq": true,
+								"eqnull": true,
+								"es5": true,
+								"esnext": false,
+								"evil": true,
+								"expr": true,
+								"forin": true,
+								"funcscope": true,
+								"globalstrict": true,
+								"immed": true,
+								"indent": 2,
+								"iterator": true,
+								"jquery": true,
+								"lastsemic": true,
+								"latedef": true,
+								"laxbreak": true,
+								"laxcomma": true,
+								"loopfunc": true,
+								"maxlen": 120,
+								"mootools": false,
+								"multistr": true,
+								"newcap": true,
+								"noarg": true,
+								"node": false,
+								"noempty": true,
+								"nomen": false,
+								"nonstandard": false,
+								"onecase": true,
+								"onevar": true,
+								"passfail": false,
+								"plusplus": false,
+								"predef":
+								[
+									"$",
+									"_",
+									"window",
+									"jQuery",
+									"console",
+									"global",
+									"module",
+									"require",
+									"process",
+									"__dirname"
+								],
+								"proto": true,
+								"prototypejs": false,
+								"quotmark": "double",
+								"regexdash": true,
+								"regexp": false,
+								"rhino": false,
+								"scripturl": true,
+								"shadow": true,
+								"smarttabs": true,
+								"strict": false,
+								"sub": true,
+								"supernew": true,
+								"trailing": true,
+								"undef": true,
+								"unused": true,
+								"validthis": true,
+								"white": false,
+								"worker": false
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"javascript": "/usr/bin/jshint"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 276,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"box-model": false,
+								"box-sizing": false,
+								"compatible-vendor-prefixes": false,
+								"ids": false,
+								"import": true,
+								"overqualified-elements": 2,
+								"qualified-headings": false,
+								"star-property-hack": false,
+								"universal-selector": false
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"asi": true,
+								"bitwise": false,
+								"boss": true,
+								"browser": true,
+								"camelcase": true,
+								"couch": false,
+								"curly": true,
+								"debug": true,
+								"devel": false,
+								"dojo": false,
+								"eqeqeq": true,
+								"eqnull": true,
+								"es5": true,
+								"esnext": false,
+								"evil": true,
+								"expr": true,
+								"forin": true,
+								"funcscope": true,
+								"globalstrict": true,
+								"immed": true,
+								"indent": 2,
+								"iterator": true,
+								"jquery": true,
+								"lastsemic": true,
+								"latedef": true,
+								"laxbreak": true,
+								"laxcomma": true,
+								"loopfunc": true,
+								"maxlen": 120,
+								"mootools": false,
+								"multistr": true,
+								"newcap": true,
+								"noarg": true,
+								"node": false,
+								"noempty": true,
+								"nomen": false,
+								"nonstandard": false,
+								"onecase": true,
+								"onevar": true,
+								"passfail": false,
+								"plusplus": false,
+								"predef":
+								[
+									"$",
+									"_",
+									"window",
+									"jQuery",
+									"console",
+									"global",
+									"module",
+									"require",
+									"process",
+									"__dirname"
+								],
+								"proto": true,
+								"prototypejs": false,
+								"quotmark": "double",
+								"regexdash": true,
+								"regexp": false,
+								"rhino": false,
+								"scripturl": true,
+								"shadow": true,
+								"smarttabs": true,
+								"strict": false,
+								"sub": true,
+								"supernew": true,
+								"trailing": true,
+								"undef": true,
+								"unused": true,
+								"validthis": true,
+								"white": false,
+								"worker": false
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"javascript": "/usr/bin/jshint"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "readme.markdown",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"box-model": false,
+								"box-sizing": false,
+								"compatible-vendor-prefixes": false,
+								"ids": false,
+								"import": true,
+								"overqualified-elements": 2,
+								"qualified-headings": false,
+								"star-property-hack": false,
+								"universal-selector": false
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"asi": true,
+								"bitwise": false,
+								"boss": true,
+								"browser": true,
+								"camelcase": true,
+								"couch": false,
+								"curly": true,
+								"debug": true,
+								"devel": false,
+								"dojo": false,
+								"eqeqeq": true,
+								"eqnull": true,
+								"es5": true,
+								"esnext": false,
+								"evil": true,
+								"expr": true,
+								"forin": true,
+								"funcscope": true,
+								"globalstrict": true,
+								"immed": true,
+								"indent": 2,
+								"iterator": true,
+								"jquery": true,
+								"lastsemic": true,
+								"latedef": true,
+								"laxbreak": true,
+								"laxcomma": true,
+								"loopfunc": true,
+								"maxlen": 120,
+								"mootools": false,
+								"multistr": true,
+								"newcap": true,
+								"noarg": true,
+								"node": false,
+								"noempty": true,
+								"nomen": false,
+								"nonstandard": false,
+								"onecase": true,
+								"onevar": true,
+								"passfail": false,
+								"plusplus": false,
+								"predef":
+								[
+									"$",
+									"_",
+									"window",
+									"jQuery",
+									"console",
+									"global",
+									"module",
+									"require",
+									"process",
+									"__dirname"
+								],
+								"proto": true,
+								"prototypejs": false,
+								"quotmark": "double",
+								"regexdash": true,
+								"regexp": false,
+								"rhino": false,
+								"scripturl": true,
+								"shadow": true,
+								"smarttabs": true,
+								"strict": false,
+								"sub": true,
+								"supernew": true,
+								"trailing": true,
+								"undef": true,
+								"unused": true,
+								"validthis": true,
+								"white": false,
+								"worker": false
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"javascript": "/usr/bin/jshint"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "CNAME",
+					"settings":
+					{
+						"buffer_size": 11,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"box-model": false,
+								"box-sizing": false,
+								"compatible-vendor-prefixes": false,
+								"ids": false,
+								"import": true,
+								"overqualified-elements": 2,
+								"qualified-headings": false,
+								"star-property-hack": false,
+								"universal-selector": false
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"asi": true,
+								"bitwise": false,
+								"boss": true,
+								"browser": true,
+								"camelcase": true,
+								"couch": false,
+								"curly": true,
+								"debug": true,
+								"devel": false,
+								"dojo": false,
+								"eqeqeq": true,
+								"eqnull": true,
+								"es5": true,
+								"esnext": false,
+								"evil": true,
+								"expr": true,
+								"forin": true,
+								"funcscope": true,
+								"globalstrict": true,
+								"immed": true,
+								"indent": 2,
+								"iterator": true,
+								"jquery": true,
+								"lastsemic": true,
+								"latedef": true,
+								"laxbreak": true,
+								"laxcomma": true,
+								"loopfunc": true,
+								"maxlen": 120,
+								"mootools": false,
+								"multistr": true,
+								"newcap": true,
+								"noarg": true,
+								"node": false,
+								"noempty": true,
+								"nomen": false,
+								"nonstandard": false,
+								"onecase": true,
+								"onevar": true,
+								"passfail": false,
+								"plusplus": false,
+								"predef":
+								[
+									"$",
+									"_",
+									"window",
+									"jQuery",
+									"console",
+									"global",
+									"module",
+									"require",
+									"process",
+									"__dirname"
+								],
+								"proto": true,
+								"prototypejs": false,
+								"quotmark": "double",
+								"regexdash": true,
+								"regexp": false,
+								"rhino": false,
+								"scripturl": true,
+								"shadow": true,
+								"smarttabs": true,
+								"strict": false,
+								"sub": true,
+								"supernew": true,
+								"trailing": true,
+								"undef": true,
+								"unused": true,
+								"validthis": true,
+								"white": false,
+								"worker": false
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"javascript": "/usr/bin/jshint"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "404.html",
+					"settings":
+					{
+						"buffer_size": 150,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"box-model": false,
+								"box-sizing": false,
+								"compatible-vendor-prefixes": false,
+								"ids": false,
+								"import": true,
+								"overqualified-elements": 2,
+								"qualified-headings": false,
+								"star-property-hack": false,
+								"universal-selector": false
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"asi": true,
+								"bitwise": false,
+								"boss": true,
+								"browser": true,
+								"camelcase": true,
+								"couch": false,
+								"curly": true,
+								"debug": true,
+								"devel": false,
+								"dojo": false,
+								"eqeqeq": true,
+								"eqnull": true,
+								"es5": true,
+								"esnext": false,
+								"evil": true,
+								"expr": true,
+								"forin": true,
+								"funcscope": true,
+								"globalstrict": true,
+								"immed": true,
+								"indent": 2,
+								"iterator": true,
+								"jquery": true,
+								"lastsemic": true,
+								"latedef": true,
+								"laxbreak": true,
+								"laxcomma": true,
+								"loopfunc": true,
+								"maxlen": 120,
+								"mootools": false,
+								"multistr": true,
+								"newcap": true,
+								"noarg": true,
+								"node": false,
+								"noempty": true,
+								"nomen": false,
+								"nonstandard": false,
+								"onecase": true,
+								"onevar": true,
+								"passfail": false,
+								"plusplus": false,
+								"predef":
+								[
+									"$",
+									"_",
+									"window",
+									"jQuery",
+									"console",
+									"global",
+									"module",
+									"require",
+									"process",
+									"__dirname"
+								],
+								"proto": true,
+								"prototypejs": false,
+								"quotmark": "double",
+								"regexdash": true,
+								"regexp": false,
+								"rhino": false,
+								"scripturl": true,
+								"shadow": true,
+								"smarttabs": true,
+								"strict": false,
+								"sub": true,
+								"supernew": true,
+								"trailing": true,
+								"undef": true,
+								"unused": true,
+								"validthis": true,
+								"white": false,
+								"worker": false
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"javascript": "/usr/bin/jshint"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "about.html",
+					"settings":
+					{
+						"buffer_size": 298,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"box-model": false,
+								"box-sizing": false,
+								"compatible-vendor-prefixes": false,
+								"ids": false,
+								"import": true,
+								"overqualified-elements": 2,
+								"qualified-headings": false,
+								"star-property-hack": false,
+								"universal-selector": false
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"asi": true,
+								"bitwise": false,
+								"boss": true,
+								"browser": true,
+								"camelcase": true,
+								"couch": false,
+								"curly": true,
+								"debug": true,
+								"devel": false,
+								"dojo": false,
+								"eqeqeq": true,
+								"eqnull": true,
+								"es5": true,
+								"esnext": false,
+								"evil": true,
+								"expr": true,
+								"forin": true,
+								"funcscope": true,
+								"globalstrict": true,
+								"immed": true,
+								"indent": 2,
+								"iterator": true,
+								"jquery": true,
+								"lastsemic": true,
+								"latedef": true,
+								"laxbreak": true,
+								"laxcomma": true,
+								"loopfunc": true,
+								"maxlen": 120,
+								"mootools": false,
+								"multistr": true,
+								"newcap": true,
+								"noarg": true,
+								"node": false,
+								"noempty": true,
+								"nomen": false,
+								"nonstandard": false,
+								"onecase": true,
+								"onevar": true,
+								"passfail": false,
+								"plusplus": false,
+								"predef":
+								[
+									"$",
+									"_",
+									"window",
+									"jQuery",
+									"console",
+									"global",
+									"module",
+									"require",
+									"process",
+									"__dirname"
+								],
+								"proto": true,
+								"prototypejs": false,
+								"quotmark": "double",
+								"regexdash": true,
+								"regexp": false,
+								"rhino": false,
+								"scripturl": true,
+								"shadow": true,
+								"smarttabs": true,
+								"strict": false,
+								"sub": true,
+								"supernew": true,
+								"trailing": true,
+								"undef": true,
+								"unused": true,
+								"validthis": true,
+								"white": false,
+								"worker": false
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"javascript": "/usr/bin/jshint"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "atom.xml",
+					"settings":
+					{
+						"buffer_size": 673,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"box-model": false,
+								"box-sizing": false,
+								"compatible-vendor-prefixes": false,
+								"ids": false,
+								"import": true,
+								"overqualified-elements": 2,
+								"qualified-headings": false,
+								"star-property-hack": false,
+								"universal-selector": false
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"asi": true,
+								"bitwise": false,
+								"boss": true,
+								"browser": true,
+								"camelcase": true,
+								"couch": false,
+								"curly": true,
+								"debug": true,
+								"devel": false,
+								"dojo": false,
+								"eqeqeq": true,
+								"eqnull": true,
+								"es5": true,
+								"esnext": false,
+								"evil": true,
+								"expr": true,
+								"forin": true,
+								"funcscope": true,
+								"globalstrict": true,
+								"immed": true,
+								"indent": 2,
+								"iterator": true,
+								"jquery": true,
+								"lastsemic": true,
+								"latedef": true,
+								"laxbreak": true,
+								"laxcomma": true,
+								"loopfunc": true,
+								"maxlen": 120,
+								"mootools": false,
+								"multistr": true,
+								"newcap": true,
+								"noarg": true,
+								"node": false,
+								"noempty": true,
+								"nomen": false,
+								"nonstandard": false,
+								"onecase": true,
+								"onevar": true,
+								"passfail": false,
+								"plusplus": false,
+								"predef":
+								[
+									"$",
+									"_",
+									"window",
+									"jQuery",
+									"console",
+									"global",
+									"module",
+									"require",
+									"process",
+									"__dirname"
+								],
+								"proto": true,
+								"prototypejs": false,
+								"quotmark": "double",
+								"regexdash": true,
+								"regexp": false,
+								"rhino": false,
+								"scripturl": true,
+								"shadow": true,
+								"smarttabs": true,
+								"strict": false,
+								"sub": true,
+								"supernew": true,
+								"trailing": true,
+								"undef": true,
+								"unused": true,
+								"validthis": true,
+								"white": false,
+								"worker": false
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"javascript": "/usr/bin/jshint"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 29.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"hand-in-view",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/hand-in-view.js"
+			],
+			[
+				"annotation-c",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/utils/annotation-controller.js"
+			],
+			[
+				"document.js",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/models/document.js"
+			],
+			[
+				"annotation.js",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/models/annotation.js"
+			],
+			[
+				"annotation-contro",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/utils/annotation-controller.js"
+			],
+			[
+				"common.js",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/utils/common.js"
+			],
+			[
+				"annot",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/annotation-view.js"
+			],
+			[
+				"document-view",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/document-view.js"
+			],
+			[
+				"input-conto",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/utils/input-controller.js"
+			],
+			[
+				"annotation-co",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/utils/annotation-controller.js"
+			],
+			[
+				"controls",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/controls-view.js"
+			],
+			[
+				"annocontr",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/utils/annotation-controller.js"
+			],
+			[
+				"document-contr",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/document-controls-view.js"
+			],
+			[
+				"es5.js",
+				"edu/common/client-side/scripts/polyfills/es5.js"
+			],
+			[
+				"documen-contr",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/document-controls-view.js"
+			],
+			[
+				"pdf.js",
+				"edu/common/client-side/scripts/custom-vendor/pdf.js"
+			],
+			[
+				"viewer.css",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/css/viewer.css"
+			],
+			[
+				"controls-",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/controls-view.js"
+			],
+			[
+				"document-contro",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/document-controls-view.js"
+			],
+			[
+				"viewer",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/css/viewer.css"
+			],
+			[
+				"hand-i",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/hand-in-view.js"
+			],
+			[
+				"viewer.cs",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/css/viewer.css"
+			],
+			[
+				"edu",
+				"edu/common/client-side/scripts/main-page/edu-common.js"
+			],
+			[
+				"handinview",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/hand-in-view.js"
+			],
+			[
+				"edu-co",
+				"edu/common/client-side/scripts/main-page/edu-common.js"
+			],
+			[
+				"controlstwig",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/views/Student/controls.html.twig"
+			],
+			[
+				"studenthandins",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/views/Student/handins.html.twig"
+			],
+			[
+				"annotation-con",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/utils/annotation-controller.js"
+			],
+			[
+				"handins.",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/views/handins.html.twig"
+			],
+			[
+				"documen",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/models/document.js"
+			],
+			[
+				"handinstwi",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/views/handins.html.twig"
+			],
+			[
+				"appker",
+				"edu/do/src/symfony/app/AppKernel.php"
+			],
+			[
+				"form",
+				"edu/common/client-side/scripts/polyfills/form-handler.js"
+			],
+			[
+				"mediat",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/utils/hand-in-mediator.js"
+			],
+			[
+				"edu-comm",
+				"edu/common/client-side/scripts/main-page/edu-common-state-machine.js"
+			],
+			[
+				"educomm",
+				"test/qunit/test-cases/edu-common/EduCommon.StateMachine.test.js"
+			],
+			[
+				"edu-",
+				"edu/common/client-side/scripts/main-page/edu-common-state-machine.js"
+			],
+			[
+				"document-view.js",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/document-view.js"
+			],
+			[
+				"educommon",
+				"test/qunit/test-cases/edu-common/EduCommon.StateMachine.test.js"
+			],
+			[
+				"edu-com",
+				"edu/common/client-side/scripts/main-page/edu-common-state-machine.js"
+			],
+			[
+				"handinsteachtwi",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/views/Teacher/handins.html.twig"
+			],
+			[
+				"handins",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/views/handins.html.twig"
+			],
+			[
+				"handinstwig",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/views/Teacher/handins.html.twig"
+			],
+			[
+				"handins.twig",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/views/handins.html.twig"
+			],
+			[
+				"list.twig",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/views/handins-list.html.twig"
+			],
+			[
+				"handin",
+				"test/qunit/runners/handinApplicationLogicRunner.html"
+			],
+			[
+				"handincontro",
+				"test/qunit/test-cases/hand-in/HandInController.test.js"
+			],
+			[
+				"main.js",
+				"edu/do/src/symfony/src/KMD/LandingPageBundle/Resources/public/js/main.js"
+			],
+			[
+				"handinsteacher",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/views/Teacher/handins.html.twig"
+			],
+			[
+				"handinv",
+				"test/qunit/test-cases/hand-in/HandInView.test.js"
+			],
+			[
+				"handins.tw",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/views/handins.html.twig"
+			],
+			[
+				"handinrunner",
+				"test/qunit/runners/handinApplicationLogicRunner.html"
+			],
+			[
+				"hand-in-vi",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/hand-in-view.js"
+			],
+			[
+				"state",
+				"edu/common/client-side/scripts/main-page/edu-common-state-machine.js"
+			],
+			[
+				"state-mach",
+				"edu/common/client-side/scripts/main-page/edu-common-state-machine.js"
+			],
+			[
+				"docu",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/models/document.js"
+			],
+			[
+				"annotion-contr",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/utils/annotation-controller.js"
+			],
+			[
+				"document",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/models/document.js"
+			],
+			[
+				"page",
+				"test/cucumber/features/pages/EdudoPage.rb"
+			],
+			[
+				"brows",
+				"edu/common/client-side/scripts/browser-advisor/browser-advisor.js"
+			],
+			[
+				"base.t",
+				"edu/do/src/symfony/app/Resources/views/base.html.twig"
+			],
+			[
+				"grun",
+				"tool/build/client-side/Gruntfile.js"
+			],
+			[
+				"grunt",
+				"tool/build/client-side/Gruntfile.js"
+			],
+			[
+				"browser",
+				"edu/common/client-side/scripts/browser-advisor/browser-advisor.js"
+			],
+			[
+				"document-vi",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/document-view.js"
+			],
+			[
+				"docum",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/models/document.js"
+			],
+			[
+				"base.ht",
+				"edu/do/src/symfony/app/Resources/views/base.html.twig"
+			],
+			[
+				"base.tw",
+				"edu/do/src/symfony/app/Resources/views/base.html.twig"
+			],
+			[
+				"footer",
+				"edu/common/client-side/sass/layout/footer.scss"
+			],
+			[
+				"comp",
+				"tool/build/client-side/component.json"
+			],
+			[
+				"xliff",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/translations/messages.da.xliff"
+			],
+			[
+				"land",
+				"doc/ui/new-landing-page/landing-page.html"
+			],
+			[
+				"common.test",
+				"test/qunit/test-cases/hand-in/Common.test.js"
+			],
+			[
+				"main",
+				"doc/ui/new-landing-page/js/main.js"
+			],
+			[
+				".hta",
+				"doc/design/ui/styleguide/.htaccess"
+			],
+			[
+				"login",
+				"doc/ui/new-landing-page/css/login.css"
+			],
+			[
+				"header",
+				"doc/ui/new-landing-page/css/header.css"
+			],
+			[
+				"foo",
+				"edu/common/client-side/sass/layout/footer.scss"
+			],
+			[
+				"def",
+				"doc/ui/new-landing-page/css/default.css"
+			],
+			[
+				"subp",
+				"doc/ui/new-landing-page/landing-page-subpage.html"
+			],
+			[
+				"log",
+				"doc/ui/new-landing-page/css/login.css"
+			],
+			[
+				"mid",
+				"doc/ui/new-landing-page/css/middle.css"
+			],
+			[
+				"middle",
+				"doc/ui/new-landing-page/css/middle.css"
+			],
+			[
+				"hea",
+				"doc/ui/new-landing-page/css/header.css"
+			],
+			[
+				"header.css",
+				"doc/ui/new-landing-page/css/header.css"
+			],
+			[
+				"header.",
+				"doc/ui/new-landing-page/css/header.css"
+			],
+			[
+				"buttons.scss",
+				"edu/common/client-side/sass/controls/buttons.scss"
+			],
+			[
+				"handins.js",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/handins.js"
+			],
+			[
+				"controlstw",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/views/Teacher/controls.html.twig"
+			],
+			[
+				"controls.twi",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/views/Student/controls.html.twig"
+			],
+			[
+				"com",
+				"tool/build/client-side/component.json"
+			],
+			[
+				"base.",
+				"edu/do/src/symfony/app/Resources/views/base.html.twig"
+			],
+			[
+				"ed",
+				"edu/common/client-side/scripts/main-page/edu-common.js"
+			],
+			[
+				"base",
+				"edu/common/client-side/sass/base.scss"
+			],
+			[
+				"validatorbas",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Validator/Constraints/Base64Validator.php"
+			],
+			[
+				"annotation-v",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/annotation-view.js"
+			],
+			[
+				"document-v",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/document-view.js"
+			],
+			[
+				"annotati",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/models/annotation.js"
+			],
+			[
+				"documenty",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Form/Type/DocumentType.php"
+			],
+			[
+				"annotationtp",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Form/Type/AnnotationType.php"
+			],
+			[
+				"documenttyp",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Form/Type/DocumentType.php"
+			],
+			[
+				"comment",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Form/Type/CommentType.php"
+			],
+			[
+				"ha",
+				"edu/common/client-side/environments/development/scripts/vendor/handlebars/handlebars.js"
+			],
+			[
+				"documenttype",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Form/Type/DocumentType.php"
+			],
+			[
+				"student",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Controller/StudentHandinsController.php"
+			],
+			[
+				"handinscontrol",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Controller/HandinsController.php"
+			],
+			[
+				"handinscon",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Controller/HandinsController.php"
+			],
+			[
+				"handins-li",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/views/handins-list.html.twig"
+			],
+			[
+				"form-ha",
+				"edu/common/client-side/scripts/polyfills/form-handler.js"
+			],
+			[
+				"mock",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Manager/MockHandinManager.php"
+			],
+			[
+				"document.php",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Entity/Document.php"
+			],
+			[
+				"handinscontr",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Controller/HandinsController.php"
+			],
+			[
+				"annotationview",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/annotation-view.js"
+			],
+			[
+				"brush-er",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/brush-and-eraser-controls-view.js"
+			],
+			[
+				"annotation-view",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/annotation-view.js"
+			],
+			[
+				"controls-view",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/controls-view.js"
+			],
+			[
+				"brush-",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/brush-and-eraser-controls-view.js"
+			],
+			[
+				"document-c",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/document-controls-view.js"
+			],
+			[
+				"inputs",
+				"edu/common/client-side/sass/controls/inputs.scss"
+			],
+			[
+				"gr",
+				"tool/build/client-side/Gruntfile.js"
+			],
+			[
+				"bas",
+				"edu/common/client-side/sass/base.scss"
+			],
+			[
+				"document-con",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/views/document-controls-view.js"
+			],
+			[
+				"common",
+				"edu/common/client-side/sass/layout/common-layout.scss"
+			],
+			[
+				"pack",
+				"tool/build/client-side/package.json"
+			],
+			[
+				"text",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/models/text-tool.js"
+			],
+			[
+				"text-tool",
+				"edu/do/src/symfony/src/KMD/HandinBundle/Resources/public/js/models/text-tool.js"
+			],
+			[
+				"package",
+				"tool/build/client-side/package.json"
+			],
+			[
+				"jquery-ui",
+				"edu/do/src/symfony/web/css/compiled/jquery-ui.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 356.0,
+	"status_bar_visible": true
+}
