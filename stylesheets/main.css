@@ -30,6 +30,7 @@ body {
 h1 {
   font-family: "Calligraffitti";
   font-size: 2em;
+  width: 200px;
 }
 
 p {
@@ -39,8 +40,8 @@ p {
 article {
   margin: 75px auto 0;
 
-  width: 450px;
-  height: 350px;
+  width: 250px;
+  height: 290px;
 }
 
 .paper-sheet-stack {
@@ -67,8 +68,8 @@ article {
 
   content: "";
 
-  width: 440px;
-  height: 360px;
+  width: 240px;
+  height: 300px;
 
   z-index: -1;
 
