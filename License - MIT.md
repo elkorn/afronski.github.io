@@ -1,6 +1,6 @@
-The MIT License
+The MIT License (MIT)
 
-Copyright (c) Wojciech Gawroński, http://afronski.github.io, http://afronski.pl
+Copyright (c) 2013 Wojciech Gawroński (afronski@gmail.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
