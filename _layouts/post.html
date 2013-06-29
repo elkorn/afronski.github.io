@@ -16,7 +16,13 @@
   <body>
     {% include menu.html %}
 
-    {{ content }}
+    <article class="paper-sheet">
+      {{ content }}
+    </article>
+
+    <section class="container comments">
+      {% include comments.html %}
+    </section>
 
     {% include footer.html %}
   </body>

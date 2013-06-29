@@ -1,15 +1,14 @@
 ---
 layout: default
-title: afronski.pl
+title: Random thoughts from top of my head - afronski.pl
 ---
 
-<article class="paper-sheet-stack">
-  <h1>Coming soon ...</h1>
-
-  <section class="stained">
-    <figure><img id="first" src="/images/avatar.png" alt="" /></figure>
-    <figure><img id="second" src="/images/second-avatar.png" alt="" /></figure>
-  </section>
+<article class="paper-sheet">
+  <ul>
+    {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
 </article>
-
-<footer>Wojciech Gawronski (afronski) - 2o13</footer>
