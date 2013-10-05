@@ -1,6 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=News+Cycle&subset=latin,latin-ext);
 @import url(http://fonts.googleapis.com/css?family=Sniglet&subset=latin,latin-ext);
 
+/* Common styles. */
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -92,6 +94,31 @@ h1, h2, h3, h4, h5, h6 {
   padding-right: 10px;
 }
 
+/* About page. */
+
+.description {
+  width: 70%;
+
+  margin-right: 50px;
+  display: inline-block;
+
+  text-align: justify;
+}
+
+.description em {
+  font-style: normal;
+  color: #2F615E;
+}
+
+.about img {
+  display: inline-block;
+
+  width: 120px;
+  height: 120px;
+
+  border: 2px solid #CBE86B;
+}
+
 /* Aside menu. */
 
 #avatar {
@@ -151,6 +178,10 @@ footer {
 /* Smaller view. */
 
 @media screen and (max-width: 1000px) {
+  .about img {
+    display: none;
+  }
+
   .mobile-link {
     display: block;
   }
