@@ -1,20 +1,5 @@
-@font-face {
-  font-family: "Calligraffitti";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Calligraffitti"),
-       local("Calligraffitti-Regular"),
-       url("/fonts/Calligraffitti/Calligraffitti.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Coming Soon";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Coming Soon"),
-       local("ComingSoon"),
-       url("/fonts/ComingSoon/ComingSoon.woff") format("woff");
-}
+@import url(http://fonts.googleapis.com/css?family=News+Cycle&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Sniglet&subset=latin,latin-ext);
 
 * {
   -webkit-box-sizing: border-box;
@@ -22,227 +7,190 @@
   box-sizing: border-box;
 }
 
+html {
+  font-family: 'News Cycle', sans-serif;
+}
+
 body {
-  background-image: url("/images/crafted-paper.png");
-
-  font-family: "Coming Soon";
-  font-size: 62.5%;
-
-  color: black;
-}
-
-h1, h2, h3, h4, h5, h6 {
   margin: 0;
-  font-family: "Calligraffitti";
+  padding: 0;
+
+  color: #1C140D;
+  background-color: #F2E9E1;
 }
 
-h1 {
-  font-size: 3em;
+a, a:link {
+  color: #2F615E;
+  text-decoration: none;
 }
 
-p, nav {
-  font-size: 2.2em;
+a:active {
+  color: #2F615E;
 }
 
-aside {
-  padding: 20px;
+a:visited {
+  color: #2F615E;
 }
 
-nav ul {
-  margin: 0;
+a:hover {
+  color: #2F615E;
+  text-decoration: underline;
+}
+
+.mobile-link {
+  display: none;
+}
+
+#disqus_thread {
+  margin: 10px 0;
+  padding: 15px;
+
+  border-radius: 5px;
+  border: 2px dashed #2F615E;
+}
+
+/* Main page. */
+
+.posts-list {
+  margin: 20px 0;
   padding: 0;
 
   list-style: none;
 }
 
-article {
-  min-width: 300px;
-  max-width: 960px;
+.posts-list li time {
+  color: #888888;
+  margin-right: 15px;
+}
 
-  margin: 0 auto;
-  padding: 20px;
+/* Content style. */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Sniglet', sans-serif;
+  font-weight: normal;
 }
 
 .container {
-  min-width: 300px;
-  max-width: 960px;
+  padding: 0 15px;
+  margin: 40px 0 0 320px;
 
-  width: auto;
-  margin: 10px auto;
-}
-
-.comments {
-  margin-bottom: 0px;
-}
-
-.terminal {
-  padding: 5px;
-
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-
-  font-family: monospace;
-  font-size: 1.2em;
-
-  color: white;
-  background-color: #111111;
-
-  -moz-box-shadow: inset 0 0 8px black, 0 0 15px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 0 8px black, 0 0 15px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 0 8px black, 0 0 15px rgba(0, 0, 0, 0.2);
-
-  border: 5px solid black;
-}
-
-.terminal a {
-  color: white;
-}
-
-.terminal a:hover {
-  text-decoration: none;
-}
-
-.terminal a:active {
-  color: #EEEEEE;
-}
-
-.terminal a:visited {
-  color: #EEEEEE;
-}
-
-.terminal-lines li:before {
-  content: "[user@blog ~ ]# ";
-  color: white;
-}
-
-.active-position:after {
-  -webkit-animation: caret 1s infinite;
-  -moz-animation: caret 1s infinite;
-  -ms-animation: caret 1s infinite;
-  animation: caret 1s infinite;
-
-  content: "|";
-}
-
-@-webkit-keyframes caret {
-  0% {
-    color: white;
-  }
-
-  50% {
-    color: transparent;
-  }
-
-  100% {
-    color: white;
-  }
-}
-
-@-moz-keyframes caret {
-  0% {
-    color: white;
-  }
-
-  50% {
-    color: transparent;
-  }
-
-  100% {
-    color: white;
-  }
-}
-
-@-ms-keyframes caret {
-  0% {
-    color: white;
-  }
-
-  50% {
-    color: transparent;
-  }
-
-  100% {
-    color: white;
-  }
+  max-width: 800px;
 }
 
 .highlight {
-  padding: 10px 5px;
-
-  font-size: 2em;
-
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-
-  background-image: url("/images/second-lined-paper.png");
-
-  border: 2px dashed #AAAAAA;
+  font-family: monospace;
 }
 
 .highlight pre {
+  padding: 15px;
+
+  border-radius: 5px;
+  box-shadow: 0 0 5px 0px #4D4D4D;
+}
+
+.highlight .lineno {
+  padding-right: 10px;
+}
+
+/* Aside menu. */
+
+#avatar {
+  display: block;
+  width: 80px;
+  border-radius: 50%;
+  margin: 0 10px 40px 0;
+  box-shadow: 0 0 0 2px #4D4D4D;
+}
+
+#avatar:hover {
+  box-shadow: 0 0 0 2px #F2E9E1;
+}
+
+.menu {
+  top: 0;
+  left: 0;
+
+  padding: 52px;
+
+  width: 300px;
+  height: 100%;
+
+  border-right: 5px solid #482C21;
+  background-color: #CBE86B;
+
+  position: fixed;
+}
+
+.menu .interests {
+  padding: 0 0 0 5px;
   margin: 0;
+
+  list-style: none;
 }
 
-.paper-sheet {
-  background-image: url("/images/second-lined-paper.png");
-
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-
-  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-.lined-paper-sheet {
-  background-image: url("/images/lined-paper.png");
-
-  border-radius: 3px;
-
-  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
+/* Footer */
 
 footer {
+  bottom: 10px;
+  left: 35px;
+  position: fixed;
+
+  color: #888888;
+  font-size: 0.8em;
   text-align: center;
-
-  width: 250px;
-  margin: 15px auto 0;
-
-  font-size: 1.2em;
-  color: #555555;
 }
 
-footer .rss {
-  font-size: 2.2em;
+/* Bigger view. */
+
+@media screen and (min-width: 1500px) {
+  .container {
+    margin: 0 auto;
+  }
 }
 
-footer a {
-  color: #888888;
-}
+/* Smaller view. */
 
-footer a:hover {
-  text-decoration: none;
-}
-
-footer a:active {
-  color: #888888;
-}
-
-footer a:visited {
-  color: #333333;
-}
-
-@media screen and (max-width: 480px) {
-  .terminal-lines li:before {
-    content: "";
+@media screen and (max-width: 1000px) {
+  .mobile-link {
+    display: block;
   }
 
-  .highlight {
-    font-size: 1.2em;
+  .menu {
+    top: 0;
+    left: 0;
+
+    padding: 14px;
+    border: 0;
+    border-top: 5px solid #482C21;
+    font-size: 110%;
+
+    width: 100%;
+    height: auto;
+
+    position: static;
+  }
+
+  .container {
+    min-width: auto;
+    margin: 0;
+  }
+
+  footer {
+    position: static;
+    margin-top: 25px;
+  }
+
+  .highlight pre {
+    padding: 15px 2px;
+
+    font-size: 0.75em;
+  }
+
+  .highlight .lineno {
+    display: none;
+  }
+
+  .posts-list li time {
+    margin: 0;
   }
 }
