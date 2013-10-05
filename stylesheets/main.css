@@ -39,6 +39,11 @@ a:hover {
   text-decoration: underline;
 }
 
+.about-link {
+  display: block;
+  margin: 5px 0 15px 0;
+}
+
 .mobile-link {
   display: none;
 }
@@ -192,6 +197,7 @@ footer {
 
   .mobile-link {
     display: block;
+    margin-bottom: 10px
   }
 
   .menu {
