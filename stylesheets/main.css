@@ -105,6 +105,10 @@ h1, h2, h3, h4, h5, h6 {
   text-align: justify;
 }
 
+.description ul {
+  text-align: left;
+}
+
 .description em {
   font-style: normal;
   color: #2F615E;
