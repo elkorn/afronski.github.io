@@ -182,6 +182,10 @@ footer {
     display: none;
   }
 
+  .description {
+    width: 100%;
+  }
+
   .mobile-link {
     display: block;
   }
