@@ -3,11 +3,11 @@ layout: default
 title: Random thoughts from top of my head - afronski.pl
 ---
 
-<article class="paper-sheet">
-  <ul>
+<article class="container">
+  <ul class="posts-list">
     {% for post in site.posts %}
       <li>
-        <a href="{{ post.url }}">{{ post.title }}</a>
+        <time datetime>{{ post.date | date: "%-d %B %Y" }}</time> <a href="{{ post.url }}">{{ post.title }}</a>
       </li>
     {% endfor %}
   </ul>

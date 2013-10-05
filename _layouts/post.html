@@ -14,16 +14,18 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-    {% include menu.html %}
+    <article class="container">
+      <a href="/">Home</a>
 
-    <article class="paper-sheet">
       {{ content }}
     </article>
 
-    <section class="container comments">
-      {% include comments.html %}
+    <section class="container">
+      <a href="/" class="mobile-link">Home</a>
+      <div id="disqus_thread"></div>
     </section>
 
-    {% include footer.html %}
+    {% include menu.html %}
+    {% include scripts.html %}
   </body>
 </html>
