@@ -79,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .container {
   padding: 0 15px;
-  margin: 40px 0 0 320px;
+  margin: 40px 0 0 20em;
 
   max-width: 800px;
 }
@@ -148,7 +148,7 @@ h1, h2, h3, h4, h5, h6 {
 
   padding: 52px;
 
-  width: 300px;
+  width: 18.7em;
   height: 100%;
 
   border-right: 5px solid #482C21;
@@ -168,7 +168,7 @@ h1, h2, h3, h4, h5, h6 {
 
 footer {
   bottom: 10px;
-  left: 35px;
+  left: 2.7em;
   position: fixed;
 
   color: #888888;
@@ -178,7 +178,7 @@ footer {
 
 /* Bigger view. */
 
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 90em) {
   .container {
     margin: 0 auto;
   }
@@ -186,7 +186,7 @@ footer {
 
 /* Smaller view. */
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 50em) {
   .about img {
     display: none;
   }
