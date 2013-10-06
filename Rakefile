@@ -19,7 +19,6 @@ desc "Generate and publish blog to gh-pages"
     Dir.mktmpdir do |tmp|
       system "mv _site/* #{tmp}"
       system "git checkout master"
-      system "rm -rf *"
       system "mv #{tmp}/* ."
       message = "[Blog update] Site updated at #{Time.now.utc}."
       system "git add -u -v"
