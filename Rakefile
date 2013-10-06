@@ -23,6 +23,7 @@ desc "Generate and publish blog to gh-pages"
 
       system "mv _site/* #{tmp}"
       system "git checkout master"
+      system "rm -rf *"
       system "mv #{tmp}/* ."
       system "touch .nojekyll"
 
