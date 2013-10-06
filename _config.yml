@@ -6,4 +6,15 @@ description: Random thoughts from top of my head - afronski.pl
 emoji_dir: /images/emoji
 pygments: true
 
-exclude: [ "Gemfile", "Gemfile.lock", "Rakefile", "README.md", "License - MIT.md" ]
+exclude: [
+  "Gemfile",
+  "Gemfile.lock",
+
+  "blog.sublime-project",
+  "blog.sublime-workspace",
+
+  "Rakefile",
+
+  "README.md",
+  "License - MIT.md"
+]
