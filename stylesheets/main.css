@@ -39,7 +39,12 @@ a:hover {
   text-decoration: underline;
 }
 
-.emoji {
+.post img {
+  width: 100%;
+  max-width: 770px;
+}
+
+img.emoji {
   border: 0;
 
   width: 20px;
@@ -202,6 +207,11 @@ footer {
 
   .description {
     width: 92%;
+  }
+
+  .post ol {
+    list-style: none;
+    padding: 0;
   }
 
   .mobile-link {
