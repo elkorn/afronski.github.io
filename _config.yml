@@ -1,9 +1,0 @@
-name: afronski.pl
-url: http://www.afronski.pl
-
-description: Random thoughts from top of my head - afronski.pl
-
-emoji_dir: /images/emoji
-pygments: true
-
-exclude: [ "Gemfile", "Gemfile.lock", "Rakefile", "README.md", "License - MIT.md" ]

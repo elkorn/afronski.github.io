@@ -1,22 +1,66 @@
----
-layout: none
----
-
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.name }}</title>
-    <description>{{ site.description }}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:10 %}
+    <title>afronski.pl</title>
+    <description>Random thoughts from top of my head - afronski.pl</description>
+    <link>http://www.afronski.pl</link>
+    <atom:link href="http://www.afronski.pl/feed.xml" rel="self" type="application/rss+xml" />
+    
       <item>
-        <title>{{ post.title }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-        <link>{{ site.url }}{{ post.url }}</link>
-        <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+        <title>Why every programmer should play with LEGO?</title>
+        <description>
+&lt;h1 id=&quot;why_every_programmer_should_play_with_lego&quot;&gt;Why every programmer should play with LEGO?&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/LegoColorBricks.jpg&quot; alt=&quot;Colorful LEGO pieces&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;disclaimer&quot;&gt;Disclaimer&lt;/h2&gt;
+
+&lt;p&gt;I would like to strongly deny that the post has anything in common with a recent visit from my parents who brought me the entire supply of bricks. I won’t say anything more without my lawyer :grin:.&lt;/p&gt;
+
+&lt;h2 id=&quot;what_does_christiansens_toy_have_in_common_with_software_engineering&quot;&gt;What does Christiansen’s toy have in common with software engineering?&lt;/h2&gt;
+
+&lt;p&gt;At a first glance, not much. But after a moment of playing you’ll begin to notice some similarities. The most obvious one is the process of creating a new thing, even if software exist only in the computer’s memory. The second similarity is related strictly to creativity, because playing with LEGO and building software are the same creative processes (with high proportion of imagination). But in my opinion there are more similarities, not so evident at the beginning.&lt;/p&gt;
+
+&lt;h3 id=&quot;standardization_and_interfaces&quot;&gt;Standardization and Interfaces&lt;/h3&gt;
+
+&lt;p&gt;When you’re playing with bricks, it’s easy to create new things, connect previously assembled elements with each other and simulate some missing parts, or even replace completely.&lt;/p&gt;
+
+&lt;p&gt;It’s a programmer’s dream: everything what is designed right now, fits perfectly to other parts assembled in past. Each component has elements which can be connected with other components in future. Common missing elements can be completely replaced or reassembled from smaller pieces.&lt;/p&gt;
+
+&lt;p&gt;By providing simple standardization and well defined interfaces (I guess the name &lt;em&gt;contract&lt;/em&gt; is more appropriate in this case) you’ll achieve amazing level of flexibility. Of course more specific elements (e.g. wheel and axle) aren’t so flexible and interchangeable as the common bricks, but it’s a balance between common use cases and more specified functionality. But, even if you have an old fashioned wheel from a stagecoach and a new one with a rubber tire, you can use both with the same axle.&lt;/p&gt;
+
+&lt;h3 id=&quot;modularity&quot;&gt;Modularity&lt;/h3&gt;
+
+&lt;p&gt;Lets assume that you want to create a big castle like below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/BigLegoCastle.jpg&quot; alt=&quot;Big LEGO castle&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;At first you’re creating walls, then towers with guards, a castle gate with a bascule bridge and in the meantime you’ll fill it with king’s headquarters and stables. When you’ll finish the castle, you’ll build the enemy armies with catapults (and finally destroy everything, because it’s the most fun part :grin:).&lt;/p&gt;
+
+&lt;p&gt;Stand back and look how the process flows - you’re creating modularized parts of the castle, then modularized elements of the enemy army. All modules can be connected together, each module has a single, well defined responsibility and you can easily join seemingly unrelated components together (because you can put enemy catapults inside your castle, creating kind of an alliance :wink:).&lt;/p&gt;
+
+&lt;h3 id=&quot;dry_and_design_patterns&quot;&gt;DRY and Design Patterns&lt;/h3&gt;
+
+&lt;p&gt;Yes, the &lt;em&gt;don’t repeat yourself&lt;/em&gt; rule have significant meaning when you’re playing with LEGO, but it’s formulated differently than the original one. In my opinion you’re not reusing the assembled part itself (because you’ve got it in just one copy), but the way of creating it (in other words: you’re reusing the way of assembling a certain thing).&lt;/p&gt;
+
+&lt;p&gt;Also the way of building a specific part can be called a &lt;em&gt;design pattern&lt;/em&gt;, which can be easily reused in the future (when you have enough bricks and time you can repeat the process over and over again). In the example mentioned above you’ll have a design pattern for your tower, but you can reapply it as many times to as many towers you need (you can, of course, adjust the previous design with some small enhancements, you aren’t obligated to fulfill all the requirements and perform all the steps from previous case).&lt;/p&gt;
+
+&lt;h2 id=&quot;okay_but_what_if_i_dont_have_any_lego_bricks&quot;&gt;Okay, but what if I don’t have any LEGO bricks?&lt;/h2&gt;
+
+&lt;p&gt;Then maybe, you’re seeing similarities in your childhood toys when you’re programming and solving problems. Or maybe you’re seeing completely different analogies when you’ll recall memories related with LEGO bricks. In both cases feel free to share your findings in the comments.&lt;/p&gt;
+
+&lt;h2 id=&quot;image_credits&quot;&gt;Image credits&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/File:Lego_Color_Bricks.jpg&quot;&gt;Lego Color Bricks&lt;/a&gt; (licensed on &lt;a href=&quot;http://creativecommons.org/licenses/by-sa/2.0/deed.en&quot;&gt;CC BY-SA 2.0&lt;/a&gt;)&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;http://www.flickr.com/photos/billward/3393269071/&quot;&gt;Lego Castle Photo&lt;/a&gt; (licensed on &lt;a href=&quot;http://creativecommons.org/licenses/by/2.0/deed.en&quot;&gt;CC BY 2.0&lt;/a&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Sun, 06 Oct 2013 00:00:00 +0200</pubDate>
+        <link>http://www.afronski.pl/2013/10/06/why-every-programmer-should-play-with-LEGO.html</link>
+        <guid isPermaLink="true">http://www.afronski.pl/2013/10/06/why-every-programmer-should-play-with-LEGO.html</guid>
       </item>
-    {% endfor %}
+    
   </channel>
 </rss>
