@@ -39,6 +39,15 @@ a:hover {
   text-decoration: underline;
 }
 
+.emoji {
+  border: 0;
+
+  width: 20px;
+  height: 20px;
+
+  vertical-align: middle;
+}
+
 .about-link {
   display: block;
   margin: 5px 0 15px 0;
