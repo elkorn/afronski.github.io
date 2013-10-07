@@ -39,20 +39,6 @@ a:hover {
   text-decoration: underline;
 }
 
-.post img {
-  width: 100%;
-  max-width: 770px;
-}
-
-img.emoji {
-  border: 0;
-
-  width: 20px;
-  height: 20px;
-
-  vertical-align: middle;
-}
-
 .about-link {
   display: block;
   margin: 5px 0 15px 0;
@@ -89,6 +75,25 @@ img.emoji {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Sniglet', sans-serif;
   font-weight: normal;
+}
+
+.post img {
+  width: 100%;
+  max-width: 770px;
+}
+
+.post img.emoji {
+  border: 0;
+
+  width: 20px;
+  height: 20px;
+
+  vertical-align: middle;
+}
+
+.post em {
+  font-style: normal;
+  color: #482C21;
 }
 
 .container {

@@ -19,7 +19,7 @@ desc "Generate blog files"
 desc "Generate and publish blog to gh-pages"
   task :publish => [ :generate ] do
     Dir.mktmpdir do |tmp|
-      message = "[Blog update] Site updated at #{Time.now.utc}."
+      message = "[Blog] Updated at #{Time.now.utc}."
 
       system "mv _site/* #{tmp}"
       system "git checkout master"
