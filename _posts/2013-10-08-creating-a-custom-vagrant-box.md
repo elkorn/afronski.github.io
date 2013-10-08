@@ -131,7 +131,7 @@ Just before the last step, please remove all previously forwarded ports for your
 We still have to do the last step - packaging:
 
 {% highlight bash %}
-~ $ vagrant package --name <VirtualBox VM name> --output FreshAndHotVagrant.box
+~ $ vagrant package --name <VM name> --output FreshAndHotVagrant.box
 {% endhighlight %}
 
 The result is a finished box, which we can add to our list:
