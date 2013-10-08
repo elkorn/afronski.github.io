@@ -113,7 +113,7 @@ Default requiretty
 &lt;h4 id=&quot;gift_packing&quot;&gt;Gift packing!&lt;/h4&gt;
 
 &lt;p&gt;We still have to do the last step - packaging:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;vagrant package --name &amp;lt;VirtualBox VM name&amp;gt; --output FreshAndHotVagrant.box
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;vagrant package --name &amp;lt;VM name&amp;gt; --output FreshAndHotVagrant.box
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The result is a finished box, which we can add to our list:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;vagrant box add &amp;lt;internal box name&amp;gt; FreshAndHotVagrant.box
