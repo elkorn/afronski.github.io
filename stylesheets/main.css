@@ -112,6 +112,8 @@ h1, h2, h3, h4, h5, h6 {
 
   border-radius: 5px;
   box-shadow: 0 0 5px 0px #4D4D4D;
+
+  white-space: pre-wrap;
 }
 
 .highlight .lineno {
@@ -250,8 +252,6 @@ footer {
   }
 
   .highlight pre {
-    padding: 15px 2px;
-
     font-size: 0.75em;
   }
 
