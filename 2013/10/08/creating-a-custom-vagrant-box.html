@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <link rel="alternate" type="application/rss+xml" title="afronski.pl" href="http://www.afronski.pl/feed.xml" />
+
+    <title>Creating a custom Vagrant box</title>
+
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="/stylesheets/syntax.min.css" />
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+    <article class="container post">
+      <a href="/">Home</a>
+
+
+<h1 id="creating_a_custom_vagrant_box">Creating a custom Vagrant box</h1>
+
+<p><img src="/assets/VagrantLogo.png" alt="Vagrant Logo" /></p>
+
+<p><em>vagrant - a person without a settled home or regular work who wanders from place to place and lives by begging.</em></p>
+
+<h1 id="it_is_not_a_common_path">It is not a common path</h1>
+
+<p>Do not start the creation of a new box from scratch without checking both of these sites:</p>
+
+<ul>
+<li><a href="http://www.vagrantbox.es/">vagrantbox.es</a></li>
+
+<li><a href="https://github.com/jedi4ever/veewee">veewee</a></li>
+</ul>
+
+<p>In 99% of cases, one page will already contain the solution, which is a needed box. Otherwise we have to roll up our sleeves and go through the whole process. This post will contain almost all directions for creating a fresh box.</p>
+
+<p>And last but not least: all recipes provided in this article are valid for Vagrant in version 1.2 and above.</p>
+
+<h1 id="_but_sometimes_necessary">… but sometimes necessary</h1>
+
+<h4 id="install_vagrant">Install Vagrant</h4>
+
+<p>I’m assuming that you already have Vagrant - if not, go to <a href="http://downloads.vagrantup.com/">downloads</a> page or install it by using package manager from your Linux distribution.</p>
+
+<h4 id="virtual_machine_in_virtualbox">Virtual Machine in VirtualBox</h4>
+
+<p>At first, we have to prepare a virtual machine with a specified amount of RAM, number of virtual processors, virtual hard disk image and the rest of the virtualized hardware. Remember the <em>VM</em> name - you will need it at the end <img alt="wink" src="/images/emoji/wink.png" class="emoji" />.</p>
+
+<p>One important thing related to networking - create only one network adapter and set it for using NAT. At last, setup port forwarding like presented below:</p>
+
+<p><img src="/assets/VirtualBoxPortForwarding.png" alt="Port forwarding setup for test purposes" /></p>
+
+<h4 id="installation">Installation</h4>
+
+<p>Grab your favourite <em>Linux distribution</em> / <em>Unix flavour</em> ISO image and proceed with the installation process (no Windows because right now Vagrant doesn’t support this operating system as a guest).</p>
+
+<p>This is the easiest step in the whole guide <img alt="grin" src="/images/emoji/grin.png" class="emoji" />.</p>
+
+<h4 id="user_management">User management</h4>
+
+<p>After the installation, create a new user account:</p>
+<div class='highlight'><pre><code class='bash'><span class='c'># Create user &#39;vagrant&#39;.</span>
+root&gt; useradd vagrant
+
+<span class='c'># Setup password.</span>
+root&gt; passwd vagrant
+</code></pre></div>
+<p>And add him to proper groups:</p>
+<div class='highlight'><pre><code class='bash'>root&gt; usermod -aG users,wheel vagrant
+</code></pre></div>
+<p>And the final step here - disable password for <code>sudo</code> command in the <code>wheel</code> group:</p>
+<div class='highlight'><pre><code class='bash'>root&gt; visudo
+
+<span class='c'># Uncomment or add a line like below:</span>
+%wheel <span class='nv'>ALL</span><span class='o'>=(</span>ALL<span class='o'>)</span> NOPASSWD: ALL
+</code></pre></div>
+<h4 id="ssh">SSH</h4>
+
+<p>At first open port 22 on your machine, then get this <a href="https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub">public key</a> and put it in the file:</p>
+<div class='highlight'><pre><code class='bash'>root&gt; curl https://raw.github.com/.../vagrant.pub &gt; /etc/ssh/authorized_keys
+root&gt; chown root:root /etc/ssh/authorized_keys
+</code></pre></div>
+<p>Then setup your <code>sshd_config</code> file like presented below:</p>
+<div class='highlight'><pre><code class='bash'><span class='c'># Uncomment these lines:</span>
+Port 22
+AddressFamily any
+ListenAddress 0.0.0.0
+ListenAddress ::
+PermitRootLogin yes
+
+<span class='c'># Also uncomment and change these:</span>
+AuthorizedKeysFile /etc/ssh/authorized_keys
+PasswordAuthentication no
+</code></pre></div>
+<p>Then you can verify your settings by command:</p>
+<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>ssh -i ~/.vagrant.d/insecure_private_key vagrant@localhost -p 2222
+</code></pre></div>
+<p>If there are no errors you’re ready for the next step.</p>
+
+<p>In some cases you’ll receive an error similar to this one (<strong>Ubuntu / RedHat compatible tip</strong>):</p>
+<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>ssh -i ~/.vagrant.d/insecure_private_key vagrant@localhost -p 2222
+
+Permission denied <span class='o'>(</span>publickey,gssapi-keyex,gssapi-with-mic<span class='o'>)</span>
+</code></pre></div>
+<p>In this case you need to fix the labels for the file with authorized keys:</p>
+<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span><span class='nb'>cd</span> /etc/ssh/
+~ <span class='nv'>$ </span>ls -laZ                     <span class='c'># Checking labels.</span>
+~ <span class='nv'>$ </span>restorecon -r -vv .         <span class='c'># Fixing them.</span>
+</code></pre></div>
+<h4 id="finishing_touches">Finishing touches</h4>
+
+<p>Unfortunately our <code>sudo</code> has one big disadvantage - it won’t work without a real TTY and as you probably guessed - vagrant doesn’t use it. So we have to disable this setting in <code>sudoers</code> file:</p>
+<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>sudo visudo
+
+<span class='c'># Comment or remove line like below:</span>
+Default requiretty
+</code></pre></div>
+<p>Just before the last step, please remove all previously forwarded ports for your virtual machine in VirtualBox.</p>
+
+<h4 id="gift_packing">Gift packing!</h4>
+
+<p>We still have to do the last step - packaging:</p>
+<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>vagrant package --name &lt;VirtualBox VM name&gt; --output FreshAndHotVagrant.box
+</code></pre></div>
+<p>The result is a finished box, which we can add to our list:</p>
+<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>vagrant box add &lt;internal box name&gt; FreshAndHotVagrant.box
+</code></pre></div>
+<p>Then feel free to use it inside <code>Vagrantfile</code>:</p>
+<div class='highlight'><pre><code class='ruby'><span class='no'>Vagrant</span><span class='o'>.</span><span class='n'>configure</span><span class='p'>(</span><span class='s2'>&quot;2&quot;</span><span class='p'>)</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>config</span><span class='o'>|</span>
+  <span class='n'>config</span><span class='o'>.</span><span class='n'>vm</span><span class='o'>.</span><span class='n'>box</span> <span class='o'>=</span> <span class='s2'>&quot;&lt;internal box name&gt;&quot;</span>
+<span class='k'>end</span>
+</code></pre></div>
+<h1 id="links_and_image_credits">Links and Image credits</h1>
+
+<ol>
+<li><a href="http://www.hashicorp.com/images/blog/a-new-look-for-vagrant/logo_wide-cab47086.png">Original link to Vagrant logo</a></li>
+
+<li><a href="http://docs.vagrantup.com/v2/">Vagrant documentation</a></li>
+</ol>
+
+    </article>
+
+    <section class="container">
+      <a href="/" class="mobile-link">Home</a>
+      <div id="disqus_thread"></div>
+    </section>
+
+    <aside class="menu">
+
+      <a href="http://afronski.pl">
+        <img id="avatar" src="/images/avatar.png" alt="My avatar" />
+      </a>
+
+      Hello! I'm <a href="/about.html">Wojciech Gawroński</a>.<br/>
+      I work as a <a href="http://pl.linkedin.com/pub/wojtek-gawroński/58/879/5b0/">software developer</a>.<br/>
+      Besides working
+      <ul class="interests">
+        <li>I write <a href="https://github.com/afronski">code</a></li>
+        <li>I <a href="https://twitter.com/afronski">tweet</a></li>
+        <li>I give <a href="https://github.com/afronski/presentations">talks</a></li>
+        <li>I <a href="/feed.xml">blog</a></li>
+        <li>I <a href="https://www.goodreads.com/user/show/16145105-wojtek-gawro-ski">read books</a></li>
+        <li>I <a href="http://www.last.fm/user/afronski">listen music</a></li>
+      </ul>
+
+      <footer>
+        <section>© Copyright 2013, Wojciech Gawroński</section>
+        <section>
+          Except where otherwise noted, content on this site<br/>
+          is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/pl/legalcode">CC BY-NC-ND 3.0</a>.
+        </section>
+      </footer>
+    </aside>
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-44633104-1','afronski.pl');ga('send','pageview');</script>
+    <noscript>
+      Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <script type="text/javascript">var disqus_shortname="afronskipl";(function(){var dsq=document.createElement("script");dsq.type="text/javascript";dsq.async=true;dsq.src="//"+disqus_shortname+".disqus.com/embed.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(dsq);})();</script>
+  </body>
+</html>
