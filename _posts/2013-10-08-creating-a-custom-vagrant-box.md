@@ -11,11 +11,11 @@ title: Creating a custom Vagrant box
 
 # It is not a common path...
 
-Do not start creation a new box from scratch without checking both of these sites:
+Do not start the creation of a new box from scratch without checking both of these sites:
 - [vagrantbox.es](http://www.vagrantbox.es/)
 - [veewee](https://github.com/jedi4ever/veewee)
 
-In 99% of cases, one page will already contain the solution, which is a needed box. Otherwise we have to roll up one's sleeves and go through whole process. This post will contain almost all directions for creating fresh box.
+In 99% of cases, one page will already contain the solution, which is a needed box. Otherwise we have to roll up our sleeves and go through the whole process. This post will contain almost all directions for creating a fresh box.
 
 And last but not least: all recipes provided in this article are valid for Vagrant in version 1.2 and above.
 
@@ -23,25 +23,25 @@ And last but not least: all recipes provided in this article are valid for Vagra
 
 #### Install Vagrant
 
-I've assumed that you already have Vagrant - if not, go to [downloads](http://downloads.vagrantup.com/) page or install it by using package manager from your Linux distribution.
+I'm assuming that you already have Vagrant - if not, go to [downloads](http://downloads.vagrantup.com/) page or install it by using package manager from your Linux distribution.
 
 #### Virtual Machine in VirtualBox
 
-At first we have to prepare virtual machine with specified amount of RAM, number of virtual processors, virtual hard disk image and rest of virtualized hardware. Remember VM name - you will need it at the end :wink:.
+At first, we have to prepare a virtual machine with a specified amount of RAM, number of virtual processors, virtual hard disk image and the rest of the virtualized hardware. Remember the *VM* name - you will need it at the end :wink:.
 
-One important thing related with network - create only one network adapter and set it for using NAT. At last setup port forwarding like presented below:
+One important thing related to networking - create only one network adapter and set it for using NAT. At last, setup port forwarding like presented below:
 
 ![Port forwarding setup for test purposes](/assets/VirtualBoxPortForwarding.png)
 
 #### Installation
 
-Then grab your favourite *Linux distribution* / *Unix flavour* ISO image and proceed with installation process (no Windows because right now Vagrant doesn't support this operating system as a guest).
+Grab your favourite *Linux distribution* / *Unix flavour* ISO image and proceed with the installation process (no Windows because right now Vagrant doesn't support this operating system as a guest).
 
-This is the easiest step in whole guide :grin:.
+This is the easiest step in the whole guide :grin:.
 
 #### User management
 
-After installation create new user account:
+After the installation, create a new user account:
 
 {% highlight bash %}
 # Create user 'vagrant'.
@@ -57,12 +57,12 @@ And add him to proper groups:
 root> usermod -aG users,wheel vagrant
 {% endhighlight %}
 
-And final step here - disable password for `sudo` command in `wheel` group:
+And the final step here - disable password for `sudo` command in the `wheel` group:
 
 {% highlight bash %}
 root> visudo
 
-# Uncomment or add line like below:
+# Uncomment or add a line like below:
 %wheel ALL=(ALL) NOPASSWD: ALL
 {% endhighlight %}
 
@@ -96,9 +96,9 @@ Then you can verify your settings by command:
 ~ $ ssh -i ~/.vagrant.d/insecure_private_key vagrant@localhost -p 2222
 {% endhighlight %}
 
-If there are no errors you're ready to the next step.
+If there are no errors you're ready for the next step.
 
-In some cases you'll receive error similar to this one (**Ubuntu / RedHat compatible tip**):
+In some cases you'll receive an error similar to this one (**Ubuntu / RedHat compatible tip**):
 
 {% highlight bash %}
 ~ $ ssh -i ~/.vagrant.d/insecure_private_key vagrant@localhost -p 2222
@@ -106,7 +106,7 @@ In some cases you'll receive error similar to this one (**Ubuntu / RedHat compat
 Permission denied (publickey,gssapi-keyex,gssapi-with-mic)
 {% endhighlight %}
 
-In this case you need to fix labels for file with authorized keys:
+In this case you need to fix the labels for the file with authorized keys:
 {% highlight bash %}
 ~ $ cd /etc/ssh/
 ~ $ ls -laZ                     # Checking labels.
@@ -124,7 +124,7 @@ Unfortunately our `sudo` has one big disadvantage - it won't work without a real
 Default requiretty
 {% endhighlight %}
 
-Just before last step, please remove all previously forwarded ports for your virtual machine in VirtualBox.
+Just before the last step, please remove all previously forwarded ports for your virtual machine in VirtualBox.
 
 #### Gift packing!
 
