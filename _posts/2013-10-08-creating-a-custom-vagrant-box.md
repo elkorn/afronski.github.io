@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Creating a custom Vagrant box
+date: 2013-10-08T19:50:00
 ---
 
 # Creating a custom Vagrant box

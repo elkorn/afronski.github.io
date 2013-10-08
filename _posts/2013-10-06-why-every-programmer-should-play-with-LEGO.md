@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Why every programmer should play with LEGO?
+date: 2013-10-06T15:30:00
 ---
 
 # Why every programmer should play with LEGO?
