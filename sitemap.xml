@@ -4,6 +4,15 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.afronski.pl/2013/10/18/chef-solo-dna-mutation.html</loc>
+    
+    <lastmod>2013-10-18T20:10:00Z</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.afronski.pl/2013/10/08/creating-a-custom-vagrant-box.html</loc>
     
     <lastmod>2013-10-08T21:50:00Z</lastmod>
@@ -34,7 +43,7 @@
     
   <url>
     <loc>http://www.afronski.pl/index.html</loc>
-    <lastmod>2013-10-08T22:00:00Z</lastmod>
+    <lastmod>2013-10-18T20:10:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
