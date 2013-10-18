@@ -4,7 +4,7 @@ title: Random thoughts from top of my head - afronski.pl
 sitemap:
   priority: 0.7
   changefreq: weekly
-  lastmod: 2013-10-18T20:30:00Z
+  lastmod: 2013-10-18T21:40:00Z
 ---
 
     <article class="container">
@@ -12,7 +12,7 @@ sitemap:
       <ul class="posts-list">
         {% for post in site.posts %}
           <li>
-            <time datetime>{{ post.date | date: "%d %B %Y" }}</time> <a href="{{ post.url }}">{{ post.title }}</a>
+            <time datetime>{{ post.date | date: "%d %b %Y" }}</time> <a href="{{ post.url }}">{{ post.title }}</a>
           </li>
         {% endfor %}
       </ul>
