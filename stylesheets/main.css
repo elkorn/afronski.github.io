@@ -104,6 +104,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .highlight {
+  border-radius: 5px;
   font-family: monospace;
 }
 
@@ -157,6 +158,12 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50%;
   margin: 0 10px 40px 0;
   box-shadow: 0 0 0 2px #4D4D4D;
+
+  -webkit-transition: box-shadow 0.2s linear;
+  -moz-transition: box-shadow 0.2s linear;
+  -ms-transition: box-shadow 0.2s linear;
+  -o-transition: box-shadow 0.2s linear;
+  transition: box-shadow 0.2s linear;
 }
 
 #avatar:hover {
