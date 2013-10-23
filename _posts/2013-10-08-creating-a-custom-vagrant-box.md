@@ -99,7 +99,7 @@ Then you can verify your settings by command:
 
 If there are no errors you're ready for the next step.
 
-In some cases you'll receive an error similar to this one (**Ubuntu / RedHat compatible tip**):
+In some cases you'll receive an error similar to this one (**SELinux compatible tip**):
 
 {% highlight bash %}
 ~ $ ssh -i ~/.vagrant.d/insecure_private_key vagrant@localhost -p 2222
