@@ -159,7 +159,7 @@ PasswordAuthentication no
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;If there are no errors you’re ready for the next step.&lt;/p&gt;
 
-&lt;p&gt;In some cases you’ll receive an error similar to this one (&lt;strong&gt;Ubuntu / RedHat compatible tip&lt;/strong&gt;):&lt;/p&gt;
+&lt;p&gt;In some cases you’ll receive an error similar to this one (&lt;strong&gt;SELinux compatible tip&lt;/strong&gt;):&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;ssh -i ~/.vagrant.d/insecure_private_key vagrant@localhost -p 2222
 
 Permission denied &lt;span class='o'&gt;(&lt;/span&gt;publickey,gssapi-keyex,gssapi-with-mic&lt;span class='o'&gt;)&lt;/span&gt;
