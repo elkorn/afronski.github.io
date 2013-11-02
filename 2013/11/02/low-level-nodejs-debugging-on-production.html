@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <meta name="author" content="Wojtek Gawroński (afronski)" />
+    <meta name="description" content="Personal blog of Wojtek Gawroński, a passionate software developer." />
+
+    <meta name="keywords" content="HTML,HTML5,JavaScript,CSS,CSS3,Canvas,WebGL,C#,.NET,Mono,Erlang,Vagrant,Omnibus" />
+
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="alternate" type="application/rss+xml" title="afronski.pl" href="http://www.afronski.pl/feed.xml" />
+
+    <title>Low-level Node.js debugging on production</title>
+
+    <link rel="stylesheet" href="/stylesheets/syntax.min.css" />
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+    <article class="container post">
+      <a href="/">Home</a>
+
+
+<h1 id="lowlevel_nodejs_debugging_on_production">Low-level Node.js debugging on production</h1>
+
+<p>Sometimes when you want to run your Node.js application on production environment, you will receive:</p>
+<div class='highlight'><pre><code class='bash'>node-stuff <span class='nv'>$ </span>node index.js
+Segmentation fault
+</code></pre></div>
+<p>Yeah… and <em>now</em> what?</p>
+
+<p>Welcome to the dungeon, <em>DevOp</em> marine <img alt="grin" src="/images/emoji/grin.png" class="emoji" />.</p>
+
+<p>First of all, if you deployed an application on <em>OS</em> different than <em>SmartOS</em>, you lost ability to use many impressive tools which will definitely help you in that case (most impressive ones are <code>mdb</code> and <code>dtrace</code>, you can find details in the references section of this post).</p>
+
+<p>So there is no <em><code>mdb</code></em>, no <em><code>dtrace</code></em>, no <em>SmartOS</em>. You can’t also use your favorite debugger like <a href="https://trace.gl/">trace.gl</a>, <a href="https://github.com/jwarkentin/node-monkey">node-monkey</a> or <a href="https://github.com/node-inspector/node-inspector">node-inspector</a>. You have got only <code>gdb</code> and your brain filled with low-level computer knowledge <img alt="wink" src="/images/emoji/wink.png" class="emoji" />.</p>
+
+<p>Before we will dive deeper into internals of our application, let’s begin the voodoo, that is a process of setting proper options in our <em>OS</em>. First we will remove the limit related with the <em>core dump</em> size:</p>
+<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>sudo <span class='nb'>ulimit</span> -c unlimited
+</code></pre></div>
+<p>Next, we set different path for these files (remember to put them on partition with a huge amount of the free disk space):</p>
+<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span><span class='nb'>echo</span> <span class='s1'>&#39;/tmp/core_%e.%p&#39;</span> | sudo tee /proc/sys/kernel/core_pattern
+</code></pre></div>
+<p>Then, if we are using native Node.js extensions we have to recompile them with the debugging flag <em><code>-g</code></em> (configuration file taken from <em><code>node_xslt</code></em> module):</p>
+<div class='highlight'><pre><code class='javascript'><span class='p'>{</span>
+  <span class='s2'>&quot;targets&quot;</span><span class='o'>:</span> <span class='p'>[{</span>
+    <span class='s2'>&quot;target_name&quot;</span><span class='o'>:</span> <span class='s2'>&quot;node_xslt&quot;</span><span class='p'>,</span>
+    <span class='s2'>&quot;sources&quot;</span><span class='o'>:</span> <span class='p'>[</span> <span class='s2'>&quot;node_xslt.cc&quot;</span> <span class='p'>],</span>
+
+    <span class='s2'>&quot;cflags&quot;</span><span class='o'>:</span> <span class='p'>[</span>
+      <span class='s2'>&quot;&amp;lt;!(xml2-config --cflags)&quot;</span><span class='p'>,</span>
+      <span class='s2'>&quot;-fexceptions&quot;</span><span class='p'>,</span>
+
+      <span class='s2'>&quot;-g&quot;</span>
+    <span class='p'>],</span>
+
+    <span class='s2'>&quot;cflags_cc&quot;</span><span class='o'>:</span> <span class='p'>[</span>
+      <span class='s2'>&quot;&amp;lt;!(xml2-config --cflags)&quot;</span><span class='p'>,</span>
+      <span class='s2'>&quot;-fexceptions&quot;</span><span class='p'>,</span>
+
+      <span class='s2'>&quot;-g&quot;</span>
+    <span class='p'>],</span>
+
+    <span class='s2'>&quot;xcode_settings&quot;</span><span class='o'>:</span> <span class='p'>{</span>
+      <span class='s2'>&quot;OTHER_CFLAGS&quot;</span><span class='o'>:</span> <span class='p'>[</span>
+        <span class='s2'>&quot;&amp;lt;!(xml2-config --cflags)&quot;</span><span class='p'>,</span>
+        <span class='s2'>&quot;-fexceptions&quot;</span><span class='p'>,</span>
+
+        <span class='s2'>&quot;-g&quot;</span>
+      <span class='p'>]</span>
+    <span class='p'>},</span>
+    <span class='s2'>&quot;libraries&quot;</span><span class='o'>:</span> <span class='p'>[</span><span class='s2'>&quot;-lxml2&quot;</span> <span class='p'>,</span> <span class='s2'>&quot;-lxslt&quot;</span> <span class='p'>,</span> <span class='s2'>&quot;-lexslt&quot;</span><span class='p'>],</span>
+    <span class='s2'>&quot;library_dirs&quot;</span><span class='o'>:</span> <span class='p'>[</span> <span class='s2'>&quot;/usr/lib&quot;</span> <span class='p'>]</span>
+  <span class='p'>}]</span>
+<span class='p'>}</span>
+</code></pre></div>
+<p>Then, look at the dependencies (in our case <code>libxslt</code>, <code>libxml2</code>) and reinstall them in the development version (sometimes marked with postfix <code>-devel</code>).</p>
+
+<p>After modifications and installing dependencies in the <em>debugging mode</em>, we have to run installation process inside directory of the modified module (but only there, not on the upper level, because it will remove our changes in the modified module):</p>
+<div class='highlight'><pre><code class='bash'>node_xslt <span class='nv'>$ </span>npm install --verbose
+</code></pre></div>
+<p>Somewhere inside long output we will find information about flags used in compilation process (and we should see flag <em><code>-g</code></em>, responsible for attaching debugging informations).</p>
+
+<p>Next, we have to simulate again situation with <em><code>Segmentation fault</code></em> behavior. When application receive unwanted signal, it will dump file with the <em>post-mortem</em> internal structure, ready for using inside <code>gdb</code>:</p>
+<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>gdb /usr/bin/node /tmp/core_XXX.YYY
+</code></pre></div>
+<p>And now we are inside the belly of the monster, so we can move around:</p>
+<div class='highlight'><pre><code class='bash'>...
+Program received signal SIGSEGV, Segmentation fault.
+
+<span class='o'>(</span>gdb<span class='o'>)</span> bt
+<span class='c'># It shows the stack trace (but from the native code).</span>
+<span class='o'>(</span>gdb<span class='o'>)</span> print V8_Fatal<span class='o'>(</span><span class='s2'>&quot;a&quot;</span>, 11, <span class='s2'>&quot;c&quot;</span><span class='o'>)</span>
+<span class='c'># It shows the stack trace inside V8.</span>
+<span class='c'># Values &quot;a&quot;, 11 and &quot;c&quot; are irrelevant.</span>
+<span class='o'>(</span>gdb<span class='o'>)</span> quit
+<span class='c'># It exits gdb.</span>
+</code></pre></div>
+<p>If you want to attach into the running process, you have to invoke the command specified below:</p>
+<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>gdb attach <span class='k'>$(</span>pidof node<span class='k'>)</span>
+</code></pre></div>
+<p>However, if your application is running in a cluster mode (or you are running more than one Node.js application on your machine), this will fail and instead of <em><code>pidof</code></em> you have to pass a single <em>PID</em> value (from one application, master or one of the slaves, depends on what is interesting for you).</p>
+
+<p>You can also run <em><code>strace</code></em> in order to determine which system calls your program invoke before <em>death</em>:</p>
+<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>strace -ttT
+</code></pre></div>
+<p>After gathering certain amount of knowledge, armed with the stack traces, system calls invocations and memory footprint you have to <em>dig deeper</em> into the actual application code and maybe trying to reproduce that behavior in more <em>debuggable</em> environment <img alt="wink" src="/images/emoji/wink.png" class="emoji" />.</p>
+
+<h1 id="references">References</h1>
+
+<ol>
+<li><a href="http://dtrace.org/blogs/dap/2012/01/13/playing-with-nodev8-postmortem-debugging">Using <code>mdb</code></a></li>
+
+<li><a href="http://dtrace.org/blogs/dap/2012/01/05/where-does-your-node-program-spend-its-time">Using <code>dtrace</code></a></li>
+
+<li><a href="http://linux.die.net/man/3/ulimit"><code>ulimit</code> man pages</a></li>
+
+<li><a href="https://github.com/bsuh/node_xslt">node_xslt</a></li>
+
+<li><a href="http://linux.die.net/man/1/strace"><code>strace</code> man pages</a></li>
+</ol>
+
+    </article>
+
+    <section class="container">
+      <a href="/" class="mobile-link">Home</a>
+      <div id="disqus_thread"></div>
+    </section>
+
+    <aside class="menu">
+
+      <a href="http://afronski.pl">
+        <img id="avatar" src="/images/avatar.png" alt="My avatar" />
+      </a>
+
+      Hello! I'm <a href="/about.html">Wojciech Gawroński</a>.<br/>
+      I work as a <a href="http://pl.linkedin.com/pub/wojtek-gawroński/58/879/5b0/">software developer</a>.<br/>
+      Besides working
+      <ul class="interests">
+        <li>I write <a href="https://github.com/afronski">code</a></li>
+        <li>I <a href="https://twitter.com/afronski">tweet</a></li>
+        <li>I give <a href="https://github.com/afronski/presentations">talks</a></li>
+        <li>I <a href="/feed.xml">blog</a></li>
+        <li>I <a href="https://www.goodreads.com/user/show/16145105-wojtek-gawro-ski">read books</a></li>
+        <li>I <a href="http://www.last.fm/user/afronski">listen music</a></li>
+      </ul>
+
+      <footer>
+        <section>© Copyright 2013, Wojciech Gawroński</section>
+        <section>
+          Except where otherwise noted, content on this site<br/>
+          is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/pl/legalcode">CC BY-NC-ND 3.0</a>.
+        </section>
+      </footer>
+    </aside>
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-44633104-1','afronski.pl');ga('send','pageview');</script>
+    <noscript>
+      Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <script type="text/javascript">var disqus_shortname="afronskipl";(function(){var dsq=document.createElement("script");dsq.type="text/javascript";dsq.async=true;dsq.src="//"+disqus_shortname+".disqus.com/embed.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(dsq);})();</script>
+  </body>
+</html>
