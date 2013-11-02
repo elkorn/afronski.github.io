@@ -66,8 +66,14 @@ a:hover {
 }
 
 .posts-list li time {
-  color: #888888;
+  display: inline-block;
+
+  width: 90px;
   margin-right: 15px;
+
+  color: #888888;
+
+  text-align: right;
 }
 
 /* Content style. */
