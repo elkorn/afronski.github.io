@@ -17,19 +17,19 @@ Segmentation fault
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Yeah… and &lt;em&gt;now&lt;/em&gt; what?&lt;/p&gt;
 
-&lt;p&gt;Welcome to the dungeon, &lt;em&gt;DevOp&lt;/em&gt; marine :grin:.&lt;/p&gt;
+&lt;p&gt;Welcome to the dungeon, &lt;em&gt;DevOps&lt;/em&gt; marine :grin:.&lt;/p&gt;
 
-&lt;p&gt;First of all, if you deployed an application on &lt;em&gt;OS&lt;/em&gt; different than &lt;em&gt;SmartOS&lt;/em&gt;, you lost ability to use many impressive tools which will definitely help you in that case (most impressive ones are &lt;code&gt;mdb&lt;/code&gt; and &lt;code&gt;dtrace&lt;/code&gt;, you can find details in the references section of this post).&lt;/p&gt;
+&lt;p&gt;First of all, if you deployed an application on an &lt;em&gt;OS&lt;/em&gt; different than &lt;em&gt;SmartOS&lt;/em&gt;, you lost the ability to use many impressive tools which could definitely help you in that case (the most impressive ones are &lt;code&gt;mdb&lt;/code&gt; and &lt;code&gt;dtrace&lt;/code&gt;, you can find details in the references section of this post).&lt;/p&gt;
 
 &lt;p&gt;So there is no &lt;em&gt;&lt;code&gt;mdb&lt;/code&gt;&lt;/em&gt;, no &lt;em&gt;&lt;code&gt;dtrace&lt;/code&gt;&lt;/em&gt;, no &lt;em&gt;SmartOS&lt;/em&gt;. You can’t also use your favorite debugger like &lt;a href=&quot;https://trace.gl/&quot;&gt;trace.gl&lt;/a&gt;, &lt;a href=&quot;https://github.com/jwarkentin/node-monkey&quot;&gt;node-monkey&lt;/a&gt; or &lt;a href=&quot;https://github.com/node-inspector/node-inspector&quot;&gt;node-inspector&lt;/a&gt;. You have got only &lt;code&gt;gdb&lt;/code&gt; and your brain filled with low-level computer knowledge :wink:.&lt;/p&gt;
 
-&lt;p&gt;Before we will dive deeper into internals of our application, let’s begin the voodoo, that is a process of setting proper options in our &lt;em&gt;OS&lt;/em&gt;. First we will remove the limit related with the &lt;em&gt;core dump&lt;/em&gt; size:&lt;/p&gt;
+&lt;p&gt;Before we dive deeper into the internals of your application, let’s begin the voodoo that is the process of setting the proper options in your &lt;em&gt;OS&lt;/em&gt;. First we will remove the limit related with the &lt;em&gt;core dump&lt;/em&gt; size:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;sudo &lt;span class='nb'&gt;ulimit&lt;/span&gt; -c unlimited
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Next, we set different path for these files (remember to put them on partition with a huge amount of the free disk space):&lt;/p&gt;
+&lt;p&gt;Next, we set different path for these files (remember to put them on a partition with a huge amount of the free disk space):&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;&lt;span class='nb'&gt;echo&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;/tmp/core_%e.%p&amp;#39;&lt;/span&gt; | sudo tee /proc/sys/kernel/core_pattern
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Then, if we are using native Node.js extensions we have to recompile them with the debugging flag &lt;em&gt;&lt;code&gt;-g&lt;/code&gt;&lt;/em&gt; (configuration file taken from &lt;em&gt;&lt;code&gt;node_xslt&lt;/code&gt;&lt;/em&gt; module):&lt;/p&gt;
+&lt;p&gt;Then, if you are using native Node.js extensions you have to recompile them with the debugging flag &lt;em&gt;&lt;code&gt;-g&lt;/code&gt;&lt;/em&gt; (configuration file taken from the &lt;em&gt;&lt;code&gt;node_xslt&lt;/code&gt;&lt;/em&gt; module):&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='p'&gt;{&lt;/span&gt;
   &lt;span class='s2'&gt;&amp;quot;targets&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='p'&gt;[{&lt;/span&gt;
     &lt;span class='s2'&gt;&amp;quot;target_name&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;node_xslt&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
@@ -62,12 +62,12 @@ Segmentation fault
   &lt;span class='p'&gt;}]&lt;/span&gt;
 &lt;span class='p'&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Then, look at the dependencies (in our case &lt;code&gt;libxslt&lt;/code&gt;, &lt;code&gt;libxml2&lt;/code&gt;) and reinstall them in the development version (sometimes marked with postfix &lt;code&gt;-devel&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Then, look at the dependencies (in our case &lt;code&gt;libxslt&lt;/code&gt;, &lt;code&gt;libxml2&lt;/code&gt;) and reinstall them in the development version (sometimes marked with a &lt;code&gt;-devel&lt;/code&gt; postfix).&lt;/p&gt;
 
-&lt;p&gt;After modifications and installing dependencies in the &lt;em&gt;debugging mode&lt;/em&gt;, we have to run installation process inside directory of the modified module (but only there, not on the upper level, because it will remove our changes in the modified module):&lt;/p&gt;
+&lt;p&gt;After modifications and installing dependencies in the &lt;em&gt;debugging mode&lt;/em&gt;, we have to run installation process inside the directory of the modified module (but only there, not on the upper level, because it will remove our changes in the modified module):&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;node_xslt &lt;span class='nv'&gt;$ &lt;/span&gt;npm install --verbose
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Somewhere inside long output we will find information about flags used in compilation process (and we should see flag &lt;em&gt;&lt;code&gt;-g&lt;/code&gt;&lt;/em&gt;, responsible for attaching debugging informations).&lt;/p&gt;
+&lt;p&gt;Somewhere inside the long output we will find information about flags used in compilation process (and we should see a &lt;em&gt;&lt;code&gt;-g&lt;/code&gt;&lt;/em&gt; flag, responsible for attaching debugging informations).&lt;/p&gt;
 
 &lt;p&gt;Next, we have to simulate again situation with &lt;em&gt;&lt;code&gt;Segmentation fault&lt;/code&gt;&lt;/em&gt; behavior. When application receive unwanted signal, it will dump file with the &lt;em&gt;post-mortem&lt;/em&gt; internal structure, ready for using inside &lt;code&gt;gdb&lt;/code&gt;:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;gdb /usr/bin/node /tmp/core_XXX.YYY
@@ -84,15 +84,15 @@ Program received signal SIGSEGV, Segmentation fault.
 &lt;span class='o'&gt;(&lt;/span&gt;gdb&lt;span class='o'&gt;)&lt;/span&gt; quit
 &lt;span class='c'&gt;# It exits gdb.&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;If you want to attach into the running process, you have to invoke the command specified below:&lt;/p&gt;
+&lt;p&gt;If you want to attach to the running process, you have to invoke the command specified below:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;gdb attach &lt;span class='k'&gt;$(&lt;/span&gt;pidof node&lt;span class='k'&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;However, if your application is running in a cluster mode (or you are running more than one Node.js application on your machine), this will fail and instead of &lt;em&gt;&lt;code&gt;pidof&lt;/code&gt;&lt;/em&gt; you have to pass a single &lt;em&gt;PID&lt;/em&gt; value (from one application, master or one of the slaves, depends on what is interesting for you).&lt;/p&gt;
 
-&lt;p&gt;You can also run &lt;em&gt;&lt;code&gt;strace&lt;/code&gt;&lt;/em&gt; in order to determine which system calls your program invoke before &lt;em&gt;death&lt;/em&gt;:&lt;/p&gt;
+&lt;p&gt;You can also run &lt;em&gt;&lt;code&gt;strace&lt;/code&gt;&lt;/em&gt; in order to determine which system calls does your program invoke before &lt;em&gt;death&lt;/em&gt;:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;strace -ttT
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;After gathering certain amount of knowledge, armed with the stack traces, system calls invocations and memory footprint you have to &lt;em&gt;dig deeper&lt;/em&gt; into the actual application code and maybe trying to reproduce that behavior in more &lt;em&gt;debuggable&lt;/em&gt; environment :wink:.&lt;/p&gt;
+&lt;p&gt;After gathering a certain amount of knowledge, armed with the stack traces, system call invocations and the memory footprint you have to &lt;em&gt;dig deeper&lt;/em&gt; into the actual application code and maybe try to reproduce that behavior in a more &lt;em&gt;debuggable&lt;/em&gt; environment :wink:.&lt;/p&gt;
 
 &lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
 

@@ -31,19 +31,19 @@ Segmentation fault
 </code></pre></div>
 <p>Yeah… and <em>now</em> what?</p>
 
-<p>Welcome to the dungeon, <em>DevOp</em> marine <img alt="grin" src="/images/emoji/grin.png" class="emoji" />.</p>
+<p>Welcome to the dungeon, <em>DevOps</em> marine <img alt="grin" src="/images/emoji/grin.png" class="emoji" />.</p>
 
-<p>First of all, if you deployed an application on <em>OS</em> different than <em>SmartOS</em>, you lost ability to use many impressive tools which will definitely help you in that case (most impressive ones are <code>mdb</code> and <code>dtrace</code>, you can find details in the references section of this post).</p>
+<p>First of all, if you deployed an application on an <em>OS</em> different than <em>SmartOS</em>, you lost the ability to use many impressive tools which could definitely help you in that case (the most impressive ones are <code>mdb</code> and <code>dtrace</code>, you can find details in the references section of this post).</p>
 
 <p>So there is no <em><code>mdb</code></em>, no <em><code>dtrace</code></em>, no <em>SmartOS</em>. You can’t also use your favorite debugger like <a href="https://trace.gl/">trace.gl</a>, <a href="https://github.com/jwarkentin/node-monkey">node-monkey</a> or <a href="https://github.com/node-inspector/node-inspector">node-inspector</a>. You have got only <code>gdb</code> and your brain filled with low-level computer knowledge <img alt="wink" src="/images/emoji/wink.png" class="emoji" />.</p>
 
-<p>Before we will dive deeper into internals of our application, let’s begin the voodoo, that is a process of setting proper options in our <em>OS</em>. First we will remove the limit related with the <em>core dump</em> size:</p>
+<p>Before we dive deeper into the internals of your application, let’s begin the voodoo that is the process of setting the proper options in your <em>OS</em>. First we will remove the limit related with the <em>core dump</em> size:</p>
 <div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>sudo <span class='nb'>ulimit</span> -c unlimited
 </code></pre></div>
-<p>Next, we set different path for these files (remember to put them on partition with a huge amount of the free disk space):</p>
+<p>Next, we set different path for these files (remember to put them on a partition with a huge amount of the free disk space):</p>
 <div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span><span class='nb'>echo</span> <span class='s1'>&#39;/tmp/core_%e.%p&#39;</span> | sudo tee /proc/sys/kernel/core_pattern
 </code></pre></div>
-<p>Then, if we are using native Node.js extensions we have to recompile them with the debugging flag <em><code>-g</code></em> (configuration file taken from <em><code>node_xslt</code></em> module):</p>
+<p>Then, if you are using native Node.js extensions you have to recompile them with the debugging flag <em><code>-g</code></em> (configuration file taken from the <em><code>node_xslt</code></em> module):</p>
 <div class='highlight'><pre><code class='javascript'><span class='p'>{</span>
   <span class='s2'>&quot;targets&quot;</span><span class='o'>:</span> <span class='p'>[{</span>
     <span class='s2'>&quot;target_name&quot;</span><span class='o'>:</span> <span class='s2'>&quot;node_xslt&quot;</span><span class='p'>,</span>
@@ -76,12 +76,12 @@ Segmentation fault
   <span class='p'>}]</span>
 <span class='p'>}</span>
 </code></pre></div>
-<p>Then, look at the dependencies (in our case <code>libxslt</code>, <code>libxml2</code>) and reinstall them in the development version (sometimes marked with postfix <code>-devel</code>).</p>
+<p>Then, look at the dependencies (in our case <code>libxslt</code>, <code>libxml2</code>) and reinstall them in the development version (sometimes marked with a <code>-devel</code> postfix).</p>
 
-<p>After modifications and installing dependencies in the <em>debugging mode</em>, we have to run installation process inside directory of the modified module (but only there, not on the upper level, because it will remove our changes in the modified module):</p>
+<p>After modifications and installing dependencies in the <em>debugging mode</em>, we have to run installation process inside the directory of the modified module (but only there, not on the upper level, because it will remove our changes in the modified module):</p>
 <div class='highlight'><pre><code class='bash'>node_xslt <span class='nv'>$ </span>npm install --verbose
 </code></pre></div>
-<p>Somewhere inside long output we will find information about flags used in compilation process (and we should see flag <em><code>-g</code></em>, responsible for attaching debugging informations).</p>
+<p>Somewhere inside the long output we will find information about flags used in compilation process (and we should see a <em><code>-g</code></em> flag, responsible for attaching debugging informations).</p>
 
 <p>Next, we have to simulate again situation with <em><code>Segmentation fault</code></em> behavior. When application receive unwanted signal, it will dump file with the <em>post-mortem</em> internal structure, ready for using inside <code>gdb</code>:</p>
 <div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>gdb /usr/bin/node /tmp/core_XXX.YYY
@@ -98,15 +98,15 @@ Program received signal SIGSEGV, Segmentation fault.
 <span class='o'>(</span>gdb<span class='o'>)</span> quit
 <span class='c'># It exits gdb.</span>
 </code></pre></div>
-<p>If you want to attach into the running process, you have to invoke the command specified below:</p>
+<p>If you want to attach to the running process, you have to invoke the command specified below:</p>
 <div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>gdb attach <span class='k'>$(</span>pidof node<span class='k'>)</span>
 </code></pre></div>
 <p>However, if your application is running in a cluster mode (or you are running more than one Node.js application on your machine), this will fail and instead of <em><code>pidof</code></em> you have to pass a single <em>PID</em> value (from one application, master or one of the slaves, depends on what is interesting for you).</p>
 
-<p>You can also run <em><code>strace</code></em> in order to determine which system calls your program invoke before <em>death</em>:</p>
+<p>You can also run <em><code>strace</code></em> in order to determine which system calls does your program invoke before <em>death</em>:</p>
 <div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>strace -ttT
 </code></pre></div>
-<p>After gathering certain amount of knowledge, armed with the stack traces, system calls invocations and memory footprint you have to <em>dig deeper</em> into the actual application code and maybe trying to reproduce that behavior in more <em>debuggable</em> environment <img alt="wink" src="/images/emoji/wink.png" class="emoji" />.</p>
+<p>After gathering a certain amount of knowledge, armed with the stack traces, system call invocations and the memory footprint you have to <em>dig deeper</em> into the actual application code and maybe try to reproduce that behavior in a more <em>debuggable</em> environment <img alt="wink" src="/images/emoji/wink.png" class="emoji" />.</p>
 
 <h1 id="references">References</h1>
 
