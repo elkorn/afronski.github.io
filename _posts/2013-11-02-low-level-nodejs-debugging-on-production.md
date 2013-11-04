@@ -21,13 +21,13 @@ First of all, if you deployed an application on an *OS* different than *SmartOS*
 
 So there is no *`mdb`*, no *`dtrace`*, no *SmartOS*. You can't also use your favorite debugger like [trace.gl](https://trace.gl/), [node-monkey](https://github.com/jwarkentin/node-monkey) or [node-inspector](https://github.com/node-inspector/node-inspector). You have got only `gdb` and your brain filled with low-level computer knowledge :wink:.
 
-Before we dive deeper into the internals of your application, let's begin the voodoo that is the process of setting the proper options in your *OS*. First we will remove the limit related with the *core dump* size:
+Before you dive deeper into the internals of your application, let's begin the voodoo that is the process of setting the proper options in your *OS*. First you will remove the limit related with the *core dump* size:
 
 {% highlight bash %}
 ~ $ sudo ulimit -c unlimited
 {% endhighlight %}
 
-Next, we set different path for these files (remember to put them on a partition with a huge amount of the free disk space):
+Next, you set different path for these files (remember to put them on a partition with a huge amount of the free disk space):
 
 {% highlight bash %}
 ~ $ echo '/tmp/core_%e.%p' | sudo tee /proc/sys/kernel/core_pattern
@@ -71,21 +71,21 @@ Then, if you are using native Node.js extensions you have to recompile them with
 
 Then, look at the dependencies (in our case `libxslt`, `libxml2`) and reinstall them in the development version (sometimes marked with a `-devel` postfix).
 
-After modifications and installing dependencies in the *debugging mode*, we have to run installation process inside the directory of the modified module (but only there, not on the upper level, because it will remove our changes in the modified module):
+After modifications and installing dependencies in the *debugging mode*, you have to run installation process inside the directory of the modified module (but only there, not on the upper level, because it will remove our changes in the modified module):
 
 {% highlight bash %}
 node_xslt $ npm install --verbose
 {% endhighlight %}
 
-Somewhere inside the long output we will find information about flags used in compilation process (and we should see a *`-g`* flag, responsible for attaching debugging informations).
+Somewhere inside the long output you will find information about flags used in compilation process (and you should see a *`-g`* flag, responsible for attaching debugging informations).
 
-Next, we have to simulate again situation with *`Segmentation fault`* behavior. When application receive unwanted signal, it will dump file with the *post-mortem* internal structure, ready for using inside `gdb`:
+Next, you have to simulate again situation with *`Segmentation fault`* behavior. When application receive unwanted signal, it will dump file with the *post-mortem* internal structure, ready for using inside `gdb`:
 
 {% highlight bash %}
 ~ $ gdb /usr/bin/node /tmp/core_XXX.YYY
 {% endhighlight %}
 
-And now we are inside the belly of the monster, so we can move around:
+And now you are inside the belly of the monster, so you can move around:
 
 {% highlight bash %}
 ...
