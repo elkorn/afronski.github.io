@@ -25,30 +25,30 @@
 
 <h1 id="tips_and_tricks_for_chefsolo_and_vagrant">Tips and tricks for chef-solo and vagrant</h1>
 
-<p>In your daily work with the kitchen sink <img alt="wink" src="/images/emoji/wink.png" class="emoji" />, sometimes you have to be a <em>plumber</em> and get dirty. In order to do that you have to be familiar with the concept of debugging <em>vagrant</em>, <em>chef-solo</em> and some other useful tricks.</p>
+<p>In your daily work at the kitchen sink <img alt="wink" src="/images/emoji/wink.png" class="emoji" />, sometimes you have to be a <em>plumber</em> and get dirty. In order to do that you have to be familiar with the concept of debugging <em>vagrant</em>, <em>chef-solo</em> and some other useful tricks.</p>
 
 <h2 id="debugging_vagrant">Debugging vagrant</h2>
 
-<p>If you want to enable a verbose mode for <em>vagrant</em>, you need to set the environment variable <code>VAGRANT_LOG</code> with <code>DEBUG</code> or <code>INFO</code> value, as in the example below:</p>
+<p>If you want to enable a verbose mode for <em>vagrant</em>, you need to set the environment variable <code>VAGRANT_LOG</code> to <code>DEBUG</code> or <code>INFO</code> value, as in the example below:</p>
 <div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ VAGRANT_LOG</span><span class='o'>=</span>DEBUG vagrant up
 </code></pre></div>
 <h2 id="debugging_chefsolo">Debugging chef-solo</h2>
 
 <p>You have got two options how to enable verbose mode for <em>chef-solo</em>.</p>
 
-<p>First, you can login into a created virtual machine via <em>SSH</em> and invoke the <em>magic command</em> in a certain directory:</p>
+<p>First, you can <em><code>SSH</code></em> into a created virtual machine and invoke the <em>magic command</em> in a certain directory:</p>
 <div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>vagrant ssh
 
 vagrant@localhost ~ <span class='nv'>$ </span><span class='nb'>cd</span> /tmp/vagrant-chef-1
 vagrant@localhost /tmp/vagrant-chef-1 <span class='nv'>$ </span>sudo chef-solo -c solo.rb -j dna.json -l debug
 </code></pre></div>
-<p>In this <em>magic command</em> parameter <code>-c</code> is responsible for setting a configuration file, <code>-j</code> is for passing a file with attributes, which is later called a <em>node specification</em>. Last parameter <code>-l</code> - most important for us - enables the verbose mode at a certain logging level.</p>
+<p>In this <em>magic command</em> the parameter <code>-c</code> is responsible for setting a configuration file, <code>-j</code> is for passing a file with attributes, which is later called a <em>node specification</em>. Last parameter <code>-l</code> - most important for us - enables the verbose mode at a certain logging level.</p>
 
-<p>You may be wondering, why you are entering to the directory <code>/tmp/vagrant-chef-1</code> with a digit at the end?</p>
+<p>You may be wondering why you are entering a <code>/tmp/vagrant-chef-1</code> directory with a digit at the end?</p>
 
-<p>Actual value depends on number of concurrent and active provisioning processes running on the virtual machine and it is represented by <a href="https://github.com/mitchellh/vagrant/blob/master/plugins/provisioners/chef/provisioner/base.rb#L22">get_and_update_counter</a> method and <a href="https://github.com/mitchellh/vagrant/blob/master/lib/vagrant/util/counter.rb">Counter</a> module.</p>
+<p>The actual value depends on the number of concurrent and active provisioning processes running on the virtual machine and is represented by the <a href="https://github.com/mitchellh/vagrant/blob/master/plugins/provisioners/chef/provisioner/base.rb#L22">get_and_update_counter</a> method and the <a href="https://github.com/mitchellh/vagrant/blob/master/lib/vagrant/util/counter.rb">Counter</a> module.</p>
 
-<p>But we can enable it in a different way - by passing the arguments to a provisioner inside <em>Vagrantfile</em>:</p>
+<p>But you can enable it in a different way - by passing the arguments to a provisioner inside <em>Vagrantfile</em>:</p>
 <div class='highlight'><pre><code class='ruby'><span class='lineno'>1</span> <span class='no'>Vagrant</span><span class='o'>.</span><span class='n'>configure</span><span class='p'>(</span><span class='s1'>&#39;2&#39;</span><span class='p'>)</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>config</span><span class='o'>|</span>
 <span class='lineno'>2</span>   <span class='c1'># ...</span>
 <span class='lineno'>3</span> 
@@ -61,11 +61,11 @@ vagrant@localhost /tmp/vagrant-chef-1 <span class='nv'>$ </span>sudo chef-solo -
 </code></pre></div>
 <h2 id="mutating_the_dna">Mutating the DNA</h2>
 
-<p>As you can see in the example above, related with the chef-solo debugging, we have got a <code>dna.json</code> file with attributes generated on the basis of provisioner configuration attached in <em>Vagrantfile</em>. We call it a <em>node specification</em>. But what if we already have an existing node specification, and we want to use it?</p>
+<p>As you can see in the example above, related with the chef-solo debugging, you have got a <code>dna.json</code> file with attributes generated on the basis of provisioner configuration attached in <em>Vagrantfile</em>. We call it a <em>node specification</em>. But what if you already have an existing node specification, and you want to use it?</p>
 
 <p>There is an attribute for that, called <code>json</code>, but it is a dictionary. You cannot pass a plain string with a path to the node file, like the role name in the <em>add_role</em> method or setting a value in the <em>environment</em> field.</p>
 
-<p>In order to inject our attributes we need to read the file first, then parse the content as a JSON and finally merge it with the existing value of the field:</p>
+<p>In order to inject our attributes you need to read the file first, then parse the content as JSON and finally merge it with the existing value of the field:</p>
 <div class='highlight'><pre><code class='ruby'><span class='lineno'>1</span> <span class='no'>Vagrant</span><span class='o'>.</span><span class='n'>configure</span><span class='p'>(</span><span class='s1'>&#39;2&#39;</span><span class='p'>)</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>config</span><span class='o'>|</span>
 <span class='lineno'>2</span>   <span class='c1'># ...</span>
 <span class='lineno'>3</span> 

@@ -23,10 +23,10 @@ Segmentation fault
 
 &lt;p&gt;So there is no &lt;em&gt;&lt;code&gt;mdb&lt;/code&gt;&lt;/em&gt;, no &lt;em&gt;&lt;code&gt;dtrace&lt;/code&gt;&lt;/em&gt;, no &lt;em&gt;SmartOS&lt;/em&gt;. You can’t also use your favorite debugger like &lt;a href=&quot;https://trace.gl/&quot;&gt;trace.gl&lt;/a&gt;, &lt;a href=&quot;https://github.com/jwarkentin/node-monkey&quot;&gt;node-monkey&lt;/a&gt; or &lt;a href=&quot;https://github.com/node-inspector/node-inspector&quot;&gt;node-inspector&lt;/a&gt;. You have got only &lt;code&gt;gdb&lt;/code&gt; and your brain filled with low-level computer knowledge :wink:.&lt;/p&gt;
 
-&lt;p&gt;Before we dive deeper into the internals of your application, let’s begin the voodoo that is the process of setting the proper options in your &lt;em&gt;OS&lt;/em&gt;. First we will remove the limit related with the &lt;em&gt;core dump&lt;/em&gt; size:&lt;/p&gt;
+&lt;p&gt;Before you dive deeper into the internals of your application, let’s begin the voodoo that is the process of setting the proper options in your &lt;em&gt;OS&lt;/em&gt;. First you will remove the limit related with the &lt;em&gt;core dump&lt;/em&gt; size:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;sudo &lt;span class='nb'&gt;ulimit&lt;/span&gt; -c unlimited
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Next, we set different path for these files (remember to put them on a partition with a huge amount of the free disk space):&lt;/p&gt;
+&lt;p&gt;Next, you set different path for these files (remember to put them on a partition with a huge amount of the free disk space):&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;&lt;span class='nb'&gt;echo&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;/tmp/core_%e.%p&amp;#39;&lt;/span&gt; | sudo tee /proc/sys/kernel/core_pattern
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Then, if you are using native Node.js extensions you have to recompile them with the debugging flag &lt;em&gt;&lt;code&gt;-g&lt;/code&gt;&lt;/em&gt; (configuration file taken from the &lt;em&gt;&lt;code&gt;node_xslt&lt;/code&gt;&lt;/em&gt; module):&lt;/p&gt;
@@ -64,15 +64,15 @@ Segmentation fault
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Then, look at the dependencies (in our case &lt;code&gt;libxslt&lt;/code&gt;, &lt;code&gt;libxml2&lt;/code&gt;) and reinstall them in the development version (sometimes marked with a &lt;code&gt;-devel&lt;/code&gt; postfix).&lt;/p&gt;
 
-&lt;p&gt;After modifications and installing dependencies in the &lt;em&gt;debugging mode&lt;/em&gt;, we have to run installation process inside the directory of the modified module (but only there, not on the upper level, because it will remove our changes in the modified module):&lt;/p&gt;
+&lt;p&gt;After modifications and installing dependencies in the &lt;em&gt;debugging mode&lt;/em&gt;, you have to run installation process inside the directory of the modified module (but only there, not on the upper level, because it will remove our changes in the modified module):&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;node_xslt &lt;span class='nv'&gt;$ &lt;/span&gt;npm install --verbose
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Somewhere inside the long output we will find information about flags used in compilation process (and we should see a &lt;em&gt;&lt;code&gt;-g&lt;/code&gt;&lt;/em&gt; flag, responsible for attaching debugging informations).&lt;/p&gt;
+&lt;p&gt;Somewhere inside the long output you will find information about flags used in compilation process (and you should see a &lt;em&gt;&lt;code&gt;-g&lt;/code&gt;&lt;/em&gt; flag, responsible for attaching debugging informations).&lt;/p&gt;
 
-&lt;p&gt;Next, we have to simulate again situation with &lt;em&gt;&lt;code&gt;Segmentation fault&lt;/code&gt;&lt;/em&gt; behavior. When application receive unwanted signal, it will dump file with the &lt;em&gt;post-mortem&lt;/em&gt; internal structure, ready for using inside &lt;code&gt;gdb&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Next, you have to simulate again situation with &lt;em&gt;&lt;code&gt;Segmentation fault&lt;/code&gt;&lt;/em&gt; behavior. When application receive unwanted signal, it will dump file with the &lt;em&gt;post-mortem&lt;/em&gt; internal structure, ready for using inside &lt;code&gt;gdb&lt;/code&gt;:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;gdb /usr/bin/node /tmp/core_XXX.YYY
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;And now we are inside the belly of the monster, so we can move around:&lt;/p&gt;
+&lt;p&gt;And now you are inside the belly of the monster, so you can move around:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;...
 Program received signal SIGSEGV, Segmentation fault.
 
@@ -118,30 +118,30 @@ Program received signal SIGSEGV, Segmentation fault.
         <description>
 &lt;h1 id=&quot;tips_and_tricks_for_chefsolo_and_vagrant&quot;&gt;Tips and tricks for chef-solo and vagrant&lt;/h1&gt;
 
-&lt;p&gt;In your daily work with the kitchen sink :wink:, sometimes you have to be a &lt;em&gt;plumber&lt;/em&gt; and get dirty. In order to do that you have to be familiar with the concept of debugging &lt;em&gt;vagrant&lt;/em&gt;, &lt;em&gt;chef-solo&lt;/em&gt; and some other useful tricks.&lt;/p&gt;
+&lt;p&gt;In your daily work at the kitchen sink :wink:, sometimes you have to be a &lt;em&gt;plumber&lt;/em&gt; and get dirty. In order to do that you have to be familiar with the concept of debugging &lt;em&gt;vagrant&lt;/em&gt;, &lt;em&gt;chef-solo&lt;/em&gt; and some other useful tricks.&lt;/p&gt;
 
 &lt;h2 id=&quot;debugging_vagrant&quot;&gt;Debugging vagrant&lt;/h2&gt;
 
-&lt;p&gt;If you want to enable a verbose mode for &lt;em&gt;vagrant&lt;/em&gt;, you need to set the environment variable &lt;code&gt;VAGRANT_LOG&lt;/code&gt; with &lt;code&gt;DEBUG&lt;/code&gt; or &lt;code&gt;INFO&lt;/code&gt; value, as in the example below:&lt;/p&gt;
+&lt;p&gt;If you want to enable a verbose mode for &lt;em&gt;vagrant&lt;/em&gt;, you need to set the environment variable &lt;code&gt;VAGRANT_LOG&lt;/code&gt; to &lt;code&gt;DEBUG&lt;/code&gt; or &lt;code&gt;INFO&lt;/code&gt; value, as in the example below:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ VAGRANT_LOG&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;DEBUG vagrant up
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&quot;debugging_chefsolo&quot;&gt;Debugging chef-solo&lt;/h2&gt;
 
 &lt;p&gt;You have got two options how to enable verbose mode for &lt;em&gt;chef-solo&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;First, you can login into a created virtual machine via &lt;em&gt;SSH&lt;/em&gt; and invoke the &lt;em&gt;magic command&lt;/em&gt; in a certain directory:&lt;/p&gt;
+&lt;p&gt;First, you can &lt;em&gt;&lt;code&gt;SSH&lt;/code&gt;&lt;/em&gt; into a created virtual machine and invoke the &lt;em&gt;magic command&lt;/em&gt; in a certain directory:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;vagrant ssh
 
 vagrant@localhost ~ &lt;span class='nv'&gt;$ &lt;/span&gt;&lt;span class='nb'&gt;cd&lt;/span&gt; /tmp/vagrant-chef-1
 vagrant@localhost /tmp/vagrant-chef-1 &lt;span class='nv'&gt;$ &lt;/span&gt;sudo chef-solo -c solo.rb -j dna.json -l debug
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;In this &lt;em&gt;magic command&lt;/em&gt; parameter &lt;code&gt;-c&lt;/code&gt; is responsible for setting a configuration file, &lt;code&gt;-j&lt;/code&gt; is for passing a file with attributes, which is later called a &lt;em&gt;node specification&lt;/em&gt;. Last parameter &lt;code&gt;-l&lt;/code&gt; - most important for us - enables the verbose mode at a certain logging level.&lt;/p&gt;
+&lt;p&gt;In this &lt;em&gt;magic command&lt;/em&gt; the parameter &lt;code&gt;-c&lt;/code&gt; is responsible for setting a configuration file, &lt;code&gt;-j&lt;/code&gt; is for passing a file with attributes, which is later called a &lt;em&gt;node specification&lt;/em&gt;. Last parameter &lt;code&gt;-l&lt;/code&gt; - most important for us - enables the verbose mode at a certain logging level.&lt;/p&gt;
 
-&lt;p&gt;You may be wondering, why you are entering to the directory &lt;code&gt;/tmp/vagrant-chef-1&lt;/code&gt; with a digit at the end?&lt;/p&gt;
+&lt;p&gt;You may be wondering why you are entering a &lt;code&gt;/tmp/vagrant-chef-1&lt;/code&gt; directory with a digit at the end?&lt;/p&gt;
 
-&lt;p&gt;Actual value depends on number of concurrent and active provisioning processes running on the virtual machine and it is represented by &lt;a href=&quot;https://github.com/mitchellh/vagrant/blob/master/plugins/provisioners/chef/provisioner/base.rb#L22&quot;&gt;get_and_update_counter&lt;/a&gt; method and &lt;a href=&quot;https://github.com/mitchellh/vagrant/blob/master/lib/vagrant/util/counter.rb&quot;&gt;Counter&lt;/a&gt; module.&lt;/p&gt;
+&lt;p&gt;The actual value depends on the number of concurrent and active provisioning processes running on the virtual machine and is represented by the &lt;a href=&quot;https://github.com/mitchellh/vagrant/blob/master/plugins/provisioners/chef/provisioner/base.rb#L22&quot;&gt;get_and_update_counter&lt;/a&gt; method and the &lt;a href=&quot;https://github.com/mitchellh/vagrant/blob/master/lib/vagrant/util/counter.rb&quot;&gt;Counter&lt;/a&gt; module.&lt;/p&gt;
 
-&lt;p&gt;But we can enable it in a different way - by passing the arguments to a provisioner inside &lt;em&gt;Vagrantfile&lt;/em&gt;:&lt;/p&gt;
+&lt;p&gt;But you can enable it in a different way - by passing the arguments to a provisioner inside &lt;em&gt;Vagrantfile&lt;/em&gt;:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='lineno'&gt;1&lt;/span&gt; &lt;span class='no'&gt;Vagrant&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;configure&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;2&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;config&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
 &lt;span class='lineno'&gt;2&lt;/span&gt;   &lt;span class='c1'&gt;# ...&lt;/span&gt;
 &lt;span class='lineno'&gt;3&lt;/span&gt; 
@@ -154,11 +154,11 @@ vagrant@localhost /tmp/vagrant-chef-1 &lt;span class='nv'&gt;$ &lt;/span&gt;sudo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&quot;mutating_the_dna&quot;&gt;Mutating the DNA&lt;/h2&gt;
 
-&lt;p&gt;As you can see in the example above, related with the chef-solo debugging, we have got a &lt;code&gt;dna.json&lt;/code&gt; file with attributes generated on the basis of provisioner configuration attached in &lt;em&gt;Vagrantfile&lt;/em&gt;. We call it a &lt;em&gt;node specification&lt;/em&gt;. But what if we already have an existing node specification, and we want to use it?&lt;/p&gt;
+&lt;p&gt;As you can see in the example above, related with the chef-solo debugging, you have got a &lt;code&gt;dna.json&lt;/code&gt; file with attributes generated on the basis of provisioner configuration attached in &lt;em&gt;Vagrantfile&lt;/em&gt;. We call it a &lt;em&gt;node specification&lt;/em&gt;. But what if you already have an existing node specification, and you want to use it?&lt;/p&gt;
 
 &lt;p&gt;There is an attribute for that, called &lt;code&gt;json&lt;/code&gt;, but it is a dictionary. You cannot pass a plain string with a path to the node file, like the role name in the &lt;em&gt;add_role&lt;/em&gt; method or setting a value in the &lt;em&gt;environment&lt;/em&gt; field.&lt;/p&gt;
 
-&lt;p&gt;In order to inject our attributes we need to read the file first, then parse the content as a JSON and finally merge it with the existing value of the field:&lt;/p&gt;
+&lt;p&gt;In order to inject our attributes you need to read the file first, then parse the content as JSON and finally merge it with the existing value of the field:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='lineno'&gt;1&lt;/span&gt; &lt;span class='no'&gt;Vagrant&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;configure&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;2&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;config&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
 &lt;span class='lineno'&gt;2&lt;/span&gt;   &lt;span class='c1'&gt;# ...&lt;/span&gt;
 &lt;span class='lineno'&gt;3&lt;/span&gt; 

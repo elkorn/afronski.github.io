@@ -37,10 +37,10 @@ Segmentation fault
 
 <p>So there is no <em><code>mdb</code></em>, no <em><code>dtrace</code></em>, no <em>SmartOS</em>. You can’t also use your favorite debugger like <a href="https://trace.gl/">trace.gl</a>, <a href="https://github.com/jwarkentin/node-monkey">node-monkey</a> or <a href="https://github.com/node-inspector/node-inspector">node-inspector</a>. You have got only <code>gdb</code> and your brain filled with low-level computer knowledge <img alt="wink" src="/images/emoji/wink.png" class="emoji" />.</p>
 
-<p>Before we dive deeper into the internals of your application, let’s begin the voodoo that is the process of setting the proper options in your <em>OS</em>. First we will remove the limit related with the <em>core dump</em> size:</p>
+<p>Before you dive deeper into the internals of your application, let’s begin the voodoo that is the process of setting the proper options in your <em>OS</em>. First you will remove the limit related with the <em>core dump</em> size:</p>
 <div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>sudo <span class='nb'>ulimit</span> -c unlimited
 </code></pre></div>
-<p>Next, we set different path for these files (remember to put them on a partition with a huge amount of the free disk space):</p>
+<p>Next, you set different path for these files (remember to put them on a partition with a huge amount of the free disk space):</p>
 <div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span><span class='nb'>echo</span> <span class='s1'>&#39;/tmp/core_%e.%p&#39;</span> | sudo tee /proc/sys/kernel/core_pattern
 </code></pre></div>
 <p>Then, if you are using native Node.js extensions you have to recompile them with the debugging flag <em><code>-g</code></em> (configuration file taken from the <em><code>node_xslt</code></em> module):</p>
@@ -78,15 +78,15 @@ Segmentation fault
 </code></pre></div>
 <p>Then, look at the dependencies (in our case <code>libxslt</code>, <code>libxml2</code>) and reinstall them in the development version (sometimes marked with a <code>-devel</code> postfix).</p>
 
-<p>After modifications and installing dependencies in the <em>debugging mode</em>, we have to run installation process inside the directory of the modified module (but only there, not on the upper level, because it will remove our changes in the modified module):</p>
+<p>After modifications and installing dependencies in the <em>debugging mode</em>, you have to run installation process inside the directory of the modified module (but only there, not on the upper level, because it will remove our changes in the modified module):</p>
 <div class='highlight'><pre><code class='bash'>node_xslt <span class='nv'>$ </span>npm install --verbose
 </code></pre></div>
-<p>Somewhere inside the long output we will find information about flags used in compilation process (and we should see a <em><code>-g</code></em> flag, responsible for attaching debugging informations).</p>
+<p>Somewhere inside the long output you will find information about flags used in compilation process (and you should see a <em><code>-g</code></em> flag, responsible for attaching debugging informations).</p>
 
-<p>Next, we have to simulate again situation with <em><code>Segmentation fault</code></em> behavior. When application receive unwanted signal, it will dump file with the <em>post-mortem</em> internal structure, ready for using inside <code>gdb</code>:</p>
+<p>Next, you have to simulate again situation with <em><code>Segmentation fault</code></em> behavior. When application receive unwanted signal, it will dump file with the <em>post-mortem</em> internal structure, ready for using inside <code>gdb</code>:</p>
 <div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>gdb /usr/bin/node /tmp/core_XXX.YYY
 </code></pre></div>
-<p>And now we are inside the belly of the monster, so we can move around:</p>
+<p>And now you are inside the belly of the monster, so you can move around:</p>
 <div class='highlight'><pre><code class='bash'>...
 Program received signal SIGSEGV, Segmentation fault.
 
