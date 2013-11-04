@@ -15,25 +15,25 @@ Segmentation fault
 
 Yeah... and *now* what?
 
-Welcome to the dungeon, *DevOp* marine :grin:.
+Welcome to the dungeon, *DevOps* marine :grin:.
 
-First of all, if you deployed an application on *OS* different than *SmartOS*, you lost ability to use many impressive tools which will definitely help you in that case (most impressive ones are `mdb` and `dtrace`, you can find details in the references section of this post).
+First of all, if you deployed an application on an *OS* different than *SmartOS*, you lost the ability to use many impressive tools which could definitely help you in that case (the most impressive ones are `mdb` and `dtrace`, you can find details in the references section of this post).
 
 So there is no *`mdb`*, no *`dtrace`*, no *SmartOS*. You can't also use your favorite debugger like [trace.gl](https://trace.gl/), [node-monkey](https://github.com/jwarkentin/node-monkey) or [node-inspector](https://github.com/node-inspector/node-inspector). You have got only `gdb` and your brain filled with low-level computer knowledge :wink:.
 
-Before we will dive deeper into internals of our application, let's begin the voodoo, that is a process of setting proper options in our *OS*. First we will remove the limit related with the *core dump* size:
+Before we dive deeper into the internals of your application, let's begin the voodoo that is the process of setting the proper options in your *OS*. First we will remove the limit related with the *core dump* size:
 
 {% highlight bash %}
 ~ $ sudo ulimit -c unlimited
 {% endhighlight %}
 
-Next, we set different path for these files (remember to put them on partition with a huge amount of the free disk space):
+Next, we set different path for these files (remember to put them on a partition with a huge amount of the free disk space):
 
 {% highlight bash %}
 ~ $ echo '/tmp/core_%e.%p' | sudo tee /proc/sys/kernel/core_pattern
 {% endhighlight %}
 
-Then, if we are using native Node.js extensions we have to recompile them with the debugging flag *`-g`* (configuration file taken from *`node_xslt`* module):
+Then, if you are using native Node.js extensions you have to recompile them with the debugging flag *`-g`* (configuration file taken from the *`node_xslt`* module):
 
 {% highlight javascript %}
 {
@@ -69,15 +69,15 @@ Then, if we are using native Node.js extensions we have to recompile them with t
 }
 {% endhighlight %}
 
-Then, look at the dependencies (in our case `libxslt`, `libxml2`) and reinstall them in the development version (sometimes marked with postfix `-devel`).
+Then, look at the dependencies (in our case `libxslt`, `libxml2`) and reinstall them in the development version (sometimes marked with a `-devel` postfix).
 
-After modifications and installing dependencies in the *debugging mode*, we have to run installation process inside directory of the modified module (but only there, not on the upper level, because it will remove our changes in the modified module):
+After modifications and installing dependencies in the *debugging mode*, we have to run installation process inside the directory of the modified module (but only there, not on the upper level, because it will remove our changes in the modified module):
 
 {% highlight bash %}
 node_xslt $ npm install --verbose
 {% endhighlight %}
 
-Somewhere inside long output we will find information about flags used in compilation process (and we should see flag *`-g`*, responsible for attaching debugging informations).
+Somewhere inside the long output we will find information about flags used in compilation process (and we should see a *`-g`* flag, responsible for attaching debugging informations).
 
 Next, we have to simulate again situation with *`Segmentation fault`* behavior. When application receive unwanted signal, it will dump file with the *post-mortem* internal structure, ready for using inside `gdb`:
 
@@ -100,7 +100,7 @@ Program received signal SIGSEGV, Segmentation fault.
 # It exits gdb.
 {% endhighlight %}
 
-If you want to attach into the running process, you have to invoke the command specified below:
+If you want to attach to the running process, you have to invoke the command specified below:
 
 {% highlight bash %}
 ~ $ gdb attach $(pidof node)
@@ -108,13 +108,13 @@ If you want to attach into the running process, you have to invoke the command s
 
 However, if your application is running in a cluster mode (or you are running more than one Node.js application on your machine), this will fail and instead of *`pidof`* you have to pass a single *PID* value (from one application, master or one of the slaves, depends on what is interesting for you).
 
-You can also run *`strace`* in order to determine which system calls your program invoke before *death*:
+You can also run *`strace`* in order to determine which system calls does your program invoke before *death*:
 
 {% highlight bash %}
 ~ $ strace -ttT
 {% endhighlight %}
 
-After gathering certain amount of knowledge, armed with the stack traces, system calls invocations and memory footprint you have to *dig deeper* into the actual application code and maybe trying to reproduce that behavior in more *debuggable* environment :wink:.
+After gathering a certain amount of knowledge, armed with the stack traces, system call invocations and the memory footprint you have to *dig deeper* into the actual application code and maybe try to reproduce that behavior in a more *debuggable* environment :wink:.
 
 # References
 
