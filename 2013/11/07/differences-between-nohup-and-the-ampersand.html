@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <meta name="author" content="Wojtek Gawroński (afronski)" />
+    <meta name="description" content="Personal blog of Wojtek Gawroński, a passionate software developer." />
+
+    <meta name="keywords" content="HTML,HTML5,JavaScript,CSS,CSS3,Canvas,WebGL,C#,.NET,Mono,Erlang,Vagrant,Node.js" />
+
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="alternate" type="application/rss+xml" title="afronski.pl" href="http://www.afronski.pl/feed.xml" />
+
+    <title>Differences between nohup and ampersand</title>
+
+    <link rel="stylesheet" href="/stylesheets/syntax.min.css" />
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+    <article class="container post">
+      <a href="/">Home</a>
+
+
+<h1 id="differences_between__and_the_ampersand">Differences between <code>nohup</code> and the ampersand</h1>
+
+<p>There are many cases when <em>small differences</em> between environments can bite you. This is one into which I have ran recently. What is the difference between these two commands?</p>
+<div class='highlight'><pre><code class='bash'><span class='lineno'>1</span> ~ <span class='nv'>$ </span>nohup myprocess.out &amp;
+<span class='lineno'>2</span> ~ <span class='nv'>$ </span>myprocess.out &amp;
+</code></pre></div>
+<p>The answer is the same as usual - <em>it depends</em>.</p>
+
+<p><code>nohup</code> catches the hangup signal while the ampersand does not.</p>
+
+<p>What is the hangup signal?</p>
+
+<p><em><code>SIGHUP</code> - hangup detected on controlling terminal or death of controlling process (value: 1).</em></p>
+
+<p>Normally, when running a command using <code>&amp;</code> and exiting the shell afterwards, the shell will terminate the sub-command with the hangup signal (like <code>kill -SIGHUP $PID</code>). This can be prevented using nohup, as it catches the signal and ignores it so that it never reaches the actual application.</p>
+
+<p>Fine, but like in this case there are always <em>‘buts’</em>. There is no difference between these launching methods when the shell is configured in a way where it does not send <code>SIGHUP</code> at all.</p>
+
+<p>In case you are using bash, you can use the command specified below to find out whether your shell sends <em><code>SIGHUP</code></em> to its child processes or not:</p>
+<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span><span class='nb'>shopt</span> | grep hupon
+</code></pre></div>
+<p>And moreover - there are cases where nohup does not work. For example, when the process you start reconnects the <code>NOHUP</code> signal (it is done inside, on the application code level).</p>
+
+<p>In the described case, lack of differences bit me when inside a custom service launching script there was a call to a second script which sets up and launches the proper application <em>without a <code>nohup</code> command</em>.</p>
+
+<p>On one Linux environment everything worked smoothly, on a second one the application quit as soon as the second script exited (detecting that case, of course took me much more time then you might think <img alt="stuck_out_tongue" src="/images/emoji/stuck_out_tongue.png" class="emoji" />).</p>
+
+<p>After adding <code>nohup</code> as a launching method to second script, application keeps running even if the scripts will exit and this behavior became consistent on both environments.</p>
+
+<h1 id="references">References</h1>
+
+<ol>
+<li><a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?signal+7"><code>man 7 signal</code></a></li>
+</ol>
+
+    </article>
+
+    <section class="container">
+      <a href="/" class="mobile-link">Home</a>
+      <div id="disqus_thread"></div>
+    </section>
+
+    <aside class="menu">
+
+      <a href="http://afronski.pl">
+        <img id="avatar" src="/images/avatar.png" alt="My avatar" />
+      </a>
+
+      Hello! I'm <a href="/about.html">Wojciech Gawroński</a>.<br/>
+      I work as a <a href="http://pl.linkedin.com/pub/wojtek-gawroński/58/879/5b0/">software developer</a>.<br/>
+      Besides working
+      <ul class="interests">
+        <li>I write <a href="https://github.com/afronski">code</a></li>
+        <li>I <a href="https://twitter.com/afronski">tweet</a></li>
+        <li>I give <a href="https://github.com/afronski/presentations">talks</a></li>
+        <li>I <a href="/feed.xml">blog</a></li>
+        <li>I <a href="https://www.goodreads.com/user/show/16145105-wojtek-gawro-ski">read books</a></li>
+        <li>I <a href="http://www.last.fm/user/afronski">listen music</a></li>
+      </ul>
+
+      <footer>
+        <section>© Copyright 2013, Wojciech Gawroński</section>
+        <section>
+          Except where otherwise noted, content on this site<br/>
+          is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/pl/legalcode">CC BY-NC-ND 3.0</a>.
+        </section>
+      </footer>
+    </aside>
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-44633104-1','afronski.pl');ga('send','pageview');</script>
+    <noscript>
+      Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <script type="text/javascript">var disqus_shortname="afronskipl";(function(){var dsq=document.createElement("script");dsq.type="text/javascript";dsq.async=true;dsq.src="//"+disqus_shortname+".disqus.com/embed.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(dsq);})();</script>
+  </body>
+</html>

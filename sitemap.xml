@@ -4,6 +4,15 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.afronski.pl/2013/11/07/differences-between-nohup-and-the-ampersand.html</loc>
+    
+    <lastmod>2013-11-07T18:45:00Z</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.afronski.pl/2013/11/02/low-level-nodejs-debugging-on-production.html</loc>
     
     <lastmod>2013-11-02T10:45:00Z</lastmod>
@@ -52,7 +61,7 @@
     
   <url>
     <loc>http://www.afronski.pl/index.html</loc>
-    <lastmod>2013-11-02T10:45:00Z</lastmod>
+    <lastmod>2013-11-07T18:45:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

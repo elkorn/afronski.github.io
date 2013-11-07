@@ -7,6 +7,49 @@
     <atom:link href="http://www.afronski.pl/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Differences between nohup and ampersand</title>
+        <description>
+&lt;h1 id=&quot;differences_between__and_the_ampersand&quot;&gt;Differences between &lt;code&gt;nohup&lt;/code&gt; and the ampersand&lt;/h1&gt;
+
+&lt;p&gt;There are many cases when &lt;em&gt;small differences&lt;/em&gt; between environments can bite you. This is one into which I have ran recently. What is the difference between these two commands?&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='lineno'&gt;1&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;nohup myprocess.out &amp;amp;
+&lt;span class='lineno'&gt;2&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;myprocess.out &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The answer is the same as usual - &lt;em&gt;it depends&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;nohup&lt;/code&gt; catches the hangup signal while the ampersand does not.&lt;/p&gt;
+
+&lt;p&gt;What is the hangup signal?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;code&gt;SIGHUP&lt;/code&gt; - hangup detected on controlling terminal or death of controlling process (value: 1).&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Normally, when running a command using &lt;code&gt;&amp;amp;&lt;/code&gt; and exiting the shell afterwards, the shell will terminate the sub-command with the hangup signal (like &lt;code&gt;kill -SIGHUP $PID&lt;/code&gt;). This can be prevented using nohup, as it catches the signal and ignores it so that it never reaches the actual application.&lt;/p&gt;
+
+&lt;p&gt;Fine, but like in this case there are always &lt;em&gt;‘buts’&lt;/em&gt;. There is no difference between these launching methods when the shell is configured in a way where it does not send &lt;code&gt;SIGHUP&lt;/code&gt; at all.&lt;/p&gt;
+
+&lt;p&gt;In case you are using bash, you can use the command specified below to find out whether your shell sends &lt;em&gt;&lt;code&gt;SIGHUP&lt;/code&gt;&lt;/em&gt; to its child processes or not:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;&lt;span class='nb'&gt;shopt&lt;/span&gt; | grep hupon
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And moreover - there are cases where nohup does not work. For example, when the process you start reconnects the &lt;code&gt;NOHUP&lt;/code&gt; signal (it is done inside, on the application code level).&lt;/p&gt;
+
+&lt;p&gt;In the described case, lack of differences bit me when inside a custom service launching script there was a call to a second script which sets up and launches the proper application &lt;em&gt;without a &lt;code&gt;nohup&lt;/code&gt; command&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;On one Linux environment everything worked smoothly, on a second one the application quit as soon as the second script exited (detecting that case, of course took me much more time then you might think :stuck_out_tongue:).&lt;/p&gt;
+
+&lt;p&gt;After adding &lt;code&gt;nohup&lt;/code&gt; as a launching method to second script, application keeps running even if the scripts will exit and this behavior became consistent on both environments.&lt;/p&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;http://unixhelp.ed.ac.uk/CGI/man-cgi?signal+7&quot;&gt;&lt;code&gt;man 7 signal&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Thu, 07 Nov 2013 18:45:00 +0000</pubDate>
+        <link>http://www.afronski.pl/2013/11/07/differences-between-nohup-and-the-ampersand.html</link>
+        <guid isPermaLink="true">http://www.afronski.pl/2013/11/07/differences-between-nohup-and-the-ampersand.html</guid>
+      </item>
+    
+      <item>
         <title>Low-level Node.js debugging on production</title>
         <description>
 &lt;h1 id=&quot;lowlevel_nodejs_debugging_on_production&quot;&gt;Low-level Node.js debugging on production&lt;/h1&gt;
