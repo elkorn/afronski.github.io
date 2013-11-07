@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Differences between nohup and ampersand
-date: 2013-11-07T18:30:00Z
+date: 2013-11-07T18:35:00Z
 ---
 
 # Differences between `nohup` and the ampersand
@@ -9,8 +9,8 @@ date: 2013-11-07T18:30:00Z
 There are many cases when small differences between environments can bite you. This is one into which I have ran recently. What is the difference between these two commands?
 
 {% highlight bash linenos %}
-nohup myprocess.out &
-myprocess.out &
+~ $ nohup myprocess.out &
+~ $ myprocess.out &
 {% endhighlight %}
 
 The answer is the same as usual - *it depends*.
@@ -28,7 +28,7 @@ Fine, but like in this case there are always 'buts'. There is no difference betw
 In case you are using bash, you can use the command specified below to find out whether your shell sends *`SIGHUP`* to its child processes or not:
 
 {% highlight bash %}
-shopt | grep hupon
+~ $ shopt | grep hupon
 {% endhighlight %}
 
 And moreover - there are cases where nohup does not work. For example, when the process you start reconnects the `NOHUP` signal (it is done inside, on the application code level).
