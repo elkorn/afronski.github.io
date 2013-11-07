@@ -22,7 +22,7 @@ What is the hangup signal?
 
 Normally, when running a command using `&` and exiting the shell afterwards, the shell will terminate the sub-command with the hangup signal (like `kill -SIGHUP $PID`). This can be prevented using nohup, as it catches the signal and ignores it so that it never reaches the actual application.
 
-Fine, but like in this case there are always a 'buts'. There is no difference between these launching method when the shell is configured that way that it doesn not send `SIGHUP` at all.
+Fine, but like in this case there are always a 'buts'. There is no difference between these launching methods when the shell is configured that way that it doesn not send `SIGHUP` at all.
 
 In case you are using bash, you can use the command specified below to find out whether your shell sends *`SIGHUP`* to its child processes or not:
 
