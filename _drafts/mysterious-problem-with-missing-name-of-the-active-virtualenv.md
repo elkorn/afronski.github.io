@@ -5,7 +5,7 @@ title: Mysterious problem with missing name of the active `virtualenv`
 
 # Mysterious problem with missing name of the active `virtualenv`
 
-Recently I have ran into an issue related with `virtualenv` and my shell. It did not display name of active `virtualenv` after invoking the standard command:
+Recently I have ran into an issue related to `virtualenv` and my shell. It did not display name of the active `virtualenv` after invoking the standard command:
 
 {% highlight bash %}
 source bin/activate
@@ -13,7 +13,7 @@ source bin/activate
 
 However, everything works perfectly without that (even a `deactivate` command). This little thing makes me nervous so I have started looking for a solution to that problem.
 
-After a while I found a reason why it does not work:
+After a while I found the reason why it does not work:
 
 {% highlight bash linenos %}
 function calculate_prompt() {
@@ -23,7 +23,7 @@ function calculate_prompt() {
 PROMPT_COMMAND=calculate_prompt
 {% endhighlight %}
 
-*Yeah*, I totally forgot about the fact that I am using `PROMPT_COMMAND`. Right now, when I know the reason, solution is a piece of cake - just add the code for displaying *`virtualenv`* name to the function which calculates the prompt:
+*Yeah*, I totally forgot about the fact that I am using `PROMPT_COMMAND`. Right now, when I know the reason, the solution is a piece of cake - just add the code for displaying *`virtualenv`* name to the function which calculates the prompt:
 
 {% highlight bash linenos %}
 function calculate_prompt() {
