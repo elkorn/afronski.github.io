@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Mysterious problem with missing name of the active `virtualenv`
+date: 2013-11-13T18:20:00Z
 ---
 
 # Mysterious problem with missing name of the active `virtualenv`
