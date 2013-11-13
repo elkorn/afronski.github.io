@@ -7,6 +7,54 @@
     <atom:link href="http://www.afronski.pl/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Mysterious problem with missing name of the active `virtualenv`</title>
+        <description>
+&lt;h1 id=&quot;mysterious_problem_with_missing_name_of_the_active_&quot;&gt;Mysterious problem with missing name of the active &lt;code&gt;virtualenv&lt;/code&gt;&lt;/h1&gt;
+
+&lt;p&gt;Recently I have ran into an issue related to &lt;code&gt;virtualenv&lt;/code&gt; and my shell. It did not display name of the active &lt;code&gt;virtualenv&lt;/code&gt; after invoking the standard command:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='nb'&gt;source &lt;/span&gt;bin/activate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;However, everything works perfectly without that (even a &lt;code&gt;deactivate&lt;/code&gt; command). This little thing makes me nervous so I have started looking for a solution to that problem.&lt;/p&gt;
+
+&lt;p&gt;After a while I found the reason why it does not work:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='lineno'&gt;1&lt;/span&gt; &lt;span class='k'&gt;function &lt;/span&gt;calculate_prompt&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+&lt;span class='lineno'&gt;2&lt;/span&gt;   &lt;span class='c'&gt;# Beautifying the prompt ;).&lt;/span&gt;
+&lt;span class='lineno'&gt;3&lt;/span&gt; &lt;span class='o'&gt;}&lt;/span&gt;
+&lt;span class='lineno'&gt;4&lt;/span&gt; 
+&lt;span class='lineno'&gt;5&lt;/span&gt; &lt;span class='nv'&gt;PROMPT_COMMAND&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;calculate_prompt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;Yeah&lt;/em&gt;, I totally forgot about the fact that I am using &lt;code&gt;PROMPT_COMMAND&lt;/code&gt;. Right now, when I know the reason, the solution is a piece of cake - just add the code for displaying &lt;em&gt;&lt;code&gt;virtualenv&lt;/code&gt;&lt;/em&gt; name to the function which calculates the prompt:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='lineno'&gt; 1&lt;/span&gt; &lt;span class='k'&gt;function &lt;/span&gt;calculate_prompt&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+&lt;span class='lineno'&gt; 2&lt;/span&gt;   &lt;span class='c'&gt;# Beautifying the prompt ;).&lt;/span&gt;
+&lt;span class='lineno'&gt; 3&lt;/span&gt;   &lt;span class='c'&gt;# ...&lt;/span&gt;
+&lt;span class='lineno'&gt; 4&lt;/span&gt; 
+&lt;span class='lineno'&gt; 5&lt;/span&gt;   &lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt; -z &lt;span class='s2'&gt;&amp;quot;$VIRTUAL_ENV_DISABLE_PROMPT&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;]&lt;/span&gt; ; &lt;span class='k'&gt;then&lt;/span&gt;
+&lt;span class='lineno'&gt; 6&lt;/span&gt; &lt;span class='k'&gt;    &lt;/span&gt;&lt;span class='nv'&gt;_OLD_VIRTUAL_PS1&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;$PS1&amp;quot;&lt;/span&gt;
+&lt;span class='lineno'&gt; 7&lt;/span&gt; 
+&lt;span class='lineno'&gt; 8&lt;/span&gt;     &lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;x&amp;quot;&lt;/span&gt; !&lt;span class='o'&gt;=&lt;/span&gt; x &lt;span class='o'&gt;]&lt;/span&gt; ; &lt;span class='k'&gt;then&lt;/span&gt;
+&lt;span class='lineno'&gt; 9&lt;/span&gt; &lt;span class='k'&gt;        &lt;/span&gt;&lt;span class='nv'&gt;PS1&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;$PS1&amp;quot;&lt;/span&gt;
+&lt;span class='lineno'&gt;10&lt;/span&gt;     &lt;span class='k'&gt;else&lt;/span&gt;
+&lt;span class='lineno'&gt;11&lt;/span&gt; &lt;span class='k'&gt;      if&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt; ! -z &lt;span class='s2'&gt;&amp;quot;$VIRTUAL_ENV&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;]&lt;/span&gt; ; &lt;span class='k'&gt;then&lt;/span&gt;
+&lt;span class='lineno'&gt;12&lt;/span&gt; &lt;span class='k'&gt;        if&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;`basename \&amp;quot;$VIRTUAL_ENV\&amp;quot;`&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;__&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;]&lt;/span&gt; ; &lt;span class='k'&gt;then&lt;/span&gt;
+&lt;span class='lineno'&gt;13&lt;/span&gt; &lt;span class='k'&gt;          &lt;/span&gt;&lt;span class='nv'&gt;PS1&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;`basename \`dirname \&amp;quot;$VIRTUAL_ENV\&amp;quot;\``: $PS1&amp;quot;&lt;/span&gt;
+&lt;span class='lineno'&gt;14&lt;/span&gt;         &lt;span class='k'&gt;else&lt;/span&gt;
+&lt;span class='lineno'&gt;15&lt;/span&gt; &lt;span class='k'&gt;          &lt;/span&gt;&lt;span class='nv'&gt;PS1&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;`basename $VIRTUAL_ENV`: $PS1&amp;quot;&lt;/span&gt;
+&lt;span class='lineno'&gt;16&lt;/span&gt;         &lt;span class='k'&gt;fi&lt;/span&gt;
+&lt;span class='lineno'&gt;17&lt;/span&gt; &lt;span class='k'&gt;      fi&lt;/span&gt;
+&lt;span class='lineno'&gt;18&lt;/span&gt; &lt;span class='k'&gt;    fi&lt;/span&gt;
+&lt;span class='lineno'&gt;19&lt;/span&gt; &lt;span class='k'&gt;  fi&lt;/span&gt;
+&lt;span class='lineno'&gt;20&lt;/span&gt; &lt;span class='o'&gt;}&lt;/span&gt;
+&lt;span class='lineno'&gt;21&lt;/span&gt; 
+&lt;span class='lineno'&gt;22&lt;/span&gt; &lt;span class='nv'&gt;PROMPT_COMMAND&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;calculate_prompt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And it is fixed! :wink:&lt;/p&gt;
+</description>
+        <pubDate>Wed, 13 Nov 2013 18:20:00 +0000</pubDate>
+        <link>http://www.afronski.pl/2013/11/13/mysterious-problem-with-missing-name-of-the-active-virtualenv.html</link>
+        <guid isPermaLink="true">http://www.afronski.pl/2013/11/13/mysterious-problem-with-missing-name-of-the-active-virtualenv.html</guid>
+      </item>
+    
+      <item>
         <title>Differences between nohup and ampersand</title>
         <description>
 &lt;h1 id=&quot;differences_between__and_the_ampersand&quot;&gt;Differences between &lt;code&gt;nohup&lt;/code&gt; and the ampersand&lt;/h1&gt;

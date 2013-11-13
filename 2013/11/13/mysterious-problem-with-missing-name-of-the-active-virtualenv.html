@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <meta name="author" content="Wojtek Gawroński (afronski)" />
+    <meta name="description" content="Personal blog of Wojtek Gawroński, a passionate software developer." />
+
+    <meta name="keywords" content="HTML,HTML5,JavaScript,CSS,CSS3,Canvas,WebGL,C#,.NET,Mono,Erlang,Vagrant,Node.js" />
+
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="alternate" type="application/rss+xml" title="afronski.pl" href="http://www.afronski.pl/feed.xml" />
+
+    <title>Mysterious problem with missing name of the active `virtualenv`</title>
+
+    <link rel="stylesheet" href="/stylesheets/syntax.min.css" />
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+    <article class="container post">
+      <a href="/">Home</a>
+
+
+<h1 id="mysterious_problem_with_missing_name_of_the_active_">Mysterious problem with missing name of the active <code>virtualenv</code></h1>
+
+<p>Recently I have ran into an issue related to <code>virtualenv</code> and my shell. It did not display name of the active <code>virtualenv</code> after invoking the standard command:</p>
+<div class='highlight'><pre><code class='bash'><span class='nb'>source </span>bin/activate
+</code></pre></div>
+<p>However, everything works perfectly without that (even a <code>deactivate</code> command). This little thing makes me nervous so I have started looking for a solution to that problem.</p>
+
+<p>After a while I found the reason why it does not work:</p>
+<div class='highlight'><pre><code class='bash'><span class='lineno'>1</span> <span class='k'>function </span>calculate_prompt<span class='o'>()</span> <span class='o'>{</span>
+<span class='lineno'>2</span>   <span class='c'># Beautifying the prompt ;).</span>
+<span class='lineno'>3</span> <span class='o'>}</span>
+<span class='lineno'>4</span> 
+<span class='lineno'>5</span> <span class='nv'>PROMPT_COMMAND</span><span class='o'>=</span>calculate_prompt
+</code></pre></div>
+<p><em>Yeah</em>, I totally forgot about the fact that I am using <code>PROMPT_COMMAND</code>. Right now, when I know the reason, the solution is a piece of cake - just add the code for displaying <em><code>virtualenv</code></em> name to the function which calculates the prompt:</p>
+<div class='highlight'><pre><code class='bash'><span class='lineno'> 1</span> <span class='k'>function </span>calculate_prompt<span class='o'>()</span> <span class='o'>{</span>
+<span class='lineno'> 2</span>   <span class='c'># Beautifying the prompt ;).</span>
+<span class='lineno'> 3</span>   <span class='c'># ...</span>
+<span class='lineno'> 4</span> 
+<span class='lineno'> 5</span>   <span class='k'>if</span> <span class='o'>[</span> -z <span class='s2'>&quot;$VIRTUAL_ENV_DISABLE_PROMPT&quot;</span> <span class='o'>]</span> ; <span class='k'>then</span>
+<span class='lineno'> 6</span> <span class='k'>    </span><span class='nv'>_OLD_VIRTUAL_PS1</span><span class='o'>=</span><span class='s2'>&quot;$PS1&quot;</span>
+<span class='lineno'> 7</span> 
+<span class='lineno'> 8</span>     <span class='k'>if</span> <span class='o'>[</span> <span class='s2'>&quot;x&quot;</span> !<span class='o'>=</span> x <span class='o'>]</span> ; <span class='k'>then</span>
+<span class='lineno'> 9</span> <span class='k'>        </span><span class='nv'>PS1</span><span class='o'>=</span><span class='s2'>&quot;$PS1&quot;</span>
+<span class='lineno'>10</span>     <span class='k'>else</span>
+<span class='lineno'>11</span> <span class='k'>      if</span> <span class='o'>[</span> ! -z <span class='s2'>&quot;$VIRTUAL_ENV&quot;</span> <span class='o'>]</span> ; <span class='k'>then</span>
+<span class='lineno'>12</span> <span class='k'>        if</span> <span class='o'>[</span> <span class='s2'>&quot;`basename \&quot;$VIRTUAL_ENV\&quot;`&quot;</span> <span class='o'>=</span> <span class='s2'>&quot;__&quot;</span> <span class='o'>]</span> ; <span class='k'>then</span>
+<span class='lineno'>13</span> <span class='k'>          </span><span class='nv'>PS1</span><span class='o'>=</span><span class='s2'>&quot;`basename \`dirname \&quot;$VIRTUAL_ENV\&quot;\``: $PS1&quot;</span>
+<span class='lineno'>14</span>         <span class='k'>else</span>
+<span class='lineno'>15</span> <span class='k'>          </span><span class='nv'>PS1</span><span class='o'>=</span><span class='s2'>&quot;`basename $VIRTUAL_ENV`: $PS1&quot;</span>
+<span class='lineno'>16</span>         <span class='k'>fi</span>
+<span class='lineno'>17</span> <span class='k'>      fi</span>
+<span class='lineno'>18</span> <span class='k'>    fi</span>
+<span class='lineno'>19</span> <span class='k'>  fi</span>
+<span class='lineno'>20</span> <span class='o'>}</span>
+<span class='lineno'>21</span> 
+<span class='lineno'>22</span> <span class='nv'>PROMPT_COMMAND</span><span class='o'>=</span>calculate_prompt
+</code></pre></div>
+<p>And it is fixed! <img alt="wink" src="/images/emoji/wink.png" class="emoji" /></p>
+
+    </article>
+
+    <section class="container">
+      <a href="/" class="mobile-link">Home</a>
+      <div id="disqus_thread"></div>
+    </section>
+
+    <aside class="menu">
+
+      <a href="http://afronski.pl">
+        <img id="avatar" src="/images/avatar.png" alt="My avatar" />
+      </a>
+
+      Hello! I'm <a href="/about.html">Wojciech Gawroński</a>.<br/>
+      I work as a <a href="http://pl.linkedin.com/pub/wojtek-gawroński/58/879/5b0/">software developer</a>.<br/>
+      Besides working
+      <ul class="interests">
+        <li>I write <a href="https://github.com/afronski">code</a></li>
+        <li>I <a href="https://twitter.com/afronski">tweet</a></li>
+        <li>I give <a href="https://github.com/afronski/presentations">talks</a></li>
+        <li>I <a href="/feed.xml">blog</a></li>
+        <li>I <a href="https://www.goodreads.com/user/show/16145105-wojtek-gawro-ski">read books</a></li>
+        <li>I <a href="http://www.last.fm/user/afronski">listen music</a></li>
+      </ul>
+
+      <footer>
+        <section>© Copyright 2013, Wojciech Gawroński</section>
+        <section>
+          Except where otherwise noted, content on this site<br/>
+          is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/pl/legalcode">CC BY-NC-ND 3.0</a>.
+        </section>
+      </footer>
+    </aside>
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-44633104-1','afronski.pl');ga('send','pageview');</script>
+    <noscript>
+      Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <script type="text/javascript">var disqus_shortname="afronskipl";(function(){var dsq=document.createElement("script");dsq.type="text/javascript";dsq.async=true;dsq.src="//"+disqus_shortname+".disqus.com/embed.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(dsq);})();</script>
+  </body>
+</html>
