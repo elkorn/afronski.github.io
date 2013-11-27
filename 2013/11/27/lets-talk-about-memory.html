@@ -13,49 +13,36 @@
 
     <link rel="alternate" type="application/rss+xml" title="afronski.pl" href="http://www.afronski.pl/feed.xml" />
 
-    <title>Random thoughts from top of my head - afronski.pl</title>
+    <title>Let's talk about memory</title>
 
     <link rel="stylesheet" href="/stylesheets/syntax.min.css" />
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-    <nav class="container">
-      <h1>Posts:</h1>
-      <ul class="posts-list">
-        
-          <li>
-            <time datetime>27 Nov 2013</time> <a href="/2013/11/27/lets-talk-about-memory.html">Let's talk about memory</a>
-          </li>
-        
-          <li>
-            <time datetime>13 Nov 2013</time> <a href="/2013/11/13/mysterious-problem-with-missing-name-of-the-active-virtualenv.html">Mysterious problem with missing name of the active virtualenv</a>
-          </li>
-        
-          <li>
-            <time datetime>07 Nov 2013</time> <a href="/2013/11/07/differences-between-nohup-and-the-ampersand.html">Differences between nohup and ampersand</a>
-          </li>
-        
-          <li>
-            <time datetime>02 Nov 2013</time> <a href="/2013/11/02/low-level-nodejs-debugging-on-production.html">Low-level Node.js debugging on production</a>
-          </li>
-        
-          <li>
-            <time datetime>18 Oct 2013</time> <a href="/2013/10/18/chef-solo-dna-mutation.html">Tips and tricks for chef-solo and vagrant</a>
-          </li>
-        
-          <li>
-            <time datetime>08 Oct 2013</time> <a href="/2013/10/08/creating-a-custom-vagrant-box.html">Creating a custom Vagrant box</a>
-          </li>
-        
-          <li>
-            <time datetime>06 Oct 2013</time> <a href="/2013/10/06/why-every-programmer-should-play-with-LEGO.html">Why every programmer should play with LEGO?</a>
-          </li>
-        
-      </ul>
+    <article class="container post">
+      <a href="/">Home</a>
 
-      <h1>Rest:</h1>
-      <a href="/about.html" class="about-link">About me</a>
-    </nav>
+
+<h1 id="lets_talk_">Let’s talk <code>about:memory</code></h1>
+
+<p>Recently on polish Facebook group <em>JSNews</em>, thanks to <a href="https://twitter.com/zbraniecki">Zbigniew Braniecki</a>, I found a very useful tool for monitoring memory in Firefox - <code>about:memory</code>.</p>
+
+<p><img src="/assets/AboutMemoryOverview.png" alt="Overview for about:memory" /></p>
+
+<p>You can open it by typing <code>about:memory</code> in your address bar. It has capabilities to measure memory usage at browser level, load and save dumps (as a gzipped <em><code>JSON</code></em> file), compare them and force garbage and cycle collection.</p>
+
+<p><img src="/assets/AboutMemoryDiff.png" alt="Difference for two memory dumps" /></p>
+
+<p>I strongly encourage you to dive into that tool, especially if you like me, thought that <em>Firefox</em> hasn’t got any tools for memory profiling. Well, not the first time I’m wrong <img alt="wink" src="/images/emoji/wink.png" class="emoji" />.</p>
+
+<p>P.S. On screenshots you can observe new UI for <em>Firefox</em>, called <em>Australis</em> - what do you think about it? Share your opinion in comments.</p>
+
+    </article>
+
+    <section class="container">
+      <a href="/" class="mobile-link">Home</a>
+      <div id="disqus_thread"></div>
+    </section>
 
     <aside class="menu">
 
@@ -84,5 +71,10 @@
       </footer>
     </aside>
     <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-44633104-1','afronski.pl');ga('send','pageview');</script>
+    <noscript>
+      Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <script type="text/javascript">var disqus_shortname="afronskipl";(function(){var dsq=document.createElement("script");dsq.type="text/javascript";dsq.async=true;dsq.src="//"+disqus_shortname+".disqus.com/embed.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(dsq);})();</script>
   </body>
 </html>

@@ -4,6 +4,15 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.afronski.pl/2013/11/27/lets-talk-about-memory.html</loc>
+    
+    <lastmod>2013-11-27T23:35:00Z</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.afronski.pl/2013/11/13/mysterious-problem-with-missing-name-of-the-active-virtualenv.html</loc>
     
     <lastmod>2013-11-13T18:20:00Z</lastmod>
@@ -70,7 +79,7 @@
     
   <url>
     <loc>http://www.afronski.pl/index.html</loc>
-    <lastmod>2013-11-23T22:50:00Z</lastmod>
+    <lastmod>2013-11-27T23:35:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

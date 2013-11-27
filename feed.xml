@@ -7,6 +7,28 @@
     <atom:link href="http://www.afronski.pl/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Let's talk about memory</title>
+        <description>
+&lt;h1 id=&quot;lets_talk_&quot;&gt;Let’s talk &lt;code&gt;about:memory&lt;/code&gt;&lt;/h1&gt;
+
+&lt;p&gt;Recently on polish Facebook group &lt;em&gt;JSNews&lt;/em&gt;, thanks to &lt;a href=&quot;https://twitter.com/zbraniecki&quot;&gt;Zbigniew Braniecki&lt;/a&gt;, I found a very useful tool for monitoring memory in Firefox - &lt;code&gt;about:memory&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/AboutMemoryOverview.png&quot; alt=&quot;Overview for about:memory&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can open it by typing &lt;code&gt;about:memory&lt;/code&gt; in your address bar. It has capabilities to measure memory usage at browser level, load and save dumps (as a gzipped &lt;em&gt;&lt;code&gt;JSON&lt;/code&gt;&lt;/em&gt; file), compare them and force garbage and cycle collection.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/AboutMemoryDiff.png&quot; alt=&quot;Difference for two memory dumps&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I strongly encourage you to dive into that tool, especially if you like me, thought that &lt;em&gt;Firefox&lt;/em&gt; hasn’t got any tools for memory profiling. Well, not the first time I’m wrong :wink:.&lt;/p&gt;
+
+&lt;p&gt;P.S. On screenshots you can observe new UI for &lt;em&gt;Firefox&lt;/em&gt;, called &lt;em&gt;Australis&lt;/em&gt; - what do you think about it? Share your opinion in comments.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 27 Nov 2013 23:35:00 +0000</pubDate>
+        <link>http://www.afronski.pl/2013/11/27/lets-talk-about-memory.html</link>
+        <guid isPermaLink="true">http://www.afronski.pl/2013/11/27/lets-talk-about-memory.html</guid>
+      </item>
+    
+      <item>
         <title>Mysterious problem with missing name of the active virtualenv</title>
         <description>
 &lt;h1 id=&quot;mysterious_problem_with_missing_name_of_the_active_&quot;&gt;Mysterious problem with missing name of the active &lt;code&gt;virtualenv&lt;/code&gt;&lt;/h1&gt;
