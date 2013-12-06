@@ -7,15 +7,15 @@ title: Node.js evolution
 
 ![Node.js logo](/assets/NodeJsLogo.png)
 
-*Node.js* in blessed, *enterprise* version `1.0` comes faster then you might have expected (look at the first link in references - Isaac said that `0.12` is the last version before the final release). What future will bring us?
+*Node.js* in blessed, *enterprise* version `1.0` comes faster then you might have expected (look at the first link in references - Isaac said that `0.12` is the last version before the final release). What will the future bring us?
 
-Bert Belder's talk on LXJS 2013 gives us a small overview about what will come. It has obviously a provocative first slide and title, but point still stands - what should we expect from *Node.js `2.0`* ?
+Bert Belder's talk on LXJS 2013 gives us a small overview about what is to come. It obviously has a provocative first slide and title, but the point still stands - what should we expect from *Node.js `2.0`* ?
 
 # Tasks
 
-One nifty concept was presented in talk and it is called *Asynchronous Tasks*.
+One nifty concept, called *Asynchronous Tasks*, was presented in the talk.
 
-It was presented as a asynchronous `try...catch` block without changing the language syntax and semantics. Let's look at the initial representation:
+It was presented as an asynchronous `try...catch` block without changing the language syntax and semantics. Let's look at the initial representation:
 
 {% highlight javascript linenos%}
 task.create(function concatTwoFilesAndThenSomeTask() {
@@ -50,15 +50,15 @@ task.create(function concatTwoFilesAndThenSomeTask() {
 });
 {% endhighlight %}
 
-Of course it is a simple concept, which ignores many thing e.g. `EventEmitter`. But it gives us also many things e.g. meaningful stack traces with asynchronous operations or handling errors of composite asynchronous operations in one place.
+Of course it is a simple concept, which ignores many thing e.g. `EventEmitter`. But it also gives us many things e.g. meaningful stack traces with asynchronous operations or handling errors of composite asynchronous operations in one place.
 
-I know that exist modules which can do that (like [async](https://github.com/caolan/async)), but having it built in the platform looks very interesting and brings other capabilities (e.g. under the hood optimization) which additional module does not have.
+I know that there exist modules which can do that (like [async](https://github.com/caolan/async)), but having it built into the platform seems very interesting and brings other capabilities (e.g. under-the-hood optimization) which the additional modules do not have.
 
-Whole concept evolved into something which is called by Bert a `domains2` module. You can find details in references.
+The whole concept has evolved into something called by Bert a `domains2` module. You can find details in references.
 
 # What else?
 
-We have to remember that world will not stay in place and will evolve. And *Node.js* in blessed, *enterprise* version have to evolve also. Owners are pushing platform in right direction and I totally agree that *Node.js* should have a thin core as it has right now, but definitely there are many things which can land in it.
+We have to remember that the world will not stay in place and will evolve. And *Node.js* in the blessed, *enterprise* version has to evolve too. The owners are the pushing platform in the right direction and I totally agree that *Node.js* should have a thin core as it has right now. However, there are definitely many things which can land in it.
 
 How about:
 
@@ -73,11 +73,11 @@ How about:
 - Supporting mesh topology (like in [this module](https://github.com/dominictarr/scuttlebutt)).
 - Solving problems with *`NPM`* and keeping it *awesome* (by providing [mirrors](http://npmjs.eu/) or [scaling it](https://scalenpm.org/) and [decentralizing](http://blog.nodejs.org/2013/11/26/npm-post-mortem/)).
 
-Reported enhancements are just the tip of the iceberg and even you can expand this list. I encourage you to subscribe into *Node.js* [mailing list](https://groups.google.com/forum/#!forum/nodejs) and then observe, learn, share ideas and experience, discuss.
+The reported enhancements are just the tip of the iceberg and even you can expand this list. I encourage you to subscribe to *Node.js* [mailing list](https://groups.google.com/forum/#!forum/nodejs) and then observe, learn, share ideas and experience, discuss.
 
 I encourage you to be a conscious and active member of the community, maybe involve in some initiatives mentioned above, like mirroring or scaling the *`NPM`* etc.
 
-Future will look promising only when platform will evolve with it and evolution depends only from us.
+The future looks promising only with the platform evolving with it - and evolution depends only on us.
 
 # References
 
