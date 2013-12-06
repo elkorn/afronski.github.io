@@ -5,9 +5,9 @@ title: With great power, comes great responsibility
 
 # With great power, comes great responsibility
 
-If you have to choose about what is better - *short and concise code* or *abstractions visible at the first glance* - what will you choose?
+If you had to choose what is better - *short and concise code* or *abstractions visible at the first glance* - what would you choose?
 
-You have got your answer? Fine, let's look at the examples.
+Got your answer? Fine, let's look at the examples.
 
 # Iterables
 
@@ -24,15 +24,15 @@ trait Iterator[T] {
 }
 {% endhighlight%}
 
-*Iterable* is an abstraction for all collections which can be step through one-by-one.
+*Iterable* is an abstraction for all collections which can be stepped through one-by-one.
 
-*Iterator* is a data structure (again, an abstraction) that allow to iterate over a sequence of elements. It has two methods - first for checking if there is a next element available, and second which returns the next element.
+*Iterator* is a data structure (again, an abstraction) that allows to iterate over a sequence of elements. It has two methods - first for checking if there is a next element available, and second which returns the next element.
 
 So far, so good - we can explicitly see an intent and usage for such abstractions. It is readable at the first sight.
 
 # Observables
 
-Things can complicate if we deal with asynchronous operations, which returns a collection as well. *Iterables* are defining collection of existing elements, not possible results.
+Things can get complicated if we are dealing with asynchronous operations, which return a collection as well. *Iterables* define only a collection of existing elements, not possible results.
 
 But we can introduce new abstractions. Let's look at the example (again, written in *Scala*):
 
@@ -52,17 +52,17 @@ trait Subscription {
 }
 {% endhighlight %}
 
-We can compare these two concepts and definitely see similarities, like *Observable* is similar to *Iterable*, the same for *Observer* - *Iterator* pair. Also we can easily spot here an intent and usage.
+We can compare these two concepts and definitely see similarities, such as that *Observable* is similar to *Iterable*. The same for *Observer* - *Iterator* pair. Also, we can easily spot an intent and usage here.
 
-But we add new *trait* called *Subscription* and there is a slight and subtle change in approach for *Observable*.
+But when we add a new *trait* called *Subscription*, there is a slight and subtle change in approach for *Observable*.
 
-It receives as an argument the *Observer* instance, instead of returning it as it is presented in *Iterable* / *Iterator* approach.
+It receives an *Observer* instance as an argument, instead of returning it as presented in the *Iterable* / *Iterator* approach.
 
-This subtle change has huge consequences in modeling and understanding these two abstractions - we trade possibility of pulling things out from *Iterable* collection to pushing model for the *Observable* which will notify and *Observer* that something appears, but not for free - we receive an ability to model asynchronous operation which returns a collection of elements (in other words: we transformed from *pulling model* to the *pushing mode*).
+This subtle change has huge consequences in modelling and understanding these two abstractions. We trade the possibility of pulling things out from an *Iterable* collection to pushing a model for the *Observable* which will notify an *Observer* that something appears, but not for free - we receive an ability to model an asynchronous operation which returns a collection of elements (in other words: we transformed from *pulling mode* to the *pushing mode*).
 
 # Power of expressiveness
 
-What if I will present this *Observable* / *Iterable* approach in one line as a composite type?
+What if this *Observable* / *Iterable* approach was to be presented in one line as a composite type?
 
 Ready? Superb, but first we will bring up two definitions.
 
@@ -77,7 +77,7 @@ val sumTry = for {
 }
 {% endhighlight %}
 
-*`Try`* is an analogue for the `try...catch` block. Instead of having an exception thrown and having to deal with it immediately in the same thread, it disconnects the error handling and recovery.
+*`Try`* is an analog for the `try...catch` block. Instead of having an exception thrown and having to deal with it immediately in the same thread, it disconnects the error handling and recovery.
 
 ## `Option[T]`
 
@@ -90,19 +90,19 @@ val optionResult2 = Option(1)     // optionResult2 is Some(1).
 
 ## Composition
 
-The same abstraction, of *Observable* can be built on top of *Iterable* and simple type which is a composite of two, previously explained elements:
+The same abstraction, of *Observable* can be built on top of *Iterable* and a simple type, which is a composite of two previously explained elements:
 
 {% highlight scala %}
 val collection: Iterable[Try[Option[T]]]
 {% endhighlight %}
 
-It's a sequence which introduces the same abstraction, but definitely it lost the intent and also usage is not visible at the first glance (how we are communicating that something changed?).
+It's a sequence which introduces the same abstraction, but definitely loses the intent. Usage is not visible at the first glance as well (how are we communicating that something changed?).
 
 # Summary
 
-The whole point of this article is to illustrate, that intent and usage can be provided by certain abstractions. Of course, these abstractions can be verbose and seems unnecessary at first sight, but if we will chase expressiveness, and introduce it out of hand we will loose details and initial intent.
+The whole point of this article is to illustrate that intent and usage can be provided by certain abstractions. Of course, these abstractions can be verbose and seem unnecessary at first sight, but if we chase expressiveness, and introduce it out of hand we will loose details and initial intent.
 
-Post is strongly inspired by *Coursera* course *"Principles of Reactive Programming"* provided by courtesy of *Erik Meijer*, *Martin Odersky* and *Roland Kuhn*.
+The post is strongly inspired by *Coursera* course *"Principles of Reactive Programming"* provided by courtesy of *Erik Meijer*, *Martin Odersky* and *Roland Kuhn*.
 
 # References
 
