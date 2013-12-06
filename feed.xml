@@ -7,6 +7,114 @@
     <atom:link href="http://www.afronski.pl/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Node.js evolution</title>
+        <description>
+&lt;h1 id=&quot;nodejs_evolution&quot;&gt;Node.js evolution&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/NodeJsLogo.png&quot; alt=&quot;Node.js logo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Node.js&lt;/em&gt; in blessed, &lt;em&gt;enterprise&lt;/em&gt; version &lt;code&gt;1.0&lt;/code&gt; comes faster then you might have expected (look at the first link in references - Isaac said that &lt;code&gt;0.12&lt;/code&gt; is the last version before the final release). What will the future bring us?&lt;/p&gt;
+
+&lt;p&gt;Bert Belder’s talk on LXJS 2013 gives us a small overview about what is to come. It obviously has a provocative first slide and title, but the point still stands - what should we expect from &lt;em&gt;Node.js &lt;code&gt;2.0&lt;/code&gt;&lt;/em&gt; ?&lt;/p&gt;
+
+&lt;h1 id=&quot;tasks&quot;&gt;Tasks&lt;/h1&gt;
+
+&lt;p&gt;One nifty concept, called &lt;em&gt;Asynchronous Tasks&lt;/em&gt;, was presented in the talk.&lt;/p&gt;
+
+&lt;p&gt;It was presented as an asynchronous &lt;code&gt;try...catch&lt;/code&gt; block without changing the language syntax and semantics. Let’s look at the initial representation:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='lineno'&gt; 1&lt;/span&gt; &lt;span class='nx'&gt;task&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;create&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;concatTwoFilesAndThenSomeTask&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+&lt;span class='lineno'&gt; 2&lt;/span&gt; 
+&lt;span class='lineno'&gt; 3&lt;/span&gt;   &lt;span class='nx'&gt;fs&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;readFile&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;some/template&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;utf8&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;error&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;file1&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+&lt;span class='lineno'&gt; 4&lt;/span&gt; 
+&lt;span class='lineno'&gt; 5&lt;/span&gt;     &lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;error&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+&lt;span class='lineno'&gt; 6&lt;/span&gt;       &lt;span class='k'&gt;throw&lt;/span&gt; &lt;span class='nx'&gt;error&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='lineno'&gt; 7&lt;/span&gt;     &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='lineno'&gt; 8&lt;/span&gt; 
+&lt;span class='lineno'&gt; 9&lt;/span&gt;     &lt;span class='nx'&gt;fs&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;readFile&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;something/else&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;utf8&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;error&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;file2&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+&lt;span class='lineno'&gt;10&lt;/span&gt; 
+&lt;span class='lineno'&gt;11&lt;/span&gt;       &lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;error&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+&lt;span class='lineno'&gt;12&lt;/span&gt;         &lt;span class='k'&gt;throw&lt;/span&gt; &lt;span class='nx'&gt;error&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='lineno'&gt;13&lt;/span&gt;       &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='lineno'&gt;14&lt;/span&gt; 
+&lt;span class='lineno'&gt;15&lt;/span&gt;       &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;data&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;file1&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;--&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='nx'&gt;file2&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='lineno'&gt;16&lt;/span&gt; 
+&lt;span class='lineno'&gt;17&lt;/span&gt;       &lt;span class='nx'&gt;data&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;data&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;replace&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='sr'&gt;/foo/g&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;bar&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='lineno'&gt;18&lt;/span&gt;       &lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='nx'&gt;data&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='lineno'&gt;19&lt;/span&gt;     &lt;span class='p'&gt;});&lt;/span&gt;
+&lt;span class='lineno'&gt;20&lt;/span&gt; 
+&lt;span class='lineno'&gt;21&lt;/span&gt;   &lt;span class='p'&gt;});&lt;/span&gt;
+&lt;span class='lineno'&gt;22&lt;/span&gt; 
+&lt;span class='lineno'&gt;23&lt;/span&gt; &lt;span class='p'&gt;}).&lt;/span&gt;&lt;span class='nx'&gt;setCallback&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;error&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;result&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+&lt;span class='lineno'&gt;24&lt;/span&gt; 
+&lt;span class='lineno'&gt;25&lt;/span&gt;   &lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;error&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+&lt;span class='lineno'&gt;26&lt;/span&gt;     &lt;span class='k'&gt;throw&lt;/span&gt; &lt;span class='nx'&gt;error&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='lineno'&gt;27&lt;/span&gt;   &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='lineno'&gt;28&lt;/span&gt; 
+&lt;span class='lineno'&gt;29&lt;/span&gt;   &lt;span class='c1'&gt;// Do something with the result.&lt;/span&gt;
+&lt;span class='lineno'&gt;30&lt;/span&gt; &lt;span class='p'&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Of course it is a simple concept, which ignores many thing e.g. &lt;code&gt;EventEmitter&lt;/code&gt;. But it also gives us many things e.g. meaningful stack traces with asynchronous operations or handling errors of composite asynchronous operations in one place.&lt;/p&gt;
+
+&lt;p&gt;I know that there exist modules which can do that (like &lt;a href=&quot;https://github.com/caolan/async&quot;&gt;async&lt;/a&gt;), but having it built into the platform seems very interesting and brings other capabilities (e.g. under-the-hood optimization) which the additional modules do not have.&lt;/p&gt;
+
+&lt;p&gt;The whole concept has evolved into something called by Bert a &lt;code&gt;domains2&lt;/code&gt; module. You can find details in references.&lt;/p&gt;
+
+&lt;h1 id=&quot;what_else&quot;&gt;What else?&lt;/h1&gt;
+
+&lt;p&gt;We have to remember that the world will not stay in place and will evolve. And &lt;em&gt;Node.js&lt;/em&gt; in the blessed, &lt;em&gt;enterprise&lt;/em&gt; version has to evolve too. The owners are the pushing platform in the right direction and I totally agree that &lt;em&gt;Node.js&lt;/em&gt; should have a thin core as it has right now. However, there are definitely many things which can land in it.&lt;/p&gt;
+
+&lt;p&gt;How about:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Supporting new protocols:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://tools.ietf.org/html/draft-ietf-httpbis-http2-04&quot;&gt;HTTP 2.0&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;http://tools.ietf.org/html/draft-ietf-httpbis-http2-00&quot;&gt;SPDY&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;http://tools.ietf.org/html/rfc5389&quot;&gt;STUN&lt;/a&gt; and &lt;a href=&quot;http://tools.ietf.org/html/rfc5766&quot;&gt;TURN&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;Supporting old ones, as well:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.ietf.org/rfc/rfc1157.txt&quot;&gt;SNMP&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;Adding more load balancing algorithms to the &lt;em&gt;&lt;code&gt;cluster&lt;/code&gt;&lt;/em&gt; module (&lt;a href=&quot;http://strongloop.com/strongblog/whats-new-in-node-js-v0-12-cluster-round-robin-load-balancing/&quot;&gt;Round-Robin was recently added in &lt;code&gt;0.12&lt;/code&gt;&lt;/a&gt;).&lt;/li&gt;
+
+&lt;li&gt;Adding supervision mechanisms (like the ones we have in &lt;a href=&quot;http://www.erlang.org/doc/design_principles/sup_princ.html&quot;&gt;Erlang and OTP&lt;/a&gt;)&lt;/li&gt;
+
+&lt;li&gt;Supporting mesh topology (like in &lt;a href=&quot;https://github.com/dominictarr/scuttlebutt&quot;&gt;this module&lt;/a&gt;).&lt;/li&gt;
+
+&lt;li&gt;Solving problems with &lt;em&gt;&lt;code&gt;NPM&lt;/code&gt;&lt;/em&gt; and keeping it &lt;em&gt;awesome&lt;/em&gt; (by providing &lt;a href=&quot;http://npmjs.eu/&quot;&gt;mirrors&lt;/a&gt; or &lt;a href=&quot;https://scalenpm.org/&quot;&gt;scaling it&lt;/a&gt; and &lt;a href=&quot;http://blog.nodejs.org/2013/11/26/npm-post-mortem/&quot;&gt;decentralizing&lt;/a&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The reported enhancements are just the tip of the iceberg and even you can expand this list. I encourage you to subscribe to &lt;em&gt;Node.js&lt;/em&gt; &lt;a href=&quot;https://groups.google.com/forum/#!forum/nodejs&quot;&gt;mailing list&lt;/a&gt; and then observe, learn, share ideas and experience, discuss.&lt;/p&gt;
+
+&lt;p&gt;I encourage you to be a conscious and active member of the community, maybe involve in some initiatives mentioned above, like mirroring or scaling the &lt;em&gt;&lt;code&gt;NPM&lt;/code&gt;&lt;/em&gt; etc.&lt;/p&gt;
+
+&lt;p&gt;The future looks promising only with the platform evolving with it - and evolution depends only on us.&lt;/p&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=82hJbjqbIt4&quot;&gt;Isaac Shlueter - The Road to Node.js v1.0&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=QnO6Uut4Ao8&quot;&gt;Bert Belder - Node.js 2.0 (LXJS 2013)&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;https://gist.github.com/piscisaureus/7454729&quot;&gt;&lt;code&gt;domains2&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;http://blog.nodejs.org/2011/07/11/evolving-the-node-js-brand/&quot;&gt;Node.js Logo&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Fri, 06 Dec 2013 18:15:00 +0000</pubDate>
+        <link>http://www.afronski.pl/2013/12/06/nodejs-evolution.html</link>
+        <guid isPermaLink="true">http://www.afronski.pl/2013/12/06/nodejs-evolution.html</guid>
+      </item>
+    
+      <item>
         <title>Let's talk about memory</title>
         <description>
 &lt;h1 id=&quot;lets_talk_&quot;&gt;Let’s talk &lt;code&gt;about:memory&lt;/code&gt;&lt;/h1&gt;
