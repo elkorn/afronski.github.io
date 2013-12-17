@@ -1,6 +1,7 @@
 ---
 layout: post
 title: With great power, comes great responsibility
+date: 2013-12-17T21:45:00Z
 ---
 
 # With great power, comes great responsibility
