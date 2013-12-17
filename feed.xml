@@ -7,6 +7,106 @@
     <atom:link href="http://www.afronski.pl/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>With great power, comes great responsibility</title>
+        <description>
+&lt;h1 id=&quot;with_great_power_comes_great_responsibility&quot;&gt;With great power, comes great responsibility&lt;/h1&gt;
+
+&lt;p&gt;If you had to choose what is better - &lt;em&gt;short and concise code&lt;/em&gt; or &lt;em&gt;abstractions visible at the first glance&lt;/em&gt; - what would you choose?&lt;/p&gt;
+
+&lt;p&gt;Got your answer? Fine, let’s look at the examples.&lt;/p&gt;
+
+&lt;h1 id=&quot;iterables&quot;&gt;Iterables&lt;/h1&gt;
+
+&lt;p&gt;Let’s look at the standard abstraction of &lt;em&gt;iterable collections&lt;/em&gt;, available in Java and Scala (example written in &lt;em&gt;Scala&lt;/em&gt;):&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='scala'&gt;&lt;span class='lineno'&gt;1&lt;/span&gt; &lt;span class='k'&gt;trait&lt;/span&gt; &lt;span class='nc'&gt;Iterable&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='kt'&gt;T&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+&lt;span class='lineno'&gt;2&lt;/span&gt;   &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='n'&gt;iterator&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt;&lt;span class='k'&gt;:&lt;/span&gt; &lt;span class='kt'&gt;Iterator&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='kt'&gt;T&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;
+&lt;span class='lineno'&gt;3&lt;/span&gt; &lt;span class='o'&gt;}&lt;/span&gt;
+&lt;span class='lineno'&gt;4&lt;/span&gt; 
+&lt;span class='lineno'&gt;5&lt;/span&gt; &lt;span class='k'&gt;trait&lt;/span&gt; &lt;span class='nc'&gt;Iterator&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='kt'&gt;T&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+&lt;span class='lineno'&gt;6&lt;/span&gt;   &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='n'&gt;hasNext&lt;/span&gt;&lt;span class='k'&gt;:&lt;/span&gt; &lt;span class='kt'&gt;Boolean&lt;/span&gt;
+&lt;span class='lineno'&gt;7&lt;/span&gt;   &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='n'&gt;next&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt;&lt;span class='k'&gt;:&lt;/span&gt; &lt;span class='kt'&gt;T&lt;/span&gt;
+&lt;span class='lineno'&gt;8&lt;/span&gt; &lt;span class='o'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;Iterable&lt;/em&gt; is an abstraction for all collections which can be stepped through one-by-one.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Iterator&lt;/em&gt; is a data structure (again, an abstraction) that allows to iterate over a sequence of elements. It has two methods - first for checking if there is a next element available, and second which returns the next element.&lt;/p&gt;
+
+&lt;p&gt;So far, so good - we can explicitly see an intent and usage for such abstractions. It is readable at the first sight.&lt;/p&gt;
+
+&lt;h1 id=&quot;observables&quot;&gt;Observables&lt;/h1&gt;
+
+&lt;p&gt;Things can get complicated if we are dealing with asynchronous operations, which return a collection as well. &lt;em&gt;Iterables&lt;/em&gt; define only a collection of existing elements, not possible results.&lt;/p&gt;
+
+&lt;p&gt;But we can introduce new abstractions. Let’s look at the example (again, written in &lt;em&gt;Scala&lt;/em&gt;):&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='scala'&gt;&lt;span class='lineno'&gt; 1&lt;/span&gt; &lt;span class='k'&gt;trait&lt;/span&gt; &lt;span class='nc'&gt;Observable&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='kt'&gt;T&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+&lt;span class='lineno'&gt; 2&lt;/span&gt;   &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='n'&gt;subscribe&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;observer&lt;/span&gt;&lt;span class='k'&gt;:&lt;/span&gt; &lt;span class='kt'&gt;Observer&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='kt'&gt;T&lt;/span&gt;&lt;span class='o'&gt;])&lt;/span&gt;&lt;span class='k'&gt;:&lt;/span&gt; &lt;span class='kt'&gt;Subscription&lt;/span&gt;
+&lt;span class='lineno'&gt; 3&lt;/span&gt; &lt;span class='o'&gt;}&lt;/span&gt;
+&lt;span class='lineno'&gt; 4&lt;/span&gt; 
+&lt;span class='lineno'&gt; 5&lt;/span&gt; &lt;span class='k'&gt;trait&lt;/span&gt; &lt;span class='nc'&gt;Observer&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='kt'&gt;T&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+&lt;span class='lineno'&gt; 6&lt;/span&gt;   &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='n'&gt;onNext&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;value&lt;/span&gt;&lt;span class='k'&gt;:&lt;/span&gt; &lt;span class='kt'&gt;T&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt;&lt;span class='k'&gt;:&lt;/span&gt; &lt;span class='kt'&gt;Unit&lt;/span&gt;
+&lt;span class='lineno'&gt; 7&lt;/span&gt;   &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='n'&gt;onError&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='n'&gt;error&lt;/span&gt;&lt;span class='k'&gt;:&lt;/span&gt; &lt;span class='kt'&gt;Throwable&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt;&lt;span class='k'&gt;:&lt;/span&gt; &lt;span class='kt'&gt;Unit&lt;/span&gt;
+&lt;span class='lineno'&gt; 8&lt;/span&gt;   &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='n'&gt;onCompleted&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt;&lt;span class='k'&gt;:&lt;/span&gt; &lt;span class='kt'&gt;Unit&lt;/span&gt;
+&lt;span class='lineno'&gt; 9&lt;/span&gt; &lt;span class='o'&gt;}&lt;/span&gt;
+&lt;span class='lineno'&gt;10&lt;/span&gt; 
+&lt;span class='lineno'&gt;11&lt;/span&gt; &lt;span class='k'&gt;trait&lt;/span&gt; &lt;span class='nc'&gt;Subscription&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+&lt;span class='lineno'&gt;12&lt;/span&gt;   &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='n'&gt;unsubscribe&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt;&lt;span class='k'&gt;:&lt;/span&gt; &lt;span class='kt'&gt;Unit&lt;/span&gt;
+&lt;span class='lineno'&gt;13&lt;/span&gt; &lt;span class='o'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We can compare these two concepts and definitely see similarities, such as that &lt;em&gt;Observable&lt;/em&gt; is similar to &lt;em&gt;Iterable&lt;/em&gt;. The same for &lt;em&gt;Observer&lt;/em&gt; - &lt;em&gt;Iterator&lt;/em&gt; pair. Also, we can easily spot an intent and usage here.&lt;/p&gt;
+
+&lt;p&gt;But when we add a new &lt;em&gt;trait&lt;/em&gt; called &lt;em&gt;Subscription&lt;/em&gt;, there is a slight and subtle change in approach for &lt;em&gt;Observable&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;It receives an &lt;em&gt;Observer&lt;/em&gt; instance as an argument, instead of returning it as presented in the &lt;em&gt;Iterable&lt;/em&gt; / &lt;em&gt;Iterator&lt;/em&gt; approach.&lt;/p&gt;
+
+&lt;p&gt;This subtle change has huge consequences in modelling and understanding these two abstractions. We trade the possibility of pulling things out from an &lt;em&gt;Iterable&lt;/em&gt; collection to pushing a model for the &lt;em&gt;Observable&lt;/em&gt; which will notify an &lt;em&gt;Observer&lt;/em&gt; that something appears, but not for free - we receive an ability to model an asynchronous operation which returns a collection of elements (in other words: we transformed from &lt;em&gt;pulling mode&lt;/em&gt; to the &lt;em&gt;pushing mode&lt;/em&gt;).&lt;/p&gt;
+
+&lt;h1 id=&quot;power_of_expressiveness&quot;&gt;Power of expressiveness&lt;/h1&gt;
+
+&lt;p&gt;What if this &lt;em&gt;Observable&lt;/em&gt; / &lt;em&gt;Iterable&lt;/em&gt; approach was to be presented in one line as a composite type?&lt;/p&gt;
+
+&lt;p&gt;Ready? Superb, but first we will bring up two definitions.&lt;/p&gt;
+
+&lt;h2 id=&quot;&quot;&gt;&lt;code&gt;Try[T]&lt;/code&gt;&lt;/h2&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='scala'&gt;&lt;span class='lineno'&gt;1&lt;/span&gt; &lt;span class='k'&gt;val&lt;/span&gt; &lt;span class='n'&gt;sumTry&lt;/span&gt; &lt;span class='k'&gt;=&lt;/span&gt; &lt;span class='k'&gt;for&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+&lt;span class='lineno'&gt;2&lt;/span&gt;   &lt;span class='n'&gt;int1&lt;/span&gt; &lt;span class='k'&gt;&amp;lt;-&lt;/span&gt; &lt;span class='nc'&gt;Try&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='nc'&gt;Integer&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;parseInt&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;1&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;))&lt;/span&gt;   &lt;span class='c1'&gt;// int1 is Success(1).&lt;/span&gt;
+&lt;span class='lineno'&gt;3&lt;/span&gt;   &lt;span class='n'&gt;int2&lt;/span&gt; &lt;span class='k'&gt;&amp;lt;-&lt;/span&gt; &lt;span class='nc'&gt;Try&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='nc'&gt;Integer&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;parseInt&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;a&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;))&lt;/span&gt;   &lt;span class='c1'&gt;// int2 is Failure(...).&lt;/span&gt;
+&lt;span class='lineno'&gt;4&lt;/span&gt; &lt;span class='o'&gt;}&lt;/span&gt; &lt;span class='k'&gt;yield&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+&lt;span class='lineno'&gt;5&lt;/span&gt;   &lt;span class='n'&gt;int1&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='n'&gt;int2&lt;/span&gt;
+&lt;span class='lineno'&gt;6&lt;/span&gt; &lt;span class='o'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;code&gt;Try&lt;/code&gt;&lt;/em&gt; is an analog for the &lt;code&gt;try...catch&lt;/code&gt; block. Instead of having an exception thrown and having to deal with it immediately in the same thread, it disconnects the error handling and recovery.&lt;/p&gt;
+
+&lt;h2 id=&quot;_2&quot;&gt;&lt;code&gt;Option[T]&lt;/code&gt;&lt;/h2&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='scala'&gt;&lt;span class='lineno'&gt;1&lt;/span&gt; &lt;span class='k'&gt;val&lt;/span&gt; &lt;span class='n'&gt;optionResult&lt;/span&gt; &lt;span class='k'&gt;=&lt;/span&gt; &lt;span class='nc'&gt;Option&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='kc'&gt;null&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt;   &lt;span class='c1'&gt;// optionResult is None.&lt;/span&gt;
+&lt;span class='lineno'&gt;2&lt;/span&gt; &lt;span class='k'&gt;val&lt;/span&gt; &lt;span class='n'&gt;optionResult2&lt;/span&gt; &lt;span class='k'&gt;=&lt;/span&gt; &lt;span class='nc'&gt;Option&lt;/span&gt;&lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;1&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt;     &lt;span class='c1'&gt;// optionResult2 is Some(1).&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;code&gt;Option&lt;/code&gt;&lt;/em&gt; represents optional values, returning an instance of &lt;em&gt;&lt;code&gt;Some(A)&lt;/code&gt;&lt;/em&gt; if &lt;code&gt;A&lt;/code&gt; exists, or &lt;em&gt;&lt;code&gt;None&lt;/code&gt;&lt;/em&gt; if it does not.&lt;/p&gt;
+
+&lt;h2 id=&quot;composition&quot;&gt;Composition&lt;/h2&gt;
+
+&lt;p&gt;The same abstraction, of &lt;em&gt;Observable&lt;/em&gt; can be built on top of &lt;em&gt;Iterable&lt;/em&gt; and a simple type, which is a composite of two previously explained elements:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='scala'&gt;&lt;span class='k'&gt;val&lt;/span&gt; &lt;span class='n'&gt;collection&lt;/span&gt;&lt;span class='k'&gt;:&lt;/span&gt; &lt;span class='kt'&gt;Iterable&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='kt'&gt;Try&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='kt'&gt;Option&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='kt'&gt;T&lt;/span&gt;&lt;span class='o'&gt;]]]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It’s a sequence which introduces the same abstraction, but definitely loses the intent. Usage is not visible at the first glance as well (how are we communicating that something changed?).&lt;/p&gt;
+
+&lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
+
+&lt;p&gt;The whole point of this article is to illustrate that intent and usage can be provided by certain abstractions. Of course, these abstractions can be verbose and seem unnecessary at first sight, but if we chase expressiveness, and introduce it out of hand we will loose details and initial intent.&lt;/p&gt;
+
+&lt;p&gt;The post is strongly inspired by &lt;em&gt;Coursera&lt;/em&gt; course &lt;em&gt;“Principles of Reactive Programming”&lt;/em&gt; provided by courtesy of &lt;em&gt;Erik Meijer&lt;/em&gt;, &lt;em&gt;Martin Odersky&lt;/em&gt; and &lt;em&gt;Roland Kuhn&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.coursera.org/course/reactive&quot;&gt;Coursera - Principles of Reactive Programming&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Tue, 17 Dec 2013 21:45:00 +0000</pubDate>
+        <link>http://www.afronski.pl/2013/12/17/with-great-power-comes-great-responsibility.html</link>
+        <guid isPermaLink="true">http://www.afronski.pl/2013/12/17/with-great-power-comes-great-responsibility.html</guid>
+      </item>
+    
+      <item>
         <title>Node.js evolution</title>
         <description>
 &lt;h1 id=&quot;nodejs_evolution&quot;&gt;Node.js evolution&lt;/h1&gt;

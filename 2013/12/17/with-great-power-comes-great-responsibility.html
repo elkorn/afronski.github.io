@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <meta name="author" content="Wojtek Gawroński (afronski)" />
+    <meta name="description" content="Personal blog of Wojtek Gawroński, a passionate software developer." />
+
+    <meta name="keywords" content="HTML,HTML5,JavaScript,CSS,CSS3,Canvas,WebGL,C#,.NET,Mono,Erlang,Vagrant,Node.js" />
+
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="alternate" type="application/rss+xml" title="afronski.pl" href="http://www.afronski.pl/feed.xml" />
+
+    <title>With great power, comes great responsibility</title>
+
+    <link rel="stylesheet" href="/stylesheets/syntax.min.css" />
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+    <article class="container post">
+      <a href="/">Home</a>
+
+
+<h1 id="with_great_power_comes_great_responsibility">With great power, comes great responsibility</h1>
+
+<p>If you had to choose what is better - <em>short and concise code</em> or <em>abstractions visible at the first glance</em> - what would you choose?</p>
+
+<p>Got your answer? Fine, let’s look at the examples.</p>
+
+<h1 id="iterables">Iterables</h1>
+
+<p>Let’s look at the standard abstraction of <em>iterable collections</em>, available in Java and Scala (example written in <em>Scala</em>):</p>
+<div class='highlight'><pre><code class='scala'><span class='lineno'>1</span> <span class='k'>trait</span> <span class='nc'>Iterable</span><span class='o'>[</span><span class='kt'>T</span><span class='o'>]</span> <span class='o'>{</span>
+<span class='lineno'>2</span>   <span class='k'>def</span> <span class='n'>iterator</span><span class='o'>()</span><span class='k'>:</span> <span class='kt'>Iterator</span><span class='o'>[</span><span class='kt'>T</span><span class='o'>]</span>
+<span class='lineno'>3</span> <span class='o'>}</span>
+<span class='lineno'>4</span> 
+<span class='lineno'>5</span> <span class='k'>trait</span> <span class='nc'>Iterator</span><span class='o'>[</span><span class='kt'>T</span><span class='o'>]</span> <span class='o'>{</span>
+<span class='lineno'>6</span>   <span class='k'>def</span> <span class='n'>hasNext</span><span class='k'>:</span> <span class='kt'>Boolean</span>
+<span class='lineno'>7</span>   <span class='k'>def</span> <span class='n'>next</span><span class='o'>()</span><span class='k'>:</span> <span class='kt'>T</span>
+<span class='lineno'>8</span> <span class='o'>}</span>
+</code></pre></div>
+<p><em>Iterable</em> is an abstraction for all collections which can be stepped through one-by-one.</p>
+
+<p><em>Iterator</em> is a data structure (again, an abstraction) that allows to iterate over a sequence of elements. It has two methods - first for checking if there is a next element available, and second which returns the next element.</p>
+
+<p>So far, so good - we can explicitly see an intent and usage for such abstractions. It is readable at the first sight.</p>
+
+<h1 id="observables">Observables</h1>
+
+<p>Things can get complicated if we are dealing with asynchronous operations, which return a collection as well. <em>Iterables</em> define only a collection of existing elements, not possible results.</p>
+
+<p>But we can introduce new abstractions. Let’s look at the example (again, written in <em>Scala</em>):</p>
+<div class='highlight'><pre><code class='scala'><span class='lineno'> 1</span> <span class='k'>trait</span> <span class='nc'>Observable</span><span class='o'>[</span><span class='kt'>T</span><span class='o'>]</span> <span class='o'>{</span>
+<span class='lineno'> 2</span>   <span class='k'>def</span> <span class='n'>subscribe</span><span class='o'>(</span><span class='n'>observer</span><span class='k'>:</span> <span class='kt'>Observer</span><span class='o'>[</span><span class='kt'>T</span><span class='o'>])</span><span class='k'>:</span> <span class='kt'>Subscription</span>
+<span class='lineno'> 3</span> <span class='o'>}</span>
+<span class='lineno'> 4</span> 
+<span class='lineno'> 5</span> <span class='k'>trait</span> <span class='nc'>Observer</span><span class='o'>[</span><span class='kt'>T</span><span class='o'>]</span> <span class='o'>{</span>
+<span class='lineno'> 6</span>   <span class='k'>def</span> <span class='n'>onNext</span><span class='o'>(</span><span class='n'>value</span><span class='k'>:</span> <span class='kt'>T</span><span class='o'>)</span><span class='k'>:</span> <span class='kt'>Unit</span>
+<span class='lineno'> 7</span>   <span class='k'>def</span> <span class='n'>onError</span><span class='o'>(</span><span class='n'>error</span><span class='k'>:</span> <span class='kt'>Throwable</span><span class='o'>)</span><span class='k'>:</span> <span class='kt'>Unit</span>
+<span class='lineno'> 8</span>   <span class='k'>def</span> <span class='n'>onCompleted</span><span class='o'>()</span><span class='k'>:</span> <span class='kt'>Unit</span>
+<span class='lineno'> 9</span> <span class='o'>}</span>
+<span class='lineno'>10</span> 
+<span class='lineno'>11</span> <span class='k'>trait</span> <span class='nc'>Subscription</span> <span class='o'>{</span>
+<span class='lineno'>12</span>   <span class='k'>def</span> <span class='n'>unsubscribe</span><span class='o'>()</span><span class='k'>:</span> <span class='kt'>Unit</span>
+<span class='lineno'>13</span> <span class='o'>}</span>
+</code></pre></div>
+<p>We can compare these two concepts and definitely see similarities, such as that <em>Observable</em> is similar to <em>Iterable</em>. The same for <em>Observer</em> - <em>Iterator</em> pair. Also, we can easily spot an intent and usage here.</p>
+
+<p>But when we add a new <em>trait</em> called <em>Subscription</em>, there is a slight and subtle change in approach for <em>Observable</em>.</p>
+
+<p>It receives an <em>Observer</em> instance as an argument, instead of returning it as presented in the <em>Iterable</em> / <em>Iterator</em> approach.</p>
+
+<p>This subtle change has huge consequences in modelling and understanding these two abstractions. We trade the possibility of pulling things out from an <em>Iterable</em> collection to pushing a model for the <em>Observable</em> which will notify an <em>Observer</em> that something appears, but not for free - we receive an ability to model an asynchronous operation which returns a collection of elements (in other words: we transformed from <em>pulling mode</em> to the <em>pushing mode</em>).</p>
+
+<h1 id="power_of_expressiveness">Power of expressiveness</h1>
+
+<p>What if this <em>Observable</em> / <em>Iterable</em> approach was to be presented in one line as a composite type?</p>
+
+<p>Ready? Superb, but first we will bring up two definitions.</p>
+
+<h2 id=""><code>Try[T]</code></h2>
+<div class='highlight'><pre><code class='scala'><span class='lineno'>1</span> <span class='k'>val</span> <span class='n'>sumTry</span> <span class='k'>=</span> <span class='k'>for</span> <span class='o'>{</span>
+<span class='lineno'>2</span>   <span class='n'>int1</span> <span class='k'>&lt;-</span> <span class='nc'>Try</span><span class='o'>(</span><span class='nc'>Integer</span><span class='o'>.</span><span class='n'>parseInt</span><span class='o'>(</span><span class='s'>&quot;1&quot;</span><span class='o'>))</span>   <span class='c1'>// int1 is Success(1).</span>
+<span class='lineno'>3</span>   <span class='n'>int2</span> <span class='k'>&lt;-</span> <span class='nc'>Try</span><span class='o'>(</span><span class='nc'>Integer</span><span class='o'>.</span><span class='n'>parseInt</span><span class='o'>(</span><span class='s'>&quot;a&quot;</span><span class='o'>))</span>   <span class='c1'>// int2 is Failure(...).</span>
+<span class='lineno'>4</span> <span class='o'>}</span> <span class='k'>yield</span> <span class='o'>{</span>
+<span class='lineno'>5</span>   <span class='n'>int1</span> <span class='o'>+</span> <span class='n'>int2</span>
+<span class='lineno'>6</span> <span class='o'>}</span>
+</code></pre></div>
+<p><em><code>Try</code></em> is an analog for the <code>try...catch</code> block. Instead of having an exception thrown and having to deal with it immediately in the same thread, it disconnects the error handling and recovery.</p>
+
+<h2 id="_2"><code>Option[T]</code></h2>
+<div class='highlight'><pre><code class='scala'><span class='lineno'>1</span> <span class='k'>val</span> <span class='n'>optionResult</span> <span class='k'>=</span> <span class='nc'>Option</span><span class='o'>(</span><span class='kc'>null</span><span class='o'>)</span>   <span class='c1'>// optionResult is None.</span>
+<span class='lineno'>2</span> <span class='k'>val</span> <span class='n'>optionResult2</span> <span class='k'>=</span> <span class='nc'>Option</span><span class='o'>(</span><span class='mi'>1</span><span class='o'>)</span>     <span class='c1'>// optionResult2 is Some(1).</span>
+</code></pre></div>
+<p><em><code>Option</code></em> represents optional values, returning an instance of <em><code>Some(A)</code></em> if <code>A</code> exists, or <em><code>None</code></em> if it does not.</p>
+
+<h2 id="composition">Composition</h2>
+
+<p>The same abstraction, of <em>Observable</em> can be built on top of <em>Iterable</em> and a simple type, which is a composite of two previously explained elements:</p>
+<div class='highlight'><pre><code class='scala'><span class='k'>val</span> <span class='n'>collection</span><span class='k'>:</span> <span class='kt'>Iterable</span><span class='o'>[</span><span class='kt'>Try</span><span class='o'>[</span><span class='kt'>Option</span><span class='o'>[</span><span class='kt'>T</span><span class='o'>]]]</span>
+</code></pre></div>
+<p>It’s a sequence which introduces the same abstraction, but definitely loses the intent. Usage is not visible at the first glance as well (how are we communicating that something changed?).</p>
+
+<h1 id="summary">Summary</h1>
+
+<p>The whole point of this article is to illustrate that intent and usage can be provided by certain abstractions. Of course, these abstractions can be verbose and seem unnecessary at first sight, but if we chase expressiveness, and introduce it out of hand we will loose details and initial intent.</p>
+
+<p>The post is strongly inspired by <em>Coursera</em> course <em>“Principles of Reactive Programming”</em> provided by courtesy of <em>Erik Meijer</em>, <em>Martin Odersky</em> and <em>Roland Kuhn</em>.</p>
+
+<h1 id="references">References</h1>
+
+<ol>
+<li><a href="https://www.coursera.org/course/reactive">Coursera - Principles of Reactive Programming</a></li>
+</ol>
+
+    </article>
+
+    <section class="container">
+      <a href="/" class="mobile-link">Home</a>
+      <div id="disqus_thread"></div>
+    </section>
+
+    <aside class="menu">
+
+      <a href="http://afronski.pl">
+        <img id="avatar" src="/images/avatar.png" alt="My avatar" />
+      </a>
+
+      Hello! I'm <a href="/about.html">Wojciech Gawroński</a>.<br/>
+      I work as a <a href="http://pl.linkedin.com/pub/wojtek-gawroński/58/879/5b0/">software developer</a>.<br/>
+      Besides working
+      <ul class="interests">
+        <li>I write <a href="https://github.com/afronski">code</a></li>
+        <li>I <a href="https://twitter.com/afronski">tweet</a></li>
+        <li>I give <a href="http://afronski.pl/presentations">talks</a></li>
+        <li>I <a href="/feed.xml">blog</a></li>
+        <li>I <a href="https://www.goodreads.com/user/show/16145105-wojtek-gawro-ski">read books</a></li>
+        <li>I <a href="http://www.last.fm/user/afronski">listen music</a></li>
+      </ul>
+
+      <footer>
+        <section>© Copyright 2013, Wojciech Gawroński</section>
+        <section>
+          Except where otherwise noted, content on this site<br/>
+          is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/pl/legalcode">CC BY-NC-ND 3.0</a>.
+        </section>
+      </footer>
+    </aside>
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-44633104-1','afronski.pl');ga('send','pageview');</script>
+    <noscript>
+      Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <script type="text/javascript">var disqus_shortname="afronskipl";(function(){var dsq=document.createElement("script");dsq.type="text/javascript";dsq.async=true;dsq.src="//"+disqus_shortname+".disqus.com/embed.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(dsq);})();</script>
+  </body>
+</html>

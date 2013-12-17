@@ -4,6 +4,15 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.afronski.pl/2013/12/17/with-great-power-comes-great-responsibility.html</loc>
+    
+    <lastmod>2013-12-17T21:45:00Z</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.afronski.pl/2013/12/06/nodejs-evolution.html</loc>
     
     <lastmod>2013-12-06T18:15:00Z</lastmod>
@@ -88,7 +97,7 @@
     
   <url>
     <loc>http://www.afronski.pl/index.html</loc>
-    <lastmod>2013-12-06T18:15:00Z</lastmod>
+    <lastmod>2013-12-17T21:45:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
