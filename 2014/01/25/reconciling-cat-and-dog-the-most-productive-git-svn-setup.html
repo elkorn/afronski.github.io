@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <meta name="author" content="Wojtek Gawroński (afronski)" />
+    <meta name="description" content="Personal blog of Wojtek Gawroński, a passionate software developer." />
+
+    <meta name="keywords" content="HTML,HTML5,JavaScript,CSS,CSS3,Canvas,WebGL,C#,.NET,Mono,Erlang,Vagrant,Node.js" />
+
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="alternate" type="application/rss+xml" title="afronski.pl" href="http://www.afronski.pl/feed.xml" />
+
+    <title>Reconciling cat and dog - the most productive git-svn setup</title>
+
+    <link rel="stylesheet" href="/stylesheets/syntax.min.css" />
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+    <article class="container post">
+      <a href="/">Home</a>
+
+
+<h2 id="reconciling_cat_and_dog__the_most_productive__setup">Reconciling cat and dog - the most productive <em><code>git-svn</code></em> setup</h2>
+
+<p>I would like to present productive and effective setup for the <em><code>git-svn</code></em> bridge which removes most of the obstacles and fixes some problems which occur with this <em>bridged</em> approach.</p>
+
+<h3 id="configuration">Configuration</h3>
+
+<p>Before we start - one remark: if you installed <em><code>git</code></em> on your machine first time ever, please remember about setting up proper user, email and <em>one-more-thing just for convinience</em>:</p>
+<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>git config --global user.name <span class='s2'>&quot;Your Name Here&quot;</span>
+~ <span class='nv'>$ </span>git config --global user.email <span class='s2'>&quot;your_email@example.com&quot;</span>
+~ <span class='nv'>$ </span>git config --global credential.helper cache
+</code></pre></div>
+<h3 id="starting">Starting</h3>
+
+<p>At first, you need to <code>clone</code> (or <code>checkout</code> in SVN terminology) repository. You can do in three different ways:</p>
+
+<ul>
+<li>First way (<em>2nd line</em>) checkouts repository with a standard SVN layout (<code>trunk</code>, <code>branches</code>, <code>tags</code>) and associates branches, tags and <em><code>trunk</code></em> with <em><code>git</code></em> <em><code>master</code></em>.</li>
+
+<li>Second way (<em>5th line</em>) checkouts whole repository as it is.</li>
+
+<li>Third way (<em>starts in 8th line</em>) is really an expansion for <code>git-svn clone</code>.</li>
+</ul>
+<div class='highlight'><pre><code class='bash'><span class='lineno'> 1</span> <span class='c'># Standard layout.</span>
+<span class='lineno'> 2</span> ~ <span class='nv'>$ </span>git svn clone -s <span class='nv'>$SVN_REPOSITORY_ROOT_URL</span>
+<span class='lineno'> 3</span> 
+<span class='lineno'> 4</span> <span class='c'># Non-standard layout.</span>
+<span class='lineno'> 5</span> ~ <span class='nv'>$ </span>git svn clone <span class='nv'>$SVN_REPOSITORY_ROOT_URL</span>
+<span class='lineno'> 6</span> 
+<span class='lineno'> 7</span> <span class='c'># &#39;git svn clone ...&#39; is basically a shortcut for these commands:</span>
+<span class='lineno'> 8</span> ~ <span class='nv'>$ </span>mkdir REPOSITORY
+<span class='lineno'> 9</span> ~ <span class='nv'>$ </span><span class='nb'>cd </span>REPOSITORY
+<span class='lineno'>10</span> ~ <span class='nv'>$ </span>git svn init <span class='nv'>$SVN_REPOSITORY_TRUNK_URL</span> .
+<span class='lineno'>11</span> ~ <span class='nv'>$ </span>git svn fetch -r HEAD
+</code></pre></div>
+<h3 id="updating_and_commiting">Updating and commiting</h3>
+
+<p>Besides <code>pull</code> and <code>push</code> (or <code>update</code> and <code>commit</code> in SVN terminology) everything works like in classical <em><code>git</code></em>. First line represents <em><code>svn update</code></em> command, second - series of <code>svn commit</code> commands with messages collected inside local <em><code>git</code></em> repository.</p>
+<div class='highlight'><pre><code class='bash'><span class='lineno'>1</span> ~ <span class='nv'>$ </span>git svn rebase
+<span class='lineno'>2</span> ~ <span class='nv'>$ </span>git svn dcommit
+</code></pre></div>
+<h3 id="ignores">Ignores</h3>
+
+<p>If you cannot store your <em><code>.gitignore</code></em> file in the SVN repository you can exclude these files locally:</p>
+<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>git svn show-ignore &gt;&gt; .git/info/exclude
+</code></pre></div>
+<p>But <code>.gitignore</code> file can be very convenient - you can easily share exclusions with other members of the team which also use this bridged approach. <em>Moreover</em>, this command is really slow for bigger repositories, so that is another advantage of having this file.</p>
+
+<h3 id="branches">Branches</h3>
+
+<p>If your repository does not have standard layout you can still easily associate SVN branch in your <em><code>.git/config</code></em> by adding new <em><code>svn-remote</code></em> section:</p>
+<div class='highlight'><pre><code class='bash'><span class='o'>[</span>svn-remote <span class='s2'>&quot;sample_branch&quot;</span><span class='o'>]</span>
+    <span class='nv'>url</span> <span class='o'>=</span> https://svn_repository/branches/sample_branch
+    <span class='nv'>fetch</span> <span class='o'>=</span> :refs/remotes/sample_branch
+</code></pre></div>
+<p>Then you should run (and <em>develop the habit of running</em>):</p>
+<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>git svn fetch --fetch-all
+</code></pre></div>
+<p>As the last step, you need to <em><code>checkout</code></em> new branch:</p>
+<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>git checkout -b sample_branch remotes/sample_branch
+</code></pre></div>
+<p>After that your branch will be available like normal <em><code>git</code></em> branch. Remember that your <em><code>trunk</code></em> is actually a <em><code>git</code></em> <em><code>master</code></em> branch.</p>
+
+<h3 id="removing_empty_directories">Removing empty directories</h3>
+
+<p>Regarding the <em><code>git-svn</code></em> bridge, dangling empty directories are my nightmare. Fortunately, someone thought about it and we can enable deleting empty directories on commit (<em>globally</em> via <em><code>git-config</code></em> or <em>on demand</em> just for certain commit):</p>
+<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>git config svn.rmdir <span class='nb'>true</span>
+~ <span class='nv'>$ </span>git svn dcommit --rmdir
+</code></pre></div>
+<h3 id="problems">Problems</h3>
+
+<p>There are still a few problems with the newest SVN clients for such combination. The most annoying is <em>assertion … failed</em> related to the renaming operation. This error looks like this example:</p>
+<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>git svn dcommit
+Committing to http://...
+    C      path/to/file/a.js <span class='o'>=</span>&gt; other/path/to/file/b.js
+assertion <span class='s2'>&quot;svn_fspath__is_canonical(child_fspath)&quot;</span> failed: file <span class='s2'>&quot;dirent_uri.c&quot;</span>, line 2502, <span class='k'>function</span>: svn_fspath__skip_ancestor
+</code></pre></div>
+<p>At first glance you may think that the only (and the <em>worst possible</em> - lost information and mess in history) option is to split your commit into two. Happily, you can perform your commit normally but you need to turn off rename detection:</p>
+<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>git svn dcommit -C1 -l1
+</code></pre></div>
+<p>Unfortunately you will still commit two changes, this time in one batch (as a <em>deletion the old file</em> and <em>creation file with the new name</em>), instead of just a file rename, so you will still loose information in the process.</p>
+
+<p>To avoid this completely the only option is to downgrade SVN client to the latest version on <em><code>1.7.X</code></em> branch.</p>
+
+<h3 id="credits">Credits</h3>
+
+<p>Big thanks to <a href="https://twitter.com/skremiec">@skremiec</a> for undeceiving me in some cases and pointing out <em><code>svn.rmdir</code></em> option <img alt="wink" src="/images/emoji/wink.png" class="emoji" />.</p>
+
+<h3 id="references">References</h3>
+
+<ol>
+<li><a href="https://www.kernel.org/pub/software/scm/git/docs/git-svn.html">Manual for <code>git-svn</code> on kernel.org</a></li>
+
+<li><a href="http://git-scm.com/book/en/Git-and-Other-Systems-Git-and-Subversion">Chapter about <code>git-svn</code> in <code>Pro Git</code> book</a></li>
+</ol>
+
+    </article>
+
+    <section class="container">
+      <a href="/" class="mobile-link">Home</a>
+      <div id="disqus_thread"></div>
+    </section>
+
+    <aside class="menu">
+
+      <a href="http://afronski.pl">
+        <img id="avatar" src="/images/avatar.png" alt="My avatar" />
+      </a>
+
+      Hello! I'm <a href="/about.html">Wojciech Gawroński</a>.<br/>
+      I work as a <a href="http://pl.linkedin.com/pub/wojtek-gawroński/58/879/5b0/">software developer</a>.<br/>
+      Besides working
+      <ul class="interests">
+        <li>I write <a href="https://github.com/afronski">code</a></li>
+        <li>I <a href="https://twitter.com/afronski">tweet</a></li>
+        <li>I give <a href="http://afronski.pl/presentations">talks</a></li>
+        <li>I <a href="/feed.xml">blog</a></li>
+        <li>I <a href="https://www.goodreads.com/user/show/16145105-wojtek-gawro-ski">read books</a></li>
+        <li>I <a href="http://www.last.fm/user/afronski">listen music</a></li>
+      </ul>
+
+      <footer>
+        <section>© Copyright 2014, Wojciech Gawroński</section>
+        <section>
+          Except where otherwise noted, content on this site<br/>
+          is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/pl/legalcode">CC BY-NC-ND 3.0</a>.
+        </section>
+      </footer>
+    </aside>
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-44633104-1','afronski.pl');ga('send','pageview');</script>
+    <noscript>
+      Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <script type="text/javascript">var disqus_shortname="afronskipl";(function(){var dsq=document.createElement("script");dsq.type="text/javascript";dsq.async=true;dsq.src="//"+disqus_shortname+".disqus.com/embed.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(dsq);})();</script>
+  </body>
+</html>

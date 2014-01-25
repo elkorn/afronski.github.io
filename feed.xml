@@ -7,6 +7,109 @@
     <atom:link href="http://www.afronski.pl/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Reconciling cat and dog - the most productive git-svn setup</title>
+        <description>
+&lt;h2 id=&quot;reconciling_cat_and_dog__the_most_productive__setup&quot;&gt;Reconciling cat and dog - the most productive &lt;em&gt;&lt;code&gt;git-svn&lt;/code&gt;&lt;/em&gt; setup&lt;/h2&gt;
+
+&lt;p&gt;I would like to present productive and effective setup for the &lt;em&gt;&lt;code&gt;git-svn&lt;/code&gt;&lt;/em&gt; bridge which removes most of the obstacles and fixes some problems which occur with this &lt;em&gt;bridged&lt;/em&gt; approach.&lt;/p&gt;
+
+&lt;h3 id=&quot;configuration&quot;&gt;Configuration&lt;/h3&gt;
+
+&lt;p&gt;Before we start - one remark: if you installed &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt; on your machine first time ever, please remember about setting up proper user, email and &lt;em&gt;one-more-thing just for convinience&lt;/em&gt;:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;git config --global user.name &lt;span class='s2'&gt;&amp;quot;Your Name Here&amp;quot;&lt;/span&gt;
+~ &lt;span class='nv'&gt;$ &lt;/span&gt;git config --global user.email &lt;span class='s2'&gt;&amp;quot;your_email@example.com&amp;quot;&lt;/span&gt;
+~ &lt;span class='nv'&gt;$ &lt;/span&gt;git config --global credential.helper cache
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;starting&quot;&gt;Starting&lt;/h3&gt;
+
+&lt;p&gt;At first, you need to &lt;code&gt;clone&lt;/code&gt; (or &lt;code&gt;checkout&lt;/code&gt; in SVN terminology) repository. You can do in three different ways:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;First way (&lt;em&gt;2nd line&lt;/em&gt;) checkouts repository with a standard SVN layout (&lt;code&gt;trunk&lt;/code&gt;, &lt;code&gt;branches&lt;/code&gt;, &lt;code&gt;tags&lt;/code&gt;) and associates branches, tags and &lt;em&gt;&lt;code&gt;trunk&lt;/code&gt;&lt;/em&gt; with &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt; &lt;em&gt;&lt;code&gt;master&lt;/code&gt;&lt;/em&gt;.&lt;/li&gt;
+
+&lt;li&gt;Second way (&lt;em&gt;5th line&lt;/em&gt;) checkouts whole repository as it is.&lt;/li&gt;
+
+&lt;li&gt;Third way (&lt;em&gt;starts in 8th line&lt;/em&gt;) is really an expansion for &lt;code&gt;git-svn clone&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='lineno'&gt; 1&lt;/span&gt; &lt;span class='c'&gt;# Standard layout.&lt;/span&gt;
+&lt;span class='lineno'&gt; 2&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn clone -s &lt;span class='nv'&gt;$SVN_REPOSITORY_ROOT_URL&lt;/span&gt;
+&lt;span class='lineno'&gt; 3&lt;/span&gt; 
+&lt;span class='lineno'&gt; 4&lt;/span&gt; &lt;span class='c'&gt;# Non-standard layout.&lt;/span&gt;
+&lt;span class='lineno'&gt; 5&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn clone &lt;span class='nv'&gt;$SVN_REPOSITORY_ROOT_URL&lt;/span&gt;
+&lt;span class='lineno'&gt; 6&lt;/span&gt; 
+&lt;span class='lineno'&gt; 7&lt;/span&gt; &lt;span class='c'&gt;# &amp;#39;git svn clone ...&amp;#39; is basically a shortcut for these commands:&lt;/span&gt;
+&lt;span class='lineno'&gt; 8&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;mkdir REPOSITORY
+&lt;span class='lineno'&gt; 9&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;&lt;span class='nb'&gt;cd &lt;/span&gt;REPOSITORY
+&lt;span class='lineno'&gt;10&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn init &lt;span class='nv'&gt;$SVN_REPOSITORY_TRUNK_URL&lt;/span&gt; .
+&lt;span class='lineno'&gt;11&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn fetch -r HEAD
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;updating_and_commiting&quot;&gt;Updating and commiting&lt;/h3&gt;
+
+&lt;p&gt;Besides &lt;code&gt;pull&lt;/code&gt; and &lt;code&gt;push&lt;/code&gt; (or &lt;code&gt;update&lt;/code&gt; and &lt;code&gt;commit&lt;/code&gt; in SVN terminology) everything works like in classical &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt;. First line represents &lt;em&gt;&lt;code&gt;svn update&lt;/code&gt;&lt;/em&gt; command, second - series of &lt;code&gt;svn commit&lt;/code&gt; commands with messages collected inside local &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt; repository.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='lineno'&gt;1&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn rebase
+&lt;span class='lineno'&gt;2&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn dcommit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;ignores&quot;&gt;Ignores&lt;/h3&gt;
+
+&lt;p&gt;If you cannot store your &lt;em&gt;&lt;code&gt;.gitignore&lt;/code&gt;&lt;/em&gt; file in the SVN repository you can exclude these files locally:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn show-ignore &amp;gt;&amp;gt; .git/info/exclude
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;But &lt;code&gt;.gitignore&lt;/code&gt; file can be very convenient - you can easily share exclusions with other members of the team which also use this bridged approach. &lt;em&gt;Moreover&lt;/em&gt;, this command is really slow for bigger repositories, so that is another advantage of having this file.&lt;/p&gt;
+
+&lt;h3 id=&quot;branches&quot;&gt;Branches&lt;/h3&gt;
+
+&lt;p&gt;If your repository does not have standard layout you can still easily associate SVN branch in your &lt;em&gt;&lt;code&gt;.git/config&lt;/code&gt;&lt;/em&gt; by adding new &lt;em&gt;&lt;code&gt;svn-remote&lt;/code&gt;&lt;/em&gt; section:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='o'&gt;[&lt;/span&gt;svn-remote &lt;span class='s2'&gt;&amp;quot;sample_branch&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;
+    &lt;span class='nv'&gt;url&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; https://svn_repository/branches/sample_branch
+    &lt;span class='nv'&gt;fetch&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; :refs/remotes/sample_branch
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then you should run (and &lt;em&gt;develop the habit of running&lt;/em&gt;):&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn fetch --fetch-all
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;As the last step, you need to &lt;em&gt;&lt;code&gt;checkout&lt;/code&gt;&lt;/em&gt; new branch:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;git checkout -b sample_branch remotes/sample_branch
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After that your branch will be available like normal &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt; branch. Remember that your &lt;em&gt;&lt;code&gt;trunk&lt;/code&gt;&lt;/em&gt; is actually a &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt; &lt;em&gt;&lt;code&gt;master&lt;/code&gt;&lt;/em&gt; branch.&lt;/p&gt;
+
+&lt;h3 id=&quot;removing_empty_directories&quot;&gt;Removing empty directories&lt;/h3&gt;
+
+&lt;p&gt;Regarding the &lt;em&gt;&lt;code&gt;git-svn&lt;/code&gt;&lt;/em&gt; bridge, dangling empty directories are my nightmare. Fortunately, someone thought about it and we can enable deleting empty directories on commit (&lt;em&gt;globally&lt;/em&gt; via &lt;em&gt;&lt;code&gt;git-config&lt;/code&gt;&lt;/em&gt; or &lt;em&gt;on demand&lt;/em&gt; just for certain commit):&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;git config svn.rmdir &lt;span class='nb'&gt;true&lt;/span&gt;
+~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn dcommit --rmdir
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;problems&quot;&gt;Problems&lt;/h3&gt;
+
+&lt;p&gt;There are still a few problems with the newest SVN clients for such combination. The most annoying is &lt;em&gt;assertion … failed&lt;/em&gt; related to the renaming operation. This error looks like this example:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn dcommit
+Committing to http://...
+    C      path/to/file/a.js &lt;span class='o'&gt;=&lt;/span&gt;&amp;gt; other/path/to/file/b.js
+assertion &lt;span class='s2'&gt;&amp;quot;svn_fspath__is_canonical(child_fspath)&amp;quot;&lt;/span&gt; failed: file &lt;span class='s2'&gt;&amp;quot;dirent_uri.c&amp;quot;&lt;/span&gt;, line 2502, &lt;span class='k'&gt;function&lt;/span&gt;: svn_fspath__skip_ancestor
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;At first glance you may think that the only (and the &lt;em&gt;worst possible&lt;/em&gt; - lost information and mess in history) option is to split your commit into two. Happily, you can perform your commit normally but you need to turn off rename detection:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn dcommit -C1 -l1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Unfortunately you will still commit two changes, this time in one batch (as a &lt;em&gt;deletion the old file&lt;/em&gt; and &lt;em&gt;creation file with the new name&lt;/em&gt;), instead of just a file rename, so you will still loose information in the process.&lt;/p&gt;
+
+&lt;p&gt;To avoid this completely the only option is to downgrade SVN client to the latest version on &lt;em&gt;&lt;code&gt;1.7.X&lt;/code&gt;&lt;/em&gt; branch.&lt;/p&gt;
+
+&lt;h3 id=&quot;credits&quot;&gt;Credits&lt;/h3&gt;
+
+&lt;p&gt;Big thanks to &lt;a href=&quot;https://twitter.com/skremiec&quot;&gt;@skremiec&lt;/a&gt; for undeceiving me in some cases and pointing out &lt;em&gt;&lt;code&gt;svn.rmdir&lt;/code&gt;&lt;/em&gt; option :wink:.&lt;/p&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.kernel.org/pub/software/scm/git/docs/git-svn.html&quot;&gt;Manual for &lt;code&gt;git-svn&lt;/code&gt; on kernel.org&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;http://git-scm.com/book/en/Git-and-Other-Systems-Git-and-Subversion&quot;&gt;Chapter about &lt;code&gt;git-svn&lt;/code&gt; in &lt;code&gt;Pro Git&lt;/code&gt; book&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Sat, 25 Jan 2014 22:00:00 +0000</pubDate>
+        <link>http://www.afronski.pl/2014/01/25/reconciling-cat-and-dog-the-most-productive-git-svn-setup.html</link>
+        <guid isPermaLink="true">http://www.afronski.pl/2014/01/25/reconciling-cat-and-dog-the-most-productive-git-svn-setup.html</guid>
+      </item>
+    
+      <item>
         <title>Small talk about productivity</title>
         <description>
 &lt;h1 id=&quot;small_talk_about_productivity&quot;&gt;Small talk about productivity&lt;/h1&gt;
@@ -697,62 +800,6 @@ Default requiretty
         <pubDate>Tue, 08 Oct 2013 21:50:00 +0000</pubDate>
         <link>http://www.afronski.pl/2013/10/08/creating-a-custom-vagrant-box.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2013/10/08/creating-a-custom-vagrant-box.html</guid>
-      </item>
-    
-      <item>
-        <title>Why every programmer should play with LEGO?</title>
-        <description>
-&lt;h1 id=&quot;why_every_programmer_should_play_with_lego&quot;&gt;Why every programmer should play with LEGO?&lt;/h1&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/LegoColorBricks.jpg&quot; alt=&quot;Colorful LEGO pieces&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;disclaimer&quot;&gt;Disclaimer&lt;/h2&gt;
-
-&lt;p&gt;I would like to strongly deny that the post has anything in common with a recent visit from my parents who brought me the entire supply of bricks. I won’t say anything more without my lawyer :grin:.&lt;/p&gt;
-
-&lt;h2 id=&quot;what_does_christiansens_toy_have_in_common_with_software_engineering&quot;&gt;What does Christiansen’s toy have in common with software engineering?&lt;/h2&gt;
-
-&lt;p&gt;At a first glance, not much. But after a moment of playing you’ll begin to notice some similarities. The most obvious one is the process of creating a new thing, even if software exist only in the computer’s memory. The second similarity is related strictly to creativity, because playing with LEGO and building software are the same creative processes (with high proportion of imagination). But in my opinion there are more similarities, not so evident at the beginning.&lt;/p&gt;
-
-&lt;h3 id=&quot;standardization_and_interfaces&quot;&gt;Standardization and Interfaces&lt;/h3&gt;
-
-&lt;p&gt;When you’re playing with bricks, it’s easy to create new things, connect previously assembled elements with each other and simulate some missing parts, or even replace completely.&lt;/p&gt;
-
-&lt;p&gt;It’s a programmer’s dream: everything what is designed right now, fits perfectly to other parts assembled in past. Each component has elements which can be connected with other components in future. Common missing elements can be completely replaced or reassembled from smaller pieces.&lt;/p&gt;
-
-&lt;p&gt;By providing simple standardization and well defined interfaces (I guess the name &lt;em&gt;contract&lt;/em&gt; is more appropriate in this case) you’ll achieve amazing level of flexibility. Of course more specific elements (e.g. wheel and axle) aren’t so flexible and interchangeable as the common bricks, but it’s a balance between common use cases and more specified functionality. But, even if you have an old fashioned wheel from a stagecoach and a new one with a rubber tire, you can use both with the same axle.&lt;/p&gt;
-
-&lt;h3 id=&quot;modularity&quot;&gt;Modularity&lt;/h3&gt;
-
-&lt;p&gt;Lets assume that you want to create a big castle like below:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/BigLegoCastle.jpg&quot; alt=&quot;Big LEGO castle&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;At first you’re creating walls, then towers with guards, a castle gate with a bascule bridge and in the meantime you’ll fill it with king’s headquarters and stables. When you’ll finish the castle, you’ll build the enemy armies with catapults (and finally destroy everything, because it’s the most fun part :grin:).&lt;/p&gt;
-
-&lt;p&gt;Stand back and look how the process flows - you’re creating modularized parts of the castle, then modularized elements of the enemy army. All modules can be connected together, each module has a single, well defined responsibility and you can easily join seemingly unrelated components together (because you can put enemy catapults inside your castle, creating kind of an alliance :wink:).&lt;/p&gt;
-
-&lt;h3 id=&quot;dry_and_design_patterns&quot;&gt;DRY and Design Patterns&lt;/h3&gt;
-
-&lt;p&gt;Yes, the &lt;em&gt;don’t repeat yourself&lt;/em&gt; rule have significant meaning when you’re playing with LEGO, but it’s formulated differently than the original one. In my opinion you’re not reusing the assembled part itself (because you’ve got it in just one copy), but the way of creating it (in other words: you’re reusing the way of assembling a certain thing).&lt;/p&gt;
-
-&lt;p&gt;Also the way of building a specific part can be called a &lt;em&gt;design pattern&lt;/em&gt;, which can be easily reused in the future (when you have enough bricks and time you can repeat the process over and over again). In the example mentioned above you’ll have a design pattern for your tower, but you can reapply it as many times to as many towers you need (you can, of course, adjust the previous design with some small enhancements, you aren’t obligated to fulfill all the requirements and perform all the steps from previous case).&lt;/p&gt;
-
-&lt;h2 id=&quot;okay_but_what_if_i_dont_have_any_lego_bricks&quot;&gt;Okay, but what if I don’t have any LEGO bricks?&lt;/h2&gt;
-
-&lt;p&gt;Then maybe, you’re seeing similarities in your childhood toys when you’re programming and solving problems. Or maybe you’re seeing completely different analogies when you’ll recall memories related with LEGO bricks. In both cases feel free to share your findings in the comments.&lt;/p&gt;
-
-&lt;h2 id=&quot;image_credits&quot;&gt;Image credits&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/File:Lego_Color_Bricks.jpg&quot;&gt;Lego Color Bricks&lt;/a&gt; (licensed on &lt;a href=&quot;http://creativecommons.org/licenses/by-sa/2.0/deed.en&quot;&gt;CC BY-SA 2.0&lt;/a&gt;)&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;http://www.flickr.com/photos/billward/3393269071/&quot;&gt;Lego Castle Photo&lt;/a&gt; (licensed on &lt;a href=&quot;http://creativecommons.org/licenses/by/2.0/deed.en&quot;&gt;CC BY 2.0&lt;/a&gt;)&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Sun, 06 Oct 2013 17:30:00 +0000</pubDate>
-        <link>http://www.afronski.pl/2013/10/06/why-every-programmer-should-play-with-LEGO.html</link>
-        <guid isPermaLink="true">http://www.afronski.pl/2013/10/06/why-every-programmer-should-play-with-LEGO.html</guid>
       </item>
     
   </channel>
