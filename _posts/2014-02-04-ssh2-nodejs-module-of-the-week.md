@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ssh2 - Node.js module of the week
+date: 2014-02-04T22:00:00Z
 ---
 
 ## `ssh2` - Node.js module of the week
