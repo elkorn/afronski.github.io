@@ -7,6 +7,100 @@
     <atom:link href="http://www.afronski.pl/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>ssh2 - Node.js module of the week</title>
+        <description>
+&lt;h2 id=&quot;__nodejs_module_of_the_week&quot;&gt;&lt;code&gt;ssh2&lt;/code&gt; - Node.js module of the week&lt;/h2&gt;
+
+&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;In this series of articles I would like to show interesting, sometimes solid, sometimes just working and really useful &lt;em&gt;Node.js&lt;/em&gt; modules which helps me in the last week (or earlier). Each post will describe a reason why I chosen this module, an API description or sample usage. It will also describe &lt;em&gt;health&lt;/em&gt; (in other words - what it supports and answer for question &lt;em&gt;“Is it actively developed?”&lt;/em&gt;) and &lt;em&gt;quality&lt;/em&gt; (documentation, tests and overall code quality).&lt;/p&gt;
+
+&lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;ssh2&lt;/code&gt; is a &lt;code&gt;SSH2&lt;/code&gt; client module written in pure JavaScript.&lt;/p&gt;
+
+&lt;p&gt;In this case mentioned module helps me bootstrap the simple tool a while ago. The main goal of this tool is to automate create, download and upload a backup to &lt;code&gt;SFTP&lt;/code&gt; for &lt;em&gt;one-of-the-most-popular-services-for-project-management&lt;/em&gt; which in cheapest version does not provide an API for that.&lt;/p&gt;
+
+&lt;p&gt;For the first part (&lt;em&gt;UI automation script&lt;/em&gt; which will create the backup and download an archive) I have used a &lt;em&gt;&lt;code&gt;node-chimera&lt;/code&gt;&lt;/em&gt; module (which I will describe in the next blog post) and for second part (&lt;em&gt;uploading previously downloaded &lt;code&gt;ZIP&lt;/code&gt; archive&lt;/em&gt; to two different &lt;code&gt;SFTP&lt;/code&gt; servers) I have used a &lt;em&gt;&lt;code&gt;ssh2&lt;/code&gt;&lt;/em&gt; module.&lt;/p&gt;
+
+&lt;h3 id=&quot;api&quot;&gt;API&lt;/h3&gt;
+
+&lt;p&gt;In the most basic case you need only to &lt;em&gt;&lt;code&gt;require&lt;/code&gt;&lt;/em&gt; this module and create new connection. It is useful to use &lt;em&gt;domains&lt;/em&gt; for error handling, but it is not an obligatory practice.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='lineno'&gt; 1&lt;/span&gt; &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;fs&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;fs&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
+&lt;span class='lineno'&gt; 2&lt;/span&gt;     &lt;span class='nx'&gt;util&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;util&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
+&lt;span class='lineno'&gt; 3&lt;/span&gt;     &lt;span class='nx'&gt;domain&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;domain&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
+&lt;span class='lineno'&gt; 4&lt;/span&gt; 
+&lt;span class='lineno'&gt; 5&lt;/span&gt;     &lt;span class='nx'&gt;Connection&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;ssh2&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
+&lt;span class='lineno'&gt; 6&lt;/span&gt; 
+&lt;span class='lineno'&gt; 7&lt;/span&gt;     &lt;span class='nx'&gt;OptionsForSFTP&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+&lt;span class='lineno'&gt; 8&lt;/span&gt;       &lt;span class='nx'&gt;host&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;X.Y.Z.U&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+&lt;span class='lineno'&gt; 9&lt;/span&gt;       &lt;span class='nx'&gt;port&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='mi'&gt;22&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+&lt;span class='lineno'&gt;10&lt;/span&gt;       &lt;span class='nx'&gt;username&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;backup&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+&lt;span class='lineno'&gt;11&lt;/span&gt;       &lt;span class='c1'&gt;// password: &amp;quot;password&amp;quot;&lt;/span&gt;
+&lt;span class='lineno'&gt;12&lt;/span&gt;       &lt;span class='nx'&gt;privateKey&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;fs&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;readFileSync&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;/path/to/privateKey&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;span class='lineno'&gt;13&lt;/span&gt;     &lt;span class='p'&gt;};&lt;/span&gt;
+&lt;span class='lineno'&gt;14&lt;/span&gt; 
+&lt;span class='lineno'&gt;15&lt;/span&gt; &lt;span class='c1'&gt;// ...&lt;/span&gt;
+&lt;span class='lineno'&gt;16&lt;/span&gt; 
+&lt;span class='lineno'&gt;17&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;uploadToSftpServer&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;options&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;fileName&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;callback&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+&lt;span class='lineno'&gt;18&lt;/span&gt;   &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;connection&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='nx'&gt;Connection&lt;/span&gt;&lt;span class='p'&gt;(),&lt;/span&gt;
+&lt;span class='lineno'&gt;19&lt;/span&gt;       &lt;span class='nx'&gt;handler&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;domain&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;create&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
+&lt;span class='lineno'&gt;20&lt;/span&gt; 
+&lt;span class='lineno'&gt;21&lt;/span&gt;   &lt;span class='nx'&gt;handler&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;on&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;error&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;error&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+&lt;span class='lineno'&gt;22&lt;/span&gt;     &lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;error&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;Error occurred: %s&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;error&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='lineno'&gt;23&lt;/span&gt;     &lt;span class='nx'&gt;process&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;exit&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='mi'&gt;1&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='lineno'&gt;24&lt;/span&gt;   &lt;span class='p'&gt;});&lt;/span&gt;
+&lt;span class='lineno'&gt;25&lt;/span&gt; 
+&lt;span class='lineno'&gt;26&lt;/span&gt;   &lt;span class='c1'&gt;// Handling &amp;quot;error&amp;quot; event inside domain handler.&lt;/span&gt;
+&lt;span class='lineno'&gt;27&lt;/span&gt;   &lt;span class='nx'&gt;handler&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;add&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;connection&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='lineno'&gt;28&lt;/span&gt; 
+&lt;span class='lineno'&gt;29&lt;/span&gt;   &lt;span class='nx'&gt;connection&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;on&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;ready&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+&lt;span class='lineno'&gt;30&lt;/span&gt;     &lt;span class='nx'&gt;connection&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;sftp&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;handler&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;intercept&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;sftp&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+&lt;span class='lineno'&gt;31&lt;/span&gt;       &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;providedFileName&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;util&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;format&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;./%s&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;fileName&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='lineno'&gt;32&lt;/span&gt; 
+&lt;span class='lineno'&gt;33&lt;/span&gt;       &lt;span class='nx'&gt;sftp&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;fastPut&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;providedFileName&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;providedFileName&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+&lt;span class='lineno'&gt;34&lt;/span&gt;                    &lt;span class='nx'&gt;handler&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;intercept&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;connection&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;end&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;bind&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;connection&lt;/span&gt;&lt;span class='p'&gt;)));&lt;/span&gt;
+&lt;span class='lineno'&gt;35&lt;/span&gt;     &lt;span class='p'&gt;}));&lt;/span&gt;
+&lt;span class='lineno'&gt;36&lt;/span&gt;   &lt;span class='p'&gt;});&lt;/span&gt;
+&lt;span class='lineno'&gt;37&lt;/span&gt; 
+&lt;span class='lineno'&gt;38&lt;/span&gt;   &lt;span class='nx'&gt;connection&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;on&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;end&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;callback&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='lineno'&gt;39&lt;/span&gt;   &lt;span class='nx'&gt;connection&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;connect&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;options&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='lineno'&gt;40&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;When connection is &lt;em&gt;&lt;code&gt;ready&lt;/code&gt;&lt;/em&gt; we need to open a &lt;em&gt;&lt;code&gt;SFTP&lt;/code&gt;&lt;/em&gt; channel and &lt;em&gt;&lt;code&gt;PUT&lt;/code&gt;&lt;/em&gt; file to the server. As you can see in example presented above, authentication via password or private key is a piece of cake and it is handled by module internals.&lt;/p&gt;
+
+&lt;h3 id=&quot;health&quot;&gt;Health&lt;/h3&gt;
+
+&lt;p&gt;Module is under active development, bugs are quickly resolved. Besides bug fixing and merging pull requests author incrementally improves design and code quality.&lt;/p&gt;
+
+&lt;p&gt;It is supported on &lt;em&gt;Node.js&lt;/em&gt; version &lt;code&gt;0.8&lt;/code&gt; and higher (probably also on &lt;code&gt;0.11&lt;/code&gt; because it does not have any kind of binary extensions).&lt;/p&gt;
+
+&lt;h3 id=&quot;quality&quot;&gt;Quality&lt;/h3&gt;
+
+&lt;p&gt;Unfortunately &lt;em&gt;module is not&lt;/em&gt; an any kind of reference in terms of quality:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;It does not have any kind of tests&lt;/em&gt; (unit or even integration tests).&lt;/li&gt;
+
+&lt;li&gt;Documentation is delivered inside single &lt;em&gt;&lt;code&gt;README.md&lt;/code&gt;&lt;/em&gt; file in form of source code examples.&lt;/li&gt;
+
+&lt;li&gt;Overall code quality is not too high, module still makes an impression of &lt;em&gt;hacked&lt;/em&gt; in the hurry.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But it works and it has just a few bugs :wink:.&lt;/p&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/mscdex/ssh2&quot;&gt;&lt;code&gt;ssh2&lt;/code&gt; github page&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Tue, 04 Feb 2014 22:00:00 +0000</pubDate>
+        <link>http://www.afronski.pl/2014/02/04/ssh2-nodejs-module-of-the-week.html</link>
+        <guid isPermaLink="true">http://www.afronski.pl/2014/02/04/ssh2-nodejs-module-of-the-week.html</guid>
+      </item>
+    
+      <item>
         <title>Reconciling cat and dog - the most productive git-svn setup</title>
         <description>
 &lt;h2 id=&quot;reconciling_cat_and_dog__the_most_productive__setup&quot;&gt;Reconciling cat and dog - the most productive &lt;em&gt;&lt;code&gt;git-svn&lt;/code&gt;&lt;/em&gt; setup&lt;/h2&gt;
@@ -670,136 +764,6 @@ vagrant@localhost /tmp/vagrant-chef-1 &lt;span class='nv'&gt;$ &lt;/span&gt;sudo
         <pubDate>Fri, 18 Oct 2013 20:10:00 +0000</pubDate>
         <link>http://www.afronski.pl/2013/10/18/chef-solo-dna-mutation.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2013/10/18/chef-solo-dna-mutation.html</guid>
-      </item>
-    
-      <item>
-        <title>Creating a custom Vagrant box</title>
-        <description>
-&lt;h1 id=&quot;creating_a_custom_vagrant_box&quot;&gt;Creating a custom Vagrant box&lt;/h1&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/VagrantLogo.png&quot; alt=&quot;Vagrant Logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;vagrant - a person without a settled home or regular work who wanders from place to place and lives by begging.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;it_is_not_a_common_path&quot;&gt;It is not a common path&lt;/h1&gt;
-
-&lt;p&gt;Do not start the creation of a new box from scratch without checking both of these sites:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.vagrantbox.es/&quot;&gt;vagrantbox.es&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;https://github.com/jedi4ever/veewee&quot;&gt;veewee&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In 99% of cases, one page will already contain the solution, which is a needed box. Otherwise we have to roll up our sleeves and go through the whole process. This post will contain almost all directions for creating a fresh box.&lt;/p&gt;
-
-&lt;p&gt;And last but not least: all recipes provided in this article are valid for Vagrant in version 1.2 and above.&lt;/p&gt;
-
-&lt;h1 id=&quot;_but_sometimes_necessary&quot;&gt;… but sometimes necessary&lt;/h1&gt;
-
-&lt;h4 id=&quot;install_vagrant&quot;&gt;Install Vagrant&lt;/h4&gt;
-
-&lt;p&gt;I’m assuming that you already have Vagrant - if not, go to &lt;a href=&quot;http://downloads.vagrantup.com/&quot;&gt;downloads&lt;/a&gt; page or install it by using package manager from your Linux distribution.&lt;/p&gt;
-
-&lt;h4 id=&quot;virtual_machine_in_virtualbox&quot;&gt;Virtual Machine in VirtualBox&lt;/h4&gt;
-
-&lt;p&gt;At first, we have to prepare a virtual machine with a specified amount of RAM, number of virtual processors, virtual hard disk image and the rest of the virtualized hardware. Remember the &lt;em&gt;VM&lt;/em&gt; name - you will need it at the end :wink:.&lt;/p&gt;
-
-&lt;p&gt;One important thing related to networking - create only one network adapter and set it for using NAT. At last, setup port forwarding like presented below:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/VirtualBoxPortForwarding.png&quot; alt=&quot;Port forwarding setup for test purposes&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;installation&quot;&gt;Installation&lt;/h4&gt;
-
-&lt;p&gt;Grab your favourite &lt;em&gt;Linux distribution&lt;/em&gt; / &lt;em&gt;Unix flavour&lt;/em&gt; ISO image and proceed with the installation process (no Windows because right now Vagrant doesn’t support this operating system as a guest).&lt;/p&gt;
-
-&lt;p&gt;This is the easiest step in the whole guide :grin:.&lt;/p&gt;
-
-&lt;h4 id=&quot;user_management&quot;&gt;User management&lt;/h4&gt;
-
-&lt;p&gt;After the installation, create a new user account:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='c'&gt;# Create user &amp;#39;vagrant&amp;#39;.&lt;/span&gt;
-root&amp;gt; useradd vagrant
-
-&lt;span class='c'&gt;# Setup password.&lt;/span&gt;
-root&amp;gt; passwd vagrant
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;And add him to proper groups:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;root&amp;gt; usermod -aG users,wheel vagrant
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;And the final step here - disable password for &lt;code&gt;sudo&lt;/code&gt; command in the &lt;code&gt;wheel&lt;/code&gt; group:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;root&amp;gt; visudo
-
-&lt;span class='c'&gt;# Uncomment or add a line like below:&lt;/span&gt;
-%wheel &lt;span class='nv'&gt;ALL&lt;/span&gt;&lt;span class='o'&gt;=(&lt;/span&gt;ALL&lt;span class='o'&gt;)&lt;/span&gt; NOPASSWD: ALL
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&quot;ssh&quot;&gt;SSH&lt;/h4&gt;
-
-&lt;p&gt;At first open port 22 on your machine, then get this &lt;a href=&quot;https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub&quot;&gt;public key&lt;/a&gt; and put it in the file:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;root&amp;gt; curl https://raw.github.com/.../vagrant.pub &amp;gt; /etc/ssh/authorized_keys
-root&amp;gt; chown root:root /etc/ssh/authorized_keys
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Then setup your &lt;code&gt;sshd_config&lt;/code&gt; file like presented below:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='c'&gt;# Uncomment these lines:&lt;/span&gt;
-Port 22
-AddressFamily any
-ListenAddress 0.0.0.0
-ListenAddress ::
-PermitRootLogin yes
-
-&lt;span class='c'&gt;# Also uncomment and change these:&lt;/span&gt;
-AuthorizedKeysFile /etc/ssh/authorized_keys
-PasswordAuthentication no
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Then you can verify your settings by command:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;ssh -i ~/.vagrant.d/insecure_private_key vagrant@localhost -p 2222
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;If there are no errors you’re ready for the next step.&lt;/p&gt;
-
-&lt;p&gt;In some cases you’ll receive an error similar to this one (&lt;strong&gt;SELinux compatible tip&lt;/strong&gt;):&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;ssh -i ~/.vagrant.d/insecure_private_key vagrant@localhost -p 2222
-
-Permission denied &lt;span class='o'&gt;(&lt;/span&gt;publickey,gssapi-keyex,gssapi-with-mic&lt;span class='o'&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;In this case you need to fix the labels for the file with authorized keys:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;&lt;span class='nb'&gt;cd&lt;/span&gt; /etc/ssh/
-~ &lt;span class='nv'&gt;$ &lt;/span&gt;ls -laZ                     &lt;span class='c'&gt;# Checking labels.&lt;/span&gt;
-~ &lt;span class='nv'&gt;$ &lt;/span&gt;restorecon -r -vv .         &lt;span class='c'&gt;# Fixing them.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&quot;finishing_touches&quot;&gt;Finishing touches&lt;/h4&gt;
-
-&lt;p&gt;Unfortunately our &lt;code&gt;sudo&lt;/code&gt; has one big disadvantage - it won’t work without a real TTY and as you probably guessed - vagrant doesn’t use it. So we have to disable this setting in &lt;code&gt;sudoers&lt;/code&gt; file:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;sudo visudo
-
-&lt;span class='c'&gt;# Comment or remove line like below:&lt;/span&gt;
-Default requiretty
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Just before the last step, please remove all previously forwarded ports for your virtual machine in VirtualBox.&lt;/p&gt;
-
-&lt;h4 id=&quot;gift_packing&quot;&gt;Gift packing!&lt;/h4&gt;
-
-&lt;p&gt;We still have to do the last step - packaging:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;vagrant package --name &amp;lt;VM name&amp;gt; --output FreshAndHotVagrant.box
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The result is a finished box, which we can add to our list:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;vagrant box add &amp;lt;internal box name&amp;gt; FreshAndHotVagrant.box
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Then feel free to use it inside &lt;code&gt;Vagrantfile&lt;/code&gt;:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='no'&gt;Vagrant&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;configure&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;2&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;config&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
-  &lt;span class='n'&gt;config&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;vm&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;box&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;&amp;lt;internal box name&amp;gt;&amp;quot;&lt;/span&gt;
-&lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1 id=&quot;links_and_image_credits&quot;&gt;Links and Image credits&lt;/h1&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.hashicorp.com/images/blog/a-new-look-for-vagrant/logo_wide-cab47086.png&quot;&gt;Original link to Vagrant logo&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;http://docs.vagrantup.com/v2/&quot;&gt;Vagrant documentation&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Tue, 08 Oct 2013 21:50:00 +0000</pubDate>
-        <link>http://www.afronski.pl/2013/10/08/creating-a-custom-vagrant-box.html</link>
-        <guid isPermaLink="true">http://www.afronski.pl/2013/10/08/creating-a-custom-vagrant-box.html</guid>
       </item>
     
   </channel>

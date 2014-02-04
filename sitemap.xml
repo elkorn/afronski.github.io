@@ -4,6 +4,15 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.afronski.pl/2014/02/04/ssh2-nodejs-module-of-the-week.html</loc>
+    
+    <lastmod>2014-02-04T22:00:00Z</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.afronski.pl/2014/01/25/reconciling-cat-and-dog-the-most-productive-git-svn-setup.html</loc>
     
     <lastmod>2014-01-25T22:00:00Z</lastmod>
@@ -115,7 +124,7 @@
     
   <url>
     <loc>http://www.afronski.pl/index.html</loc>
-    <lastmod>2014-01-25T22:00:00Z</lastmod>
+    <lastmod>2014-02-04T22:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
