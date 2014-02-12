@@ -620,14 +620,14 @@ Segmentation fault
     &lt;span class='s2'&gt;&amp;quot;sources&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='p'&gt;[&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;node_xslt.cc&amp;quot;&lt;/span&gt; &lt;span class='p'&gt;],&lt;/span&gt;
 
     &lt;span class='s2'&gt;&amp;quot;cflags&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='p'&gt;[&lt;/span&gt;
-      &lt;span class='s2'&gt;&amp;quot;&amp;amp;lt;!(xml2-config --cflags)&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+      &lt;span class='s2'&gt;&amp;quot;&amp;lt;!(xml2-config --cflags)&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
       &lt;span class='s2'&gt;&amp;quot;-fexceptions&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
 
       &lt;span class='s2'&gt;&amp;quot;-g&amp;quot;&lt;/span&gt;
     &lt;span class='p'&gt;],&lt;/span&gt;
 
     &lt;span class='s2'&gt;&amp;quot;cflags_cc&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='p'&gt;[&lt;/span&gt;
-      &lt;span class='s2'&gt;&amp;quot;&amp;amp;lt;!(xml2-config --cflags)&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+      &lt;span class='s2'&gt;&amp;quot;&amp;lt;!(xml2-config --cflags)&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
       &lt;span class='s2'&gt;&amp;quot;-fexceptions&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
 
       &lt;span class='s2'&gt;&amp;quot;-g&amp;quot;&lt;/span&gt;
@@ -635,7 +635,7 @@ Segmentation fault
 
     &lt;span class='s2'&gt;&amp;quot;xcode_settings&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
       &lt;span class='s2'&gt;&amp;quot;OTHER_CFLAGS&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='p'&gt;[&lt;/span&gt;
-        &lt;span class='s2'&gt;&amp;quot;&amp;amp;lt;!(xml2-config --cflags)&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+        &lt;span class='s2'&gt;&amp;quot;&amp;lt;!(xml2-config --cflags)&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
         &lt;span class='s2'&gt;&amp;quot;-fexceptions&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
 
         &lt;span class='s2'&gt;&amp;quot;-g&amp;quot;&lt;/span&gt;
