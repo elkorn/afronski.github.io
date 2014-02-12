@@ -42,14 +42,14 @@ Then, if you are using native Node.js extensions you have to recompile them with
     "sources": [ "node_xslt.cc" ],
 
     "cflags": [
-      "&lt;!(xml2-config --cflags)",
+      "<!(xml2-config --cflags)",
       "-fexceptions",
 
       "-g"
     ],
 
     "cflags_cc": [
-      "&lt;!(xml2-config --cflags)",
+      "<!(xml2-config --cflags)",
       "-fexceptions",
 
       "-g"
@@ -57,7 +57,7 @@ Then, if you are using native Node.js extensions you have to recompile them with
 
     "xcode_settings": {
       "OTHER_CFLAGS": [
-        "&lt;!(xml2-config --cflags)",
+        "<!(xml2-config --cflags)",
         "-fexceptions",
 
         "-g"
