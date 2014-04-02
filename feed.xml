@@ -7,9 +7,41 @@
     <atom:link href="http://www.afronski.pl/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Using JIRA from the command line</title>
+        <description>&lt;h1 id=&quot;using__from_the_command_line&quot;&gt;Using &lt;code&gt;JIRA&lt;/code&gt; from the command line&lt;/h1&gt;
+
+&lt;p&gt;If someone would like to automate some popular workflows related with &lt;code&gt;JIRA&lt;/code&gt; (like logging time related with code review or meetings) or just use it from command line, please look at &lt;a href=&quot;http://tebriel.github.io/jira-cli&quot;&gt;this tool&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Installation:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;npm install -g jira-cli
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then create a file inside your home directory called &lt;em&gt;&lt;code&gt;.jiraclirc.json&lt;/code&gt;&lt;/em&gt; with content:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='s2'&gt;&amp;quot;user&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;USERNAME&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+  &lt;span class='s2'&gt;&amp;quot;password&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;PASSWORD&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+  &lt;span class='s2'&gt;&amp;quot;host&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;address.to.jira.com&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+  &lt;span class='s2'&gt;&amp;quot;protocol&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;https:&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+  &lt;span class='s2'&gt;&amp;quot;port&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='mi'&gt;443&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+  &lt;span class='s2'&gt;&amp;quot;strictSSL&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='kc'&gt;false&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+  &lt;span class='s2'&gt;&amp;quot;project&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;PROJECTID&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After that you can log time with command specified below. In this case, it will prompt you to type a work log comment and amount of time spent with this activity e.g. &lt;em&gt;&lt;code&gt;1h&lt;/code&gt;&lt;/em&gt; (format like in corresponding dialog):&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;jira -w BLAHBLAH-111
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;links&quot;&gt;Links&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;http://tebriel.github.io/jira-cli/&quot;&gt;&lt;code&gt;jira-cli&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+        <pubDate>Wed, 02 Apr 2014 17:00:00 +0200</pubDate>
+        <link>http://www.afronski.pl/2014/04/02/using-jira-from-the-command-line.html</link>
+        <guid isPermaLink="true">http://www.afronski.pl/2014/04/02/using-jira-from-the-command-line.html</guid>
+      </item>
+    
+      <item>
         <title>ssh2 - Node.js module of the week</title>
-        <description>
-&lt;h2 id=&quot;__nodejs_module_of_the_week&quot;&gt;&lt;code&gt;ssh2&lt;/code&gt; - Node.js module of the week&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;__nodejs_module_of_the_week&quot;&gt;&lt;code&gt;ssh2&lt;/code&gt; - Node.js module of the week&lt;/h2&gt;
 
 &lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
 
@@ -93,17 +125,15 @@
 
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/mscdex/ssh2&quot;&gt;&lt;code&gt;ssh2&lt;/code&gt; github page&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Tue, 04 Feb 2014 22:00:00 +0000</pubDate>
+&lt;/ol&gt;</description>
+        <pubDate>Tue, 04 Feb 2014 23:00:00 +0100</pubDate>
         <link>http://www.afronski.pl/2014/02/04/ssh2-nodejs-module-of-the-week.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2014/02/04/ssh2-nodejs-module-of-the-week.html</guid>
       </item>
     
       <item>
         <title>Reconciling cat and dog - the most productive git-svn setup</title>
-        <description>
-&lt;h2 id=&quot;reconciling_cat_and_dog__the_most_productive__setup&quot;&gt;Reconciling cat and dog - the most productive &lt;em&gt;&lt;code&gt;git-svn&lt;/code&gt;&lt;/em&gt; setup&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;reconciling_cat_and_dog__the_most_productive__setup&quot;&gt;Reconciling cat and dog - the most productive &lt;em&gt;&lt;code&gt;git-svn&lt;/code&gt;&lt;/em&gt; setup&lt;/h2&gt;
 
 &lt;p&gt;I would like to present productive and effective setup for the &lt;em&gt;&lt;code&gt;git-svn&lt;/code&gt;&lt;/em&gt; bridge which removes most of the obstacles and fixes some problems which occur with this &lt;em&gt;bridged&lt;/em&gt; approach.&lt;/p&gt;
 
@@ -136,6 +166,7 @@
 &lt;span class='lineno'&gt; 9&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;&lt;span class='nb'&gt;cd &lt;/span&gt;REPOSITORY
 &lt;span class='lineno'&gt;10&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn init &lt;span class='nv'&gt;$SVN_REPOSITORY_TRUNK_URL&lt;/span&gt; .
 &lt;span class='lineno'&gt;11&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn fetch -r HEAD
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&quot;updating_and_commiting&quot;&gt;Updating and commiting&lt;/h3&gt;
 
@@ -196,17 +227,15 @@ assertion &lt;span class='s2'&gt;&amp;quot;svn_fspath__is_canonical(child_fspath
 &lt;li&gt;&lt;a href=&quot;https://www.kernel.org/pub/software/scm/git/docs/git-svn.html&quot;&gt;Manual for &lt;code&gt;git-svn&lt;/code&gt; on kernel.org&lt;/a&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;a href=&quot;http://git-scm.com/book/en/Git-and-Other-Systems-Git-and-Subversion&quot;&gt;Chapter about &lt;code&gt;git-svn&lt;/code&gt; in &lt;code&gt;Pro Git&lt;/code&gt; book&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Sat, 25 Jan 2014 22:00:00 +0000</pubDate>
+&lt;/ol&gt;</description>
+        <pubDate>Sat, 25 Jan 2014 23:00:00 +0100</pubDate>
         <link>http://www.afronski.pl/2014/01/25/reconciling-cat-and-dog-the-most-productive-git-svn-setup.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2014/01/25/reconciling-cat-and-dog-the-most-productive-git-svn-setup.html</guid>
       </item>
     
       <item>
         <title>Small talk about productivity</title>
-        <description>
-&lt;h1 id=&quot;small_talk_about_productivity&quot;&gt;Small talk about productivity&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;small_talk_about_productivity&quot;&gt;Small talk about productivity&lt;/h1&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Do you propose a 4 day work week in your company?&lt;/li&gt;
@@ -262,17 +291,15 @@ assertion &lt;span class='s2'&gt;&amp;quot;svn_fspath__is_canonical(child_fspath
 
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;https://vimeo.com/39020426&quot;&gt;Scott Hanselman - It’s not what you read, it’s what you ignore&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Sat, 18 Jan 2014 17:30:00 +0000</pubDate>
+&lt;/ol&gt;</description>
+        <pubDate>Sat, 18 Jan 2014 18:30:00 +0100</pubDate>
         <link>http://www.afronski.pl/2014/01/18/small-talk-about-productivity.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2014/01/18/small-talk-about-productivity.html</guid>
       </item>
     
       <item>
         <title>With great power, comes great responsibility</title>
-        <description>
-&lt;h1 id=&quot;with_great_power_comes_great_responsibility&quot;&gt;With great power, comes great responsibility&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;with_great_power_comes_great_responsibility&quot;&gt;With great power, comes great responsibility&lt;/h1&gt;
 
 &lt;p&gt;If you had to choose what is better - &lt;em&gt;short and concise code&lt;/em&gt; or &lt;em&gt;abstractions visible at the first glance&lt;/em&gt; - what would you choose?&lt;/p&gt;
 
@@ -362,17 +389,15 @@ assertion &lt;span class='s2'&gt;&amp;quot;svn_fspath__is_canonical(child_fspath
 
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/course/reactive&quot;&gt;Coursera - Principles of Reactive Programming&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Tue, 17 Dec 2013 21:45:00 +0000</pubDate>
+&lt;/ol&gt;</description>
+        <pubDate>Tue, 17 Dec 2013 22:45:00 +0100</pubDate>
         <link>http://www.afronski.pl/2013/12/17/with-great-power-comes-great-responsibility.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2013/12/17/with-great-power-comes-great-responsibility.html</guid>
       </item>
     
       <item>
         <title>Node.js evolution</title>
-        <description>
-&lt;h1 id=&quot;nodejs_evolution&quot;&gt;Node.js evolution&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;nodejs_evolution&quot;&gt;Node.js evolution&lt;/h1&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/NodeJsLogo.png&quot; alt=&quot;Node.js logo&quot; /&gt;&lt;/p&gt;
 
@@ -470,17 +495,15 @@ assertion &lt;span class='s2'&gt;&amp;quot;svn_fspath__is_canonical(child_fspath
 &lt;li&gt;&lt;a href=&quot;https://gist.github.com/piscisaureus/7454729&quot;&gt;&lt;code&gt;domains2&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;a href=&quot;http://blog.nodejs.org/2011/07/11/evolving-the-node-js-brand/&quot;&gt;Node.js Logo&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Fri, 06 Dec 2013 18:15:00 +0000</pubDate>
+&lt;/ol&gt;</description>
+        <pubDate>Fri, 06 Dec 2013 19:15:00 +0100</pubDate>
         <link>http://www.afronski.pl/2013/12/06/nodejs-evolution.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2013/12/06/nodejs-evolution.html</guid>
       </item>
     
       <item>
         <title>Let's talk about memory</title>
-        <description>
-&lt;h1 id=&quot;lets_talk_&quot;&gt;Let’s talk &lt;code&gt;about:memory&lt;/code&gt;&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;lets_talk_&quot;&gt;Let’s talk &lt;code&gt;about:memory&lt;/code&gt;&lt;/h1&gt;
 
 &lt;p&gt;Recently on polish Facebook group &lt;em&gt;JSNews&lt;/em&gt;, thanks to &lt;a href=&quot;https://twitter.com/zbraniecki&quot;&gt;Zbigniew Braniecki&lt;/a&gt;, I found a very useful tool for monitoring memory in Firefox - &lt;code&gt;about:memory&lt;/code&gt;.&lt;/p&gt;
 
@@ -492,17 +515,15 @@ assertion &lt;span class='s2'&gt;&amp;quot;svn_fspath__is_canonical(child_fspath
 
 &lt;p&gt;I strongly encourage you to dive into that tool, especially if you like me, thought that &lt;em&gt;Firefox&lt;/em&gt; hasn’t got any tools for memory profiling. Well, not the first time I’m wrong :wink:.&lt;/p&gt;
 
-&lt;p&gt;P.S. On screenshots you can observe new UI for &lt;em&gt;Firefox&lt;/em&gt;, called &lt;em&gt;Australis&lt;/em&gt; - what do you think about it? Share your opinion in comments.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 27 Nov 2013 23:35:00 +0000</pubDate>
-        <link>http://www.afronski.pl/2013/11/27/lets-talk-about-memory.html</link>
-        <guid isPermaLink="true">http://www.afronski.pl/2013/11/27/lets-talk-about-memory.html</guid>
+&lt;p&gt;P.S. On screenshots you can observe new UI for &lt;em&gt;Firefox&lt;/em&gt;, called &lt;em&gt;Australis&lt;/em&gt; - what do you think about it? Share your opinion in comments.&lt;/p&gt;</description>
+        <pubDate>Thu, 28 Nov 2013 00:35:00 +0100</pubDate>
+        <link>http://www.afronski.pl/2013/11/28/lets-talk-about-memory.html</link>
+        <guid isPermaLink="true">http://www.afronski.pl/2013/11/28/lets-talk-about-memory.html</guid>
       </item>
     
       <item>
         <title>Mysterious problem with missing name of the active virtualenv</title>
-        <description>
-&lt;h1 id=&quot;mysterious_problem_with_missing_name_of_the_active_&quot;&gt;Mysterious problem with missing name of the active &lt;code&gt;virtualenv&lt;/code&gt;&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;mysterious_problem_with_missing_name_of_the_active_&quot;&gt;Mysterious problem with missing name of the active &lt;code&gt;virtualenv&lt;/code&gt;&lt;/h1&gt;
 
 &lt;p&gt;Recently I have ran into an issue related to &lt;code&gt;virtualenv&lt;/code&gt; and my shell. It did not display name of the active &lt;code&gt;virtualenv&lt;/code&gt; after invoking the standard command:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='nb'&gt;source &lt;/span&gt;bin/activate
@@ -521,14 +542,14 @@ assertion &lt;span class='s2'&gt;&amp;quot;svn_fspath__is_canonical(child_fspath
 &lt;span class='lineno'&gt; 2&lt;/span&gt;   &lt;span class='c'&gt;# Beautifying the prompt ;).&lt;/span&gt;
 &lt;span class='lineno'&gt; 3&lt;/span&gt;   &lt;span class='c'&gt;# ...&lt;/span&gt;
 &lt;span class='lineno'&gt; 4&lt;/span&gt; 
-&lt;span class='lineno'&gt; 5&lt;/span&gt;   &lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt; -z &lt;span class='s2'&gt;&amp;quot;$VIRTUAL_ENV_DISABLE_PROMPT&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;]&lt;/span&gt; ; &lt;span class='k'&gt;then&lt;/span&gt;
+&lt;span class='lineno'&gt; 5&lt;/span&gt;   &lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt; -z &lt;span class='s2'&gt;&amp;quot;$VIRTUAL_ENV_DISABLE_PROMPT&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;]&lt;/span&gt; &lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='k'&gt;then&lt;/span&gt;
 &lt;span class='lineno'&gt; 6&lt;/span&gt; &lt;span class='k'&gt;    &lt;/span&gt;&lt;span class='nv'&gt;_OLD_VIRTUAL_PS1&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;$PS1&amp;quot;&lt;/span&gt;
 &lt;span class='lineno'&gt; 7&lt;/span&gt; 
-&lt;span class='lineno'&gt; 8&lt;/span&gt;     &lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;x&amp;quot;&lt;/span&gt; !&lt;span class='o'&gt;=&lt;/span&gt; x &lt;span class='o'&gt;]&lt;/span&gt; ; &lt;span class='k'&gt;then&lt;/span&gt;
+&lt;span class='lineno'&gt; 8&lt;/span&gt;     &lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;x&amp;quot;&lt;/span&gt; !&lt;span class='o'&gt;=&lt;/span&gt; x &lt;span class='o'&gt;]&lt;/span&gt; &lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='k'&gt;then&lt;/span&gt;
 &lt;span class='lineno'&gt; 9&lt;/span&gt; &lt;span class='k'&gt;        &lt;/span&gt;&lt;span class='nv'&gt;PS1&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;$PS1&amp;quot;&lt;/span&gt;
 &lt;span class='lineno'&gt;10&lt;/span&gt;     &lt;span class='k'&gt;else&lt;/span&gt;
-&lt;span class='lineno'&gt;11&lt;/span&gt; &lt;span class='k'&gt;      if&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt; ! -z &lt;span class='s2'&gt;&amp;quot;$VIRTUAL_ENV&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;]&lt;/span&gt; ; &lt;span class='k'&gt;then&lt;/span&gt;
-&lt;span class='lineno'&gt;12&lt;/span&gt; &lt;span class='k'&gt;        if&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;`basename \&amp;quot;$VIRTUAL_ENV\&amp;quot;`&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;__&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;]&lt;/span&gt; ; &lt;span class='k'&gt;then&lt;/span&gt;
+&lt;span class='lineno'&gt;11&lt;/span&gt; &lt;span class='k'&gt;      if&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt; ! -z &lt;span class='s2'&gt;&amp;quot;$VIRTUAL_ENV&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;]&lt;/span&gt; &lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='k'&gt;then&lt;/span&gt;
+&lt;span class='lineno'&gt;12&lt;/span&gt; &lt;span class='k'&gt;        if&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;`basename \&amp;quot;$VIRTUAL_ENV\&amp;quot;`&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;__&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;]&lt;/span&gt; &lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='k'&gt;then&lt;/span&gt;
 &lt;span class='lineno'&gt;13&lt;/span&gt; &lt;span class='k'&gt;          &lt;/span&gt;&lt;span class='nv'&gt;PS1&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;`basename \`dirname \&amp;quot;$VIRTUAL_ENV\&amp;quot;\``: $PS1&amp;quot;&lt;/span&gt;
 &lt;span class='lineno'&gt;14&lt;/span&gt;         &lt;span class='k'&gt;else&lt;/span&gt;
 &lt;span class='lineno'&gt;15&lt;/span&gt; &lt;span class='k'&gt;          &lt;/span&gt;&lt;span class='nv'&gt;PS1&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;`basename $VIRTUAL_ENV`: $PS1&amp;quot;&lt;/span&gt;
@@ -540,21 +561,19 @@ assertion &lt;span class='s2'&gt;&amp;quot;svn_fspath__is_canonical(child_fspath
 &lt;span class='lineno'&gt;21&lt;/span&gt; 
 &lt;span class='lineno'&gt;22&lt;/span&gt; &lt;span class='nv'&gt;PROMPT_COMMAND&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;calculate_prompt
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;And it is fixed! :wink:&lt;/p&gt;
-</description>
-        <pubDate>Wed, 13 Nov 2013 18:20:00 +0000</pubDate>
+&lt;p&gt;And it is fixed! :wink:&lt;/p&gt;</description>
+        <pubDate>Wed, 13 Nov 2013 19:20:00 +0100</pubDate>
         <link>http://www.afronski.pl/2013/11/13/mysterious-problem-with-missing-name-of-the-active-virtualenv.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2013/11/13/mysterious-problem-with-missing-name-of-the-active-virtualenv.html</guid>
       </item>
     
       <item>
         <title>Differences between nohup and ampersand</title>
-        <description>
-&lt;h1 id=&quot;differences_between__and_the_ampersand&quot;&gt;Differences between &lt;code&gt;nohup&lt;/code&gt; and the ampersand&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;differences_between__and_the_ampersand&quot;&gt;Differences between &lt;code&gt;nohup&lt;/code&gt; and the ampersand&lt;/h1&gt;
 
 &lt;p&gt;There are many cases when &lt;em&gt;small differences&lt;/em&gt; between environments can bite you. This is one into which I have ran recently. What is the difference between these two commands?&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='lineno'&gt;1&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;nohup myprocess.out &amp;amp;
-&lt;span class='lineno'&gt;2&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;myprocess.out &amp;amp;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='lineno'&gt;1&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;nohup myprocess.out &lt;span class='p'&gt;&amp;amp;&lt;/span&gt;
+&lt;span class='lineno'&gt;2&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;myprocess.out &lt;span class='p'&gt;&amp;amp;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The answer is the same as usual - &lt;em&gt;it depends&lt;/em&gt;.&lt;/p&gt;
 
@@ -569,7 +588,7 @@ assertion &lt;span class='s2'&gt;&amp;quot;svn_fspath__is_canonical(child_fspath
 &lt;p&gt;Fine, but like in this case there are always &lt;em&gt;‘buts’&lt;/em&gt;. There is no difference between these launching methods when the shell is configured in a way where it does not send &lt;code&gt;SIGHUP&lt;/code&gt; at all.&lt;/p&gt;
 
 &lt;p&gt;In case you are using bash, you can use the command specified below to find out whether your shell sends &lt;em&gt;&lt;code&gt;SIGHUP&lt;/code&gt;&lt;/em&gt; to its child processes or not:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;&lt;span class='nb'&gt;shopt&lt;/span&gt; | grep hupon
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;&lt;span class='nb'&gt;shopt&lt;/span&gt; &lt;span class='p'&gt;|&lt;/span&gt; grep hupon
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And moreover - there are cases where nohup does not work. For example, when the process you start reconnects the &lt;code&gt;NOHUP&lt;/code&gt; signal (it is done inside, on the application code level).&lt;/p&gt;
 
@@ -583,17 +602,15 @@ assertion &lt;span class='s2'&gt;&amp;quot;svn_fspath__is_canonical(child_fspath
 
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;http://unixhelp.ed.ac.uk/CGI/man-cgi?signal+7&quot;&gt;&lt;code&gt;man 7 signal&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Thu, 07 Nov 2013 18:45:00 +0000</pubDate>
+&lt;/ol&gt;</description>
+        <pubDate>Thu, 07 Nov 2013 19:45:00 +0100</pubDate>
         <link>http://www.afronski.pl/2013/11/07/differences-between-nohup-and-the-ampersand.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2013/11/07/differences-between-nohup-and-the-ampersand.html</guid>
       </item>
     
       <item>
         <title>Low-level Node.js debugging on production</title>
-        <description>
-&lt;h1 id=&quot;lowlevel_nodejs_debugging_on_production&quot;&gt;Low-level Node.js debugging on production&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;lowlevel_nodejs_debugging_on_production&quot;&gt;Low-level Node.js debugging on production&lt;/h1&gt;
 
 &lt;p&gt;Sometimes when you want to run your Node.js application on production environment, you will receive:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;node-stuff &lt;span class='nv'&gt;$ &lt;/span&gt;node index.js
@@ -611,7 +628,7 @@ Segmentation fault
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;sudo &lt;span class='nb'&gt;ulimit&lt;/span&gt; -c unlimited
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Next, you set different path for these files (remember to put them on a partition with a huge amount of the free disk space):&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;&lt;span class='nb'&gt;echo&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;/tmp/core_%e.%p&amp;#39;&lt;/span&gt; | sudo tee /proc/sys/kernel/core_pattern
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;&lt;span class='nb'&gt;echo&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;/tmp/core_%e.%p&amp;#39;&lt;/span&gt; &lt;span class='p'&gt;|&lt;/span&gt; sudo tee /proc/sys/kernel/core_pattern
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Then, if you are using native Node.js extensions you have to recompile them with the debugging flag &lt;em&gt;&lt;code&gt;-g&lt;/code&gt;&lt;/em&gt; (configuration file taken from the &lt;em&gt;&lt;code&gt;node_xslt&lt;/code&gt;&lt;/em&gt; module):&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='p'&gt;{&lt;/span&gt;
@@ -690,80 +707,10 @@ Program received signal SIGSEGV, Segmentation fault.
 &lt;li&gt;&lt;a href=&quot;https://github.com/bsuh/node_xslt&quot;&gt;node_xslt&lt;/a&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;a href=&quot;http://linux.die.net/man/1/strace&quot;&gt;&lt;code&gt;strace&lt;/code&gt; man pages&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Sat, 02 Nov 2013 10:45:00 +0000</pubDate>
+&lt;/ol&gt;</description>
+        <pubDate>Sat, 02 Nov 2013 11:45:00 +0100</pubDate>
         <link>http://www.afronski.pl/2013/11/02/low-level-nodejs-debugging-on-production.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2013/11/02/low-level-nodejs-debugging-on-production.html</guid>
-      </item>
-    
-      <item>
-        <title>Tips and tricks for chef-solo and vagrant</title>
-        <description>
-&lt;h1 id=&quot;tips_and_tricks_for_chefsolo_and_vagrant&quot;&gt;Tips and tricks for chef-solo and vagrant&lt;/h1&gt;
-
-&lt;p&gt;In your daily work at the kitchen sink :wink:, sometimes you have to be a &lt;em&gt;plumber&lt;/em&gt; and get dirty. In order to do that you have to be familiar with the concept of debugging &lt;em&gt;vagrant&lt;/em&gt;, &lt;em&gt;chef-solo&lt;/em&gt; and some other useful tricks.&lt;/p&gt;
-
-&lt;h2 id=&quot;debugging_vagrant&quot;&gt;Debugging vagrant&lt;/h2&gt;
-
-&lt;p&gt;If you want to enable a verbose mode for &lt;em&gt;vagrant&lt;/em&gt;, you need to set the environment variable &lt;code&gt;VAGRANT_LOG&lt;/code&gt; to &lt;code&gt;DEBUG&lt;/code&gt; or &lt;code&gt;INFO&lt;/code&gt; value, as in the example below:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ VAGRANT_LOG&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;DEBUG vagrant up
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&quot;debugging_chefsolo&quot;&gt;Debugging chef-solo&lt;/h2&gt;
-
-&lt;p&gt;You have got two options how to enable verbose mode for &lt;em&gt;chef-solo&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;First, you can &lt;em&gt;&lt;code&gt;SSH&lt;/code&gt;&lt;/em&gt; into a created virtual machine and invoke the &lt;em&gt;magic command&lt;/em&gt; in a certain directory:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;vagrant ssh
-
-vagrant@localhost ~ &lt;span class='nv'&gt;$ &lt;/span&gt;&lt;span class='nb'&gt;cd&lt;/span&gt; /tmp/vagrant-chef-1
-vagrant@localhost /tmp/vagrant-chef-1 &lt;span class='nv'&gt;$ &lt;/span&gt;sudo chef-solo -c solo.rb -j dna.json -l debug
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;In this &lt;em&gt;magic command&lt;/em&gt; the parameter &lt;code&gt;-c&lt;/code&gt; is responsible for setting a configuration file, &lt;code&gt;-j&lt;/code&gt; is for passing a file with attributes, which is later called a &lt;em&gt;node specification&lt;/em&gt;. Last parameter &lt;code&gt;-l&lt;/code&gt; - most important for us - enables the verbose mode at a certain logging level.&lt;/p&gt;
-
-&lt;p&gt;You may be wondering why you are entering a &lt;code&gt;/tmp/vagrant-chef-1&lt;/code&gt; directory with a digit at the end?&lt;/p&gt;
-
-&lt;p&gt;The actual value depends on the number of concurrent and active provisioning processes running on the virtual machine and is represented by the &lt;a href=&quot;https://github.com/mitchellh/vagrant/blob/master/plugins/provisioners/chef/provisioner/base.rb#L22&quot;&gt;get_and_update_counter&lt;/a&gt; method and the &lt;a href=&quot;https://github.com/mitchellh/vagrant/blob/master/lib/vagrant/util/counter.rb&quot;&gt;Counter&lt;/a&gt; module.&lt;/p&gt;
-
-&lt;p&gt;But you can enable it in a different way - by passing the arguments to a provisioner inside &lt;em&gt;Vagrantfile&lt;/em&gt;:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='lineno'&gt;1&lt;/span&gt; &lt;span class='no'&gt;Vagrant&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;configure&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;2&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;config&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
-&lt;span class='lineno'&gt;2&lt;/span&gt;   &lt;span class='c1'&gt;# ...&lt;/span&gt;
-&lt;span class='lineno'&gt;3&lt;/span&gt; 
-&lt;span class='lineno'&gt;4&lt;/span&gt;   &lt;span class='n'&gt;config&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;vm&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;provision&lt;/span&gt; &lt;span class='ss'&gt;:chef_solo&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;chef&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
-&lt;span class='lineno'&gt;5&lt;/span&gt;     &lt;span class='c1'&gt;# ...&lt;/span&gt;
-&lt;span class='lineno'&gt;6&lt;/span&gt; 
-&lt;span class='lineno'&gt;7&lt;/span&gt;     &lt;span class='n'&gt;chef&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;arguments&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;-l debug&amp;#39;&lt;/span&gt;
-&lt;span class='lineno'&gt;8&lt;/span&gt;   &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;span class='lineno'&gt;9&lt;/span&gt; &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&quot;mutating_the_dna&quot;&gt;Mutating the DNA&lt;/h2&gt;
-
-&lt;p&gt;As you can see in the example above, related with the chef-solo debugging, you have got a &lt;code&gt;dna.json&lt;/code&gt; file with attributes generated on the basis of provisioner configuration attached in &lt;em&gt;Vagrantfile&lt;/em&gt;. We call it a &lt;em&gt;node specification&lt;/em&gt;. But what if you already have an existing node specification, and you want to use it?&lt;/p&gt;
-
-&lt;p&gt;There is an attribute for that, called &lt;code&gt;json&lt;/code&gt;, but it is a dictionary. You cannot pass a plain string with a path to the node file, like the role name in the &lt;em&gt;add_role&lt;/em&gt; method or setting a value in the &lt;em&gt;environment&lt;/em&gt; field.&lt;/p&gt;
-
-&lt;p&gt;In order to inject our attributes you need to read the file first, then parse the content as JSON and finally merge it with the existing value of the field:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='lineno'&gt;1&lt;/span&gt; &lt;span class='no'&gt;Vagrant&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;configure&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;2&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;config&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
-&lt;span class='lineno'&gt;2&lt;/span&gt;   &lt;span class='c1'&gt;# ...&lt;/span&gt;
-&lt;span class='lineno'&gt;3&lt;/span&gt; 
-&lt;span class='lineno'&gt;4&lt;/span&gt;   &lt;span class='n'&gt;config&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;vm&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;provision&lt;/span&gt; &lt;span class='ss'&gt;:chef_solo&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;chef&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
-&lt;span class='lineno'&gt;5&lt;/span&gt;     &lt;span class='c1'&gt;# ...&lt;/span&gt;
-&lt;span class='lineno'&gt;6&lt;/span&gt; 
-&lt;span class='lineno'&gt;7&lt;/span&gt;     &lt;span class='n'&gt;chef&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;json&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;merge!&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='no'&gt;JSON&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;parse&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='no'&gt;File&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;read&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;path/to/json/file&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)))&lt;/span&gt;
-&lt;span class='lineno'&gt;8&lt;/span&gt;   &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;span class='lineno'&gt;9&lt;/span&gt; &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1 id=&quot;links&quot;&gt;Links&lt;/h1&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/mitchellh/vagrant&quot;&gt;Vagrant Github repository&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;http://docs.vagrantup.com/v2/&quot;&gt;Vagrant documentation&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Fri, 18 Oct 2013 20:10:00 +0000</pubDate>
-        <link>http://www.afronski.pl/2013/10/18/chef-solo-dna-mutation.html</link>
-        <guid isPermaLink="true">http://www.afronski.pl/2013/10/18/chef-solo-dna-mutation.html</guid>
       </item>
     
   </channel>

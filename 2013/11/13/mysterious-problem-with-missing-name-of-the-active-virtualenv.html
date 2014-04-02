@@ -22,7 +22,6 @@
     <article class="container post">
       <a href="/">Home</a>
 
-
 <h1 id="mysterious_problem_with_missing_name_of_the_active_">Mysterious problem with missing name of the active <code>virtualenv</code></h1>
 
 <p>Recently I have ran into an issue related to <code>virtualenv</code> and my shell. It did not display name of the active <code>virtualenv</code> after invoking the standard command:</p>
@@ -42,14 +41,14 @@
 <span class='lineno'> 2</span>   <span class='c'># Beautifying the prompt ;).</span>
 <span class='lineno'> 3</span>   <span class='c'># ...</span>
 <span class='lineno'> 4</span> 
-<span class='lineno'> 5</span>   <span class='k'>if</span> <span class='o'>[</span> -z <span class='s2'>&quot;$VIRTUAL_ENV_DISABLE_PROMPT&quot;</span> <span class='o'>]</span> ; <span class='k'>then</span>
+<span class='lineno'> 5</span>   <span class='k'>if</span> <span class='o'>[</span> -z <span class='s2'>&quot;$VIRTUAL_ENV_DISABLE_PROMPT&quot;</span> <span class='o'>]</span> <span class='p'>;</span> <span class='k'>then</span>
 <span class='lineno'> 6</span> <span class='k'>    </span><span class='nv'>_OLD_VIRTUAL_PS1</span><span class='o'>=</span><span class='s2'>&quot;$PS1&quot;</span>
 <span class='lineno'> 7</span> 
-<span class='lineno'> 8</span>     <span class='k'>if</span> <span class='o'>[</span> <span class='s2'>&quot;x&quot;</span> !<span class='o'>=</span> x <span class='o'>]</span> ; <span class='k'>then</span>
+<span class='lineno'> 8</span>     <span class='k'>if</span> <span class='o'>[</span> <span class='s2'>&quot;x&quot;</span> !<span class='o'>=</span> x <span class='o'>]</span> <span class='p'>;</span> <span class='k'>then</span>
 <span class='lineno'> 9</span> <span class='k'>        </span><span class='nv'>PS1</span><span class='o'>=</span><span class='s2'>&quot;$PS1&quot;</span>
 <span class='lineno'>10</span>     <span class='k'>else</span>
-<span class='lineno'>11</span> <span class='k'>      if</span> <span class='o'>[</span> ! -z <span class='s2'>&quot;$VIRTUAL_ENV&quot;</span> <span class='o'>]</span> ; <span class='k'>then</span>
-<span class='lineno'>12</span> <span class='k'>        if</span> <span class='o'>[</span> <span class='s2'>&quot;`basename \&quot;$VIRTUAL_ENV\&quot;`&quot;</span> <span class='o'>=</span> <span class='s2'>&quot;__&quot;</span> <span class='o'>]</span> ; <span class='k'>then</span>
+<span class='lineno'>11</span> <span class='k'>      if</span> <span class='o'>[</span> ! -z <span class='s2'>&quot;$VIRTUAL_ENV&quot;</span> <span class='o'>]</span> <span class='p'>;</span> <span class='k'>then</span>
+<span class='lineno'>12</span> <span class='k'>        if</span> <span class='o'>[</span> <span class='s2'>&quot;`basename \&quot;$VIRTUAL_ENV\&quot;`&quot;</span> <span class='o'>=</span> <span class='s2'>&quot;__&quot;</span> <span class='o'>]</span> <span class='p'>;</span> <span class='k'>then</span>
 <span class='lineno'>13</span> <span class='k'>          </span><span class='nv'>PS1</span><span class='o'>=</span><span class='s2'>&quot;`basename \`dirname \&quot;$VIRTUAL_ENV\&quot;\``: $PS1&quot;</span>
 <span class='lineno'>14</span>         <span class='k'>else</span>
 <span class='lineno'>15</span> <span class='k'>          </span><span class='nv'>PS1</span><span class='o'>=</span><span class='s2'>&quot;`basename $VIRTUAL_ENV`: $PS1&quot;</span>
@@ -62,7 +61,6 @@
 <span class='lineno'>22</span> <span class='nv'>PROMPT_COMMAND</span><span class='o'>=</span>calculate_prompt
 </code></pre></div>
 <p>And it is fixed! <img alt="wink" src="/images/emoji/wink.png" class="emoji" /></p>
-
     </article>
 
     <section class="container">

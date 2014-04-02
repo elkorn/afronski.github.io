@@ -22,7 +22,6 @@
     <article class="container post">
       <a href="/">Home</a>
 
-
 <h1 id="lowlevel_nodejs_debugging_on_production">Low-level Node.js debugging on production</h1>
 
 <p>Sometimes when you want to run your Node.js application on production environment, you will receive:</p>
@@ -41,7 +40,7 @@ Segmentation fault
 <div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>sudo <span class='nb'>ulimit</span> -c unlimited
 </code></pre></div>
 <p>Next, you set different path for these files (remember to put them on a partition with a huge amount of the free disk space):</p>
-<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span><span class='nb'>echo</span> <span class='s1'>&#39;/tmp/core_%e.%p&#39;</span> | sudo tee /proc/sys/kernel/core_pattern
+<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span><span class='nb'>echo</span> <span class='s1'>&#39;/tmp/core_%e.%p&#39;</span> <span class='p'>|</span> sudo tee /proc/sys/kernel/core_pattern
 </code></pre></div>
 <p>Then, if you are using native Node.js extensions you have to recompile them with the debugging flag <em><code>-g</code></em> (configuration file taken from the <em><code>node_xslt</code></em> module):</p>
 <div class='highlight'><pre><code class='javascript'><span class='p'>{</span>
@@ -121,7 +120,6 @@ Program received signal SIGSEGV, Segmentation fault.
 
 <li><a href="http://linux.die.net/man/1/strace"><code>strace</code> man pages</a></li>
 </ol>
-
     </article>
 
     <section class="container">
