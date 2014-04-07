@@ -39,9 +39,6 @@ At first, you need to `clone` (or `checkout` in SVN terminology) repository. You
 ~ $ git svn fetch -r HEAD
 {% endhighlight %}
 
-{% highlight bash%}
-{% endhighlight %}
-
 ### Updating and commiting
 
 Besides `pull` and `push` (or `update` and `commit` in SVN terminology) everything works like in classical *`git`*.
