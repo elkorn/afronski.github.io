@@ -166,7 +166,6 @@
 &lt;span class='lineno'&gt; 9&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;&lt;span class='nb'&gt;cd &lt;/span&gt;REPOSITORY
 &lt;span class='lineno'&gt;10&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn init &lt;span class='nv'&gt;$SVN_REPOSITORY_TRUNK_URL&lt;/span&gt; .
 &lt;span class='lineno'&gt;11&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn fetch -r HEAD
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&quot;updating_and_commiting&quot;&gt;Updating and commiting&lt;/h3&gt;
 
