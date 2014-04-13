@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <meta name="author" content="Wojtek Gawroński (afronski)" />
+    <meta name="description" content="Personal blog of Wojtek Gawroński, a passionate software developer." />
+
+    <meta name="keywords" content="HTML,HTML5,JavaScript,CSS,CSS3,Canvas,WebGL,C#,.NET,Mono,Erlang,Vagrant,Node.js" />
+
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="alternate" type="application/rss+xml" title="afronski.pl" href="http://www.afronski.pl/feed.xml" />
+
+    <title>Useful tools - mailcatcher</title>
+
+    <link rel="stylesheet" href="/stylesheets/syntax.min.css" />
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+    <article class="container post">
+      <a href="/">Home</a>
+
+<h1 id="useful_tools__">Useful tools - <code>mailcatcher</code></h1>
+
+<h2 id="overview">Overview</h2>
+
+<p><em>MailCatcher</em> runs a super simple <code>SMTP</code> server which catches any message sent to it to display in a web interface. It is a very useful tool which does not need a huge knowledge about e.g. <code>sendmail</code> and it is really easy to set up.</p>
+
+<h2 id="installation_and_usage">Installation and Usage</h2>
+
+<p>Service is written in <em>Ruby</em> and it is accessible in the gems repository. If you have <em>Ruby</em> installed you will only need to perform two installation steps:</p>
+
+<ol>
+<li>Install it from gems by <code>gem install mailcatcher</code>.</li>
+
+<li>Start the service by invoking command <code>mailcatcher</code>.</li>
+
+<li>Go to the dashboard at <code>http://localhost:1080/</code>.</li>
+
+<li>Send email through <code>smtp://localhost:1025</code> - after that email should appear in the dashboard.</li>
+</ol>
+
+<p>Using it inside a web framework e.g. <em><code>Symfony2</code></em> is a piece of cake. The only thing you need is a small modification in the <em><code>parameters.yml</code></em> configuration file:</p>
+<div class='highlight'><pre><code class='yaml'><span class='l-Scalar-Plain'>parameters</span><span class='p-Indicator'>:</span>
+  <span class='l-Scalar-Plain'>mailer_transport</span><span class='p-Indicator'>:</span>  <span class='l-Scalar-Plain'>smtp</span>
+  <span class='l-Scalar-Plain'>mailer_host</span><span class='p-Indicator'>:</span>       <span class='l-Scalar-Plain'>localhost</span>
+  <span class='l-Scalar-Plain'>mailer_port</span><span class='p-Indicator'>:</span>       <span class='l-Scalar-Plain'>1025</span>
+</code></pre></div>
+<p>You need to be sure that in the <em><code>config.yml</code></em> you have these keys:</p>
+<div class='highlight'><pre><code class='yaml'><span class='l-Scalar-Plain'>swiftmailer</span><span class='p-Indicator'>:</span>
+  <span class='l-Scalar-Plain'>transport</span><span class='p-Indicator'>:</span>      <span class='err'>%</span><span class='l-Scalar-Plain'>mailer_transport%</span>
+  <span class='l-Scalar-Plain'>host</span><span class='p-Indicator'>:</span>           <span class='err'>%</span><span class='l-Scalar-Plain'>mailer_host%</span>
+  <span class='l-Scalar-Plain'>port</span><span class='p-Indicator'>:</span>           <span class='err'>%</span><span class='l-Scalar-Plain'>mailer_port%</span>
+</code></pre></div>
+<p>After applying mentioned changes and rebuilding the cache application will send emails via <code>SMTP</code> server from <em>mailcatcher</em>.</p>
+
+<p>If you need to run it as a service with web interface accessible outside you need to run it in this way:</p>
+<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>nohup mailcatcher --http-ip 0.0.0.0 &gt; /var/log/mailcatcher.log 2&gt;<span class='p'>&amp;</span>1 <span class='p'>&amp;</span>
+</code></pre></div>
+<h1 id="links">Links</h1>
+
+<ol>
+<li><a href="http://mailcatcher.me/"><code>mailcatcher</code></a></li>
+</ol>
+    </article>
+
+    <section class="container">
+      <a href="/" class="mobile-link">Home</a>
+      <div id="disqus_thread"></div>
+    </section>
+
+    <aside class="menu">
+
+      <a href="http://afronski.pl">
+        <img id="avatar" src="/images/avatar.png" alt="My avatar" />
+      </a>
+
+      Hello! I'm <a href="/about.html">Wojciech Gawroński</a>.<br/>
+      I work as a <a href="http://pl.linkedin.com/pub/wojtek-gawroński/58/879/5b0/">software developer</a>.<br/>
+      Besides working
+      <ul class="interests">
+        <li>I write <a href="https://github.com/afronski">code</a></li>
+        <li>I <a href="https://twitter.com/afronski">tweet</a></li>
+        <li>I give <a href="http://afronski.pl/presentations">talks</a></li>
+        <li>I <a href="/feed.xml">blog</a></li>
+        <li>I <a href="https://www.goodreads.com/user/show/16145105-wojtek-gawro-ski">read books</a></li>
+        <li>I <a href="http://www.last.fm/user/afronski">listen music</a></li>
+      </ul>
+
+      <footer>
+        <section>© Copyright 2014, Wojciech Gawroński</section>
+        <section>
+          Except where otherwise noted, content on this site<br/>
+          is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/pl/legalcode">CC BY-NC-ND 3.0</a>.
+        </section>
+      </footer>
+    </aside>
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-44633104-1','afronski.pl');ga('send','pageview');</script>
+    <noscript>
+      Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <script type="text/javascript">var disqus_shortname="afronskipl";(function(){var dsq=document.createElement("script");dsq.type="text/javascript";dsq.async=true;dsq.src="//"+disqus_shortname+".disqus.com/embed.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(dsq);})();</script>
+  </body>
+</html>
