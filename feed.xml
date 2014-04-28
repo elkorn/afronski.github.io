@@ -7,6 +7,148 @@
     <atom:link href="http://www.afronski.pl/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>My Toolbox</title>
+        <description>&lt;h1 id=&quot;my_toolbox&quot;&gt;My Toolbox&lt;/h1&gt;
+
+&lt;p&gt;This post is mostly a summary, notes with conclusions and information about what tools I am actually using, which ones I have dropped and even more important why these are sufficient or just good enough.&lt;/p&gt;
+
+&lt;h2 id=&quot;current_setup&quot;&gt;Current Setup&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Notes - &lt;em&gt;Microsoft OneNote&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;Impressive web and mobile clients.&lt;/li&gt;
+
+&lt;li&gt;Easy access to my notes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;Tasks - &lt;em&gt;Asana&lt;/em&gt; &amp;amp; &lt;em&gt;Google Calendar&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;Unfortunately all tasks management tools are after a while not enough and too &lt;em&gt;rigid&lt;/em&gt; for me.&lt;/li&gt;
+
+&lt;li&gt;Right now I am scheduling all tasks in Google Calendar and rest of uncategorized tasks are available in &lt;em&gt;Asana&lt;/em&gt;.&lt;/li&gt;
+
+&lt;li&gt;I am in the middle of researching an ideal workflow and transferring tasks from both to just one.&lt;/li&gt;
+
+&lt;li&gt;Recently I back to &lt;em&gt;Trello&lt;/em&gt; for some side project and I cannot recall why I stopped to use this tool.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;Mind Maps - &lt;em&gt;MindMup&lt;/em&gt; (&lt;a href=&quot;http://www.mindmup.com&quot;&gt;mindmup.com&lt;/a&gt;)
+&lt;ul&gt;
+&lt;li&gt;I have started using mind mapping technique recently as a way of making notes and I must admit that in some cases it works perfectly.&lt;/li&gt;
+
+&lt;li&gt;&lt;em&gt;MindMup&lt;/em&gt; is a very good web client for doing notes in such form.&lt;/li&gt;
+
+&lt;li&gt;Unfortunately, I cannot use this approach in each case, because editing mode for longer notes and short descriptions in nodes is terrible.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;Repositories - &lt;em&gt;Github&lt;/em&gt; (&lt;a href=&quot;https://github.com&quot;&gt;github.com&lt;/a&gt;)
+&lt;ul&gt;
+&lt;li&gt;For me it is an obvious choice - I am a happy customer since 2012.&lt;/li&gt;
+
+&lt;li&gt;I have tried &lt;em&gt;bitbucket&lt;/em&gt; earlier, I moved to &lt;em&gt;github&lt;/em&gt; and recently I have used &lt;em&gt;bitbucket&lt;/em&gt; again after a while - it works and looks much better right now.&lt;/li&gt;
+
+&lt;li&gt;At this point of time these two systems are very similar in capabilities and supported features.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;Storage - &lt;em&gt;Google Drive&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;Natural choice because of Google Apps account and seamless integration with Google Docs.&lt;/li&gt;
+
+&lt;li&gt;From &lt;em&gt;Android&lt;/em&gt;-like device it is a pleasure to work with Drive for me.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;Documents - &lt;em&gt;Google Docs&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;Impressive and what is most important working web and mobile client.&lt;/li&gt;
+
+&lt;li&gt;Right now I am using Google Docs in all tasks which requires creating documents, spreadsheets.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;Read/Watch Later - &lt;em&gt;Instapaper&lt;/em&gt;, &lt;em&gt;Feedly&lt;/em&gt;, &lt;em&gt;Vimeo&lt;/em&gt;, &lt;em&gt;Youtube&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;Simple and clean UI, whole project is seamlessly integrated with Kindle.&lt;/li&gt;
+
+&lt;li&gt;&lt;em&gt;Feedly&lt;/em&gt; (after closing &lt;em&gt;Google Reader&lt;/em&gt;) is for me the best application for RSS feeds management (with decent mobile client).
+&lt;ul&gt;
+&lt;li&gt;Still, it has serious issues - lack of tag management etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;For videos and podcasts I am using Youtube’s and Vimeo’s &lt;em&gt;“Watch Later”&lt;/em&gt; lists.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;Presentations - &lt;em&gt;Customized frameworks&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;I hate &lt;em&gt;PowerPoint&lt;/em&gt;-like presentations.&lt;/li&gt;
+
+&lt;li&gt;I am using adjusted and crafted version of &lt;a href=&quot;http://lab.hakim.se/reveal-js&quot;&gt;reveal.js&lt;/a&gt; available &lt;a href=&quot;https://github.com/afronski/presentation-template&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+
+&lt;li&gt;In future, with probability I will use &lt;a href=&quot;http://slides.com&quot;&gt;slides.com&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;tools_that_i_tried&quot;&gt;Tools that I tried&lt;/h2&gt;
+
+&lt;h3 id=&quot;emacs_orgmode&quot;&gt;Emacs org-mode&lt;/h3&gt;
+
+&lt;p&gt;It is at the same time powerful and annoying. With &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt; and remote repository creates very powerful combination. Unfortunately, there are no synchronization mechanisms for web / mobile application - for me it is not acceptable, because most of notes and ideas are coming to my mind when I do not have access to laptop / PC.&lt;/p&gt;
+
+&lt;h3 id=&quot;dropbox&quot;&gt;Dropbox&lt;/h3&gt;
+
+&lt;p&gt;My Dropbox account was the victim of migration to Google Apps - I would like to have seamless integration with my online documents, so the naturally I have migrated to Google Drive. Unfortunately this option has a serious drawback - Linux client for Google Drive does not exist, there is a very simple alternative called &lt;em&gt;&lt;code&gt;grive&lt;/code&gt;&lt;/em&gt;. Dropbox had very good client for that operating system.&lt;/p&gt;
+
+&lt;h3 id=&quot;offline_notetaking&quot;&gt;Offline note-taking&lt;/h3&gt;
+
+&lt;p&gt;This does not work for me. I have made myself to work with it and I just can’t. When I have pen and paper, notebook or something similar, I can note interesting observation and idea. There is only one &lt;em&gt;if&lt;/em&gt; - I often forgot to gather with me my notebook. Another disadvantage is related with offline management for such notes - it is much harder then the digital ones (lack of copy-pasting, lack of elasticity - moving paragraphs etc.).&lt;/p&gt;
+
+&lt;h3 id=&quot;trello&quot;&gt;Trello&lt;/h3&gt;
+
+&lt;p&gt;Very simple and neat board management tool. I have used it extensively in the past and one day I just stopped. Personally, I don’t remember why I did that - it can be that I had pile of tasks which are not properly reduced after a while and &lt;em&gt;icebox&lt;/em&gt; was bigger and bigger.&lt;/p&gt;
+
+&lt;h3 id=&quot;evernote&quot;&gt;Evernote&lt;/h3&gt;
+
+&lt;p&gt;It is a really good tool, I have used it previously as a something in the middle of note taking and long term tasks management tool. However lack of decent Linux / Web client enforced me to look for better alternative.&lt;/p&gt;
+
+&lt;h3 id=&quot;prezi&quot;&gt;Prezi&lt;/h3&gt;
+
+&lt;p&gt;It does not look good enough for me to pay for it, and free version limitation (e.g. I do not like watermarks) is unacceptable for me. Moreover communication via such tool can be very &lt;em&gt;cluttered&lt;/em&gt; and &lt;em&gt;inconsistent&lt;/em&gt;. Do you need more arguments? It is powered by Flash.&lt;/p&gt;
+
+&lt;h3 id=&quot;impressjs&quot;&gt;impress.js&lt;/h3&gt;
+
+&lt;p&gt;It is very neat tool, but complicated transforms and moving parts are &lt;em&gt;cluttering&lt;/em&gt; the meaning (as above). A huge advantage is use of a web platform and browser as a main technologies for this library.&lt;/p&gt;
+
+&lt;h3 id=&quot;pocket&quot;&gt;Pocket&lt;/h3&gt;
+
+&lt;p&gt;This project does not work for me because of several reasons. First, I have used it around a year ago and I hated this UI. Second, there were no integration with Kindle at that time.&lt;/p&gt;
+
+&lt;h3 id=&quot;digg&quot;&gt;Digg&lt;/h3&gt;
+
+&lt;p&gt;I have tried to use this web application and after a couple of days I gave up. Many glitches on the UI side and problem with categorization of sources were sufficient for me to drop that tool.&lt;/p&gt;
+
+&lt;h3 id=&quot;the_old_reader&quot;&gt;The Old Reader&lt;/h3&gt;
+
+&lt;p&gt;I really liked this application, it has simple and clean UI, decent tags and feeds categorization management. However after fuss with closing and reopening it discouraged me enough to keep me away from it.&lt;/p&gt;
+
+&lt;h1 id=&quot;missing_pieces&quot;&gt;Missing Pieces&lt;/h1&gt;
+
+&lt;p&gt;Actually, there is only one piece missing here - integration between tasks, calendar and feeds of information (like &lt;em&gt;Instapaper&lt;/em&gt;/&lt;em&gt;Youtube&lt;/em&gt;/&lt;em&gt;Vimeo&lt;/em&gt; queues). If you know such tool, please let me know.&lt;/p&gt;
+
+&lt;p&gt;If you disagree with my opinion and my choices, please let me know about it in the comments.&lt;/p&gt;</description>
+        <pubDate>Mon, 28 Apr 2014 22:30:00 +0000</pubDate>
+        <link>http://www.afronski.pl/2014/04/28/my-toolbox.html</link>
+        <guid isPermaLink="true">http://www.afronski.pl/2014/04/28/my-toolbox.html</guid>
+      </item>
+    
+      <item>
         <title>Gibberish Game</title>
         <description>&lt;h1 id=&quot;gibberish_game&quot;&gt;Gibberish Game&lt;/h1&gt;
 
@@ -619,52 +761,6 @@ assertion &lt;span class='s2'&gt;&amp;quot;svn_fspath__is_canonical(child_fspath
         <pubDate>Thu, 28 Nov 2013 00:35:00 +0100</pubDate>
         <link>http://www.afronski.pl/2013/11/28/lets-talk-about-memory.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2013/11/28/lets-talk-about-memory.html</guid>
-      </item>
-    
-      <item>
-        <title>Mysterious problem with missing name of the active virtualenv</title>
-        <description>&lt;h1 id=&quot;mysterious_problem_with_missing_name_of_the_active_&quot;&gt;Mysterious problem with missing name of the active &lt;code&gt;virtualenv&lt;/code&gt;&lt;/h1&gt;
-
-&lt;p&gt;Recently I have ran into an issue related to &lt;code&gt;virtualenv&lt;/code&gt; and my shell. It did not display name of the active &lt;code&gt;virtualenv&lt;/code&gt; after invoking the standard command:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='nb'&gt;source &lt;/span&gt;bin/activate
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;However, everything works perfectly without that (even a &lt;code&gt;deactivate&lt;/code&gt; command). This little thing makes me nervous so I have started looking for a solution to that problem.&lt;/p&gt;
-
-&lt;p&gt;After a while I found the reason why it does not work:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='lineno'&gt;1&lt;/span&gt; &lt;span class='k'&gt;function &lt;/span&gt;calculate_prompt&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
-&lt;span class='lineno'&gt;2&lt;/span&gt;   &lt;span class='c'&gt;# Beautifying the prompt ;).&lt;/span&gt;
-&lt;span class='lineno'&gt;3&lt;/span&gt; &lt;span class='o'&gt;}&lt;/span&gt;
-&lt;span class='lineno'&gt;4&lt;/span&gt; 
-&lt;span class='lineno'&gt;5&lt;/span&gt; &lt;span class='nv'&gt;PROMPT_COMMAND&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;calculate_prompt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;em&gt;Yeah&lt;/em&gt;, I totally forgot about the fact that I am using &lt;code&gt;PROMPT_COMMAND&lt;/code&gt;. Right now, when I know the reason, the solution is a piece of cake - just add the code for displaying &lt;em&gt;&lt;code&gt;virtualenv&lt;/code&gt;&lt;/em&gt; name to the function which calculates the prompt:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='lineno'&gt; 1&lt;/span&gt; &lt;span class='k'&gt;function &lt;/span&gt;calculate_prompt&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
-&lt;span class='lineno'&gt; 2&lt;/span&gt;   &lt;span class='c'&gt;# Beautifying the prompt ;).&lt;/span&gt;
-&lt;span class='lineno'&gt; 3&lt;/span&gt;   &lt;span class='c'&gt;# ...&lt;/span&gt;
-&lt;span class='lineno'&gt; 4&lt;/span&gt; 
-&lt;span class='lineno'&gt; 5&lt;/span&gt;   &lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt; -z &lt;span class='s2'&gt;&amp;quot;$VIRTUAL_ENV_DISABLE_PROMPT&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;]&lt;/span&gt; &lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='k'&gt;then&lt;/span&gt;
-&lt;span class='lineno'&gt; 6&lt;/span&gt; &lt;span class='k'&gt;    &lt;/span&gt;&lt;span class='nv'&gt;_OLD_VIRTUAL_PS1&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;$PS1&amp;quot;&lt;/span&gt;
-&lt;span class='lineno'&gt; 7&lt;/span&gt; 
-&lt;span class='lineno'&gt; 8&lt;/span&gt;     &lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;x&amp;quot;&lt;/span&gt; !&lt;span class='o'&gt;=&lt;/span&gt; x &lt;span class='o'&gt;]&lt;/span&gt; &lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='k'&gt;then&lt;/span&gt;
-&lt;span class='lineno'&gt; 9&lt;/span&gt; &lt;span class='k'&gt;        &lt;/span&gt;&lt;span class='nv'&gt;PS1&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;$PS1&amp;quot;&lt;/span&gt;
-&lt;span class='lineno'&gt;10&lt;/span&gt;     &lt;span class='k'&gt;else&lt;/span&gt;
-&lt;span class='lineno'&gt;11&lt;/span&gt; &lt;span class='k'&gt;      if&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt; ! -z &lt;span class='s2'&gt;&amp;quot;$VIRTUAL_ENV&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;]&lt;/span&gt; &lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='k'&gt;then&lt;/span&gt;
-&lt;span class='lineno'&gt;12&lt;/span&gt; &lt;span class='k'&gt;        if&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;`basename \&amp;quot;$VIRTUAL_ENV\&amp;quot;`&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;__&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;]&lt;/span&gt; &lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='k'&gt;then&lt;/span&gt;
-&lt;span class='lineno'&gt;13&lt;/span&gt; &lt;span class='k'&gt;          &lt;/span&gt;&lt;span class='nv'&gt;PS1&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;`basename \`dirname \&amp;quot;$VIRTUAL_ENV\&amp;quot;\``: $PS1&amp;quot;&lt;/span&gt;
-&lt;span class='lineno'&gt;14&lt;/span&gt;         &lt;span class='k'&gt;else&lt;/span&gt;
-&lt;span class='lineno'&gt;15&lt;/span&gt; &lt;span class='k'&gt;          &lt;/span&gt;&lt;span class='nv'&gt;PS1&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;`basename $VIRTUAL_ENV`: $PS1&amp;quot;&lt;/span&gt;
-&lt;span class='lineno'&gt;16&lt;/span&gt;         &lt;span class='k'&gt;fi&lt;/span&gt;
-&lt;span class='lineno'&gt;17&lt;/span&gt; &lt;span class='k'&gt;      fi&lt;/span&gt;
-&lt;span class='lineno'&gt;18&lt;/span&gt; &lt;span class='k'&gt;    fi&lt;/span&gt;
-&lt;span class='lineno'&gt;19&lt;/span&gt; &lt;span class='k'&gt;  fi&lt;/span&gt;
-&lt;span class='lineno'&gt;20&lt;/span&gt; &lt;span class='o'&gt;}&lt;/span&gt;
-&lt;span class='lineno'&gt;21&lt;/span&gt; 
-&lt;span class='lineno'&gt;22&lt;/span&gt; &lt;span class='nv'&gt;PROMPT_COMMAND&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;calculate_prompt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;And it is fixed! :wink:&lt;/p&gt;</description>
-        <pubDate>Wed, 13 Nov 2013 19:20:00 +0100</pubDate>
-        <link>http://www.afronski.pl/2013/11/13/mysterious-problem-with-missing-name-of-the-active-virtualenv.html</link>
-        <guid isPermaLink="true">http://www.afronski.pl/2013/11/13/mysterious-problem-with-missing-name-of-the-active-virtualenv.html</guid>
       </item>
     
   </channel>
