@@ -7,6 +7,82 @@
     <atom:link href="http://www.afronski.pl/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Easter Eggs in Python's REPL</title>
+        <description>&lt;h1 id=&quot;easter_eggs_in_pythons_&quot;&gt;Easter Eggs in Python’s &lt;code&gt;REPL&lt;/code&gt;&lt;/h1&gt;
+
+&lt;p&gt;Recently, I have ran into a funny thing in Python. Try to import &lt;em&gt;&lt;code&gt;antigravity&lt;/code&gt;&lt;/em&gt; module inside the &lt;code&gt;REPL&lt;/code&gt;:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='kn'&gt;import&lt;/span&gt; &lt;span class='nn'&gt;antigravity&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Obviously, it is not the only funny thing hidden somewhere deep in the Python implementation. I researched the topic and I found more examples of easter eggs :grin:.&lt;/p&gt;
+
+&lt;p&gt;The best known is &lt;code&gt;import this&lt;/code&gt; easter egg:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='kn'&gt;import&lt;/span&gt; &lt;span class='nn'&gt;this&lt;/span&gt;
+&lt;span class='n'&gt;The&lt;/span&gt; &lt;span class='n'&gt;Zen&lt;/span&gt; &lt;span class='n'&gt;of&lt;/span&gt; &lt;span class='n'&gt;Python&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='n'&gt;by&lt;/span&gt; &lt;span class='n'&gt;Tim&lt;/span&gt; &lt;span class='n'&gt;Peters&lt;/span&gt;
+
+&lt;span class='n'&gt;Beautiful&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;better&lt;/span&gt; &lt;span class='n'&gt;than&lt;/span&gt; &lt;span class='n'&gt;ugly&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
+&lt;span class='n'&gt;Explicit&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;better&lt;/span&gt; &lt;span class='n'&gt;than&lt;/span&gt; &lt;span class='n'&gt;implicit&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
+&lt;span class='n'&gt;Simple&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;better&lt;/span&gt; &lt;span class='n'&gt;than&lt;/span&gt; &lt;span class='nb'&gt;complex&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
+&lt;span class='n'&gt;Complex&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;better&lt;/span&gt; &lt;span class='n'&gt;than&lt;/span&gt; &lt;span class='n'&gt;complicated&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
+&lt;span class='n'&gt;Flat&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;better&lt;/span&gt; &lt;span class='n'&gt;than&lt;/span&gt; &lt;span class='n'&gt;nested&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
+&lt;span class='n'&gt;Sparse&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;better&lt;/span&gt; &lt;span class='n'&gt;than&lt;/span&gt; &lt;span class='n'&gt;dense&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
+&lt;span class='n'&gt;Readability&lt;/span&gt; &lt;span class='n'&gt;counts&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
+&lt;span class='n'&gt;Special&lt;/span&gt; &lt;span class='n'&gt;cases&lt;/span&gt; &lt;span class='n'&gt;aren&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;t special enough to break the rules.&lt;/span&gt;
+&lt;span class='n'&gt;Although&lt;/span&gt; &lt;span class='n'&gt;practicality&lt;/span&gt; &lt;span class='n'&gt;beats&lt;/span&gt; &lt;span class='n'&gt;purity&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
+&lt;span class='n'&gt;Errors&lt;/span&gt; &lt;span class='n'&gt;should&lt;/span&gt; &lt;span class='n'&gt;never&lt;/span&gt; &lt;span class='k'&gt;pass&lt;/span&gt; &lt;span class='n'&gt;silently&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
+&lt;span class='n'&gt;Unless&lt;/span&gt; &lt;span class='n'&gt;explicitly&lt;/span&gt; &lt;span class='n'&gt;silenced&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
+&lt;span class='n'&gt;In&lt;/span&gt; &lt;span class='n'&gt;the&lt;/span&gt; &lt;span class='n'&gt;face&lt;/span&gt; &lt;span class='n'&gt;of&lt;/span&gt; &lt;span class='n'&gt;ambiguity&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='n'&gt;refuse&lt;/span&gt; &lt;span class='n'&gt;the&lt;/span&gt; &lt;span class='n'&gt;temptation&lt;/span&gt; &lt;span class='n'&gt;to&lt;/span&gt; &lt;span class='n'&gt;guess&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
+&lt;span class='n'&gt;There&lt;/span&gt; &lt;span class='n'&gt;should&lt;/span&gt; &lt;span class='n'&gt;be&lt;/span&gt; &lt;span class='n'&gt;one&lt;/span&gt;&lt;span class='o'&gt;--&lt;/span&gt; &lt;span class='ow'&gt;and&lt;/span&gt; &lt;span class='n'&gt;preferably&lt;/span&gt; &lt;span class='n'&gt;only&lt;/span&gt; &lt;span class='n'&gt;one&lt;/span&gt; &lt;span class='o'&gt;--&lt;/span&gt;&lt;span class='n'&gt;obvious&lt;/span&gt; &lt;span class='n'&gt;way&lt;/span&gt; &lt;span class='n'&gt;to&lt;/span&gt; &lt;span class='n'&gt;do&lt;/span&gt; &lt;span class='n'&gt;it&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
+&lt;span class='n'&gt;Although&lt;/span&gt; &lt;span class='n'&gt;that&lt;/span&gt; &lt;span class='n'&gt;way&lt;/span&gt; &lt;span class='n'&gt;may&lt;/span&gt; &lt;span class='ow'&gt;not&lt;/span&gt; &lt;span class='n'&gt;be&lt;/span&gt; &lt;span class='n'&gt;obvious&lt;/span&gt; &lt;span class='n'&gt;at&lt;/span&gt; &lt;span class='n'&gt;first&lt;/span&gt; &lt;span class='n'&gt;unless&lt;/span&gt; &lt;span class='n'&gt;you&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;re Dutch.&lt;/span&gt;
+&lt;span class='n'&gt;Now&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;better&lt;/span&gt; &lt;span class='n'&gt;than&lt;/span&gt; &lt;span class='n'&gt;never&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
+&lt;span class='n'&gt;Although&lt;/span&gt; &lt;span class='n'&gt;never&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;often&lt;/span&gt; &lt;span class='n'&gt;better&lt;/span&gt; &lt;span class='n'&gt;than&lt;/span&gt; &lt;span class='o'&gt;*&lt;/span&gt;&lt;span class='n'&gt;right&lt;/span&gt;&lt;span class='o'&gt;*&lt;/span&gt; &lt;span class='n'&gt;now&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
+&lt;span class='n'&gt;If&lt;/span&gt; &lt;span class='n'&gt;the&lt;/span&gt; &lt;span class='n'&gt;implementation&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;hard&lt;/span&gt; &lt;span class='n'&gt;to&lt;/span&gt; &lt;span class='n'&gt;explain&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='n'&gt;it&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;s a bad idea.&lt;/span&gt;
+&lt;span class='n'&gt;If&lt;/span&gt; &lt;span class='n'&gt;the&lt;/span&gt; &lt;span class='n'&gt;implementation&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;easy&lt;/span&gt; &lt;span class='n'&gt;to&lt;/span&gt; &lt;span class='n'&gt;explain&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='n'&gt;it&lt;/span&gt; &lt;span class='n'&gt;may&lt;/span&gt; &lt;span class='n'&gt;be&lt;/span&gt; &lt;span class='n'&gt;a&lt;/span&gt; &lt;span class='n'&gt;good&lt;/span&gt; &lt;span class='n'&gt;idea&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
+&lt;span class='n'&gt;Namespaces&lt;/span&gt; &lt;span class='n'&gt;are&lt;/span&gt; &lt;span class='n'&gt;one&lt;/span&gt; &lt;span class='n'&gt;honking&lt;/span&gt; &lt;span class='n'&gt;great&lt;/span&gt; &lt;span class='n'&gt;idea&lt;/span&gt; &lt;span class='o'&gt;--&lt;/span&gt; &lt;span class='n'&gt;let&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;s do more of those!&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;There is also nice &lt;a href=&quot;http://www.redmountainsw.com/wordpress/archives/a-joke-in-the-python-interpreter&quot;&gt;example&lt;/a&gt; which exploits idea of &lt;code&gt;this&lt;/code&gt;:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='n'&gt;love&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;this&lt;/span&gt;
+&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='n'&gt;this&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;love&lt;/span&gt;
+&lt;span class='bp'&gt;True&lt;/span&gt;
+&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='n'&gt;love&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='bp'&gt;True&lt;/span&gt;
+&lt;span class='bp'&gt;False&lt;/span&gt;
+&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='n'&gt;love&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='bp'&gt;False&lt;/span&gt;
+&lt;span class='bp'&gt;False&lt;/span&gt;
+&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='n'&gt;love&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='ow'&gt;not&lt;/span&gt; &lt;span class='bp'&gt;True&lt;/span&gt; &lt;span class='ow'&gt;or&lt;/span&gt; &lt;span class='bp'&gt;False&lt;/span&gt;
+&lt;span class='bp'&gt;True&lt;/span&gt;
+&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='n'&gt;love&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='ow'&gt;not&lt;/span&gt; &lt;span class='bp'&gt;True&lt;/span&gt; &lt;span class='ow'&gt;or&lt;/span&gt; &lt;span class='bp'&gt;False&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='n'&gt;love&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;love&lt;/span&gt;
+&lt;span class='bp'&gt;True&lt;/span&gt;
+&lt;span class='bp'&gt;True&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Also, Python as a &lt;em&gt;truly enterprise ready&lt;/em&gt; language has built-in &lt;code&gt;Hello World&lt;/code&gt; functionality:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='kn'&gt;import&lt;/span&gt; &lt;span class='nn'&gt;__hello__&lt;/span&gt;
+&lt;span class='n'&gt;Hello&lt;/span&gt; &lt;span class='n'&gt;world&lt;/span&gt;&lt;span class='o'&gt;...&lt;/span&gt;
+&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='nb'&gt;reload&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;__hello__&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;span class='n'&gt;Hello&lt;/span&gt; &lt;span class='n'&gt;world&lt;/span&gt;&lt;span class='o'&gt;...&lt;/span&gt;
+&lt;span class='o'&gt;&amp;lt;&lt;/span&gt;&lt;span class='n'&gt;module&lt;/span&gt; &lt;span class='s'&gt;&amp;#39;__hello__&amp;#39;&lt;/span&gt; &lt;span class='kn'&gt;from&lt;/span&gt; &lt;span class='s'&gt;&amp;#39;&amp;lt;frozen&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class='o'&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;But the funniest thing is &lt;em&gt;&lt;code&gt;IMHO&lt;/code&gt;&lt;/em&gt; this:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='kn'&gt;from&lt;/span&gt; &lt;span class='nn'&gt;__future__&lt;/span&gt; &lt;span class='kn'&gt;import&lt;/span&gt; &lt;span class='n'&gt;braces&lt;/span&gt;
+  &lt;span class='n'&gt;File&lt;/span&gt; &lt;span class='s'&gt;&amp;quot;&amp;lt;stdin&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='n'&gt;line&lt;/span&gt; &lt;span class='mi'&gt;1&lt;/span&gt;
+&lt;span class='ne'&gt;SyntaxError&lt;/span&gt;&lt;span class='p'&gt;:&lt;/span&gt; &lt;span class='ow'&gt;not&lt;/span&gt; &lt;span class='n'&gt;a&lt;/span&gt; &lt;span class='n'&gt;chance&lt;/span&gt;
+&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This exception message definitely made my day :wink:.&lt;/p&gt;
+
+&lt;p&gt;If I omitted something, please post a comment and let me know which I have missed.&lt;/p&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;http://xkcd.com/353&quot;&gt;&lt;code&gt;xkcd&lt;/code&gt;: Python!&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;http://svn.python.org/view/python/trunk/Lib/antigravity.py?view=markup&quot;&gt;Module &lt;code&gt;antigravity&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+        <pubDate>Sun, 08 Jun 2014 12:10:00 +0000</pubDate>
+        <link>http://www.afronski.pl/2014/06/08/easter-eggs-in-pythons-repl.html</link>
+        <guid isPermaLink="true">http://www.afronski.pl/2014/06/08/easter-eggs-in-pythons-repl.html</guid>
+      </item>
+    
+      <item>
         <title>My Toolbox</title>
         <description>&lt;h1 id=&quot;my_toolbox&quot;&gt;My Toolbox&lt;/h1&gt;
 
@@ -741,26 +817,6 @@ assertion &lt;span class='s2'&gt;&amp;quot;svn_fspath__is_canonical(child_fspath
         <pubDate>Fri, 06 Dec 2013 19:15:00 +0100</pubDate>
         <link>http://www.afronski.pl/2013/12/06/nodejs-evolution.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2013/12/06/nodejs-evolution.html</guid>
-      </item>
-    
-      <item>
-        <title>Let's talk about memory</title>
-        <description>&lt;h1 id=&quot;lets_talk_&quot;&gt;Let’s talk &lt;code&gt;about:memory&lt;/code&gt;&lt;/h1&gt;
-
-&lt;p&gt;Recently on polish Facebook group &lt;em&gt;JSNews&lt;/em&gt;, thanks to &lt;a href=&quot;https://twitter.com/zbraniecki&quot;&gt;Zbigniew Braniecki&lt;/a&gt;, I found a very useful tool for monitoring memory in Firefox - &lt;code&gt;about:memory&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/AboutMemoryOverview.png&quot; alt=&quot;Overview for about:memory&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;You can open it by typing &lt;code&gt;about:memory&lt;/code&gt; in your address bar. It has capabilities to measure memory usage at browser level, load and save dumps (as a gzipped &lt;em&gt;&lt;code&gt;JSON&lt;/code&gt;&lt;/em&gt; file), compare them and force garbage and cycle collection.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/AboutMemoryDiff.png&quot; alt=&quot;Difference for two memory dumps&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I strongly encourage you to dive into that tool, especially if you like me, thought that &lt;em&gt;Firefox&lt;/em&gt; hasn’t got any tools for memory profiling. Well, not the first time I’m wrong :wink:.&lt;/p&gt;
-
-&lt;p&gt;P.S. On screenshots you can observe new UI for &lt;em&gt;Firefox&lt;/em&gt;, called &lt;em&gt;Australis&lt;/em&gt; - what do you think about it? Share your opinion in comments.&lt;/p&gt;</description>
-        <pubDate>Thu, 28 Nov 2013 00:35:00 +0100</pubDate>
-        <link>http://www.afronski.pl/2013/11/28/lets-talk-about-memory.html</link>
-        <guid isPermaLink="true">http://www.afronski.pl/2013/11/28/lets-talk-about-memory.html</guid>
       </item>
     
   </channel>
