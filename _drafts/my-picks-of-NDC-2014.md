@@ -27,7 +27,7 @@ Unfortunately, since 2011 there are no *`torrent`* files, which combine all vide
 ~ $ node vimeo-scraper.js > urls.txt
 {% endhighlight %}
 
-In the output file you will receive list of URLs which point directly to *MP4* ready to download.
+In the output file you will receive list of URLs which point directly to *MP4* ready to download. Complete source code of scripts and helpers is available [here](https://github.com/afronski/playground-repository/tree/master/vimeo-scraper).
 
 # Appendix - A bitter state of headless browsers
 
