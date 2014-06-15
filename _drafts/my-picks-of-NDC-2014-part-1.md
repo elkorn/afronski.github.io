@@ -1,10 +1,10 @@
 ---
 layout: post
-title: My picks of NDC 2014
-date: 2014-06-11T16:00:00Z-02:00
+title: My picks of NDC 2014 - part I
+date: 2014-06-16T10:30:00Z-02:00
 ---
 
-# My picks of NDC 2014
+# My picks of NDC 2014 - part I
 
 1. [Kevlin Henney - Seven Ineffective Coding Habits of Many Programmers](https://vimeo.com/97329157) - Very refreshing talk about style and programming habbits. Even if it has many controversial points from your perspective and it is very opinionated, many of them are at least thought-provoking and maybe they should be reconsidered and rethought again.
 2. [Hadi Hariri - Developing in a Decade](https://vimeo.com/97315946) - Very inspiring and refreshing talk what software development, internet and whole IT actually is and why it should change if we want to be happier and live in the better world. Amazing anegdotes and very thought-provoking comparisons to the books (Orwell's *"1984"*, Huxley's *"Brave New World"*, Postman's *"Amusing Ourselves to Death"*). My very first association with this talk was *Roger Water's* lyrics from the song *"Amused to death"*.
