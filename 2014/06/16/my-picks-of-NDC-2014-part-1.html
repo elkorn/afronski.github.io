@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <meta name="author" content="Wojtek Gawroński (afronski)" />
+    <meta name="description" content="Personal blog of Wojtek Gawroński, a passionate software developer." />
+
+    <meta name="keywords" content="HTML,HTML5,JavaScript,CSS,CSS3,Canvas,WebGL,C#,.NET,Mono,Erlang,Vagrant,Node.js" />
+
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="alternate" type="application/rss+xml" title="afronski.pl" href="http://www.afronski.pl/feed.xml" />
+
+    <title>My picks of NDC 2014 - part I</title>
+
+    <link rel="stylesheet" href="/stylesheets/syntax.min.css" />
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+    <article class="container post">
+      <a href="/">Home</a>
+
+<h1 id="my_picks_of_ndc_2014__part_i">My picks of NDC 2014 - part I</h1>
+
+<ol>
+<li><a href="https://vimeo.com/97329157">Kevlin Henney - Seven Ineffective Coding Habits of Many Programmers</a> - Very refreshing talk about style and programming habbits. Even if it has many controversial points from your perspective and it is very opinionated, many of them are at least thought-provoking and maybe they should be reconsidered and rethought again.</li>
+
+<li><a href="https://vimeo.com/97315946">Hadi Hariri - Developing in a Decade</a> - Very inspiring and refreshing talk what software development, internet and whole IT actually is and why it should change if we want to be happier and live in the better world. Amazing anegdotes and very thought-provoking comparisons to the books (Orwell’s <em>“1984”</em>, Huxley’s <em>“Brave New World”</em>, Postman’s <em>“Amusing Ourselves to Death”</em>). For me, this is the best presentation of this year NDC by now.</li>
+
+<li><a href="https://vimeo.com/97530863">Robert C. Martin - Clean Architecture and Design</a> - Strongly recommended if you have not seen earlier talks made by <em>Uncle Bob</em> related with this topic. The most appropriate summary of this talk: <em>application’s business rules are the most important things, protect them - everything is a implementation detail and it should be pluggable</em>. In other words <em>good architecture maximizes the number of decisions not made</em>.</li>
+
+<li><a href="https://vimeo.com/97505656">Tim Berglund - Discrete Math You Need to Know</a> - Inspiring talk (even if you may think that math cannot be inspiring). Definitely recommended, at first - it is recommended to stretch your mind frequently, moreover - it is nice to know more and have these tools in your toolbox (or what is even more recommended - refresh it). Surprisingly, still many people in IT do not know how the RSA works underneath.</li>
+
+<li><a href="https://vimeo.com/97318800">Denise R. Jackobs - Banish Your Inner Critic</a> - It can be very enlightening talk for many people, maybe even a life changer. If you have problems with pursuing to the perfection state, procrastination and you have feeling and knowledge that you are a victim of <em>impostor syndrome</em> definitely worth watching.</li>
+
+<li><a href="https://vimeo.com/97516288">Robert C. Martin - Advanced Test Driven Development</a> - Again, if you have seen it before, there is probably nothing new, but if not - please definitely watch it. Very interesting concept called <em>transformation priority premise</em>. And surprising summary - <em>if statement is a degenerated case of while loop</em>. <img alt="wink" src="/images/emoji/wink.png" class="emoji" /></li>
+
+<li><a href="https://vimeo.com/97537026">Scott Bellware - TDD in Tatters</a> - Eye-opening introduction about cognitive theory and learning. Very nice differentiation between crude and subtle things, which sometimes fells out and disappear in the process of learning. I disagree about that automation leads to removal a connection between the programmers and code, but still it is a viable talk (at least the beginning about <em>amateur cognitive theory</em>, pointing out the subtleties and explaining the design role in <em>TDD</em> acronym). The most important quote from this presentation is <em>every test is an additional coupling to the code</em> - and by providing good design we should minimize the coupling, we should control it. It is the subtle thing that we often ignore.</li>
+</ol>
+
+<h2 id="how_to_watch_these_videos_offline">How to watch these videos offline?</h2>
+
+<p>Unfortunately, since 2013 there are no <em><code>torrent</code></em> files, which combine all videos in one place. But there is a solution - we can use <code>Selenium</code> <em>JavaScript</em> driver to scrap all links from <em><code>HTML5</code></em> <em>video</em> tags. Complete source code of scripts and helpers is available <a href="https://github.com/afronski/playground-repository/tree/master/vimeo-scraper">here</a>. Installation:</p>
+<div class='highlight'><pre><code class='bash'><span class='lineno'>1</span> <span class='c'># On Arch Linux, Selenium Chrome WebDriver is available only in AUR.</span>
+<span class='lineno'>2</span> ~ <span class='nv'>$ </span>pacaur -S chromedriver
+<span class='lineno'>3</span> ~ <span class='nv'>$ </span>npm install
+<span class='lineno'>4</span> ~ <span class='nv'>$ </span>node vimeo-scraper.js &gt; urls.txt
+</code></pre></div>
+<p>In the output file you will receive list of URLs which point directly to <em>MP4</em> ready to download.</p>
+
+<h2 id="appendix__a_bitter_state_of_headless_browsers">Appendix - A bitter state of headless browsers</h2>
+
+<p>I know that there are tools capable to do such things headlessly. I thought that it will be an easy task to do.</p>
+
+<p>Unfortunately, I have tested <code>Phantom.js</code> and <code>SlimmerJS</code> (representatives of two major browser engines - <em>WebKit</em> and <em>Gecko</em>) and both does not work (even if creators of <code>SlimmerJS</code> <a href="http://slimerjs.org/features.html">claims</a> that it should work with <em><code>HTML5</code></em> <em>video</em>, <code>Phantom.js</code> is slightly better in this matter - it <a href="https://github.com/ariya/phantomjs/wiki/Supported-Web-Standards#unsupported-features">officially</a> does not support <em>audio</em> and <em>video</em>).</p>
+
+<p>The best implementation of <em><code>WebKit</code></em> rendering engine available to Node.js called <em>Chimera</em> is <a href="https://github.com/deanmao/node-chimera/issues/44#issuecomment-30561620">no longer maintained</a>. It was a very nice module, I have used it in the past - very unfortunate and disappointing decision.</p>
+
+<p>So if you really want to scrape pages headlessly by doing more than simple rendering, measure loading time and capture a single screenshot, you need to use the good, old and reliable pair: <code>Selenium</code> and <code>Xvfb</code>.</p>
+
+<h1 id="references">References</h1>
+
+<ol>
+<li><a href="https://vimeo.com/channels/ndc2014">NDC 2014 Vimeo Playlist</a></li>
+
+<li><a href="http://slimmerjs.org">SlimmerJS</a></li>
+
+<li><a href="http://phantomjs.org">phantomjs</a></li>
+
+<li><a href="https://github.com/deanmao/node-chimera"><code>node-chimera</code></a></li>
+</ol>
+    </article>
+
+    <section class="container">
+      <a href="/" class="mobile-link">Home</a>
+      <div id="disqus_thread"></div>
+    </section>
+
+    <aside class="menu">
+
+      <a href="http://afronski.pl">
+        <img id="avatar" src="/images/avatar.png" alt="My avatar" />
+      </a>
+
+      Hello! I'm <a href="/about.html">Wojciech Gawroński</a>.<br/>
+      I work as a <a href="http://pl.linkedin.com/pub/wojtek-gawroński/58/879/5b0/">software developer</a>.<br/>
+      Besides working
+      <ul class="interests">
+        <li>I write <a href="https://github.com/afronski">code</a></li>
+        <li>I <a href="https://twitter.com/afronski">tweet</a></li>
+        <li>I give <a href="http://afronski.pl/presentations">talks</a></li>
+        <li>I <a href="/feed.xml">blog</a></li>
+        <li>I <a href="https://www.goodreads.com/user/show/16145105-wojtek-gawro-ski">read books</a></li>
+        <li>I <a href="http://www.last.fm/user/afronski">listen music</a></li>
+      </ul>
+
+      <footer>
+        <section>© Copyright 2014, Wojciech Gawroński</section>
+        <section>
+          Except where otherwise noted, content on this site<br/>
+          is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/pl/legalcode">CC BY-NC-ND 3.0</a>.
+        </section>
+      </footer>
+    </aside>
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-44633104-1','afronski.pl');ga('require', 'displayfeatures');ga('send','pageview');</script>
+    <noscript>
+      Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <script type="text/javascript">var disqus_shortname="afronskipl";(function(){var dsq=document.createElement("script");dsq.type="text/javascript";dsq.async=true;dsq.src="//"+disqus_shortname+".disqus.com/embed.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(dsq);})();</script>
+  </body>
+</html>
