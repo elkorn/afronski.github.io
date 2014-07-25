@@ -10,7 +10,7 @@ I would like to present very interesting initiative for everyone interested in t
 
 # Why?
 
-The major problem when you are learning new stuff is related with first step, even with a basic question *"how to start"*. This barrier is often related with new thinking or programming paradigm, new language, unknown environment or even unfamiliar `API`. For almost every technology we can find opinionated stuff on the Internet: multiple tutorials, guidelines (often it is not so hard to find two conflicting ones :wink:) and blog posts with information how to work with technology in which we are interested. Moreover, in almost each case we still have a question back in our heads: *"Is is a proper way to learn and work with it?"*.
+The major problem when you are learning new stuff is related with first step, even with a basic question *"how to start"*. This barrier is often related with new thinking or programming paradigm, new language, unknown environment or even unfamiliar `API`. For almost every technology we can find opinionated stuff on the Internet: multiple tutorials, guidelines (often it is not so hard to find two conflicting ones :wink:) and blog posts with information how to work with technology in which we are interested. Moreover, in almost each case we still have a question back in our heads: *"Is it a proper way to learn and work with it?"*.
 
 Learning process could be easier if we have one source of truth and best practices how to approach certain topics related with piece of technology which is interesting for us. For Node.js such initiative is called [nodeschool.io](http://nodeschool.io).
 
@@ -37,7 +37,17 @@ Electives are oriented around:
 - [promises](http://nodeschool.io/#promiseitwonthurt)
 - [async.js](http://nodeschool.io/#asyncyou)
 
-Every single workshop is using the same command line interface and workflow. This eases the work with each of them. Moreover assignments are well defined, descriptive and small enough to perform them as a *daily kata*.
+# How to start?
+
+At first you need to have *`npm`* and *`node`* executables - if you do not have them already on your machine, the most recommended place to start is [here](http://nodejs.org/download/). Then you can install each workshop globally using *Node Packaged Modules* manager:
+
+{% highlight bash %}
+~ $ npm install -g learnyounode
+{% endhighlight %}
+
+In this example *`-g`* flag means *"install package globally"*, so it will be available as a executable on your machine.
+
+Every single workshop is using the same command line interface and workflow. This eases the work with each of them. Moreover, assignments are well defined, descriptive and small enough to perform them as a [daily code kata](http://en.wikipedia.org/wiki/Kata_%28programming%29).
 
 Workflow is oriented around invoking commands in the terminal. After starting the workshop executable without any parameters you will see the list of available assignments, like presented below:
 
@@ -62,11 +72,11 @@ I will recommend to start with [learn-you-node workshop](http://nodeschool.io/#l
 
 You can contribute in several ways.
 
-The easiest thing is to perform any workshop and check it in practice (especially with edge cases). Then you can fork repository related with it, fix the bugs, improve documentation and clarity of the steps, maybe even add missing scenarios and lessons.
+The easiest thing is to perform any workshop and check it in practice (especially with edge cases). Then you can fork repository related with it, fix the bugs, improve documentation and clarity of the steps, maybe even add missing scenarios and lessons. After that you can contribute back your changes to the community by providing a *pull request* to the workshop author.
 
 Second option is related with local events. You can easily organize a new event in your city which will be oriented around whole *nodeschool* initiative (or even around just one type of workshops). There is a detailed guideline prepared by organization [how to do this](http://nodeschool.io/host.html).
 
-And finally, you can create a new workshop. In such vibrant and broad community you can easily find topic suitable for you. If you do not have a clue which could be suitable for you, you can look at the list of possible topics gathered [here](https://github.com/nodeschool/workshoppers/issues?labels=status%3Arequested). If you already have an idea, you should fork the [rvagg/workshopper](https://github.com/rvagg/workshopper) project and start creating lessons. Then, you can add your project to the list of available workshops via [github](https://github.com/nodeschool/workshoppers/issues?labels=status%3Ain+progress) - then your workshop will be reviewed, validated and after successful acceptance it will be available as a official lesson on the main *nodeschool* page.
+And finally, you can create a new workshop. In such vibrant and broad community you can easily find topic suitable for you. If you do not have a clue which could be suitable for you, you can look at the list of possible topics gathered [here](https://github.com/nodeschool/workshoppers/issues?labels=status%3Arequested). If you already have an idea, you should fork the [rvagg/workshopper](https://github.com/rvagg/workshopper) project and start creating lessons. Then, you can add your project to the list of available workshops via [github](https://github.com/nodeschool/workshoppers/issues?labels=status%3Ain+progress) - then your workshop will be reviewed, validated and after successful acceptation it will be available as a official lesson on the main *nodeschool* page.
 
 # References
 
