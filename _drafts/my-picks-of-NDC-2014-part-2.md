@@ -15,3 +15,4 @@ date: 2014-06-20T16:00:00Z-02:00
 7. [Venkat Subramaniam - Core Software Design Principles](https://vimeo.com/97541185) - TODO.
 8. [Garrett Smith - Functional code considered Beautiful](https://vimeo.com/97337252) - TODO.
 9. [Mathias Brandewinder - F# and Machine Learning: a winning combination](https://vimeo.com/97514517) - TODO.
+10. [Bruce Tate - Pipe Dreams](https://vimeo.com/97419178) - TODO.
