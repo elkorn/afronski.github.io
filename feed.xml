@@ -7,6 +7,38 @@
     <atom:link href="http://www.afronski.pl/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>My picks of NDC 2014 - part II</title>
+        <description>&lt;h1 id=&quot;my_picks_of_ndc_2014__part_ii&quot;&gt;My picks of NDC 2014 - part II&lt;/h1&gt;
+
+&lt;p&gt;Another presentations worth looking from the past NDC conference (previous part is &lt;a href=&quot;http://www.afronski.pl/2014/06/16/my-picks-of-NDC-2014-part-1.html&quot;&gt;here&lt;/a&gt;):&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97537675&quot;&gt;Venkat Subramaniam - Towards an Evolutionary Architecture&lt;/a&gt; - Very nice talk which summarizes all necessary things which are important in the concept of &lt;em&gt;Good Architecture&lt;/em&gt;. An architect in Agile have been considered as obsolete by many people, but actually it is the opposite. Good architecture defers decisions, enables evolution and moreover handles or even removes completely the complexity. Besides that - a very nice Agile approach is to prioritize features and assignments by the business value and the architectural impact - by doing that you can really avoid many pitfalls when you are moving forward and crush the knowledge during the process of building the application.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97415346&quot;&gt;Cory House - Becoming an Outlier: Career Reboot for the Developer Mind&lt;/a&gt; - Definitely recommended video to watch. For many people it will be a mind and eye opening experience. Handful of valuable thoughts and advices how to manage your career, change your habits and adapt in the continuously changing environment.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97516289&quot;&gt;Roy Osherove - Beautiful Builds&lt;/a&gt; - Very refreshing talk. It starts by very obvious, but very often forgotten statement that &lt;em&gt;automated builds are not the continuous integration&lt;/em&gt;. It introduces important concept of &lt;em&gt;shipping skeleton&lt;/em&gt;. Mixing operational knowledge with building and deployment knowledge is also an anti-pattern. Talk contains a very useful set of patterns and best practices about CI and even Continuous Deployment - definitely recommended.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97507576&quot;&gt;Doc Norton - The Technical Debt Trap&lt;/a&gt; - Very wise and mindful explanation of Technical Debt metaphor (and moreover - the good and only true one). If you are operating this metaphor and you often use it, please watch this presentation and be sure that all points which are related with the true definition are fulfilled. Because if not, you are talking about &lt;em&gt;cruft&lt;/em&gt; not &lt;em&gt;debt&lt;/em&gt;. :wink:&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97408239&quot;&gt;Joe Armstrong - The mess we’re in&lt;/a&gt; - In most cases talks presented by Joe Armstrong can look like a little spontaneous, sometimes even unprepared. However it is a false belief - amount of experience, insight, pragmatic and at the same time scientific approach to the computing can be really underestimated. Knowledge and very insightful anecdotes are &lt;em&gt;flowing out this talk&lt;/em&gt;. If you want to know more or you are merely interested about the history of computing and how it actually will affect the future of computer science, it is a must-watch presentation.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97505679&quot;&gt;Aral Balkan - Free is a lie&lt;/a&gt; - Definitely recommended talk, especially if you do not have an idea what is a Google / Facebook business model. For those people it can be even a controversial talk (for me it is because of presenting Mozilla as not a ‘Free’ option in the IT world - claiming that most of the income comes from the Google and only that disqualifies this company from being &lt;em&gt;free as a liberty&lt;/em&gt; is &lt;em&gt;just unfair&lt;/em&gt;). In other words - if you do not know this already, by using free services - you are not a consumer, you are a product - &lt;em&gt;a data source&lt;/em&gt; - nothing less, nothing more.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97541185&quot;&gt;Venkat Subramaniam - Core Software Design Principles&lt;/a&gt; - Worth looking if you forgot or you would like to refresh your knowledge about &lt;em&gt;&lt;code&gt;SOLID&lt;/code&gt;&lt;/em&gt; principles, or you do not know what &lt;em&gt;&lt;code&gt;YAGNI&lt;/code&gt;&lt;/em&gt;, &lt;em&gt;&lt;code&gt;DRY&lt;/code&gt;&lt;/em&gt; and &lt;em&gt;&lt;code&gt;TDA&lt;/code&gt;&lt;/em&gt; means. Otherwise, you will watch a rather repetitive (but not boring) presentation.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97337252&quot;&gt;Garrett Smith - Functional code considered Beautiful&lt;/a&gt; - Definitely worth looking, especially that it is a kind of a rather &lt;em&gt;soft&lt;/em&gt; talk with very pragmatic insights, without &lt;em&gt;preaching&lt;/em&gt; and not necessary &lt;em&gt;marketing&lt;/em&gt;. If you are not convinced enough - try to think about very readable, declarative code which is oriented around concurrency and is side-effect free - how it should look like? And one more - presented sample with &lt;em&gt;&lt;code&gt;GCD&lt;/code&gt;&lt;/em&gt; is beautiful and enlightening.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97514517&quot;&gt;Mathias Brandewinder - F# and Machine Learning: a winning combination&lt;/a&gt; - Inspiring and fresh talk, both regarding the topic and presented programming language. Definitely worth looking if you are interested in the polyglot programming movement, and you are looking for interesting language to learn in this or next year. :wink:&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97419178&quot;&gt;Bruce Tate - Pipe Dreams&lt;/a&gt; - Another talk from the polyglot programming family. In this case it presents only two key pieces of Elixir, a new language which is a mix of Ruby syntax, Erlang VM and OTP library, but does it well and deeply - actually it is open-minded in terms of specific approach to the data processing paradigm and sequentiality.&lt;/li&gt;
+&lt;/ol&gt;</description>
+        <pubDate>Thu, 28 Aug 2014 20:00:00 +0000</pubDate>
+        <link>http://www.afronski.pl/2014/08/28/my-picks-of-NDC-2014-part-2.html</link>
+        <guid isPermaLink="true">http://www.afronski.pl/2014/08/28/my-picks-of-NDC-2014-part-2.html</guid>
+      </item>
+    
+      <item>
         <title>nodeschool.io</title>
         <description>&lt;h1 id=&quot;nodeschoolio&quot;&gt;nodeschool.io&lt;/h1&gt;
 
@@ -706,70 +738,6 @@ assertion &lt;span class='s2'&gt;&amp;quot;svn_fspath__is_canonical(child_fspath
         <pubDate>Sat, 25 Jan 2014 23:00:00 +0100</pubDate>
         <link>http://www.afronski.pl/2014/01/25/reconciling-cat-and-dog-the-most-productive-git-svn-setup.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2014/01/25/reconciling-cat-and-dog-the-most-productive-git-svn-setup.html</guid>
-      </item>
-    
-      <item>
-        <title>Small talk about productivity</title>
-        <description>&lt;h1 id=&quot;small_talk_about_productivity&quot;&gt;Small talk about productivity&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Do you propose a 4 day work week in your company?&lt;/li&gt;
-
-&lt;li&gt;Are you using 3 monitors and you have requested another one?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;STOP!&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Do you really think that &lt;em&gt;efficiency&lt;/em&gt; can be measured with &lt;em&gt;monitors-which-you-have-on-your-work-desk&lt;/em&gt;?&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;No, it cannot be measured in such way.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;time&quot;&gt;Time&lt;/h2&gt;
-
-&lt;p&gt;Do you want work only 4 days in a week? And how do you spent time in a normal week? Be honest with yourself - are you really one of these people which have 90 - 95% productivity in a week and you always do what you plan to do?&lt;/p&gt;
-
-&lt;p&gt;If not, let’s do some math.&lt;/p&gt;
-
-&lt;p&gt;Let’s assume that you have pretty good efficiency around 80% in normal week. It means that (in terms of Polish work law) you worked &lt;em&gt;“properly”&lt;/em&gt; 32 hours per week, 8 hours you have spent on something else (let’s call it a &lt;em&gt;procrastination&lt;/em&gt;, BTW. in terms of Polish law it is a &lt;em&gt;whole working day&lt;/em&gt; spent on non-working activities).&lt;/p&gt;
-
-&lt;p&gt;Now let’s think about 4 day work week - you have got 32 hours per week - in order to achieve the same productivity in terms of hours, you need to increase your efficiency from 80% to 100%. And probably you know &lt;em&gt;Pareto rule&lt;/em&gt; which states that 80% of “something” (work done, complexity etc.) is located in 20% of domain of “something” (hours per week, time spent of some task etc.). If you look at the 15 - 20% which you does not have at the moment, you can spent pretty significant amount of time in order to achieve that.&lt;/p&gt;
-
-&lt;p&gt;But what if you stay with the 80% efficiency - you have got 26 hours (rounded with a handicap for you :wink:) - 6 hours less than in 5 a day work week. Think about - in order to do actual work (and you already cut &lt;em&gt;procrastination&lt;/em&gt; by reducing work week by one day) you need to cut time spent on less important tasks in your work day (for someone it will be a meeting, email communication, chatting for someone else reading an article, research etc.) - and you need to find 6 hours of &lt;em&gt;such time&lt;/em&gt;. Are you ready for that?&lt;/p&gt;
-
-&lt;p&gt;You can do it better! How about increasing productivity for normal work week and going up to the 90 - 95%. Move forward, triage things, use &lt;em&gt;DDDD rule&lt;/em&gt; (&lt;em&gt;Do, Delegate, Defer, Delete&lt;/em&gt;) etc. There are many amazing things and talks about increasing productivity, some of them you can find in the references.&lt;/p&gt;
-
-&lt;p&gt;If you achieve such level of efficiency, then you need to plan activities for each day - like 3 - 4 main activities which I need to do. If you do them, rest of time you can spent in a different way - e.g. procrastination, do some research, learning etc. You can do stuff unrelated with work only if you finish your daily work activity.&lt;/p&gt;
-
-&lt;p&gt;One more thing - if you can’t specify your limited &lt;em&gt;daily goals&lt;/em&gt; list you are simply doing too much - please look at &lt;em&gt;DDDD&lt;/em&gt; in advance, because in future you can be highly frustrated (let’s call it a &lt;em&gt;burnout&lt;/em&gt;) about amount of work which you have to do and amount of responsibilities which are assigned to you.&lt;/p&gt;
-
-&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
-
-&lt;p&gt;Are you using your resources in 100% and you are requesting more only if you feel constrained? If you have doubt about that, please read next paragraphs.&lt;/p&gt;
-
-&lt;p&gt;I have seen people which have three monitors - one for &lt;code&gt;IDE&lt;/code&gt; / editor, one for browser, test runner, documentation and one for … &lt;code&gt;IRC&lt;/code&gt;, twitter, Skype, email client etc.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Why the heck people spent ⅓ of their resources on these “chatter-boxes”, instant interruptions and transforming asynchronous communication channels into synchronous ones?&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Many people ask me why I’m using just one screen in my daily work (and I’m a programmer so in many people mindset I need to have at least two if not three monitors). I have got laptop and unattached second screen. And I’m using such opportunity only if I need to.&lt;/p&gt;
-
-&lt;p&gt;Start with just one screen, use virtual desktops, throw away interruptions while you working, be effective on just one screen. If I feel constrained with space of my 4 virtual desktops at one physical screen I’m immediately attaching second screen and rearrange my workspace, on the occasion I’m cleaning up my stuff unrelated with the problem on which I’m working right now.&lt;/p&gt;
-
-&lt;p&gt;Asynchronism in the communication channels should be our advantage. Please refer to the Scott’s talk and schedule time for emails / communication stuff. Respond only if you need and what is even more important be as much asynchronous with it as you can (in other words - defer it).&lt;/p&gt;
-
-&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
-
-&lt;p&gt;Whole topic came to my mind after some “unwise” statements that some people made in company which I’m working right now. What frustrates me the most is that these people &lt;em&gt;are not spent&lt;/em&gt; their time effectively and they claim that 4 day work week will be even more efficient (&lt;em&gt;of course it will&lt;/em&gt;, it will be productive in the lack of productivity :grin:).&lt;/p&gt;
-
-&lt;p&gt;Please, be honest with yourselves and with your employers - We need to use our resources honestly, then effectively and only if we will be very productive we can move to the next step which is an &lt;em&gt;optimization&lt;/em&gt; of these parameters.&lt;/p&gt;
-
-&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;https://vimeo.com/39020426&quot;&gt;Scott Hanselman - It’s not what you read, it’s what you ignore&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</description>
-        <pubDate>Sat, 18 Jan 2014 18:30:00 +0100</pubDate>
-        <link>http://www.afronski.pl/2014/01/18/small-talk-about-productivity.html</link>
-        <guid isPermaLink="true">http://www.afronski.pl/2014/01/18/small-talk-about-productivity.html</guid>
       </item>
     
   </channel>
