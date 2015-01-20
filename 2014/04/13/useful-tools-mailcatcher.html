@@ -22,48 +22,49 @@
     <article class="container post">
       <a href="/">Home</a>
 
-<h1 id="useful_tools__">Useful tools - <code>mailcatcher</code></h1>
+<h1 id="useful-tools---mailcatcher">Useful tools - <code>mailcatcher</code></h1>
 
 <h2 id="overview">Overview</h2>
 
 <p><em>MailCatcher</em> runs a super simple <code>SMTP</code> server which catches any message sent to it to display in a web interface. It is a very useful tool which does not need a huge knowledge about e.g. <code>sendmail</code> and it is really easy to set up.</p>
 
-<h2 id="installation_and_usage">Installation and Usage</h2>
+<h2 id="installation-and-usage">Installation and Usage</h2>
 
 <p>Service is written in <em>Ruby</em> and it is accessible in the gems repository. If you have <em>Ruby</em> installed you will only need to perform two installation steps:</p>
 
 <ol>
-<li>Install it from gems by <code>gem install mailcatcher</code>.</li>
-
-<li>Start the service by invoking command <code>mailcatcher</code>.</li>
-
-<li>Go to the dashboard at <code>http://localhost:1080/</code>.</li>
-
-<li>Send email through <code>smtp://localhost:1025</code> - after that email should appear in the dashboard.</li>
+  <li>Install it from gems by <code>gem install mailcatcher</code>.</li>
+  <li>Start the service by invoking command <code>mailcatcher</code>.</li>
+  <li>Go to the dashboard at <code>http://localhost:1080/</code>.</li>
+  <li>Send email through <code>smtp://localhost:1025</code> - after that email should appear in the dashboard.</li>
 </ol>
 
 <p>Using it inside a web framework e.g. <em><code>Symfony2</code></em> is a piece of cake. The only thing you need is a small modification in the <em><code>parameters.yml</code></em> configuration file:</p>
-<div class='highlight'><pre><code class='yaml'><span class='l-Scalar-Plain'>parameters</span><span class='p-Indicator'>:</span>
-  <span class='l-Scalar-Plain'>mailer_transport</span><span class='p-Indicator'>:</span>  <span class='l-Scalar-Plain'>smtp</span>
-  <span class='l-Scalar-Plain'>mailer_host</span><span class='p-Indicator'>:</span>       <span class='l-Scalar-Plain'>localhost</span>
-  <span class='l-Scalar-Plain'>mailer_port</span><span class='p-Indicator'>:</span>       <span class='l-Scalar-Plain'>1025</span>
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml">parameters:
+  mailer_transport:  smtp
+  mailer_host:       localhost
+  mailer_port:       1025</code></pre></div>
+
 <p>You need to be sure that in the <em><code>config.yml</code></em> you have these keys:</p>
-<div class='highlight'><pre><code class='yaml'><span class='l-Scalar-Plain'>swiftmailer</span><span class='p-Indicator'>:</span>
-  <span class='l-Scalar-Plain'>transport</span><span class='p-Indicator'>:</span>      <span class='err'>%</span><span class='l-Scalar-Plain'>mailer_transport%</span>
-  <span class='l-Scalar-Plain'>host</span><span class='p-Indicator'>:</span>           <span class='err'>%</span><span class='l-Scalar-Plain'>mailer_host%</span>
-  <span class='l-Scalar-Plain'>port</span><span class='p-Indicator'>:</span>           <span class='err'>%</span><span class='l-Scalar-Plain'>mailer_port%</span>
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml">swiftmailer:
+  transport:      %mailer_transport%
+  host:           %mailer_host%
+  port:           %mailer_port%</code></pre></div>
+
 <p>After applying mentioned changes and rebuilding the cache application will send emails via <code>SMTP</code> server from <em>mailcatcher</em>.</p>
 
 <p>If you need to run it as a service with web interface accessible outside you need to run it in this way:</p>
-<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>nohup mailcatcher --http-ip 0.0.0.0 &gt; /var/log/mailcatcher.log 2&gt;<span class='p'>&amp;</span>1 <span class='p'>&amp;</span>
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~ $ nohup mailcatcher --http-ip 0.0.0.0 &gt; /var/log/mailcatcher.log 2&gt;&amp;1 &amp;</code></pre></div>
+
 <h1 id="links">Links</h1>
 
 <ol>
-<li><a href="http://mailcatcher.me/"><code>mailcatcher</code></a></li>
+  <li><a href="http://mailcatcher.me/"><code>mailcatcher</code></a></li>
 </ol>
+
     </article>
 
     <section class="container">

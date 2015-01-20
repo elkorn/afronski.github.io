@@ -22,104 +22,110 @@
     <article class="container post">
       <a href="/">Home</a>
 
-<h1 id="lowlevel_nodejs_debugging_on_production">Low-level Node.js debugging on production</h1>
+<h1 id="low-level-nodejs-debugging-on-production">Low-level Node.js debugging on production</h1>
 
 <p>Sometimes when you want to run your Node.js application on production environment, you will receive:</p>
-<div class='highlight'><pre><code class='bash'>node-stuff <span class='nv'>$ </span>node index.js
-Segmentation fault
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">node-stuff $ node index.js
+Segmentation fault</code></pre></div>
+
 <p>Yeah… and <em>now</em> what?</p>
 
-<p>Welcome to the dungeon, <em>DevOps</em> marine <img alt="grin" src="/images/emoji/grin.png" class="emoji" />.</p>
+<p>Welcome to the dungeon, <em>DevOps</em> marine <img class="emoji" title=":grin:" alt=":grin:" src="https://assets.github.com/images/icons/emoji/unicode/1f601.png" height="20" width="20" align="absmiddle" />.</p>
 
 <p>First of all, if you deployed an application on an <em>OS</em> different than <em>SmartOS</em>, you lost the ability to use many impressive tools which could definitely help you in that case (the most impressive ones are <code>mdb</code> and <code>dtrace</code>, you can find details in the references section of this post).</p>
 
-<p>So there is no <em><code>mdb</code></em>, no <em><code>dtrace</code></em>, no <em>SmartOS</em>. You can’t also use your favorite debugger like <a href="https://trace.gl/">trace.gl</a>, <a href="https://github.com/jwarkentin/node-monkey">node-monkey</a> or <a href="https://github.com/node-inspector/node-inspector">node-inspector</a>. You have got only <code>gdb</code> and your brain filled with low-level computer knowledge <img alt="wink" src="/images/emoji/wink.png" class="emoji" />.</p>
+<p>So there is no <em><code>mdb</code></em>, no <em><code>dtrace</code></em>, no <em>SmartOS</em>. You can’t also use your favorite debugger like <a href="https://trace.gl/">trace.gl</a>, <a href="https://github.com/jwarkentin/node-monkey">node-monkey</a> or <a href="https://github.com/node-inspector/node-inspector">node-inspector</a>. You have got only <code>gdb</code> and your brain filled with low-level computer knowledge <img class="emoji" title=":wink:" alt=":wink:" src="https://assets.github.com/images/icons/emoji/unicode/1f609.png" height="20" width="20" align="absmiddle" />.</p>
 
 <p>Before you dive deeper into the internals of your application, let’s begin the voodoo that is the process of setting the proper options in your <em>OS</em>. First you will remove the limit related with the <em>core dump</em> size:</p>
-<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>sudo <span class='nb'>ulimit</span> -c unlimited
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~ $ sudo ulimit -c unlimited</code></pre></div>
+
 <p>Next, you set different path for these files (remember to put them on a partition with a huge amount of the free disk space):</p>
-<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span><span class='nb'>echo</span> <span class='s1'>&#39;/tmp/core_%e.%p&#39;</span> <span class='p'>|</span> sudo tee /proc/sys/kernel/core_pattern
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~ $ echo '/tmp/core_%e.%p' | sudo tee /proc/sys/kernel/core_pattern</code></pre></div>
+
 <p>Then, if you are using native Node.js extensions you have to recompile them with the debugging flag <em><code>-g</code></em> (configuration file taken from the <em><code>node_xslt</code></em> module):</p>
-<div class='highlight'><pre><code class='javascript'><span class='p'>{</span>
-  <span class='s2'>&quot;targets&quot;</span><span class='o'>:</span> <span class='p'>[{</span>
-    <span class='s2'>&quot;target_name&quot;</span><span class='o'>:</span> <span class='s2'>&quot;node_xslt&quot;</span><span class='p'>,</span>
-    <span class='s2'>&quot;sources&quot;</span><span class='o'>:</span> <span class='p'>[</span> <span class='s2'>&quot;node_xslt.cc&quot;</span> <span class='p'>],</span>
 
-    <span class='s2'>&quot;cflags&quot;</span><span class='o'>:</span> <span class='p'>[</span>
-      <span class='s2'>&quot;&lt;!(xml2-config --cflags)&quot;</span><span class='p'>,</span>
-      <span class='s2'>&quot;-fexceptions&quot;</span><span class='p'>,</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">{
+  &quot;targets&quot;: [{
+    &quot;target_name&quot;: &quot;node_xslt&quot;,
+    &quot;sources&quot;: [ &quot;node_xslt.cc&quot; ],
 
-      <span class='s2'>&quot;-g&quot;</span>
-    <span class='p'>],</span>
+    &quot;cflags&quot;: [
+      &quot;&lt;!(xml2-config --cflags)&quot;,
+      &quot;-fexceptions&quot;,
 
-    <span class='s2'>&quot;cflags_cc&quot;</span><span class='o'>:</span> <span class='p'>[</span>
-      <span class='s2'>&quot;&lt;!(xml2-config --cflags)&quot;</span><span class='p'>,</span>
-      <span class='s2'>&quot;-fexceptions&quot;</span><span class='p'>,</span>
+      &quot;-g&quot;
+    ],
 
-      <span class='s2'>&quot;-g&quot;</span>
-    <span class='p'>],</span>
+    &quot;cflags_cc&quot;: [
+      &quot;&lt;!(xml2-config --cflags)&quot;,
+      &quot;-fexceptions&quot;,
 
-    <span class='s2'>&quot;xcode_settings&quot;</span><span class='o'>:</span> <span class='p'>{</span>
-      <span class='s2'>&quot;OTHER_CFLAGS&quot;</span><span class='o'>:</span> <span class='p'>[</span>
-        <span class='s2'>&quot;&lt;!(xml2-config --cflags)&quot;</span><span class='p'>,</span>
-        <span class='s2'>&quot;-fexceptions&quot;</span><span class='p'>,</span>
+      &quot;-g&quot;
+    ],
 
-        <span class='s2'>&quot;-g&quot;</span>
-      <span class='p'>]</span>
-    <span class='p'>},</span>
-    <span class='s2'>&quot;libraries&quot;</span><span class='o'>:</span> <span class='p'>[</span><span class='s2'>&quot;-lxml2&quot;</span> <span class='p'>,</span> <span class='s2'>&quot;-lxslt&quot;</span> <span class='p'>,</span> <span class='s2'>&quot;-lexslt&quot;</span><span class='p'>],</span>
-    <span class='s2'>&quot;library_dirs&quot;</span><span class='o'>:</span> <span class='p'>[</span> <span class='s2'>&quot;/usr/lib&quot;</span> <span class='p'>]</span>
-  <span class='p'>}]</span>
-<span class='p'>}</span>
-</code></pre></div>
+    &quot;xcode_settings&quot;: {
+      &quot;OTHER_CFLAGS&quot;: [
+        &quot;&lt;!(xml2-config --cflags)&quot;,
+        &quot;-fexceptions&quot;,
+
+        &quot;-g&quot;
+      ]
+    },
+    &quot;libraries&quot;: [&quot;-lxml2&quot; , &quot;-lxslt&quot; , &quot;-lexslt&quot;],
+    &quot;library_dirs&quot;: [ &quot;/usr/lib&quot; ]
+  }]
+}</code></pre></div>
+
 <p>Then, look at the dependencies (in our case <code>libxslt</code>, <code>libxml2</code>) and reinstall them in the development version (sometimes marked with a <code>-devel</code> postfix).</p>
 
 <p>After modifications and installing dependencies in the <em>debugging mode</em>, you have to run installation process inside the directory of the modified module (but only there, not on the upper level, because it will remove our changes in the modified module):</p>
-<div class='highlight'><pre><code class='bash'>node_xslt <span class='nv'>$ </span>npm install --verbose
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">node_xslt $ npm install --verbose</code></pre></div>
+
 <p>Somewhere inside the long output you will find information about flags used in compilation process (and you should see a <em><code>-g</code></em> flag, responsible for attaching debugging informations).</p>
 
 <p>Next, you have to simulate again situation with <em><code>Segmentation fault</code></em> behavior. When application receive unwanted signal, it will dump file with the <em>post-mortem</em> internal structure, ready for using inside <code>gdb</code>:</p>
-<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>gdb /usr/bin/node /tmp/core_XXX.YYY
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~ $ gdb /usr/bin/node /tmp/core_XXX.YYY</code></pre></div>
+
 <p>And now you are inside the belly of the monster, so you can move around:</p>
-<div class='highlight'><pre><code class='bash'>...
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">...
 Program received signal SIGSEGV, Segmentation fault.
 
-<span class='o'>(</span>gdb<span class='o'>)</span> bt
-<span class='c'># It shows the stack trace (but from the native code).</span>
-<span class='o'>(</span>gdb<span class='o'>)</span> print V8_Fatal<span class='o'>(</span><span class='s2'>&quot;a&quot;</span>, 11, <span class='s2'>&quot;c&quot;</span><span class='o'>)</span>
-<span class='c'># It shows the stack trace inside V8.</span>
-<span class='c'># Values &quot;a&quot;, 11 and &quot;c&quot; are irrelevant.</span>
-<span class='o'>(</span>gdb<span class='o'>)</span> quit
-<span class='c'># It exits gdb.</span>
-</code></pre></div>
+(gdb) bt
+# It shows the stack trace (but from the native code).
+(gdb) print V8_Fatal(&quot;a&quot;, 11, &quot;c&quot;)
+# It shows the stack trace inside V8.
+# Values &quot;a&quot;, 11 and &quot;c&quot; are irrelevant.
+(gdb) quit
+# It exits gdb.</code></pre></div>
+
 <p>If you want to attach to the running process, you have to invoke the command specified below:</p>
-<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>gdb attach <span class='k'>$(</span>pidof node<span class='k'>)</span>
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~ $ gdb attach $(pidof node)</code></pre></div>
+
 <p>However, if your application is running in a cluster mode (or you are running more than one Node.js application on your machine), this will fail and instead of <em><code>pidof</code></em> you have to pass a single <em>PID</em> value (from one application, master or one of the slaves, depends on what is interesting for you).</p>
 
 <p>You can also run <em><code>strace</code></em> in order to determine which system calls does your program invoke before <em>death</em>:</p>
-<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>strace -ttT
-</code></pre></div>
-<p>After gathering a certain amount of knowledge, armed with the stack traces, system call invocations and the memory footprint you have to <em>dig deeper</em> into the actual application code and maybe try to reproduce that behavior in a more <em>debuggable</em> environment <img alt="wink" src="/images/emoji/wink.png" class="emoji" />.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~ $ strace -ttT</code></pre></div>
+
+<p>After gathering a certain amount of knowledge, armed with the stack traces, system call invocations and the memory footprint you have to <em>dig deeper</em> into the actual application code and maybe try to reproduce that behavior in a more <em>debuggable</em> environment <img class="emoji" title=":wink:" alt=":wink:" src="https://assets.github.com/images/icons/emoji/unicode/1f609.png" height="20" width="20" align="absmiddle" />.</p>
 
 <h1 id="references">References</h1>
 
 <ol>
-<li><a href="http://dtrace.org/blogs/dap/2012/01/13/playing-with-nodev8-postmortem-debugging">Using <code>mdb</code></a></li>
-
-<li><a href="http://dtrace.org/blogs/dap/2012/01/05/where-does-your-node-program-spend-its-time">Using <code>dtrace</code></a></li>
-
-<li><a href="http://linux.die.net/man/3/ulimit"><code>ulimit</code> man pages</a></li>
-
-<li><a href="https://github.com/bsuh/node_xslt">node_xslt</a></li>
-
-<li><a href="http://linux.die.net/man/1/strace"><code>strace</code> man pages</a></li>
+  <li><a href="http://dtrace.org/blogs/dap/2012/01/13/playing-with-nodev8-postmortem-debugging">Using <code>mdb</code></a></li>
+  <li><a href="http://dtrace.org/blogs/dap/2012/01/05/where-does-your-node-program-spend-its-time">Using <code>dtrace</code></a></li>
+  <li><a href="http://linux.die.net/man/3/ulimit"><code>ulimit</code> man pages</a></li>
+  <li><a href="https://github.com/bsuh/node_xslt">node_xslt</a></li>
+  <li><a href="http://linux.die.net/man/1/strace"><code>strace</code> man pages</a></li>
 </ol>
+
     </article>
 
     <section class="container">

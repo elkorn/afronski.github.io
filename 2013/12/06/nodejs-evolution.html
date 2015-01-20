@@ -22,7 +22,7 @@
     <article class="container post">
       <a href="/">Home</a>
 
-<h1 id="nodejs_evolution">Node.js evolution</h1>
+<h1 id="nodejs-evolution">Node.js evolution</h1>
 
 <p><img src="/assets/NodeJsLogo.png" alt="Node.js logo" /></p>
 
@@ -35,73 +35,67 @@
 <p>One nifty concept, called <em>Asynchronous Tasks</em>, was presented in the talk.</p>
 
 <p>It was presented as an asynchronous <code>try...catch</code> block without changing the language syntax and semantics. Let’s look at the initial representation:</p>
-<div class='highlight'><pre><code class='javascript'><span class='lineno'> 1</span> <span class='nx'>task</span><span class='p'>.</span><span class='nx'>create</span><span class='p'>(</span><span class='kd'>function</span> <span class='nx'>concatTwoFilesAndThenSomeTask</span><span class='p'>()</span> <span class='p'>{</span>
-<span class='lineno'> 2</span> 
-<span class='lineno'> 3</span>   <span class='nx'>fs</span><span class='p'>.</span><span class='nx'>readFile</span><span class='p'>(</span><span class='s2'>&quot;some/template&quot;</span><span class='p'>,</span> <span class='s2'>&quot;utf8&quot;</span><span class='p'>,</span> <span class='kd'>function</span> <span class='p'>(</span><span class='nx'>error</span><span class='p'>,</span> <span class='nx'>file1</span><span class='p'>)</span> <span class='p'>{</span>
-<span class='lineno'> 4</span> 
-<span class='lineno'> 5</span>     <span class='k'>if</span> <span class='p'>(</span><span class='nx'>error</span><span class='p'>)</span> <span class='p'>{</span>
-<span class='lineno'> 6</span>       <span class='k'>throw</span> <span class='nx'>error</span><span class='p'>;</span>
-<span class='lineno'> 7</span>     <span class='p'>}</span>
-<span class='lineno'> 8</span> 
-<span class='lineno'> 9</span>     <span class='nx'>fs</span><span class='p'>.</span><span class='nx'>readFile</span><span class='p'>(</span><span class='s2'>&quot;something/else&quot;</span><span class='p'>,</span> <span class='s2'>&quot;utf8&quot;</span><span class='p'>,</span> <span class='kd'>function</span> <span class='p'>(</span><span class='nx'>error</span><span class='p'>,</span> <span class='nx'>file2</span><span class='p'>)</span> <span class='p'>{</span>
-<span class='lineno'>10</span> 
-<span class='lineno'>11</span>       <span class='k'>if</span> <span class='p'>(</span><span class='nx'>error</span><span class='p'>)</span> <span class='p'>{</span>
-<span class='lineno'>12</span>         <span class='k'>throw</span> <span class='nx'>error</span><span class='p'>;</span>
-<span class='lineno'>13</span>       <span class='p'>}</span>
-<span class='lineno'>14</span> 
-<span class='lineno'>15</span>       <span class='kd'>var</span> <span class='nx'>data</span> <span class='o'>=</span> <span class='nx'>file1</span> <span class='o'>+</span> <span class='s2'>&quot;--&quot;</span> <span class='o'>+</span> <span class='nx'>file2</span><span class='p'>;</span>
-<span class='lineno'>16</span> 
-<span class='lineno'>17</span>       <span class='nx'>data</span> <span class='o'>=</span> <span class='nx'>data</span><span class='p'>.</span><span class='nx'>replace</span><span class='p'>(</span><span class='sr'>/foo/g</span><span class='p'>,</span> <span class='s2'>&quot;bar&quot;</span><span class='p'>);</span>
-<span class='lineno'>18</span>       <span class='k'>return</span> <span class='nx'>data</span><span class='p'>;</span>
-<span class='lineno'>19</span>     <span class='p'>});</span>
-<span class='lineno'>20</span> 
-<span class='lineno'>21</span>   <span class='p'>});</span>
-<span class='lineno'>22</span> 
-<span class='lineno'>23</span> <span class='p'>}).</span><span class='nx'>setCallback</span><span class='p'>(</span><span class='kd'>function</span> <span class='p'>(</span><span class='nx'>error</span><span class='p'>,</span> <span class='nx'>result</span><span class='p'>)</span> <span class='p'>{</span>
-<span class='lineno'>24</span> 
-<span class='lineno'>25</span>   <span class='k'>if</span> <span class='p'>(</span><span class='nx'>error</span><span class='p'>)</span> <span class='p'>{</span>
-<span class='lineno'>26</span>     <span class='k'>throw</span> <span class='nx'>error</span><span class='p'>;</span>
-<span class='lineno'>27</span>   <span class='p'>}</span>
-<span class='lineno'>28</span> 
-<span class='lineno'>29</span>   <span class='c1'>// Do something with the result.</span>
-<span class='lineno'>30</span> <span class='p'>});</span>
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">task.create(function concatTwoFilesAndThenSomeTask() {
+
+  fs.readFile(&quot;some/template&quot;, &quot;utf8&quot;, function (error, file1) {
+
+    if (error) {
+      throw error;
+    }
+
+    fs.readFile(&quot;something/else&quot;, &quot;utf8&quot;, function (error, file2) {
+
+      if (error) {
+        throw error;
+      }
+
+      var data = file1 + &quot;--&quot; + file2;
+
+      data = data.replace(/foo/g, &quot;bar&quot;);
+      return data;
+    });
+
+  });
+
+}).setCallback(function (error, result) {
+
+  if (error) {
+    throw error;
+  }
+
+  // Do something with the result.
+});</code></pre></div>
+
 <p>Of course it is a simple concept, which ignores many thing e.g. <code>EventEmitter</code>. But it also gives us many things e.g. meaningful stack traces with asynchronous operations or handling errors of composite asynchronous operations in one place.</p>
 
 <p>I know that there exist modules which can do that (like <a href="https://github.com/caolan/async">async</a>), but having it built into the platform seems very interesting and brings other capabilities (e.g. under-the-hood optimization) which the additional modules do not have.</p>
 
 <p>The whole concept has evolved into something called by Bert a <code>domains2</code> module. You can find details in references.</p>
 
-<h1 id="what_else">What else?</h1>
+<h1 id="what-else">What else?</h1>
 
 <p>We have to remember that the world will not stay in place and will evolve. And <em>Node.js</em> in the blessed, <em>enterprise</em> version has to evolve too. The owners are the pushing platform in the right direction and I totally agree that <em>Node.js</em> should have a thin core as it has right now. However, there are definitely many things which can land in it.</p>
 
 <p>How about:</p>
 
 <ul>
-<li>Supporting new protocols:
-<ul>
-<li><a href="http://tools.ietf.org/html/draft-ietf-httpbis-http2-04">HTTP 2.0</a></li>
-
-<li><a href="http://tools.ietf.org/html/draft-ietf-httpbis-http2-00">SPDY</a></li>
-
-<li><a href="http://tools.ietf.org/html/rfc5389">STUN</a> and <a href="http://tools.ietf.org/html/rfc5766">TURN</a></li>
-</ul>
-</li>
-
-<li>Supporting old ones, as well:
-<ul>
-<li><a href="http://www.ietf.org/rfc/rfc1157.txt">SNMP</a></li>
-</ul>
-</li>
-
-<li>Adding more load balancing algorithms to the <em><code>cluster</code></em> module (<a href="http://strongloop.com/strongblog/whats-new-in-node-js-v0-12-cluster-round-robin-load-balancing/">Round-Robin was recently added in <code>0.12</code></a>).</li>
-
-<li>Adding supervision mechanisms (like the ones we have in <a href="http://www.erlang.org/doc/design_principles/sup_princ.html">Erlang and OTP</a>)</li>
-
-<li>Supporting mesh topology (like in <a href="https://github.com/dominictarr/scuttlebutt">this module</a>).</li>
-
-<li>Solving problems with <em><code>NPM</code></em> and keeping it <em>awesome</em> (by providing <a href="http://npmjs.eu/">mirrors</a> or <a href="https://scalenpm.org/">scaling it</a> and <a href="http://blog.nodejs.org/2013/11/26/npm-post-mortem/">decentralizing</a>).</li>
+  <li>Supporting new protocols:
+    <ul>
+      <li><a href="http://tools.ietf.org/html/draft-ietf-httpbis-http2-04">HTTP 2.0</a></li>
+      <li><a href="http://tools.ietf.org/html/draft-ietf-httpbis-http2-00">SPDY</a></li>
+      <li><a href="http://tools.ietf.org/html/rfc5389">STUN</a> and <a href="http://tools.ietf.org/html/rfc5766">TURN</a></li>
+    </ul>
+  </li>
+  <li>Supporting old ones, as well:
+    <ul>
+      <li><a href="http://www.ietf.org/rfc/rfc1157.txt">SNMP</a></li>
+    </ul>
+  </li>
+  <li>Adding more load balancing algorithms to the <em><code>cluster</code></em> module (<a href="http://strongloop.com/strongblog/whats-new-in-node-js-v0-12-cluster-round-robin-load-balancing/">Round-Robin was recently added in <code>0.12</code></a>).</li>
+  <li>Adding supervision mechanisms (like the ones we have in <a href="http://www.erlang.org/doc/design_principles/sup_princ.html">Erlang and OTP</a>)</li>
+  <li>Supporting mesh topology (like in <a href="https://github.com/dominictarr/scuttlebutt">this module</a>).</li>
+  <li>Solving problems with <em><code>NPM</code></em> and keeping it <em>awesome</em> (by providing <a href="http://npmjs.eu/">mirrors</a> or <a href="https://scalenpm.org/">scaling it</a> and <a href="http://blog.nodejs.org/2013/11/26/npm-post-mortem/">decentralizing</a>).</li>
 </ul>
 
 <p>The reported enhancements are just the tip of the iceberg and even you can expand this list. I encourage you to subscribe to <em>Node.js</em> <a href="https://groups.google.com/forum/#!forum/nodejs">mailing list</a> and then observe, learn, share ideas and experience, discuss.</p>
@@ -113,14 +107,12 @@
 <h1 id="references">References</h1>
 
 <ol>
-<li><a href="http://www.youtube.com/watch?v=82hJbjqbIt4">Isaac Shlueter - The Road to Node.js v1.0</a></li>
-
-<li><a href="http://www.youtube.com/watch?v=QnO6Uut4Ao8">Bert Belder - Node.js 2.0 (LXJS 2013)</a></li>
-
-<li><a href="https://gist.github.com/piscisaureus/7454729"><code>domains2</code></a></li>
-
-<li><a href="http://blog.nodejs.org/2011/07/11/evolving-the-node-js-brand/">Node.js Logo</a></li>
+  <li><a href="http://www.youtube.com/watch?v=82hJbjqbIt4">Isaac Shlueter - The Road to Node.js v1.0</a></li>
+  <li><a href="http://www.youtube.com/watch?v=QnO6Uut4Ao8">Bert Belder - Node.js 2.0 (LXJS 2013)</a></li>
+  <li><a href="https://gist.github.com/piscisaureus/7454729"><code>domains2</code></a></li>
+  <li><a href="http://blog.nodejs.org/2011/07/11/evolving-the-node-js-brand/">Node.js Logo</a></li>
 </ol>
+
     </article>
 
     <section class="container">

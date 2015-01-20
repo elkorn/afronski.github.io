@@ -8,31 +8,23 @@
     
       <item>
         <title>My picks of NDC 2014 - part II</title>
-        <description>&lt;h1 id=&quot;my_picks_of_ndc_2014__part_ii&quot;&gt;My picks of NDC 2014 - part II&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;my-picks-of-ndc-2014---part-ii&quot;&gt;My picks of NDC 2014 - part II&lt;/h1&gt;
 
 &lt;p&gt;Another presentations worth looking from the past NDC conference (previous part is &lt;a href=&quot;http://www.afronski.pl/2014/06/16/my-picks-of-NDC-2014-part-1.html&quot;&gt;here&lt;/a&gt;):&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97537675&quot;&gt;Venkat Subramaniam - Towards an Evolutionary Architecture&lt;/a&gt; - Very nice talk which summarizes all necessary things which are important in the concept of &lt;em&gt;Good Architecture&lt;/em&gt;. An architect in Agile have been considered as obsolete by many people, but actually it is the opposite. Good architecture defers decisions, enables evolution and moreover handles or even removes completely the complexity. Besides that - a very nice Agile approach is to prioritize features and assignments by the business value and the architectural impact - by doing that you can really avoid many pitfalls when you are moving forward and crush the knowledge during the process of building the application.&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97415346&quot;&gt;Cory House - Becoming an Outlier: Career Reboot for the Developer Mind&lt;/a&gt; - Definitely recommended video to watch. For many people it will be a mind and eye opening experience. Handful of valuable thoughts and advices how to manage your career, change your habits and adapt in the continuously changing environment.&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97516289&quot;&gt;Roy Osherove - Beautiful Builds&lt;/a&gt; - Very refreshing talk. It starts by very obvious, but very often forgotten statement that &lt;em&gt;automated builds are not the continuous integration&lt;/em&gt;. It introduces important concept of &lt;em&gt;shipping skeleton&lt;/em&gt;. Mixing operational knowledge with building and deployment knowledge is also an anti-pattern. Talk contains a very useful set of patterns and best practices about CI and even Continuous Deployment - definitely recommended.&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97507576&quot;&gt;Doc Norton - The Technical Debt Trap&lt;/a&gt; - Very wise and mindful explanation of Technical Debt metaphor (and moreover - the good and only true one). If you are operating this metaphor and you often use it, please watch this presentation and be sure that all points which are related with the true definition are fulfilled. Because if not, you are talking about &lt;em&gt;cruft&lt;/em&gt; not &lt;em&gt;debt&lt;/em&gt;. :wink:&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97408239&quot;&gt;Joe Armstrong - The mess we’re in&lt;/a&gt; - In most cases talks presented by Joe Armstrong can look like a little spontaneous, sometimes even unprepared. However it is a false belief - amount of experience, insight, pragmatic and at the same time scientific approach to the computing can be really underestimated. Knowledge and very insightful anecdotes are &lt;em&gt;flowing out this talk&lt;/em&gt;. If you want to know more or you are merely interested about the history of computing and how it actually will affect the future of computer science, it is a must-watch presentation.&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97505679&quot;&gt;Aral Balkan - Free is a lie&lt;/a&gt; - Definitely recommended talk, especially if you do not have an idea what is a Google / Facebook business model. For those people it can be even a controversial talk (for me it is because of presenting Mozilla as not a ‘Free’ option in the IT world - claiming that most of the income comes from the Google and only that disqualifies this company from being &lt;em&gt;free as a liberty&lt;/em&gt; is &lt;em&gt;just unfair&lt;/em&gt;). In other words - if you do not know this already, by using free services - you are not a consumer, you are a product - &lt;em&gt;a data source&lt;/em&gt; - nothing less, nothing more.&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97541185&quot;&gt;Venkat Subramaniam - Core Software Design Principles&lt;/a&gt; - Worth looking if you forgot or you would like to refresh your knowledge about &lt;em&gt;&lt;code&gt;SOLID&lt;/code&gt;&lt;/em&gt; principles, or you do not know what &lt;em&gt;&lt;code&gt;YAGNI&lt;/code&gt;&lt;/em&gt;, &lt;em&gt;&lt;code&gt;DRY&lt;/code&gt;&lt;/em&gt; and &lt;em&gt;&lt;code&gt;TDA&lt;/code&gt;&lt;/em&gt; means. Otherwise, you will watch a rather repetitive (but not boring) presentation.&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97337252&quot;&gt;Garrett Smith - Functional code considered Beautiful&lt;/a&gt; - Definitely worth looking, especially that it is a kind of a rather &lt;em&gt;soft&lt;/em&gt; talk with very pragmatic insights, without &lt;em&gt;preaching&lt;/em&gt; and not necessary &lt;em&gt;marketing&lt;/em&gt;. If you are not convinced enough - try to think about very readable, declarative code which is oriented around concurrency and is side-effect free - how it should look like? And one more - presented sample with &lt;em&gt;&lt;code&gt;GCD&lt;/code&gt;&lt;/em&gt; is beautiful and enlightening.&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97514517&quot;&gt;Mathias Brandewinder - F# and Machine Learning: a winning combination&lt;/a&gt; - Inspiring and fresh talk, both regarding the topic and presented programming language. Definitely worth looking if you are interested in the polyglot programming movement, and if you are looking for interesting language to learn in this or next year. :wink:&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97419178&quot;&gt;Bruce Tate - Pipe Dreams&lt;/a&gt; - Another talk from the polyglot programming family. In this case it presents only two key pieces of Elixir, a new language which is a mix of Ruby syntax, Erlang VM and OTP library, but does it well and deeply - actually it is open-minded in terms of specific approach to the data processing paradigm and sequentiality.&lt;/li&gt;
-&lt;/ol&gt;</description>
+  &lt;li&gt;&lt;a href=&quot;https://vimeo.com/97537675&quot;&gt;Venkat Subramaniam - Towards an Evolutionary Architecture&lt;/a&gt; - Very nice talk which summarizes all necessary things which are important in the concept of &lt;em&gt;Good Architecture&lt;/em&gt;. An architect in Agile have been considered as obsolete by many people, but actually it is the opposite. Good architecture defers decisions, enables evolution and moreover handles or even removes completely the complexity. Besides that - a very nice Agile approach is to prioritize features and assignments by the business value and the architectural impact - by doing that you can really avoid many pitfalls when you are moving forward and crush the knowledge during the process of building the application.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://vimeo.com/97415346&quot;&gt;Cory House - Becoming an Outlier: Career Reboot for the Developer Mind&lt;/a&gt; - Definitely recommended video to watch. For many people it will be a mind and eye opening experience. Handful of valuable thoughts and advices how to manage your career, change your habits and adapt in the continuously changing environment.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://vimeo.com/97516289&quot;&gt;Roy Osherove - Beautiful Builds&lt;/a&gt; - Very refreshing talk. It starts by very obvious, but very often forgotten statement that &lt;em&gt;automated builds are not the continuous integration&lt;/em&gt;. It introduces important concept of &lt;em&gt;shipping skeleton&lt;/em&gt;. Mixing operational knowledge with building and deployment knowledge is also an anti-pattern. Talk contains a very useful set of patterns and best practices about CI and even Continuous Deployment - definitely recommended.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://vimeo.com/97507576&quot;&gt;Doc Norton - The Technical Debt Trap&lt;/a&gt; - Very wise and mindful explanation of Technical Debt metaphor (and moreover - the good and only true one). If you are operating this metaphor and you often use it, please watch this presentation and be sure that all points which are related with the true definition are fulfilled. Because if not, you are talking about &lt;em&gt;cruft&lt;/em&gt; not &lt;em&gt;debt&lt;/em&gt;. &lt;img class=&quot;emoji&quot; title=&quot;:wink:&quot; alt=&quot;:wink:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f609.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://vimeo.com/97408239&quot;&gt;Joe Armstrong - The mess we’re in&lt;/a&gt; - In most cases talks presented by Joe Armstrong can look like a little spontaneous, sometimes even unprepared. However it is a false belief - amount of experience, insight, pragmatic and at the same time scientific approach to the computing can be really underestimated. Knowledge and very insightful anecdotes are &lt;em&gt;flowing out this talk&lt;/em&gt;. If you want to know more or you are merely interested about the history of computing and how it actually will affect the future of computer science, it is a must-watch presentation.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://vimeo.com/97505679&quot;&gt;Aral Balkan - Free is a lie&lt;/a&gt; - Definitely recommended talk, especially if you do not have an idea what is a Google / Facebook business model. For those people it can be even a controversial talk (for me it is because of presenting Mozilla as not a ‘Free’ option in the IT world - claiming that most of the income comes from the Google and only that disqualifies this company from being &lt;em&gt;free as a liberty&lt;/em&gt; is &lt;em&gt;just unfair&lt;/em&gt;). In other words - if you do not know this already, by using free services - you are not a consumer, you are a product - &lt;em&gt;a data source&lt;/em&gt; - nothing less, nothing more.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://vimeo.com/97541185&quot;&gt;Venkat Subramaniam - Core Software Design Principles&lt;/a&gt; - Worth looking if you forgot or you would like to refresh your knowledge about &lt;em&gt;&lt;code&gt;SOLID&lt;/code&gt;&lt;/em&gt; principles, or you do not know what &lt;em&gt;&lt;code&gt;YAGNI&lt;/code&gt;&lt;/em&gt;, &lt;em&gt;&lt;code&gt;DRY&lt;/code&gt;&lt;/em&gt; and &lt;em&gt;&lt;code&gt;TDA&lt;/code&gt;&lt;/em&gt; means. Otherwise, you will watch a rather repetitive (but not boring) presentation.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://vimeo.com/97337252&quot;&gt;Garrett Smith - Functional code considered Beautiful&lt;/a&gt; - Definitely worth looking, especially that it is a kind of a rather &lt;em&gt;soft&lt;/em&gt; talk with very pragmatic insights, without &lt;em&gt;preaching&lt;/em&gt; and not necessary &lt;em&gt;marketing&lt;/em&gt;. If you are not convinced enough - try to think about very readable, declarative code which is oriented around concurrency and is side-effect free - how it should look like? And one more - presented sample with &lt;em&gt;&lt;code&gt;GCD&lt;/code&gt;&lt;/em&gt; is beautiful and enlightening.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://vimeo.com/97514517&quot;&gt;Mathias Brandewinder - F# and Machine Learning: a winning combination&lt;/a&gt; - Inspiring and fresh talk, both regarding the topic and presented programming language. Definitely worth looking if you are interested in the polyglot programming movement, and if you are looking for interesting language to learn in this or next year. &lt;img class=&quot;emoji&quot; title=&quot;:wink:&quot; alt=&quot;:wink:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f609.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://vimeo.com/97419178&quot;&gt;Bruce Tate - Pipe Dreams&lt;/a&gt; - Another talk from the polyglot programming family. In this case it presents only two key pieces of Elixir, a new language which is a mix of Ruby syntax, Erlang VM and OTP library, but does it well and deeply - actually it is open-minded in terms of specific approach to the data processing paradigm and sequentiality.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
         <pubDate>Thu, 28 Aug 2014 20:00:00 +0000</pubDate>
         <link>http://www.afronski.pl/2014/08/28/my-picks-of-NDC-2014-part-2.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2014/08/28/my-picks-of-NDC-2014-part-2.html</guid>
@@ -46,7 +38,7 @@
 
 &lt;h1 id=&quot;why&quot;&gt;Why?&lt;/h1&gt;
 
-&lt;p&gt;The major problem when you are learning new stuff is related with first step, even with a basic question &lt;em&gt;“how to start”&lt;/em&gt;. This barrier is often related with new thinking or programming paradigm, new language, unknown environment or even unfamiliar &lt;code&gt;API&lt;/code&gt;. For almost every technology we can find opinionated stuff on the Internet: multiple tutorials, guidelines (often it is not so hard to find two conflicting ones :wink:) and blog posts with information how to work with technology in which we are interested. Moreover, in almost each case we still have a question back in our heads: &lt;em&gt;“Is it a proper way to learn and work with it?”&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The major problem when you are learning new stuff is related with first step, even with a basic question &lt;em&gt;“how to start”&lt;/em&gt;. This barrier is often related with new thinking or programming paradigm, new language, unknown environment or even unfamiliar &lt;code&gt;API&lt;/code&gt;. For almost every technology we can find opinionated stuff on the Internet: multiple tutorials, guidelines (often it is not so hard to find two conflicting ones &lt;img class=&quot;emoji&quot; title=&quot;:wink:&quot; alt=&quot;:wink:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f609.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;) and blog posts with information how to work with technology in which we are interested. Moreover, in almost each case we still have a question back in our heads: &lt;em&gt;“Is it a proper way to learn and work with it?”&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Learning process could be easier if we have one source of truth and best practices how to approach certain topics related with piece of technology which is interesting for us. For Node.js such initiative is called &lt;a href=&quot;http://nodeschool.io&quot;&gt;nodeschool.io&lt;/a&gt;.&lt;/p&gt;
 
@@ -56,45 +48,29 @@
 
 &lt;p&gt;Nodeschool is a series of interactive workshops, divided into two sections - core concepts and electives.&lt;/p&gt;
 
-&lt;p&gt;In the main concepts we have:&lt;/p&gt;
+&lt;p&gt;In the main concepts we have:
+- &lt;a href=&quot;http://nodeschool.io/#learn-you-node&quot;&gt;basic asynchronous programming and introduction to the core Node.js concepts&lt;/a&gt;
+- &lt;a href=&quot;http://nodeschool.io/#stream-adventure&quot;&gt;introduction to the streams&lt;/a&gt;
+- &lt;a href=&quot;http://nodeschool.io/#bytewiser&quot;&gt;bytes and buffers manipulation&lt;/a&gt;
+- &lt;a href=&quot;http://nodeschool.io/#functionaljs&quot;&gt;functional programming in JavaScript&lt;/a&gt;
+- &lt;a href=&quot;http://nodeschool.io/#git-it&quot;&gt;how to work effectively with git and github&lt;/a&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://nodeschool.io/#learn-you-node&quot;&gt;basic asynchronous programming and introduction to the core Node.js concepts&lt;/a&gt;&lt;/li&gt;
+&lt;p&gt;Electives are oriented around:
+- &lt;a href=&quot;http://nodeschool.io/#levelmeup&quot;&gt;use of node.js binding and modules related with LevelDB&lt;/a&gt;
+- &lt;a href=&quot;http://nodeschool.io/#makemehapi&quot;&gt;hapi.js framework&lt;/a&gt;
+- &lt;a href=&quot;http://nodeschool.io/#expressworks&quot;&gt;express.js framework&lt;/a&gt;
+- &lt;a href=&quot;http://nodeschool.io/#goingnative&quot;&gt;native modules and addons&lt;/a&gt;
+- &lt;a href=&quot;http://nodeschool.io/#count-to-6&quot;&gt;6th version of ECMAScript&lt;/a&gt;
+- &lt;a href=&quot;http://nodeschool.io/#browserify-adventure&quot;&gt;browserify&lt;/a&gt;
+- &lt;a href=&quot;http://nodeschool.io/#promiseitwonthurt&quot;&gt;promises&lt;/a&gt;
+- &lt;a href=&quot;http://nodeschool.io/#asyncyou&quot;&gt;async.js&lt;/a&gt;&lt;/p&gt;
 
-&lt;li&gt;&lt;a href=&quot;http://nodeschool.io/#stream-adventure&quot;&gt;introduction to the streams&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;http://nodeschool.io/#bytewiser&quot;&gt;bytes and buffers manipulation&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;http://nodeschool.io/#functionaljs&quot;&gt;functional programming in JavaScript&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;http://nodeschool.io/#git-it&quot;&gt;how to work effectively with git and github&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Electives are oriented around:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://nodeschool.io/#levelmeup&quot;&gt;use of node.js binding and modules related with LevelDB&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;http://nodeschool.io/#makemehapi&quot;&gt;hapi.js framework&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;http://nodeschool.io/#expressworks&quot;&gt;express.js framework&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;http://nodeschool.io/#goingnative&quot;&gt;native modules and addons&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;http://nodeschool.io/#count-to-6&quot;&gt;6th version of ECMAScript&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;http://nodeschool.io/#browserify-adventure&quot;&gt;browserify&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;http://nodeschool.io/#promiseitwonthurt&quot;&gt;promises&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;http://nodeschool.io/#asyncyou&quot;&gt;async.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;how_to_start&quot;&gt;How to start?&lt;/h1&gt;
+&lt;h1 id=&quot;how-to-start&quot;&gt;How to start?&lt;/h1&gt;
 
 &lt;p&gt;At first you need to have &lt;em&gt;&lt;code&gt;npm&lt;/code&gt;&lt;/em&gt; and &lt;em&gt;&lt;code&gt;node&lt;/code&gt;&lt;/em&gt; executables - if you do not have them already on your machine, the most recommended place to start is &lt;a href=&quot;http://nodejs.org/download/&quot;&gt;here&lt;/a&gt;. Then you can install each workshop globally using &lt;em&gt;Node Packaged Modules&lt;/em&gt; manager:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;npm install -g learnyounode
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~ $ npm install -g learnyounode&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;In this example &lt;em&gt;&lt;code&gt;-g&lt;/code&gt;&lt;/em&gt; flag means &lt;em&gt;“install package globally”&lt;/em&gt;, so it will be available as a executable on your machine.&lt;/p&gt;
 
 &lt;p&gt;Every single workshop is using the same command line interface and workflow. This eases the work with each of them. Moreover, assignments are well defined, descriptive and small enough to perform them as a &lt;a href=&quot;http://en.wikipedia.org/wiki/Kata_%28programming%29&quot;&gt;daily code kata&lt;/a&gt;.&lt;/p&gt;
@@ -104,18 +80,19 @@
 &lt;p&gt;&lt;img src=&quot;/assets/learnyounode.png&quot; alt=&quot;learnyounode workshop&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Then you should select first unresolved assignment from the list. After that you will see the description and guidelines how you should approach this task. Then you have two commands for testing and verifying prepared solution.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='c'&gt;# Testing your solution:&lt;/span&gt;
-~ &lt;span class='nv'&gt;$ &lt;/span&gt;learnyounode run &amp;lt;FILE_NAME_WITH_SOLUTION&amp;gt;
-&lt;span class='c'&gt;# Veryfing the prepared solution:&lt;/span&gt;
-~ &lt;span class='nv'&gt;$ &lt;/span&gt;learnyounode verify &amp;lt;FILE_NAME_WITH_SOLUTION&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;# Testing your solution:
+~ $ learnyounode run &amp;lt;FILE_NAME_WITH_SOLUTION&amp;gt;
+# Veryfing the prepared solution:
+~ $ learnyounode verify &amp;lt;FILE_NAME_WITH_SOLUTION&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;If solution is correct, the current assignment will be marked as resolved. Now you are ready to work with each workshop available on the main page.&lt;/p&gt;
 
-&lt;h1 id=&quot;i_am_the_beginner_in_nodejs_community__where_should_i_start&quot;&gt;I am the beginner in Node.js community - where should I start?&lt;/h1&gt;
+&lt;h1 id=&quot;i-am-the-beginner-in-nodejs-community---where-should-i-start&quot;&gt;I am the beginner in Node.js community - where should I start?&lt;/h1&gt;
 
 &lt;p&gt;I will recommend to start with &lt;a href=&quot;http://nodeschool.io/#learn-you-node&quot;&gt;learn-you-node workshop&lt;/a&gt; and then move forward through the rest of core concepts. After that you are free to choose any from the interesting topics from electives group (e.g. related with specific framework).&lt;/p&gt;
 
-&lt;h1 id=&quot;i_am_more_advanced_member__how_can_i_contribute&quot;&gt;I am more advanced member - how can I contribute?&lt;/h1&gt;
+&lt;h1 id=&quot;i-am-more-advanced-member---how-can-i-contribute&quot;&gt;I am more advanced member - how can I contribute?&lt;/h1&gt;
 
 &lt;p&gt;You can contribute in several ways.&lt;/p&gt;
 
@@ -128,12 +105,11 @@
 &lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;http://nodeschool.io&quot;&gt;nodeschool.io&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;http://nodeschool.io/host.html&quot;&gt;How to run a new ‘nodeschool’ event?&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;https://github.com/rvagg/workshopper&quot;&gt;rvagg/workshopper&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</description>
+  &lt;li&gt;&lt;a href=&quot;http://nodeschool.io&quot;&gt;nodeschool.io&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://nodeschool.io/host.html&quot;&gt;How to run a new ‘nodeschool’ event?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rvagg/workshopper&quot;&gt;rvagg/workshopper&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
         <pubDate>Fri, 18 Jul 2014 15:00:00 +0000</pubDate>
         <link>http://www.afronski.pl/2014/07/18/nodeschool-io.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2014/07/18/nodeschool-io.html</guid>
@@ -141,35 +117,30 @@
     
       <item>
         <title>My picks of NDC 2014 - part I</title>
-        <description>&lt;h1 id=&quot;my_picks_of_ndc_2014__part_i&quot;&gt;My picks of NDC 2014 - part I&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;my-picks-of-ndc-2014---part-i&quot;&gt;My picks of NDC 2014 - part I&lt;/h1&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97329157&quot;&gt;Kevlin Henney - Seven Ineffective Coding Habits of Many Programmers&lt;/a&gt; - Very refreshing talk about style and programming habbits. Even if it has many controversial points from your perspective and it is very opinionated, many of them are at least thought-provoking and maybe they should be reconsidered and rethought again.&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97315946&quot;&gt;Hadi Hariri - Developing in a Decade&lt;/a&gt; - Very inspiring and refreshing talk what software development, internet and whole IT actually is and why it should change if we want to be happier and live in the better world. Amazing anegdotes and very thought-provoking comparisons to the books (Orwell’s &lt;em&gt;“1984”&lt;/em&gt;, Huxley’s &lt;em&gt;“Brave New World”&lt;/em&gt;, Postman’s &lt;em&gt;“Amusing Ourselves to Death”&lt;/em&gt;). For me, this is the best presentation of this year NDC by now.&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97530863&quot;&gt;Robert C. Martin - Clean Architecture and Design&lt;/a&gt; - Strongly recommended if you have not seen earlier talks made by &lt;em&gt;Uncle Bob&lt;/em&gt; related with this topic. The most appropriate summary of this talk: &lt;em&gt;application’s business rules are the most important things, protect them - everything is a implementation detail and it should be pluggable&lt;/em&gt;. In other words &lt;em&gt;good architecture maximizes the number of decisions not made&lt;/em&gt;.&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97505656&quot;&gt;Tim Berglund - Discrete Math You Need to Know&lt;/a&gt; - Inspiring talk (even if you may think that math cannot be inspiring). Definitely recommended, at first - it is recommended to stretch your mind frequently, moreover - it is nice to know more and have these tools in your toolbox (or what is even more recommended - refresh it). Surprisingly, still many people in IT do not know how the RSA works underneath.&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97318800&quot;&gt;Denise R. Jackobs - Banish Your Inner Critic&lt;/a&gt; - It can be very enlightening talk for many people, maybe even a life changer. If you have problems with pursuing to the perfection state, procrastination and you have feeling and knowledge that you are a victim of &lt;em&gt;impostor syndrome&lt;/em&gt; definitely worth watching.&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97516288&quot;&gt;Robert C. Martin - Advanced Test Driven Development&lt;/a&gt; - Again, if you have seen it before, there is probably nothing new, but if not - please definitely watch it. Very interesting concept called &lt;em&gt;transformation priority premise&lt;/em&gt;. And surprising summary - &lt;em&gt;if statement is a degenerated case of while loop&lt;/em&gt;. :wink:&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;https://vimeo.com/97537026&quot;&gt;Scott Bellware - TDD in Tatters&lt;/a&gt; - Eye-opening introduction about cognitive theory and learning. Very nice differentiation between crude and subtle things, which sometimes fells out and disappear in the process of learning. I disagree about that automation leads to removal a connection between the programmers and code, but still it is a viable talk (at least the beginning about &lt;em&gt;amateur cognitive theory&lt;/em&gt;, pointing out the subtleties and explaining the design role in &lt;em&gt;TDD&lt;/em&gt; acronym). The most important quote from this presentation is &lt;em&gt;every test is an additional coupling to the code&lt;/em&gt; - and by providing good design we should minimize the coupling, we should control it. It is the subtle thing that we often ignore.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://vimeo.com/97329157&quot;&gt;Kevlin Henney - Seven Ineffective Coding Habits of Many Programmers&lt;/a&gt; - Very refreshing talk about style and programming habbits. Even if it has many controversial points from your perspective and it is very opinionated, many of them are at least thought-provoking and maybe they should be reconsidered and rethought again.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://vimeo.com/97315946&quot;&gt;Hadi Hariri - Developing in a Decade&lt;/a&gt; - Very inspiring and refreshing talk what software development, internet and whole IT actually is and why it should change if we want to be happier and live in the better world. Amazing anegdotes and very thought-provoking comparisons to the books (Orwell’s &lt;em&gt;“1984”&lt;/em&gt;, Huxley’s &lt;em&gt;“Brave New World”&lt;/em&gt;, Postman’s &lt;em&gt;“Amusing Ourselves to Death”&lt;/em&gt;). For me, this is the best presentation of this year NDC by now.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://vimeo.com/97530863&quot;&gt;Robert C. Martin - Clean Architecture and Design&lt;/a&gt; - Strongly recommended if you have not seen earlier talks made by &lt;em&gt;Uncle Bob&lt;/em&gt; related with this topic. The most appropriate summary of this talk: &lt;em&gt;application’s business rules are the most important things, protect them - everything is a implementation detail and it should be pluggable&lt;/em&gt;. In other words &lt;em&gt;good architecture maximizes the number of decisions not made&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://vimeo.com/97505656&quot;&gt;Tim Berglund - Discrete Math You Need to Know&lt;/a&gt; - Inspiring talk (even if you may think that math cannot be inspiring). Definitely recommended, at first - it is recommended to stretch your mind frequently, moreover - it is nice to know more and have these tools in your toolbox (or what is even more recommended - refresh it). Surprisingly, still many people in IT do not know how the RSA works underneath.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://vimeo.com/97318800&quot;&gt;Denise R. Jackobs - Banish Your Inner Critic&lt;/a&gt; - It can be very enlightening talk for many people, maybe even a life changer. If you have problems with pursuing to the perfection state, procrastination and you have feeling and knowledge that you are a victim of &lt;em&gt;impostor syndrome&lt;/em&gt; definitely worth watching.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://vimeo.com/97516288&quot;&gt;Robert C. Martin - Advanced Test Driven Development&lt;/a&gt; - Again, if you have seen it before, there is probably nothing new, but if not - please definitely watch it. Very interesting concept called &lt;em&gt;transformation priority premise&lt;/em&gt;. And surprising summary - &lt;em&gt;if statement is a degenerated case of while loop&lt;/em&gt;. &lt;img class=&quot;emoji&quot; title=&quot;:wink:&quot; alt=&quot;:wink:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f609.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://vimeo.com/97537026&quot;&gt;Scott Bellware - TDD in Tatters&lt;/a&gt; - Eye-opening introduction about cognitive theory and learning. Very nice differentiation between crude and subtle things, which sometimes fells out and disappear in the process of learning. I disagree about that automation leads to removal a connection between the programmers and code, but still it is a viable talk (at least the beginning about &lt;em&gt;amateur cognitive theory&lt;/em&gt;, pointing out the subtleties and explaining the design role in &lt;em&gt;TDD&lt;/em&gt; acronym). The most important quote from this presentation is &lt;em&gt;every test is an additional coupling to the code&lt;/em&gt; - and by providing good design we should minimize the coupling, we should control it. It is the subtle thing that we often ignore.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;how_to_watch_these_videos_offline&quot;&gt;How to watch these videos offline?&lt;/h2&gt;
+&lt;h2 id=&quot;how-to-watch-these-videos-offline&quot;&gt;How to watch these videos offline?&lt;/h2&gt;
 
 &lt;p&gt;Unfortunately, since 2013 there are no &lt;em&gt;&lt;code&gt;torrent&lt;/code&gt;&lt;/em&gt; files, which combine all videos in one place. But there is a solution - we can use &lt;code&gt;Selenium&lt;/code&gt; &lt;em&gt;JavaScript&lt;/em&gt; driver to scrap all links from &lt;em&gt;&lt;code&gt;HTML5&lt;/code&gt;&lt;/em&gt; &lt;em&gt;video&lt;/em&gt; tags. Complete source code of scripts and helpers is available &lt;a href=&quot;https://github.com/afronski/playground-repository/tree/master/vimeo-scraper&quot;&gt;here&lt;/a&gt;. Installation:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='lineno'&gt;1&lt;/span&gt; &lt;span class='c'&gt;# On Arch Linux, Selenium Chrome WebDriver is available only in AUR.&lt;/span&gt;
-&lt;span class='lineno'&gt;2&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;pacaur -S chromedriver
-&lt;span class='lineno'&gt;3&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;npm install
-&lt;span class='lineno'&gt;4&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;node vimeo-scraper.js &amp;gt; urls.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;# On Arch Linux, Selenium Chrome WebDriver is available only in AUR.
+~ $ pacaur -S chromedriver
+~ $ npm install
+~ $ node vimeo-scraper.js &amp;gt; urls.txt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;In the output file you will receive list of URLs which point directly to &lt;em&gt;MP4&lt;/em&gt; ready to download.&lt;/p&gt;
 
-&lt;h2 id=&quot;appendix__a_bitter_state_of_headless_browsers&quot;&gt;Appendix - A bitter state of headless browsers&lt;/h2&gt;
+&lt;h2 id=&quot;appendix---a-bitter-state-of-headless-browsers&quot;&gt;Appendix - A bitter state of headless browsers&lt;/h2&gt;
 
 &lt;p&gt;I know that there are tools capable to do such things headlessly. I thought that it will be an easy task to do.&lt;/p&gt;
 
@@ -182,14 +153,12 @@
 &lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;https://vimeo.com/channels/ndc2014&quot;&gt;NDC 2014 Vimeo Playlist&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;http://slimmerjs.org&quot;&gt;SlimmerJS&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;http://phantomjs.org&quot;&gt;phantomjs&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;https://github.com/deanmao/node-chimera&quot;&gt;&lt;code&gt;node-chimera&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</description>
+  &lt;li&gt;&lt;a href=&quot;https://vimeo.com/channels/ndc2014&quot;&gt;NDC 2014 Vimeo Playlist&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://slimmerjs.org&quot;&gt;SlimmerJS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://phantomjs.org&quot;&gt;phantomjs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/deanmao/node-chimera&quot;&gt;&lt;code&gt;node-chimera&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
         <pubDate>Mon, 16 Jun 2014 22:10:00 +0000</pubDate>
         <link>http://www.afronski.pl/2014/06/16/my-picks-of-NDC-2014-part-1.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2014/06/16/my-picks-of-NDC-2014-part-1.html</guid>
@@ -197,75 +166,80 @@
     
       <item>
         <title>Easter Eggs in Python's REPL</title>
-        <description>&lt;h1 id=&quot;easter_eggs_in_pythons_&quot;&gt;Easter Eggs in Python’s &lt;code&gt;REPL&lt;/code&gt;&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;easter-eggs-in-pythons-repl&quot;&gt;Easter Eggs in Python’s &lt;code&gt;REPL&lt;/code&gt;&lt;/h1&gt;
 
 &lt;p&gt;Recently, I have ran into a funny thing in Python. Try to import &lt;em&gt;&lt;code&gt;antigravity&lt;/code&gt;&lt;/em&gt; module inside the &lt;code&gt;REPL&lt;/code&gt;:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='kn'&gt;import&lt;/span&gt; &lt;span class='nn'&gt;antigravity&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Obviously, it is not the only funny thing hidden somewhere deep in the Python implementation. I researched the topic and I found more examples of easter eggs :grin:.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&amp;gt;&amp;gt;&amp;gt; import antigravity&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Obviously, it is not the only funny thing hidden somewhere deep in the Python implementation. I researched the topic and I found more examples of easter eggs &lt;img class=&quot;emoji&quot; title=&quot;:grin:&quot; alt=&quot;:grin:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f601.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;.&lt;/p&gt;
 
 &lt;p&gt;The best known is &lt;code&gt;import this&lt;/code&gt; easter egg:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='kn'&gt;import&lt;/span&gt; &lt;span class='nn'&gt;this&lt;/span&gt;
-&lt;span class='n'&gt;The&lt;/span&gt; &lt;span class='n'&gt;Zen&lt;/span&gt; &lt;span class='n'&gt;of&lt;/span&gt; &lt;span class='n'&gt;Python&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='n'&gt;by&lt;/span&gt; &lt;span class='n'&gt;Tim&lt;/span&gt; &lt;span class='n'&gt;Peters&lt;/span&gt;
 
-&lt;span class='n'&gt;Beautiful&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;better&lt;/span&gt; &lt;span class='n'&gt;than&lt;/span&gt; &lt;span class='n'&gt;ugly&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
-&lt;span class='n'&gt;Explicit&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;better&lt;/span&gt; &lt;span class='n'&gt;than&lt;/span&gt; &lt;span class='n'&gt;implicit&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
-&lt;span class='n'&gt;Simple&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;better&lt;/span&gt; &lt;span class='n'&gt;than&lt;/span&gt; &lt;span class='nb'&gt;complex&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
-&lt;span class='n'&gt;Complex&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;better&lt;/span&gt; &lt;span class='n'&gt;than&lt;/span&gt; &lt;span class='n'&gt;complicated&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
-&lt;span class='n'&gt;Flat&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;better&lt;/span&gt; &lt;span class='n'&gt;than&lt;/span&gt; &lt;span class='n'&gt;nested&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
-&lt;span class='n'&gt;Sparse&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;better&lt;/span&gt; &lt;span class='n'&gt;than&lt;/span&gt; &lt;span class='n'&gt;dense&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
-&lt;span class='n'&gt;Readability&lt;/span&gt; &lt;span class='n'&gt;counts&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
-&lt;span class='n'&gt;Special&lt;/span&gt; &lt;span class='n'&gt;cases&lt;/span&gt; &lt;span class='n'&gt;aren&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;t special enough to break the rules.&lt;/span&gt;
-&lt;span class='n'&gt;Although&lt;/span&gt; &lt;span class='n'&gt;practicality&lt;/span&gt; &lt;span class='n'&gt;beats&lt;/span&gt; &lt;span class='n'&gt;purity&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
-&lt;span class='n'&gt;Errors&lt;/span&gt; &lt;span class='n'&gt;should&lt;/span&gt; &lt;span class='n'&gt;never&lt;/span&gt; &lt;span class='k'&gt;pass&lt;/span&gt; &lt;span class='n'&gt;silently&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
-&lt;span class='n'&gt;Unless&lt;/span&gt; &lt;span class='n'&gt;explicitly&lt;/span&gt; &lt;span class='n'&gt;silenced&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
-&lt;span class='n'&gt;In&lt;/span&gt; &lt;span class='n'&gt;the&lt;/span&gt; &lt;span class='n'&gt;face&lt;/span&gt; &lt;span class='n'&gt;of&lt;/span&gt; &lt;span class='n'&gt;ambiguity&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='n'&gt;refuse&lt;/span&gt; &lt;span class='n'&gt;the&lt;/span&gt; &lt;span class='n'&gt;temptation&lt;/span&gt; &lt;span class='n'&gt;to&lt;/span&gt; &lt;span class='n'&gt;guess&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
-&lt;span class='n'&gt;There&lt;/span&gt; &lt;span class='n'&gt;should&lt;/span&gt; &lt;span class='n'&gt;be&lt;/span&gt; &lt;span class='n'&gt;one&lt;/span&gt;&lt;span class='o'&gt;--&lt;/span&gt; &lt;span class='ow'&gt;and&lt;/span&gt; &lt;span class='n'&gt;preferably&lt;/span&gt; &lt;span class='n'&gt;only&lt;/span&gt; &lt;span class='n'&gt;one&lt;/span&gt; &lt;span class='o'&gt;--&lt;/span&gt;&lt;span class='n'&gt;obvious&lt;/span&gt; &lt;span class='n'&gt;way&lt;/span&gt; &lt;span class='n'&gt;to&lt;/span&gt; &lt;span class='n'&gt;do&lt;/span&gt; &lt;span class='n'&gt;it&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
-&lt;span class='n'&gt;Although&lt;/span&gt; &lt;span class='n'&gt;that&lt;/span&gt; &lt;span class='n'&gt;way&lt;/span&gt; &lt;span class='n'&gt;may&lt;/span&gt; &lt;span class='ow'&gt;not&lt;/span&gt; &lt;span class='n'&gt;be&lt;/span&gt; &lt;span class='n'&gt;obvious&lt;/span&gt; &lt;span class='n'&gt;at&lt;/span&gt; &lt;span class='n'&gt;first&lt;/span&gt; &lt;span class='n'&gt;unless&lt;/span&gt; &lt;span class='n'&gt;you&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;re Dutch.&lt;/span&gt;
-&lt;span class='n'&gt;Now&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;better&lt;/span&gt; &lt;span class='n'&gt;than&lt;/span&gt; &lt;span class='n'&gt;never&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
-&lt;span class='n'&gt;Although&lt;/span&gt; &lt;span class='n'&gt;never&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;often&lt;/span&gt; &lt;span class='n'&gt;better&lt;/span&gt; &lt;span class='n'&gt;than&lt;/span&gt; &lt;span class='o'&gt;*&lt;/span&gt;&lt;span class='n'&gt;right&lt;/span&gt;&lt;span class='o'&gt;*&lt;/span&gt; &lt;span class='n'&gt;now&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
-&lt;span class='n'&gt;If&lt;/span&gt; &lt;span class='n'&gt;the&lt;/span&gt; &lt;span class='n'&gt;implementation&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;hard&lt;/span&gt; &lt;span class='n'&gt;to&lt;/span&gt; &lt;span class='n'&gt;explain&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='n'&gt;it&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;s a bad idea.&lt;/span&gt;
-&lt;span class='n'&gt;If&lt;/span&gt; &lt;span class='n'&gt;the&lt;/span&gt; &lt;span class='n'&gt;implementation&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;easy&lt;/span&gt; &lt;span class='n'&gt;to&lt;/span&gt; &lt;span class='n'&gt;explain&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='n'&gt;it&lt;/span&gt; &lt;span class='n'&gt;may&lt;/span&gt; &lt;span class='n'&gt;be&lt;/span&gt; &lt;span class='n'&gt;a&lt;/span&gt; &lt;span class='n'&gt;good&lt;/span&gt; &lt;span class='n'&gt;idea&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
-&lt;span class='n'&gt;Namespaces&lt;/span&gt; &lt;span class='n'&gt;are&lt;/span&gt; &lt;span class='n'&gt;one&lt;/span&gt; &lt;span class='n'&gt;honking&lt;/span&gt; &lt;span class='n'&gt;great&lt;/span&gt; &lt;span class='n'&gt;idea&lt;/span&gt; &lt;span class='o'&gt;--&lt;/span&gt; &lt;span class='n'&gt;let&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;s do more of those!&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&amp;gt;&amp;gt;&amp;gt; import this
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;There is also nice &lt;a href=&quot;http://www.redmountainsw.com/wordpress/archives/a-joke-in-the-python-interpreter&quot;&gt;example&lt;/a&gt; which exploits idea of &lt;code&gt;this&lt;/code&gt;:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='n'&gt;love&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;this&lt;/span&gt;
-&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='n'&gt;this&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;love&lt;/span&gt;
-&lt;span class='bp'&gt;True&lt;/span&gt;
-&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='n'&gt;love&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='bp'&gt;True&lt;/span&gt;
-&lt;span class='bp'&gt;False&lt;/span&gt;
-&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='n'&gt;love&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='bp'&gt;False&lt;/span&gt;
-&lt;span class='bp'&gt;False&lt;/span&gt;
-&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='n'&gt;love&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='ow'&gt;not&lt;/span&gt; &lt;span class='bp'&gt;True&lt;/span&gt; &lt;span class='ow'&gt;or&lt;/span&gt; &lt;span class='bp'&gt;False&lt;/span&gt;
-&lt;span class='bp'&gt;True&lt;/span&gt;
-&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='n'&gt;love&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='ow'&gt;not&lt;/span&gt; &lt;span class='bp'&gt;True&lt;/span&gt; &lt;span class='ow'&gt;or&lt;/span&gt; &lt;span class='bp'&gt;False&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='n'&gt;love&lt;/span&gt; &lt;span class='ow'&gt;is&lt;/span&gt; &lt;span class='n'&gt;love&lt;/span&gt;
-&lt;span class='bp'&gt;True&lt;/span&gt;
-&lt;span class='bp'&gt;True&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&amp;gt;&amp;gt;&amp;gt; love = this
+&amp;gt;&amp;gt;&amp;gt; this is love
+True
+&amp;gt;&amp;gt;&amp;gt; love is True
+False
+&amp;gt;&amp;gt;&amp;gt; love is False
+False
+&amp;gt;&amp;gt;&amp;gt; love is not True or False
+True
+&amp;gt;&amp;gt;&amp;gt; love is not True or False; love is love
+True
+True&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;Also, Python as a &lt;em&gt;truly enterprise ready&lt;/em&gt; language has built-in &lt;code&gt;Hello World&lt;/code&gt; functionality:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='kn'&gt;import&lt;/span&gt; &lt;span class='nn'&gt;__hello__&lt;/span&gt;
-&lt;span class='n'&gt;Hello&lt;/span&gt; &lt;span class='n'&gt;world&lt;/span&gt;&lt;span class='o'&gt;...&lt;/span&gt;
-&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='nb'&gt;reload&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;__hello__&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
-&lt;span class='n'&gt;Hello&lt;/span&gt; &lt;span class='n'&gt;world&lt;/span&gt;&lt;span class='o'&gt;...&lt;/span&gt;
-&lt;span class='o'&gt;&amp;lt;&lt;/span&gt;&lt;span class='n'&gt;module&lt;/span&gt; &lt;span class='s'&gt;&amp;#39;__hello__&amp;#39;&lt;/span&gt; &lt;span class='kn'&gt;from&lt;/span&gt; &lt;span class='s'&gt;&amp;#39;&amp;lt;frozen&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class='o'&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&amp;gt;&amp;gt;&amp;gt; import __hello__
+Hello world...
+&amp;gt;&amp;gt;&amp;gt; reload(__hello__)
+Hello world...
+&amp;lt;module '__hello__' from '&amp;lt;frozen&amp;gt;'&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;But the funniest thing is &lt;em&gt;&lt;code&gt;IMHO&lt;/code&gt;&lt;/em&gt; this:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class='kn'&gt;from&lt;/span&gt; &lt;span class='nn'&gt;__future__&lt;/span&gt; &lt;span class='kn'&gt;import&lt;/span&gt; &lt;span class='n'&gt;braces&lt;/span&gt;
-  &lt;span class='n'&gt;File&lt;/span&gt; &lt;span class='s'&gt;&amp;quot;&amp;lt;stdin&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='n'&gt;line&lt;/span&gt; &lt;span class='mi'&gt;1&lt;/span&gt;
-&lt;span class='ne'&gt;SyntaxError&lt;/span&gt;&lt;span class='p'&gt;:&lt;/span&gt; &lt;span class='ow'&gt;not&lt;/span&gt; &lt;span class='n'&gt;a&lt;/span&gt; &lt;span class='n'&gt;chance&lt;/span&gt;
-&lt;span class='o'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;This exception message definitely made my day :wink:.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&amp;gt;&amp;gt;&amp;gt; from __future__ import braces
+  File &amp;quot;&amp;lt;stdin&amp;gt;&amp;quot;, line 1
+SyntaxError: not a chance
+&amp;gt;&amp;gt;&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This exception message definitely made my day &lt;img class=&quot;emoji&quot; title=&quot;:wink:&quot; alt=&quot;:wink:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f609.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;.&lt;/p&gt;
 
 &lt;p&gt;If I omitted something, please post a comment and let me know which I have missed.&lt;/p&gt;
 
 &lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;http://xkcd.com/353&quot;&gt;&lt;code&gt;xkcd&lt;/code&gt;: Python!&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;http://svn.python.org/view/python/trunk/Lib/antigravity.py?view=markup&quot;&gt;Module &lt;code&gt;antigravity&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</description>
+  &lt;li&gt;&lt;a href=&quot;http://xkcd.com/353&quot;&gt;&lt;code&gt;xkcd&lt;/code&gt;: Python!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://svn.python.org/view/python/trunk/Lib/antigravity.py?view=markup&quot;&gt;Module &lt;code&gt;antigravity&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
         <pubDate>Sun, 08 Jun 2014 12:10:00 +0000</pubDate>
         <link>http://www.afronski.pl/2014/06/08/easter-eggs-in-pythons-repl.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2014/06/08/easter-eggs-in-pythons-repl.html</guid>
@@ -273,97 +247,76 @@
     
       <item>
         <title>My Toolbox</title>
-        <description>&lt;h1 id=&quot;my_toolbox&quot;&gt;My Toolbox&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;my-toolbox&quot;&gt;My Toolbox&lt;/h1&gt;
 
 &lt;p&gt;This post is mostly a summary, notes with conclusions and information about what tools I am actually using, which ones I have dropped and even more important why these are sufficient or just good enough.&lt;/p&gt;
 
-&lt;h2 id=&quot;current_setup&quot;&gt;Current Setup&lt;/h2&gt;
+&lt;h2 id=&quot;current-setup&quot;&gt;Current Setup&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Notes - &lt;em&gt;Microsoft OneNote&lt;/em&gt;
-&lt;ul&gt;
-&lt;li&gt;Impressive web and mobile clients.&lt;/li&gt;
-
-&lt;li&gt;Easy access to my notes.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-
-&lt;li&gt;Tasks - &lt;em&gt;Asana&lt;/em&gt; &amp;amp; &lt;em&gt;Google Calendar&lt;/em&gt;
-&lt;ul&gt;
-&lt;li&gt;Unfortunately all tasks management tools are after a while not enough and too &lt;em&gt;rigid&lt;/em&gt; for me.&lt;/li&gt;
-
-&lt;li&gt;Right now I am scheduling all tasks in Google Calendar and rest of uncategorized tasks are available in &lt;em&gt;Asana&lt;/em&gt;.&lt;/li&gt;
-
-&lt;li&gt;I am in the middle of researching an ideal workflow and transferring tasks from both to just one.&lt;/li&gt;
-
-&lt;li&gt;Recently I back to &lt;em&gt;Trello&lt;/em&gt; for some side project and I cannot recall why I stopped to use this tool.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-
-&lt;li&gt;Mind Maps - &lt;em&gt;MindMup&lt;/em&gt; (&lt;a href=&quot;http://www.mindmup.com&quot;&gt;mindmup.com&lt;/a&gt;)
-&lt;ul&gt;
-&lt;li&gt;I have started using mind mapping technique recently as a way of making notes and I must admit that in some cases it works perfectly.&lt;/li&gt;
-
-&lt;li&gt;&lt;em&gt;MindMup&lt;/em&gt; is a very good web client for doing notes in such form.&lt;/li&gt;
-
-&lt;li&gt;Unfortunately, I cannot use this approach in each case, because editing mode for longer notes and short descriptions in nodes is terrible.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-
-&lt;li&gt;Repositories - &lt;em&gt;Github&lt;/em&gt; (&lt;a href=&quot;https://github.com&quot;&gt;github.com&lt;/a&gt;)
-&lt;ul&gt;
-&lt;li&gt;For me it is an obvious choice - I am a happy customer since 2012.&lt;/li&gt;
-
-&lt;li&gt;I have tried &lt;em&gt;bitbucket&lt;/em&gt; earlier, I moved to &lt;em&gt;github&lt;/em&gt; and recently I have used &lt;em&gt;bitbucket&lt;/em&gt; again after a while - it works and looks much better right now.&lt;/li&gt;
-
-&lt;li&gt;At this point of time these two systems are very similar in capabilities and supported features.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-
-&lt;li&gt;Storage - &lt;em&gt;Google Drive&lt;/em&gt;
-&lt;ul&gt;
-&lt;li&gt;Natural choice because of Google Apps account and seamless integration with Google Docs.&lt;/li&gt;
-
-&lt;li&gt;From &lt;em&gt;Android&lt;/em&gt;-like device it is a pleasure to work with Drive for me.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-
-&lt;li&gt;Documents - &lt;em&gt;Google Docs&lt;/em&gt;
-&lt;ul&gt;
-&lt;li&gt;Impressive and what is most important working web and mobile client.&lt;/li&gt;
-
-&lt;li&gt;Right now I am using Google Docs in all tasks which requires creating documents, spreadsheets.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-
-&lt;li&gt;Read/Watch Later - &lt;em&gt;Instapaper&lt;/em&gt;, &lt;em&gt;Feedly&lt;/em&gt;, &lt;em&gt;Vimeo&lt;/em&gt;, &lt;em&gt;Youtube&lt;/em&gt;
-&lt;ul&gt;
-&lt;li&gt;Simple and clean UI, whole project is seamlessly integrated with Kindle.&lt;/li&gt;
-
-&lt;li&gt;&lt;em&gt;Feedly&lt;/em&gt; (after closing &lt;em&gt;Google Reader&lt;/em&gt;) is for me the best application for RSS feeds management (with decent mobile client).
-&lt;ul&gt;
-&lt;li&gt;Still, it has serious issues - lack of tag management etc.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-
-&lt;li&gt;For videos and podcasts I am using Youtube’s and Vimeo’s &lt;em&gt;“Watch Later”&lt;/em&gt; lists.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-
-&lt;li&gt;Presentations - &lt;em&gt;Customized frameworks&lt;/em&gt;
-&lt;ul&gt;
-&lt;li&gt;I hate &lt;em&gt;PowerPoint&lt;/em&gt;-like presentations.&lt;/li&gt;
-
-&lt;li&gt;I am using adjusted and crafted version of &lt;a href=&quot;http://lab.hakim.se/reveal-js&quot;&gt;reveal.js&lt;/a&gt; available &lt;a href=&quot;https://github.com/afronski/presentation-template&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
-
-&lt;li&gt;In future, with probability I will use &lt;a href=&quot;http://slides.com&quot;&gt;slides.com&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+  &lt;li&gt;Notes - &lt;em&gt;Microsoft OneNote&lt;/em&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Impressive web and mobile clients.&lt;/li&gt;
+      &lt;li&gt;Easy access to my notes.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Tasks - &lt;em&gt;Asana&lt;/em&gt; &amp;amp; &lt;em&gt;Google Calendar&lt;/em&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Unfortunately all tasks management tools are after a while not enough and too &lt;em&gt;rigid&lt;/em&gt; for me.&lt;/li&gt;
+      &lt;li&gt;Right now I am scheduling all tasks in Google Calendar and rest of uncategorized tasks are available in &lt;em&gt;Asana&lt;/em&gt;.&lt;/li&gt;
+      &lt;li&gt;I am in the middle of researching an ideal workflow and transferring tasks from both to just one.&lt;/li&gt;
+      &lt;li&gt;Recently I back to &lt;em&gt;Trello&lt;/em&gt; for some side project and I cannot recall why I stopped to use this tool.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Mind Maps - &lt;em&gt;MindMup&lt;/em&gt; (&lt;a href=&quot;http://www.mindmup.com&quot;&gt;mindmup.com&lt;/a&gt;)
+    &lt;ul&gt;
+      &lt;li&gt;I have started using mind mapping technique recently as a way of making notes and I must admit that in some cases it works perfectly.&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;MindMup&lt;/em&gt; is a very good web client for doing notes in such form.&lt;/li&gt;
+      &lt;li&gt;Unfortunately, I cannot use this approach in each case, because editing mode for longer notes and short descriptions in nodes is terrible.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Repositories - &lt;em&gt;Github&lt;/em&gt; (&lt;a href=&quot;https://github.com&quot;&gt;github.com&lt;/a&gt;)
+    &lt;ul&gt;
+      &lt;li&gt;For me it is an obvious choice - I am a happy customer since 2012.&lt;/li&gt;
+      &lt;li&gt;I have tried &lt;em&gt;bitbucket&lt;/em&gt; earlier, I moved to &lt;em&gt;github&lt;/em&gt; and recently I have used &lt;em&gt;bitbucket&lt;/em&gt; again after a while - it works and looks much better right now.&lt;/li&gt;
+      &lt;li&gt;At this point of time these two systems are very similar in capabilities and supported features.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Storage - &lt;em&gt;Google Drive&lt;/em&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Natural choice because of Google Apps account and seamless integration with Google Docs.&lt;/li&gt;
+      &lt;li&gt;From &lt;em&gt;Android&lt;/em&gt;-like device it is a pleasure to work with Drive for me.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Documents - &lt;em&gt;Google Docs&lt;/em&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Impressive and what is most important working web and mobile client.&lt;/li&gt;
+      &lt;li&gt;Right now I am using Google Docs in all tasks which requires creating documents, spreadsheets.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Read/Watch Later - &lt;em&gt;Instapaper&lt;/em&gt;, &lt;em&gt;Feedly&lt;/em&gt;, &lt;em&gt;Vimeo&lt;/em&gt;, &lt;em&gt;Youtube&lt;/em&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Simple and clean UI, whole project is seamlessly integrated with Kindle.&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;Feedly&lt;/em&gt; (after closing &lt;em&gt;Google Reader&lt;/em&gt;) is for me the best application for RSS feeds management (with decent mobile client).
+        &lt;ul&gt;
+          &lt;li&gt;Still, it has serious issues - lack of tag management etc.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;For videos and podcasts I am using Youtube’s and Vimeo’s &lt;em&gt;“Watch Later”&lt;/em&gt; lists.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Presentations - &lt;em&gt;Customized frameworks&lt;/em&gt;
+    &lt;ul&gt;
+      &lt;li&gt;I hate &lt;em&gt;PowerPoint&lt;/em&gt;-like presentations.&lt;/li&gt;
+      &lt;li&gt;I am using adjusted and crafted version of &lt;a href=&quot;http://lab.hakim.se/reveal-js&quot;&gt;reveal.js&lt;/a&gt; available &lt;a href=&quot;https://github.com/afronski/presentation-template&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+      &lt;li&gt;In future, with probability I will use &lt;a href=&quot;http://slides.com&quot;&gt;slides.com&lt;/a&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;tools_that_i_tried&quot;&gt;Tools that I tried&lt;/h2&gt;
+&lt;h2 id=&quot;tools-that-i-tried&quot;&gt;Tools that I tried&lt;/h2&gt;
 
-&lt;h3 id=&quot;emacs_orgmode&quot;&gt;Emacs org-mode&lt;/h3&gt;
+&lt;h3 id=&quot;emacs-org-mode&quot;&gt;Emacs org-mode&lt;/h3&gt;
 
 &lt;p&gt;It is at the same time powerful and annoying. With &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt; and remote repository creates very powerful combination. Unfortunately, there are no synchronization mechanisms for web / mobile application - for me it is not acceptable, because most of notes and ideas are coming to my mind when I do not have access to laptop / PC.&lt;/p&gt;
 
@@ -371,7 +324,7 @@
 
 &lt;p&gt;My Dropbox account was the victim of migration to Google Apps - I would like to have seamless integration with my online documents, so the naturally I have migrated to Google Drive. Unfortunately this option has a serious drawback - Linux client for Google Drive does not exist, there is a very simple alternative called &lt;em&gt;&lt;code&gt;grive&lt;/code&gt;&lt;/em&gt;. Dropbox had very good client for that operating system.&lt;/p&gt;
 
-&lt;h3 id=&quot;offline_notetaking&quot;&gt;Offline note-taking&lt;/h3&gt;
+&lt;h3 id=&quot;offline-note-taking&quot;&gt;Offline note-taking&lt;/h3&gt;
 
 &lt;p&gt;This does not work for me. I have made myself to work with it and I just can’t. When I have pen and paper, notebook or something similar, I can note interesting observation and idea. There is only one &lt;em&gt;if&lt;/em&gt; - I often forgot to gather with me my notebook. Another disadvantage is related with offline management for such notes - it is much harder then the digital ones (lack of copy-pasting, lack of elasticity - moving paragraphs etc.).&lt;/p&gt;
 
@@ -399,15 +352,16 @@
 
 &lt;p&gt;I have tried to use this web application and after a couple of days I gave up. Many glitches on the UI side and problem with categorization of sources were sufficient for me to drop that tool.&lt;/p&gt;
 
-&lt;h3 id=&quot;the_old_reader&quot;&gt;The Old Reader&lt;/h3&gt;
+&lt;h3 id=&quot;the-old-reader&quot;&gt;The Old Reader&lt;/h3&gt;
 
 &lt;p&gt;I really liked this application, it has simple and clean UI, decent tags and feeds categorization management. However after fuss with closing and reopening it discouraged me enough to keep me away from it.&lt;/p&gt;
 
-&lt;h1 id=&quot;missing_pieces&quot;&gt;Missing Pieces&lt;/h1&gt;
+&lt;h1 id=&quot;missing-pieces&quot;&gt;Missing Pieces&lt;/h1&gt;
 
 &lt;p&gt;Actually, there is only one piece missing here - integration between tasks, calendar and feeds of information (like &lt;em&gt;Instapaper&lt;/em&gt;/&lt;em&gt;Youtube&lt;/em&gt;/&lt;em&gt;Vimeo&lt;/em&gt; queues). If you know such tool, please let me know.&lt;/p&gt;
 
-&lt;p&gt;If you disagree with my opinion and my choices, please let me know about it in the comments.&lt;/p&gt;</description>
+&lt;p&gt;If you disagree with my opinion and my choices, please let me know about it in the comments.&lt;/p&gt;
+</description>
         <pubDate>Mon, 28 Apr 2014 22:30:00 +0000</pubDate>
         <link>http://www.afronski.pl/2014/04/28/my-toolbox.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2014/04/28/my-toolbox.html</guid>
@@ -415,7 +369,7 @@
     
       <item>
         <title>Gibberish Game</title>
-        <description>&lt;h1 id=&quot;gibberish_game&quot;&gt;Gibberish Game&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;gibberish-game&quot;&gt;Gibberish Game&lt;/h1&gt;
 
 &lt;p&gt;Sometimes you cannot properly name the actual thing. Sometimes you exactly know how to name it, but it will introduce ambiguity and confusion. &lt;em&gt;How to avoid overloading certain terms and assign proper name to the actual definition?&lt;/em&gt;&lt;/p&gt;
 
@@ -430,36 +384,32 @@
 &lt;h3 id=&quot;how&quot;&gt;How?&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Do not name model elements too early.&lt;/li&gt;
-
-&lt;li&gt;Name it at first as &lt;em&gt;&lt;code&gt;foo&lt;/code&gt;&lt;/em&gt;/&lt;em&gt;&lt;code&gt;bar&lt;/code&gt;&lt;/em&gt;/&lt;em&gt;&lt;code&gt;blah&lt;/code&gt;&lt;/em&gt;/&lt;em&gt;&lt;code&gt;ble&lt;/code&gt;&lt;/em&gt;/etc. and describe its rules and features.
-&lt;ul&gt;
-&lt;li&gt;Proper and what is even more important - descriptive and clear name will automatically appear after a while.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-
-&lt;li&gt;In the next iteration of describing things choose different word.
-&lt;ul&gt;
-&lt;li&gt;Why? Because your brain already learned what the previous word means.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-
-&lt;li&gt;If &lt;em&gt;&lt;code&gt;foo&lt;/code&gt;&lt;/em&gt;-ish names sounds offensive and are not appropriate for the audience, you can use Greek letters instead.
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;&lt;code&gt;Alpha&lt;/code&gt;&lt;/em&gt;/&lt;em&gt;&lt;code&gt;Kappa&lt;/code&gt;&lt;/em&gt;/&lt;em&gt;&lt;code&gt;Psi&lt;/code&gt;&lt;/em&gt;/etc. sounds more professional :stuck_out_tongue_closed_eyes:.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+  &lt;li&gt;Do not name model elements too early.&lt;/li&gt;
+  &lt;li&gt;Name it at first as &lt;em&gt;&lt;code&gt;foo&lt;/code&gt;&lt;/em&gt;/&lt;em&gt;&lt;code&gt;bar&lt;/code&gt;&lt;/em&gt;/&lt;em&gt;&lt;code&gt;blah&lt;/code&gt;&lt;/em&gt;/&lt;em&gt;&lt;code&gt;ble&lt;/code&gt;&lt;/em&gt;/etc. and describe its rules and features.
+    &lt;ul&gt;
+      &lt;li&gt;Proper and what is even more important - descriptive and clear name will automatically appear after a while.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;In the next iteration of describing things choose different word.
+    &lt;ul&gt;
+      &lt;li&gt;Why? Because your brain already learned what the previous word means.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;If &lt;em&gt;&lt;code&gt;foo&lt;/code&gt;&lt;/em&gt;-ish names sounds offensive and are not appropriate for the audience, you can use Greek letters instead.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;&lt;code&gt;Alpha&lt;/code&gt;&lt;/em&gt;/&lt;em&gt;&lt;code&gt;Kappa&lt;/code&gt;&lt;/em&gt;/&lt;em&gt;&lt;code&gt;Psi&lt;/code&gt;&lt;/em&gt;/etc. sounds more professional &lt;img class=&quot;emoji&quot; title=&quot;:stuck_out_tongue_closed_eyes:&quot; alt=&quot;:stuck_out_tongue_closed_eyes:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f61d.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;http://goodenoughsoftware.net/2012/02/28/the-gibberish-game/&quot;&gt;&lt;em&gt;The Gibberish Game&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;http://goodenoughsoftware.net/2012/02/29/the-context-game/&quot;&gt;&lt;em&gt;The Context Game&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=iaLeKHbspLg&quot;&gt;&lt;em&gt;Model jest wszystkim czego potrzebujesz&lt;/em&gt; (PL)&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</description>
+  &lt;li&gt;&lt;a href=&quot;http://goodenoughsoftware.net/2012/02/28/the-gibberish-game/&quot;&gt;&lt;em&gt;The Gibberish Game&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://goodenoughsoftware.net/2012/02/29/the-context-game/&quot;&gt;&lt;em&gt;The Context Game&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=iaLeKHbspLg&quot;&gt;&lt;em&gt;Model jest wszystkim czego potrzebujesz&lt;/em&gt; (PL)&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
         <pubDate>Thu, 24 Apr 2014 23:00:00 +0000</pubDate>
         <link>http://www.afronski.pl/2014/04/24/gibberish-game.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2014/04/24/gibberish-game.html</guid>
@@ -467,48 +417,49 @@
     
       <item>
         <title>Useful tools - mailcatcher</title>
-        <description>&lt;h1 id=&quot;useful_tools__&quot;&gt;Useful tools - &lt;code&gt;mailcatcher&lt;/code&gt;&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;useful-tools---mailcatcher&quot;&gt;Useful tools - &lt;code&gt;mailcatcher&lt;/code&gt;&lt;/h1&gt;
 
 &lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
 
 &lt;p&gt;&lt;em&gt;MailCatcher&lt;/em&gt; runs a super simple &lt;code&gt;SMTP&lt;/code&gt; server which catches any message sent to it to display in a web interface. It is a very useful tool which does not need a huge knowledge about e.g. &lt;code&gt;sendmail&lt;/code&gt; and it is really easy to set up.&lt;/p&gt;
 
-&lt;h2 id=&quot;installation_and_usage&quot;&gt;Installation and Usage&lt;/h2&gt;
+&lt;h2 id=&quot;installation-and-usage&quot;&gt;Installation and Usage&lt;/h2&gt;
 
 &lt;p&gt;Service is written in &lt;em&gt;Ruby&lt;/em&gt; and it is accessible in the gems repository. If you have &lt;em&gt;Ruby&lt;/em&gt; installed you will only need to perform two installation steps:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Install it from gems by &lt;code&gt;gem install mailcatcher&lt;/code&gt;.&lt;/li&gt;
-
-&lt;li&gt;Start the service by invoking command &lt;code&gt;mailcatcher&lt;/code&gt;.&lt;/li&gt;
-
-&lt;li&gt;Go to the dashboard at &lt;code&gt;http://localhost:1080/&lt;/code&gt;.&lt;/li&gt;
-
-&lt;li&gt;Send email through &lt;code&gt;smtp://localhost:1025&lt;/code&gt; - after that email should appear in the dashboard.&lt;/li&gt;
+  &lt;li&gt;Install it from gems by &lt;code&gt;gem install mailcatcher&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Start the service by invoking command &lt;code&gt;mailcatcher&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Go to the dashboard at &lt;code&gt;http://localhost:1080/&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Send email through &lt;code&gt;smtp://localhost:1025&lt;/code&gt; - after that email should appear in the dashboard.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Using it inside a web framework e.g. &lt;em&gt;&lt;code&gt;Symfony2&lt;/code&gt;&lt;/em&gt; is a piece of cake. The only thing you need is a small modification in the &lt;em&gt;&lt;code&gt;parameters.yml&lt;/code&gt;&lt;/em&gt; configuration file:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='yaml'&gt;&lt;span class='l-Scalar-Plain'&gt;parameters&lt;/span&gt;&lt;span class='p-Indicator'&gt;:&lt;/span&gt;
-  &lt;span class='l-Scalar-Plain'&gt;mailer_transport&lt;/span&gt;&lt;span class='p-Indicator'&gt;:&lt;/span&gt;  &lt;span class='l-Scalar-Plain'&gt;smtp&lt;/span&gt;
-  &lt;span class='l-Scalar-Plain'&gt;mailer_host&lt;/span&gt;&lt;span class='p-Indicator'&gt;:&lt;/span&gt;       &lt;span class='l-Scalar-Plain'&gt;localhost&lt;/span&gt;
-  &lt;span class='l-Scalar-Plain'&gt;mailer_port&lt;/span&gt;&lt;span class='p-Indicator'&gt;:&lt;/span&gt;       &lt;span class='l-Scalar-Plain'&gt;1025&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;parameters:
+  mailer_transport:  smtp
+  mailer_host:       localhost
+  mailer_port:       1025&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;You need to be sure that in the &lt;em&gt;&lt;code&gt;config.yml&lt;/code&gt;&lt;/em&gt; you have these keys:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='yaml'&gt;&lt;span class='l-Scalar-Plain'&gt;swiftmailer&lt;/span&gt;&lt;span class='p-Indicator'&gt;:&lt;/span&gt;
-  &lt;span class='l-Scalar-Plain'&gt;transport&lt;/span&gt;&lt;span class='p-Indicator'&gt;:&lt;/span&gt;      &lt;span class='err'&gt;%&lt;/span&gt;&lt;span class='l-Scalar-Plain'&gt;mailer_transport%&lt;/span&gt;
-  &lt;span class='l-Scalar-Plain'&gt;host&lt;/span&gt;&lt;span class='p-Indicator'&gt;:&lt;/span&gt;           &lt;span class='err'&gt;%&lt;/span&gt;&lt;span class='l-Scalar-Plain'&gt;mailer_host%&lt;/span&gt;
-  &lt;span class='l-Scalar-Plain'&gt;port&lt;/span&gt;&lt;span class='p-Indicator'&gt;:&lt;/span&gt;           &lt;span class='err'&gt;%&lt;/span&gt;&lt;span class='l-Scalar-Plain'&gt;mailer_port%&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;swiftmailer:
+  transport:      %mailer_transport%
+  host:           %mailer_host%
+  port:           %mailer_port%&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;After applying mentioned changes and rebuilding the cache application will send emails via &lt;code&gt;SMTP&lt;/code&gt; server from &lt;em&gt;mailcatcher&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;If you need to run it as a service with web interface accessible outside you need to run it in this way:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;nohup mailcatcher --http-ip 0.0.0.0 &amp;gt; /var/log/mailcatcher.log 2&amp;gt;&lt;span class='p'&gt;&amp;amp;&lt;/span&gt;1 &lt;span class='p'&gt;&amp;amp;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~ $ nohup mailcatcher --http-ip 0.0.0.0 &amp;gt; /var/log/mailcatcher.log 2&amp;gt;&amp;amp;1 &amp;amp;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;h1 id=&quot;links&quot;&gt;Links&lt;/h1&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;http://mailcatcher.me/&quot;&gt;&lt;code&gt;mailcatcher&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</description>
+  &lt;li&gt;&lt;a href=&quot;http://mailcatcher.me/&quot;&gt;&lt;code&gt;mailcatcher&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
         <pubDate>Sun, 13 Apr 2014 16:00:00 +0200</pubDate>
         <link>http://www.afronski.pl/2014/04/13/useful-tools-mailcatcher.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2014/04/13/useful-tools-mailcatcher.html</guid>
@@ -516,32 +467,36 @@
     
       <item>
         <title>Using JIRA from the command line</title>
-        <description>&lt;h1 id=&quot;using__from_the_command_line&quot;&gt;Using &lt;code&gt;JIRA&lt;/code&gt; from the command line&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;using-jira-from-the-command-line&quot;&gt;Using &lt;code&gt;JIRA&lt;/code&gt; from the command line&lt;/h1&gt;
 
 &lt;p&gt;If someone would like to automate some popular workflows related with &lt;code&gt;JIRA&lt;/code&gt; (like logging time related with code review or meetings) or just use it from command line, please look at &lt;a href=&quot;http://tebriel.github.io/jira-cli&quot;&gt;this tool&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Installation:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;npm install -g jira-cli
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~ $ npm install -g jira-cli&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;Then create a file inside your home directory called &lt;em&gt;&lt;code&gt;.jiraclirc.json&lt;/code&gt;&lt;/em&gt; with content:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='p'&gt;{&lt;/span&gt;
-  &lt;span class='s2'&gt;&amp;quot;user&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;USERNAME&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
-  &lt;span class='s2'&gt;&amp;quot;password&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;PASSWORD&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
-  &lt;span class='s2'&gt;&amp;quot;host&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;address.to.jira.com&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
-  &lt;span class='s2'&gt;&amp;quot;protocol&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;https:&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
-  &lt;span class='s2'&gt;&amp;quot;port&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='mi'&gt;443&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
-  &lt;span class='s2'&gt;&amp;quot;strictSSL&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='kc'&gt;false&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
-  &lt;span class='s2'&gt;&amp;quot;project&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;PROJECTID&lt;/span&gt;
-&lt;span class='p'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;{
+  &amp;quot;user&amp;quot;: &amp;quot;USERNAME&amp;quot;,
+  &amp;quot;password&amp;quot;:&amp;quot;PASSWORD&amp;quot;,
+  &amp;quot;host&amp;quot;: &amp;quot;address.to.jira.com&amp;quot;,
+  &amp;quot;protocol&amp;quot;: &amp;quot;https:&amp;quot;,
+  &amp;quot;port&amp;quot;: 443,
+  &amp;quot;strictSSL&amp;quot;: false,
+  &amp;quot;project&amp;quot;: PROJECTID
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;After that you can log time with command specified below. In this case, it will prompt you to type a work log comment and amount of time spent with this activity e.g. &lt;em&gt;&lt;code&gt;1h&lt;/code&gt;&lt;/em&gt; (format like in corresponding dialog):&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;jira -w BLAHBLAH-111
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~ $ jira -w BLAHBLAH-111&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;h1 id=&quot;links&quot;&gt;Links&lt;/h1&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;http://tebriel.github.io/jira-cli/&quot;&gt;&lt;code&gt;jira-cli&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</description>
+  &lt;li&gt;&lt;a href=&quot;http://tebriel.github.io/jira-cli/&quot;&gt;&lt;code&gt;jira-cli&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
         <pubDate>Wed, 02 Apr 2014 17:00:00 +0200</pubDate>
         <link>http://www.afronski.pl/2014/04/02/using-jira-from-the-command-line.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2014/04/02/using-jira-from-the-command-line.html</guid>
@@ -549,7 +504,7 @@
     
       <item>
         <title>ssh2 - Node.js module of the week</title>
-        <description>&lt;h2 id=&quot;__nodejs_module_of_the_week&quot;&gt;&lt;code&gt;ssh2&lt;/code&gt; - Node.js module of the week&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;ssh2---nodejs-module-of-the-week&quot;&gt;&lt;code&gt;ssh2&lt;/code&gt; - Node.js module of the week&lt;/h2&gt;
 
 &lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
 
@@ -566,47 +521,48 @@
 &lt;h3 id=&quot;api&quot;&gt;API&lt;/h3&gt;
 
 &lt;p&gt;In the most basic case you need only to &lt;em&gt;&lt;code&gt;require&lt;/code&gt;&lt;/em&gt; this module and create new connection. It is useful to use &lt;em&gt;domains&lt;/em&gt; for error handling, but it is not an obligatory practice.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='lineno'&gt; 1&lt;/span&gt; &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;fs&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;fs&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
-&lt;span class='lineno'&gt; 2&lt;/span&gt;     &lt;span class='nx'&gt;util&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;util&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
-&lt;span class='lineno'&gt; 3&lt;/span&gt;     &lt;span class='nx'&gt;domain&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;domain&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
-&lt;span class='lineno'&gt; 4&lt;/span&gt; 
-&lt;span class='lineno'&gt; 5&lt;/span&gt;     &lt;span class='nx'&gt;Connection&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;ssh2&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
-&lt;span class='lineno'&gt; 6&lt;/span&gt; 
-&lt;span class='lineno'&gt; 7&lt;/span&gt;     &lt;span class='nx'&gt;OptionsForSFTP&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
-&lt;span class='lineno'&gt; 8&lt;/span&gt;       &lt;span class='nx'&gt;host&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;X.Y.Z.U&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
-&lt;span class='lineno'&gt; 9&lt;/span&gt;       &lt;span class='nx'&gt;port&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='mi'&gt;22&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
-&lt;span class='lineno'&gt;10&lt;/span&gt;       &lt;span class='nx'&gt;username&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;backup&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
-&lt;span class='lineno'&gt;11&lt;/span&gt;       &lt;span class='c1'&gt;// password: &amp;quot;password&amp;quot;&lt;/span&gt;
-&lt;span class='lineno'&gt;12&lt;/span&gt;       &lt;span class='nx'&gt;privateKey&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;fs&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;readFileSync&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;/path/to/privateKey&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
-&lt;span class='lineno'&gt;13&lt;/span&gt;     &lt;span class='p'&gt;};&lt;/span&gt;
-&lt;span class='lineno'&gt;14&lt;/span&gt; 
-&lt;span class='lineno'&gt;15&lt;/span&gt; &lt;span class='c1'&gt;// ...&lt;/span&gt;
-&lt;span class='lineno'&gt;16&lt;/span&gt; 
-&lt;span class='lineno'&gt;17&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;uploadToSftpServer&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;options&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;fileName&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;callback&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
-&lt;span class='lineno'&gt;18&lt;/span&gt;   &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;connection&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='nx'&gt;Connection&lt;/span&gt;&lt;span class='p'&gt;(),&lt;/span&gt;
-&lt;span class='lineno'&gt;19&lt;/span&gt;       &lt;span class='nx'&gt;handler&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;domain&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;create&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
-&lt;span class='lineno'&gt;20&lt;/span&gt; 
-&lt;span class='lineno'&gt;21&lt;/span&gt;   &lt;span class='nx'&gt;handler&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;on&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;error&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;error&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
-&lt;span class='lineno'&gt;22&lt;/span&gt;     &lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;error&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;Error occurred: %s&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;error&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
-&lt;span class='lineno'&gt;23&lt;/span&gt;     &lt;span class='nx'&gt;process&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;exit&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='mi'&gt;1&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
-&lt;span class='lineno'&gt;24&lt;/span&gt;   &lt;span class='p'&gt;});&lt;/span&gt;
-&lt;span class='lineno'&gt;25&lt;/span&gt; 
-&lt;span class='lineno'&gt;26&lt;/span&gt;   &lt;span class='c1'&gt;// Handling &amp;quot;error&amp;quot; event inside domain handler.&lt;/span&gt;
-&lt;span class='lineno'&gt;27&lt;/span&gt;   &lt;span class='nx'&gt;handler&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;add&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;connection&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
-&lt;span class='lineno'&gt;28&lt;/span&gt; 
-&lt;span class='lineno'&gt;29&lt;/span&gt;   &lt;span class='nx'&gt;connection&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;on&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;ready&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
-&lt;span class='lineno'&gt;30&lt;/span&gt;     &lt;span class='nx'&gt;connection&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;sftp&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;handler&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;intercept&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;sftp&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
-&lt;span class='lineno'&gt;31&lt;/span&gt;       &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;providedFileName&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;util&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;format&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;./%s&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;fileName&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
-&lt;span class='lineno'&gt;32&lt;/span&gt; 
-&lt;span class='lineno'&gt;33&lt;/span&gt;       &lt;span class='nx'&gt;sftp&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;fastPut&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;providedFileName&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;providedFileName&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
-&lt;span class='lineno'&gt;34&lt;/span&gt;                    &lt;span class='nx'&gt;handler&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;intercept&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;connection&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;end&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;bind&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;connection&lt;/span&gt;&lt;span class='p'&gt;)));&lt;/span&gt;
-&lt;span class='lineno'&gt;35&lt;/span&gt;     &lt;span class='p'&gt;}));&lt;/span&gt;
-&lt;span class='lineno'&gt;36&lt;/span&gt;   &lt;span class='p'&gt;});&lt;/span&gt;
-&lt;span class='lineno'&gt;37&lt;/span&gt; 
-&lt;span class='lineno'&gt;38&lt;/span&gt;   &lt;span class='nx'&gt;connection&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;on&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;end&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;callback&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
-&lt;span class='lineno'&gt;39&lt;/span&gt;   &lt;span class='nx'&gt;connection&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;connect&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;options&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
-&lt;span class='lineno'&gt;40&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;var fs = require(&amp;quot;fs&amp;quot;),
+    util = require(&amp;quot;util&amp;quot;),
+    domain = require(&amp;quot;domain&amp;quot;),
+
+    Connection = require(&amp;quot;ssh2&amp;quot;),
+
+    OptionsForSFTP = {
+      host: &amp;quot;X.Y.Z.U&amp;quot;,
+      port: 22,
+      username: &amp;quot;backup&amp;quot;,
+      // password: &amp;quot;password&amp;quot;
+      privateKey: fs.readFileSync(&amp;quot;/path/to/privateKey&amp;quot;)
+    };
+
+// ...
+
+function uploadToSftpServer(options, fileName, callback) {
+  var connection = new Connection(),
+      handler = domain.create();
+
+  handler.on(&amp;quot;error&amp;quot;, function (error) {
+    console.error(&amp;quot;Error occurred: %s&amp;quot;, error);
+    process.exit(-1);
+  });
+
+  // Handling &amp;quot;error&amp;quot; event inside domain handler.
+  handler.add(connection);
+
+  connection.on(&amp;quot;ready&amp;quot;, function () {
+    connection.sftp(handler.intercept(function (sftp) {
+      var providedFileName = util.format(&amp;quot;./%s&amp;quot;, fileName);
+
+      sftp.fastPut(providedFileName, providedFileName,
+                   handler.intercept(connection.end.bind(connection)));
+    }));
+  });
+
+  connection.on(&amp;quot;end&amp;quot;, callback);
+  connection.connect(options);
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;When connection is &lt;em&gt;&lt;code&gt;ready&lt;/code&gt;&lt;/em&gt; we need to open a &lt;em&gt;&lt;code&gt;SFTP&lt;/code&gt;&lt;/em&gt; channel and &lt;em&gt;&lt;code&gt;PUT&lt;/code&gt;&lt;/em&gt; file to the server. As you can see in example presented above, authentication via password or private key is a piece of cake and it is handled by module internals.&lt;/p&gt;
 
 &lt;h3 id=&quot;health&quot;&gt;Health&lt;/h3&gt;
@@ -617,23 +573,19 @@
 
 &lt;h3 id=&quot;quality&quot;&gt;Quality&lt;/h3&gt;
 
-&lt;p&gt;Unfortunately &lt;em&gt;module is not&lt;/em&gt; an any kind of reference in terms of quality:&lt;/p&gt;
+&lt;p&gt;Unfortunately &lt;em&gt;module is not&lt;/em&gt; an any kind of reference in terms of quality:
+- &lt;em&gt;It does not have any kind of tests&lt;/em&gt; (unit or even integration tests).
+- Documentation is delivered inside single &lt;em&gt;&lt;code&gt;README.md&lt;/code&gt;&lt;/em&gt; file in form of source code examples.
+- Overall code quality is not too high, module still makes an impression of &lt;em&gt;hacked&lt;/em&gt; in the hurry.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;It does not have any kind of tests&lt;/em&gt; (unit or even integration tests).&lt;/li&gt;
-
-&lt;li&gt;Documentation is delivered inside single &lt;em&gt;&lt;code&gt;README.md&lt;/code&gt;&lt;/em&gt; file in form of source code examples.&lt;/li&gt;
-
-&lt;li&gt;Overall code quality is not too high, module still makes an impression of &lt;em&gt;hacked&lt;/em&gt; in the hurry.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;But it works and it has just a few bugs :wink:.&lt;/p&gt;
+&lt;p&gt;But it works and it has just a few bugs &lt;img class=&quot;emoji&quot; title=&quot;:wink:&quot; alt=&quot;:wink:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f609.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/mscdex/ssh2&quot;&gt;&lt;code&gt;ssh2&lt;/code&gt; github page&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</description>
+  &lt;li&gt;&lt;a href=&quot;https://github.com/mscdex/ssh2&quot;&gt;&lt;code&gt;ssh2&lt;/code&gt; github page&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
         <pubDate>Tue, 04 Feb 2014 23:00:00 +0100</pubDate>
         <link>http://www.afronski.pl/2014/02/04/ssh2-nodejs-module-of-the-week.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2014/02/04/ssh2-nodejs-module-of-the-week.html</guid>
@@ -641,100 +593,106 @@
     
       <item>
         <title>Reconciling cat and dog - the most productive git-svn setup</title>
-        <description>&lt;h2 id=&quot;reconciling_cat_and_dog__the_most_productive__setup&quot;&gt;Reconciling cat and dog - the most productive &lt;em&gt;&lt;code&gt;git-svn&lt;/code&gt;&lt;/em&gt; setup&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;reconciling-cat-and-dog---the-most-productive-git-svn-setup&quot;&gt;Reconciling cat and dog - the most productive &lt;em&gt;&lt;code&gt;git-svn&lt;/code&gt;&lt;/em&gt; setup&lt;/h2&gt;
 
 &lt;p&gt;I would like to present productive and effective setup for the &lt;em&gt;&lt;code&gt;git-svn&lt;/code&gt;&lt;/em&gt; bridge which removes most of the obstacles and fixes some problems which occur with this &lt;em&gt;bridged&lt;/em&gt; approach.&lt;/p&gt;
 
 &lt;h3 id=&quot;configuration&quot;&gt;Configuration&lt;/h3&gt;
 
 &lt;p&gt;Before we start - one remark: if you installed &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt; on your machine first time ever, please remember about setting up proper user, email and &lt;em&gt;one-more-thing just for convinience&lt;/em&gt;:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;git config --global user.name &lt;span class='s2'&gt;&amp;quot;Your Name Here&amp;quot;&lt;/span&gt;
-~ &lt;span class='nv'&gt;$ &lt;/span&gt;git config --global user.email &lt;span class='s2'&gt;&amp;quot;your_email@example.com&amp;quot;&lt;/span&gt;
-~ &lt;span class='nv'&gt;$ &lt;/span&gt;git config --global credential.helper cache
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~ $ git config --global user.name &amp;quot;Your Name Here&amp;quot;
+~ $ git config --global user.email &amp;quot;your_email@example.com&amp;quot;
+~ $ git config --global credential.helper cache&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;h3 id=&quot;starting&quot;&gt;Starting&lt;/h3&gt;
 
-&lt;p&gt;At first, you need to &lt;code&gt;clone&lt;/code&gt; (or &lt;code&gt;checkout&lt;/code&gt; in SVN terminology) repository. You can do in three different ways:&lt;/p&gt;
+&lt;p&gt;At first, you need to &lt;code&gt;clone&lt;/code&gt; (or &lt;code&gt;checkout&lt;/code&gt; in SVN terminology) repository. You can do in three different ways:
+- First way (&lt;em&gt;2nd line&lt;/em&gt;) checkouts repository with a standard SVN layout (&lt;code&gt;trunk&lt;/code&gt;, &lt;code&gt;branches&lt;/code&gt;, &lt;code&gt;tags&lt;/code&gt;) and associates branches, tags and &lt;em&gt;&lt;code&gt;trunk&lt;/code&gt;&lt;/em&gt; with &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt; &lt;em&gt;&lt;code&gt;master&lt;/code&gt;&lt;/em&gt;.
+- Second way (&lt;em&gt;5th line&lt;/em&gt;) checkouts whole repository as it is.
+- Third way (&lt;em&gt;starts in 8th line&lt;/em&gt;) is really an expansion for &lt;code&gt;git-svn clone&lt;/code&gt;.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;First way (&lt;em&gt;2nd line&lt;/em&gt;) checkouts repository with a standard SVN layout (&lt;code&gt;trunk&lt;/code&gt;, &lt;code&gt;branches&lt;/code&gt;, &lt;code&gt;tags&lt;/code&gt;) and associates branches, tags and &lt;em&gt;&lt;code&gt;trunk&lt;/code&gt;&lt;/em&gt; with &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt; &lt;em&gt;&lt;code&gt;master&lt;/code&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;# Standard layout.
+~ $ git svn clone -s $SVN_REPOSITORY_ROOT_URL
 
-&lt;li&gt;Second way (&lt;em&gt;5th line&lt;/em&gt;) checkouts whole repository as it is.&lt;/li&gt;
+# Non-standard layout.
+~ $ git svn clone $SVN_REPOSITORY_ROOT_URL
 
-&lt;li&gt;Third way (&lt;em&gt;starts in 8th line&lt;/em&gt;) is really an expansion for &lt;code&gt;git-svn clone&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='lineno'&gt; 1&lt;/span&gt; &lt;span class='c'&gt;# Standard layout.&lt;/span&gt;
-&lt;span class='lineno'&gt; 2&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn clone -s &lt;span class='nv'&gt;$SVN_REPOSITORY_ROOT_URL&lt;/span&gt;
-&lt;span class='lineno'&gt; 3&lt;/span&gt; 
-&lt;span class='lineno'&gt; 4&lt;/span&gt; &lt;span class='c'&gt;# Non-standard layout.&lt;/span&gt;
-&lt;span class='lineno'&gt; 5&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn clone &lt;span class='nv'&gt;$SVN_REPOSITORY_ROOT_URL&lt;/span&gt;
-&lt;span class='lineno'&gt; 6&lt;/span&gt; 
-&lt;span class='lineno'&gt; 7&lt;/span&gt; &lt;span class='c'&gt;# &amp;#39;git svn clone ...&amp;#39; is basically a shortcut for these commands:&lt;/span&gt;
-&lt;span class='lineno'&gt; 8&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;mkdir REPOSITORY
-&lt;span class='lineno'&gt; 9&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;&lt;span class='nb'&gt;cd &lt;/span&gt;REPOSITORY
-&lt;span class='lineno'&gt;10&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn init &lt;span class='nv'&gt;$SVN_REPOSITORY_TRUNK_URL&lt;/span&gt; .
-&lt;span class='lineno'&gt;11&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn fetch -r HEAD
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&quot;updating_and_commiting&quot;&gt;Updating and commiting&lt;/h3&gt;
+# 'git svn clone ...' is basically a shortcut for these commands:
+~ $ mkdir REPOSITORY
+~ $ cd REPOSITORY
+~ $ git svn init $SVN_REPOSITORY_TRUNK_URL .
+~ $ git svn fetch -r HEAD&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Besides &lt;code&gt;pull&lt;/code&gt; and &lt;code&gt;push&lt;/code&gt; (or &lt;code&gt;update&lt;/code&gt; and &lt;code&gt;commit&lt;/code&gt; in SVN terminology) everything works like in classical &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt;. First line represents &lt;em&gt;&lt;code&gt;svn update&lt;/code&gt;&lt;/em&gt; command, second - series of &lt;code&gt;svn commit&lt;/code&gt; commands with messages collected inside local &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt; repository.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='lineno'&gt;1&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn rebase
-&lt;span class='lineno'&gt;2&lt;/span&gt; ~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn dcommit
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;updating-and-commiting&quot;&gt;Updating and commiting&lt;/h3&gt;
+
+&lt;p&gt;Besides &lt;code&gt;pull&lt;/code&gt; and &lt;code&gt;push&lt;/code&gt; (or &lt;code&gt;update&lt;/code&gt; and &lt;code&gt;commit&lt;/code&gt; in SVN terminology) everything works like in classical &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt;.
+First line represents &lt;em&gt;&lt;code&gt;svn update&lt;/code&gt;&lt;/em&gt; command, second - series of &lt;code&gt;svn commit&lt;/code&gt; commands with messages collected inside local &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt; repository.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~ $ git svn rebase
+~ $ git svn dcommit&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;h3 id=&quot;ignores&quot;&gt;Ignores&lt;/h3&gt;
 
 &lt;p&gt;If you cannot store your &lt;em&gt;&lt;code&gt;.gitignore&lt;/code&gt;&lt;/em&gt; file in the SVN repository you can exclude these files locally:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn show-ignore &amp;gt;&amp;gt; .git/info/exclude
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~ $ git svn show-ignore &amp;gt;&amp;gt; .git/info/exclude&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;But &lt;code&gt;.gitignore&lt;/code&gt; file can be very convenient - you can easily share exclusions with other members of the team which also use this bridged approach. &lt;em&gt;Moreover&lt;/em&gt;, this command is really slow for bigger repositories, so that is another advantage of having this file.&lt;/p&gt;
 
 &lt;h3 id=&quot;branches&quot;&gt;Branches&lt;/h3&gt;
 
 &lt;p&gt;If your repository does not have standard layout you can still easily associate SVN branch in your &lt;em&gt;&lt;code&gt;.git/config&lt;/code&gt;&lt;/em&gt; by adding new &lt;em&gt;&lt;code&gt;svn-remote&lt;/code&gt;&lt;/em&gt; section:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='o'&gt;[&lt;/span&gt;svn-remote &lt;span class='s2'&gt;&amp;quot;sample_branch&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;
-    &lt;span class='nv'&gt;url&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; https://svn_repository/branches/sample_branch
-    &lt;span class='nv'&gt;fetch&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; :refs/remotes/sample_branch
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;[svn-remote &amp;quot;sample_branch&amp;quot;]
+    url = https://svn_repository/branches/sample_branch
+    fetch = :refs/remotes/sample_branch&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;Then you should run (and &lt;em&gt;develop the habit of running&lt;/em&gt;):&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn fetch --fetch-all
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~ $ git svn fetch --fetch-all&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;As the last step, you need to &lt;em&gt;&lt;code&gt;checkout&lt;/code&gt;&lt;/em&gt; new branch:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;git checkout -b sample_branch remotes/sample_branch
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~ $ git checkout -b sample_branch remotes/sample_branch&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;After that your branch will be available like normal &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt; branch. Remember that your &lt;em&gt;&lt;code&gt;trunk&lt;/code&gt;&lt;/em&gt; is actually a &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt; &lt;em&gt;&lt;code&gt;master&lt;/code&gt;&lt;/em&gt; branch.&lt;/p&gt;
 
-&lt;h3 id=&quot;removing_empty_directories&quot;&gt;Removing empty directories&lt;/h3&gt;
+&lt;h3 id=&quot;removing-empty-directories&quot;&gt;Removing empty directories&lt;/h3&gt;
 
 &lt;p&gt;Regarding the &lt;em&gt;&lt;code&gt;git-svn&lt;/code&gt;&lt;/em&gt; bridge, dangling empty directories are my nightmare. Fortunately, someone thought about it and we can enable deleting empty directories on commit (&lt;em&gt;globally&lt;/em&gt; via &lt;em&gt;&lt;code&gt;git-config&lt;/code&gt;&lt;/em&gt; or &lt;em&gt;on demand&lt;/em&gt; just for certain commit):&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;git config svn.rmdir &lt;span class='nb'&gt;true&lt;/span&gt;
-~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn dcommit --rmdir
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~ $ git config svn.rmdir true
+~ $ git svn dcommit --rmdir&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;h3 id=&quot;problems&quot;&gt;Problems&lt;/h3&gt;
 
 &lt;p&gt;There are still a few problems with the newest SVN clients for such combination. The most annoying is &lt;em&gt;assertion … failed&lt;/em&gt; related to the renaming operation. This error looks like this example:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn dcommit
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~ $ git svn dcommit
 Committing to http://...
-    C      path/to/file/a.js &lt;span class='o'&gt;=&lt;/span&gt;&amp;gt; other/path/to/file/b.js
-assertion &lt;span class='s2'&gt;&amp;quot;svn_fspath__is_canonical(child_fspath)&amp;quot;&lt;/span&gt; failed: file &lt;span class='s2'&gt;&amp;quot;dirent_uri.c&amp;quot;&lt;/span&gt;, line 2502, &lt;span class='k'&gt;function&lt;/span&gt;: svn_fspath__skip_ancestor
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    C      path/to/file/a.js =&amp;gt; other/path/to/file/b.js
+assertion &amp;quot;svn_fspath__is_canonical(child_fspath)&amp;quot; failed: file &amp;quot;dirent_uri.c&amp;quot;, line 2502, function: svn_fspath__skip_ancestor&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;At first glance you may think that the only (and the &lt;em&gt;worst possible&lt;/em&gt; - lost information and mess in history) option is to split your commit into two. Happily, you can perform your commit normally but you need to turn off rename detection:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;~ &lt;span class='nv'&gt;$ &lt;/span&gt;git svn dcommit -C1 -l1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~ $ git svn dcommit -C1 -l1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;Unfortunately you will still commit two changes, this time in one batch (as a &lt;em&gt;deletion the old file&lt;/em&gt; and &lt;em&gt;creation file with the new name&lt;/em&gt;), instead of just a file rename, so you will still loose information in the process.&lt;/p&gt;
 
 &lt;p&gt;To avoid this completely the only option is to downgrade SVN client to the latest version on &lt;em&gt;&lt;code&gt;1.7.X&lt;/code&gt;&lt;/em&gt; branch.&lt;/p&gt;
 
 &lt;h3 id=&quot;credits&quot;&gt;Credits&lt;/h3&gt;
 
-&lt;p&gt;Big thanks to &lt;a href=&quot;https://twitter.com/skremiec&quot;&gt;@skremiec&lt;/a&gt; for undeceiving me in some cases and pointing out &lt;em&gt;&lt;code&gt;svn.rmdir&lt;/code&gt;&lt;/em&gt; option :wink:.&lt;/p&gt;
+&lt;p&gt;Big thanks to &lt;a href=&quot;https://twitter.com/skremiec&quot;&gt;@skremiec&lt;/a&gt; for undeceiving me in some cases and pointing out &lt;em&gt;&lt;code&gt;svn.rmdir&lt;/code&gt;&lt;/em&gt; option &lt;img class=&quot;emoji&quot; title=&quot;:wink:&quot; alt=&quot;:wink:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f609.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.kernel.org/pub/software/scm/git/docs/git-svn.html&quot;&gt;Manual for &lt;code&gt;git-svn&lt;/code&gt; on kernel.org&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href=&quot;http://git-scm.com/book/en/Git-and-Other-Systems-Git-and-Subversion&quot;&gt;Chapter about &lt;code&gt;git-svn&lt;/code&gt; in &lt;code&gt;Pro Git&lt;/code&gt; book&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</description>
+  &lt;li&gt;&lt;a href=&quot;https://www.kernel.org/pub/software/scm/git/docs/git-svn.html&quot;&gt;Manual for &lt;code&gt;git-svn&lt;/code&gt; on kernel.org&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://git-scm.com/book/en/Git-and-Other-Systems-Git-and-Subversion&quot;&gt;Chapter about &lt;code&gt;git-svn&lt;/code&gt; in &lt;code&gt;Pro Git&lt;/code&gt; book&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
         <pubDate>Sat, 25 Jan 2014 23:00:00 +0100</pubDate>
         <link>http://www.afronski.pl/2014/01/25/reconciling-cat-and-dog-the-most-productive-git-svn-setup.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2014/01/25/reconciling-cat-and-dog-the-most-productive-git-svn-setup.html</guid>

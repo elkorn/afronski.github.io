@@ -22,12 +22,13 @@
     <article class="container post">
       <a href="/">Home</a>
 
-<h1 id="differences_between__and_the_ampersand">Differences between <code>nohup</code> and the ampersand</h1>
+<h1 id="differences-between-nohup-and-the-ampersand">Differences between <code>nohup</code> and the ampersand</h1>
 
 <p>There are many cases when <em>small differences</em> between environments can bite you. This is one into which I have ran recently. What is the difference between these two commands?</p>
-<div class='highlight'><pre><code class='bash'><span class='lineno'>1</span> ~ <span class='nv'>$ </span>nohup myprocess.out <span class='p'>&amp;</span>
-<span class='lineno'>2</span> ~ <span class='nv'>$ </span>myprocess.out <span class='p'>&amp;</span>
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~ $ nohup myprocess.out &amp;
+~ $ myprocess.out &amp;</code></pre></div>
+
 <p>The answer is the same as usual - <em>it depends</em>.</p>
 
 <p><code>nohup</code> catches the hangup signal while the ampersand does not.</p>
@@ -41,21 +42,23 @@
 <p>Fine, but like in this case there are always <em>‘buts’</em>. There is no difference between these launching methods when the shell is configured in a way where it does not send <code>SIGHUP</code> at all.</p>
 
 <p>In case you are using bash, you can use the command specified below to find out whether your shell sends <em><code>SIGHUP</code></em> to its child processes or not:</p>
-<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span><span class='nb'>shopt</span> <span class='p'>|</span> grep hupon
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~ $ shopt | grep hupon</code></pre></div>
+
 <p>And moreover - there are cases where nohup does not work. For example, when the process you start reconnects the <code>NOHUP</code> signal (it is done inside, on the application code level).</p>
 
 <p>In the described case, lack of differences bit me when inside a custom service launching script there was a call to a second script which sets up and launches the proper application <em>without a <code>nohup</code> command</em>.</p>
 
-<p>On one Linux environment everything worked smoothly, on a second one the application quit as soon as the second script exited (detecting that case, of course took me much more time then you might think <img alt="stuck_out_tongue" src="/images/emoji/stuck_out_tongue.png" class="emoji" />).</p>
+<p>On one Linux environment everything worked smoothly, on a second one the application quit as soon as the second script exited (detecting that case, of course took me much more time then you might think <img class="emoji" title=":stuck_out_tongue:" alt=":stuck_out_tongue:" src="https://assets.github.com/images/icons/emoji/unicode/1f61b.png" height="20" width="20" align="absmiddle" />).</p>
 
 <p>After adding <code>nohup</code> as a launching method to second script, application keeps running even if the scripts will exit and this behavior became consistent on both environments.</p>
 
 <h1 id="references">References</h1>
 
 <ol>
-<li><a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?signal+7"><code>man 7 signal</code></a></li>
+  <li><a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?signal+7"><code>man 7 signal</code></a></li>
 </ol>
+
     </article>
 
     <section class="container">

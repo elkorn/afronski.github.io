@@ -28,7 +28,7 @@
 
 <h1 id="why">Why?</h1>
 
-<p>The major problem when you are learning new stuff is related with first step, even with a basic question <em>“how to start”</em>. This barrier is often related with new thinking or programming paradigm, new language, unknown environment or even unfamiliar <code>API</code>. For almost every technology we can find opinionated stuff on the Internet: multiple tutorials, guidelines (often it is not so hard to find two conflicting ones <img alt="wink" src="/images/emoji/wink.png" class="emoji" />) and blog posts with information how to work with technology in which we are interested. Moreover, in almost each case we still have a question back in our heads: <em>“Is it a proper way to learn and work with it?”</em>.</p>
+<p>The major problem when you are learning new stuff is related with first step, even with a basic question <em>“how to start”</em>. This barrier is often related with new thinking or programming paradigm, new language, unknown environment or even unfamiliar <code>API</code>. For almost every technology we can find opinionated stuff on the Internet: multiple tutorials, guidelines (often it is not so hard to find two conflicting ones <img class="emoji" title=":wink:" alt=":wink:" src="https://assets.github.com/images/icons/emoji/unicode/1f609.png" height="20" width="20" align="absmiddle" />) and blog posts with information how to work with technology in which we are interested. Moreover, in almost each case we still have a question back in our heads: <em>“Is it a proper way to learn and work with it?”</em>.</p>
 
 <p>Learning process could be easier if we have one source of truth and best practices how to approach certain topics related with piece of technology which is interesting for us. For Node.js such initiative is called <a href="http://nodeschool.io">nodeschool.io</a>.</p>
 
@@ -38,45 +38,29 @@
 
 <p>Nodeschool is a series of interactive workshops, divided into two sections - core concepts and electives.</p>
 
-<p>In the main concepts we have:</p>
+<p>In the main concepts we have:
+- <a href="http://nodeschool.io/#learn-you-node">basic asynchronous programming and introduction to the core Node.js concepts</a>
+- <a href="http://nodeschool.io/#stream-adventure">introduction to the streams</a>
+- <a href="http://nodeschool.io/#bytewiser">bytes and buffers manipulation</a>
+- <a href="http://nodeschool.io/#functionaljs">functional programming in JavaScript</a>
+- <a href="http://nodeschool.io/#git-it">how to work effectively with git and github</a></p>
 
-<ul>
-<li><a href="http://nodeschool.io/#learn-you-node">basic asynchronous programming and introduction to the core Node.js concepts</a></li>
+<p>Electives are oriented around:
+- <a href="http://nodeschool.io/#levelmeup">use of node.js binding and modules related with LevelDB</a>
+- <a href="http://nodeschool.io/#makemehapi">hapi.js framework</a>
+- <a href="http://nodeschool.io/#expressworks">express.js framework</a>
+- <a href="http://nodeschool.io/#goingnative">native modules and addons</a>
+- <a href="http://nodeschool.io/#count-to-6">6th version of ECMAScript</a>
+- <a href="http://nodeschool.io/#browserify-adventure">browserify</a>
+- <a href="http://nodeschool.io/#promiseitwonthurt">promises</a>
+- <a href="http://nodeschool.io/#asyncyou">async.js</a></p>
 
-<li><a href="http://nodeschool.io/#stream-adventure">introduction to the streams</a></li>
-
-<li><a href="http://nodeschool.io/#bytewiser">bytes and buffers manipulation</a></li>
-
-<li><a href="http://nodeschool.io/#functionaljs">functional programming in JavaScript</a></li>
-
-<li><a href="http://nodeschool.io/#git-it">how to work effectively with git and github</a></li>
-</ul>
-
-<p>Electives are oriented around:</p>
-
-<ul>
-<li><a href="http://nodeschool.io/#levelmeup">use of node.js binding and modules related with LevelDB</a></li>
-
-<li><a href="http://nodeschool.io/#makemehapi">hapi.js framework</a></li>
-
-<li><a href="http://nodeschool.io/#expressworks">express.js framework</a></li>
-
-<li><a href="http://nodeschool.io/#goingnative">native modules and addons</a></li>
-
-<li><a href="http://nodeschool.io/#count-to-6">6th version of ECMAScript</a></li>
-
-<li><a href="http://nodeschool.io/#browserify-adventure">browserify</a></li>
-
-<li><a href="http://nodeschool.io/#promiseitwonthurt">promises</a></li>
-
-<li><a href="http://nodeschool.io/#asyncyou">async.js</a></li>
-</ul>
-
-<h1 id="how_to_start">How to start?</h1>
+<h1 id="how-to-start">How to start?</h1>
 
 <p>At first you need to have <em><code>npm</code></em> and <em><code>node</code></em> executables - if you do not have them already on your machine, the most recommended place to start is <a href="http://nodejs.org/download/">here</a>. Then you can install each workshop globally using <em>Node Packaged Modules</em> manager:</p>
-<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>npm install -g learnyounode
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~ $ npm install -g learnyounode</code></pre></div>
+
 <p>In this example <em><code>-g</code></em> flag means <em>“install package globally”</em>, so it will be available as a executable on your machine.</p>
 
 <p>Every single workshop is using the same command line interface and workflow. This eases the work with each of them. Moreover, assignments are well defined, descriptive and small enough to perform them as a <a href="http://en.wikipedia.org/wiki/Kata_%28programming%29">daily code kata</a>.</p>
@@ -86,18 +70,19 @@
 <p><img src="/assets/learnyounode.png" alt="learnyounode workshop" /></p>
 
 <p>Then you should select first unresolved assignment from the list. After that you will see the description and guidelines how you should approach this task. Then you have two commands for testing and verifying prepared solution.</p>
-<div class='highlight'><pre><code class='bash'><span class='c'># Testing your solution:</span>
-~ <span class='nv'>$ </span>learnyounode run &lt;FILE_NAME_WITH_SOLUTION&gt;
-<span class='c'># Veryfing the prepared solution:</span>
-~ <span class='nv'>$ </span>learnyounode verify &lt;FILE_NAME_WITH_SOLUTION&gt;
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"># Testing your solution:
+~ $ learnyounode run &lt;FILE_NAME_WITH_SOLUTION&gt;
+# Veryfing the prepared solution:
+~ $ learnyounode verify &lt;FILE_NAME_WITH_SOLUTION&gt;</code></pre></div>
+
 <p>If solution is correct, the current assignment will be marked as resolved. Now you are ready to work with each workshop available on the main page.</p>
 
-<h1 id="i_am_the_beginner_in_nodejs_community__where_should_i_start">I am the beginner in Node.js community - where should I start?</h1>
+<h1 id="i-am-the-beginner-in-nodejs-community---where-should-i-start">I am the beginner in Node.js community - where should I start?</h1>
 
 <p>I will recommend to start with <a href="http://nodeschool.io/#learn-you-node">learn-you-node workshop</a> and then move forward through the rest of core concepts. After that you are free to choose any from the interesting topics from electives group (e.g. related with specific framework).</p>
 
-<h1 id="i_am_more_advanced_member__how_can_i_contribute">I am more advanced member - how can I contribute?</h1>
+<h1 id="i-am-more-advanced-member---how-can-i-contribute">I am more advanced member - how can I contribute?</h1>
 
 <p>You can contribute in several ways.</p>
 
@@ -110,12 +95,11 @@
 <h1 id="references">References</h1>
 
 <ol>
-<li><a href="http://nodeschool.io">nodeschool.io</a></li>
-
-<li><a href="http://nodeschool.io/host.html">How to run a new ‘nodeschool’ event?</a></li>
-
-<li><a href="https://github.com/rvagg/workshopper">rvagg/workshopper</a></li>
+  <li><a href="http://nodeschool.io">nodeschool.io</a></li>
+  <li><a href="http://nodeschool.io/host.html">How to run a new ‘nodeschool’ event?</a></li>
+  <li><a href="https://github.com/rvagg/workshopper">rvagg/workshopper</a></li>
 </ol>
+
     </article>
 
     <section class="container">

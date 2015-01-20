@@ -22,32 +22,36 @@
     <article class="container post">
       <a href="/">Home</a>
 
-<h1 id="using__from_the_command_line">Using <code>JIRA</code> from the command line</h1>
+<h1 id="using-jira-from-the-command-line">Using <code>JIRA</code> from the command line</h1>
 
 <p>If someone would like to automate some popular workflows related with <code>JIRA</code> (like logging time related with code review or meetings) or just use it from command line, please look at <a href="http://tebriel.github.io/jira-cli">this tool</a>.</p>
 
 <p>Installation:</p>
-<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>npm install -g jira-cli
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~ $ npm install -g jira-cli</code></pre></div>
+
 <p>Then create a file inside your home directory called <em><code>.jiraclirc.json</code></em> with content:</p>
-<div class='highlight'><pre><code class='javascript'><span class='p'>{</span>
-  <span class='s2'>&quot;user&quot;</span><span class='o'>:</span> <span class='s2'>&quot;USERNAME&quot;</span><span class='p'>,</span>
-  <span class='s2'>&quot;password&quot;</span><span class='o'>:</span><span class='s2'>&quot;PASSWORD&quot;</span><span class='p'>,</span>
-  <span class='s2'>&quot;host&quot;</span><span class='o'>:</span> <span class='s2'>&quot;address.to.jira.com&quot;</span><span class='p'>,</span>
-  <span class='s2'>&quot;protocol&quot;</span><span class='o'>:</span> <span class='s2'>&quot;https:&quot;</span><span class='p'>,</span>
-  <span class='s2'>&quot;port&quot;</span><span class='o'>:</span> <span class='mi'>443</span><span class='p'>,</span>
-  <span class='s2'>&quot;strictSSL&quot;</span><span class='o'>:</span> <span class='kc'>false</span><span class='p'>,</span>
-  <span class='s2'>&quot;project&quot;</span><span class='o'>:</span> <span class='nx'>PROJECTID</span>
-<span class='p'>}</span>
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">{
+  &quot;user&quot;: &quot;USERNAME&quot;,
+  &quot;password&quot;:&quot;PASSWORD&quot;,
+  &quot;host&quot;: &quot;address.to.jira.com&quot;,
+  &quot;protocol&quot;: &quot;https:&quot;,
+  &quot;port&quot;: 443,
+  &quot;strictSSL&quot;: false,
+  &quot;project&quot;: PROJECTID
+}</code></pre></div>
+
 <p>After that you can log time with command specified below. In this case, it will prompt you to type a work log comment and amount of time spent with this activity e.g. <em><code>1h</code></em> (format like in corresponding dialog):</p>
-<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>jira -w BLAHBLAH-111
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~ $ jira -w BLAHBLAH-111</code></pre></div>
+
 <h1 id="links">Links</h1>
 
 <ol>
-<li><a href="http://tebriel.github.io/jira-cli/"><code>jira-cli</code></a></li>
+  <li><a href="http://tebriel.github.io/jira-cli/"><code>jira-cli</code></a></li>
 </ol>
+
     </article>
 
     <section class="container">

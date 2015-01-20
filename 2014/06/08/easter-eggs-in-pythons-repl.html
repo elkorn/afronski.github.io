@@ -22,75 +22,80 @@
     <article class="container post">
       <a href="/">Home</a>
 
-<h1 id="easter_eggs_in_pythons_">Easter Eggs in Python’s <code>REPL</code></h1>
+<h1 id="easter-eggs-in-pythons-repl">Easter Eggs in Python’s <code>REPL</code></h1>
 
 <p>Recently, I have ran into a funny thing in Python. Try to import <em><code>antigravity</code></em> module inside the <code>REPL</code>:</p>
-<div class='highlight'><pre><code class='python'><span class='o'>&gt;&gt;&gt;</span> <span class='kn'>import</span> <span class='nn'>antigravity</span>
-</code></pre></div>
-<p>Obviously, it is not the only funny thing hidden somewhere deep in the Python implementation. I researched the topic and I found more examples of easter eggs <img alt="grin" src="/images/emoji/grin.png" class="emoji" />.</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python">&gt;&gt;&gt; import antigravity</code></pre></div>
+
+<p>Obviously, it is not the only funny thing hidden somewhere deep in the Python implementation. I researched the topic and I found more examples of easter eggs <img class="emoji" title=":grin:" alt=":grin:" src="https://assets.github.com/images/icons/emoji/unicode/1f601.png" height="20" width="20" align="absmiddle" />.</p>
 
 <p>The best known is <code>import this</code> easter egg:</p>
-<div class='highlight'><pre><code class='python'><span class='o'>&gt;&gt;&gt;</span> <span class='kn'>import</span> <span class='nn'>this</span>
-<span class='n'>The</span> <span class='n'>Zen</span> <span class='n'>of</span> <span class='n'>Python</span><span class='p'>,</span> <span class='n'>by</span> <span class='n'>Tim</span> <span class='n'>Peters</span>
 
-<span class='n'>Beautiful</span> <span class='ow'>is</span> <span class='n'>better</span> <span class='n'>than</span> <span class='n'>ugly</span><span class='o'>.</span>
-<span class='n'>Explicit</span> <span class='ow'>is</span> <span class='n'>better</span> <span class='n'>than</span> <span class='n'>implicit</span><span class='o'>.</span>
-<span class='n'>Simple</span> <span class='ow'>is</span> <span class='n'>better</span> <span class='n'>than</span> <span class='nb'>complex</span><span class='o'>.</span>
-<span class='n'>Complex</span> <span class='ow'>is</span> <span class='n'>better</span> <span class='n'>than</span> <span class='n'>complicated</span><span class='o'>.</span>
-<span class='n'>Flat</span> <span class='ow'>is</span> <span class='n'>better</span> <span class='n'>than</span> <span class='n'>nested</span><span class='o'>.</span>
-<span class='n'>Sparse</span> <span class='ow'>is</span> <span class='n'>better</span> <span class='n'>than</span> <span class='n'>dense</span><span class='o'>.</span>
-<span class='n'>Readability</span> <span class='n'>counts</span><span class='o'>.</span>
-<span class='n'>Special</span> <span class='n'>cases</span> <span class='n'>aren</span><span class='s'>&#39;t special enough to break the rules.</span>
-<span class='n'>Although</span> <span class='n'>practicality</span> <span class='n'>beats</span> <span class='n'>purity</span><span class='o'>.</span>
-<span class='n'>Errors</span> <span class='n'>should</span> <span class='n'>never</span> <span class='k'>pass</span> <span class='n'>silently</span><span class='o'>.</span>
-<span class='n'>Unless</span> <span class='n'>explicitly</span> <span class='n'>silenced</span><span class='o'>.</span>
-<span class='n'>In</span> <span class='n'>the</span> <span class='n'>face</span> <span class='n'>of</span> <span class='n'>ambiguity</span><span class='p'>,</span> <span class='n'>refuse</span> <span class='n'>the</span> <span class='n'>temptation</span> <span class='n'>to</span> <span class='n'>guess</span><span class='o'>.</span>
-<span class='n'>There</span> <span class='n'>should</span> <span class='n'>be</span> <span class='n'>one</span><span class='o'>--</span> <span class='ow'>and</span> <span class='n'>preferably</span> <span class='n'>only</span> <span class='n'>one</span> <span class='o'>--</span><span class='n'>obvious</span> <span class='n'>way</span> <span class='n'>to</span> <span class='n'>do</span> <span class='n'>it</span><span class='o'>.</span>
-<span class='n'>Although</span> <span class='n'>that</span> <span class='n'>way</span> <span class='n'>may</span> <span class='ow'>not</span> <span class='n'>be</span> <span class='n'>obvious</span> <span class='n'>at</span> <span class='n'>first</span> <span class='n'>unless</span> <span class='n'>you</span><span class='s'>&#39;re Dutch.</span>
-<span class='n'>Now</span> <span class='ow'>is</span> <span class='n'>better</span> <span class='n'>than</span> <span class='n'>never</span><span class='o'>.</span>
-<span class='n'>Although</span> <span class='n'>never</span> <span class='ow'>is</span> <span class='n'>often</span> <span class='n'>better</span> <span class='n'>than</span> <span class='o'>*</span><span class='n'>right</span><span class='o'>*</span> <span class='n'>now</span><span class='o'>.</span>
-<span class='n'>If</span> <span class='n'>the</span> <span class='n'>implementation</span> <span class='ow'>is</span> <span class='n'>hard</span> <span class='n'>to</span> <span class='n'>explain</span><span class='p'>,</span> <span class='n'>it</span><span class='s'>&#39;s a bad idea.</span>
-<span class='n'>If</span> <span class='n'>the</span> <span class='n'>implementation</span> <span class='ow'>is</span> <span class='n'>easy</span> <span class='n'>to</span> <span class='n'>explain</span><span class='p'>,</span> <span class='n'>it</span> <span class='n'>may</span> <span class='n'>be</span> <span class='n'>a</span> <span class='n'>good</span> <span class='n'>idea</span><span class='o'>.</span>
-<span class='n'>Namespaces</span> <span class='n'>are</span> <span class='n'>one</span> <span class='n'>honking</span> <span class='n'>great</span> <span class='n'>idea</span> <span class='o'>--</span> <span class='n'>let</span><span class='s'>&#39;s do more of those!</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-python" data-lang="python">&gt;&gt;&gt; import this
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!</code></pre></div>
+
 <p>There is also nice <a href="http://www.redmountainsw.com/wordpress/archives/a-joke-in-the-python-interpreter">example</a> which exploits idea of <code>this</code>:</p>
-<div class='highlight'><pre><code class='python'><span class='o'>&gt;&gt;&gt;</span> <span class='n'>love</span> <span class='o'>=</span> <span class='n'>this</span>
-<span class='o'>&gt;&gt;&gt;</span> <span class='n'>this</span> <span class='ow'>is</span> <span class='n'>love</span>
-<span class='bp'>True</span>
-<span class='o'>&gt;&gt;&gt;</span> <span class='n'>love</span> <span class='ow'>is</span> <span class='bp'>True</span>
-<span class='bp'>False</span>
-<span class='o'>&gt;&gt;&gt;</span> <span class='n'>love</span> <span class='ow'>is</span> <span class='bp'>False</span>
-<span class='bp'>False</span>
-<span class='o'>&gt;&gt;&gt;</span> <span class='n'>love</span> <span class='ow'>is</span> <span class='ow'>not</span> <span class='bp'>True</span> <span class='ow'>or</span> <span class='bp'>False</span>
-<span class='bp'>True</span>
-<span class='o'>&gt;&gt;&gt;</span> <span class='n'>love</span> <span class='ow'>is</span> <span class='ow'>not</span> <span class='bp'>True</span> <span class='ow'>or</span> <span class='bp'>False</span><span class='p'>;</span> <span class='n'>love</span> <span class='ow'>is</span> <span class='n'>love</span>
-<span class='bp'>True</span>
-<span class='bp'>True</span>
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python">&gt;&gt;&gt; love = this
+&gt;&gt;&gt; this is love
+True
+&gt;&gt;&gt; love is True
+False
+&gt;&gt;&gt; love is False
+False
+&gt;&gt;&gt; love is not True or False
+True
+&gt;&gt;&gt; love is not True or False; love is love
+True
+True</code></pre></div>
+
 <p>Also, Python as a <em>truly enterprise ready</em> language has built-in <code>Hello World</code> functionality:</p>
-<div class='highlight'><pre><code class='python'><span class='o'>&gt;&gt;&gt;</span> <span class='kn'>import</span> <span class='nn'>__hello__</span>
-<span class='n'>Hello</span> <span class='n'>world</span><span class='o'>...</span>
-<span class='o'>&gt;&gt;&gt;</span> <span class='nb'>reload</span><span class='p'>(</span><span class='n'>__hello__</span><span class='p'>)</span>
-<span class='n'>Hello</span> <span class='n'>world</span><span class='o'>...</span>
-<span class='o'>&lt;</span><span class='n'>module</span> <span class='s'>&#39;__hello__&#39;</span> <span class='kn'>from</span> <span class='s'>&#39;&lt;frozen&gt;&#39;</span><span class='o'>&gt;</span>
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python">&gt;&gt;&gt; import __hello__
+Hello world...
+&gt;&gt;&gt; reload(__hello__)
+Hello world...
+&lt;module '__hello__' from '&lt;frozen&gt;'&gt;</code></pre></div>
+
 <p>But the funniest thing is <em><code>IMHO</code></em> this:</p>
-<div class='highlight'><pre><code class='python'><span class='o'>&gt;&gt;&gt;</span> <span class='kn'>from</span> <span class='nn'>__future__</span> <span class='kn'>import</span> <span class='n'>braces</span>
-  <span class='n'>File</span> <span class='s'>&quot;&lt;stdin&gt;&quot;</span><span class='p'>,</span> <span class='n'>line</span> <span class='mi'>1</span>
-<span class='ne'>SyntaxError</span><span class='p'>:</span> <span class='ow'>not</span> <span class='n'>a</span> <span class='n'>chance</span>
-<span class='o'>&gt;&gt;&gt;</span>
-</code></pre></div>
-<p>This exception message definitely made my day <img alt="wink" src="/images/emoji/wink.png" class="emoji" />.</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python">&gt;&gt;&gt; from __future__ import braces
+  File &quot;&lt;stdin&gt;&quot;, line 1
+SyntaxError: not a chance
+&gt;&gt;&gt;</code></pre></div>
+
+<p>This exception message definitely made my day <img class="emoji" title=":wink:" alt=":wink:" src="https://assets.github.com/images/icons/emoji/unicode/1f609.png" height="20" width="20" align="absmiddle" />.</p>
 
 <p>If I omitted something, please post a comment and let me know which I have missed.</p>
 
 <h1 id="references">References</h1>
 
 <ol>
-<li><a href="http://xkcd.com/353"><code>xkcd</code>: Python!</a></li>
-
-<li><a href="http://svn.python.org/view/python/trunk/Lib/antigravity.py?view=markup">Module <code>antigravity</code></a></li>
+  <li><a href="http://xkcd.com/353"><code>xkcd</code>: Python!</a></li>
+  <li><a href="http://svn.python.org/view/python/trunk/Lib/antigravity.py?view=markup">Module <code>antigravity</code></a></li>
 </ol>
+
     </article>
 
     <section class="container">

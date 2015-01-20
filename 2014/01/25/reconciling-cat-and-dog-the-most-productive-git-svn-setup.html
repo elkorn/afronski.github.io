@@ -22,100 +22,106 @@
     <article class="container post">
       <a href="/">Home</a>
 
-<h2 id="reconciling_cat_and_dog__the_most_productive__setup">Reconciling cat and dog - the most productive <em><code>git-svn</code></em> setup</h2>
+<h2 id="reconciling-cat-and-dog---the-most-productive-git-svn-setup">Reconciling cat and dog - the most productive <em><code>git-svn</code></em> setup</h2>
 
 <p>I would like to present productive and effective setup for the <em><code>git-svn</code></em> bridge which removes most of the obstacles and fixes some problems which occur with this <em>bridged</em> approach.</p>
 
 <h3 id="configuration">Configuration</h3>
 
 <p>Before we start - one remark: if you installed <em><code>git</code></em> on your machine first time ever, please remember about setting up proper user, email and <em>one-more-thing just for convinience</em>:</p>
-<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>git config --global user.name <span class='s2'>&quot;Your Name Here&quot;</span>
-~ <span class='nv'>$ </span>git config --global user.email <span class='s2'>&quot;your_email@example.com&quot;</span>
-~ <span class='nv'>$ </span>git config --global credential.helper cache
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~ $ git config --global user.name &quot;Your Name Here&quot;
+~ $ git config --global user.email &quot;your_email@example.com&quot;
+~ $ git config --global credential.helper cache</code></pre></div>
+
 <h3 id="starting">Starting</h3>
 
-<p>At first, you need to <code>clone</code> (or <code>checkout</code> in SVN terminology) repository. You can do in three different ways:</p>
+<p>At first, you need to <code>clone</code> (or <code>checkout</code> in SVN terminology) repository. You can do in three different ways:
+- First way (<em>2nd line</em>) checkouts repository with a standard SVN layout (<code>trunk</code>, <code>branches</code>, <code>tags</code>) and associates branches, tags and <em><code>trunk</code></em> with <em><code>git</code></em> <em><code>master</code></em>.
+- Second way (<em>5th line</em>) checkouts whole repository as it is.
+- Third way (<em>starts in 8th line</em>) is really an expansion for <code>git-svn clone</code>.</p>
 
-<ul>
-<li>First way (<em>2nd line</em>) checkouts repository with a standard SVN layout (<code>trunk</code>, <code>branches</code>, <code>tags</code>) and associates branches, tags and <em><code>trunk</code></em> with <em><code>git</code></em> <em><code>master</code></em>.</li>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"># Standard layout.
+~ $ git svn clone -s $SVN_REPOSITORY_ROOT_URL
 
-<li>Second way (<em>5th line</em>) checkouts whole repository as it is.</li>
+# Non-standard layout.
+~ $ git svn clone $SVN_REPOSITORY_ROOT_URL
 
-<li>Third way (<em>starts in 8th line</em>) is really an expansion for <code>git-svn clone</code>.</li>
-</ul>
-<div class='highlight'><pre><code class='bash'><span class='lineno'> 1</span> <span class='c'># Standard layout.</span>
-<span class='lineno'> 2</span> ~ <span class='nv'>$ </span>git svn clone -s <span class='nv'>$SVN_REPOSITORY_ROOT_URL</span>
-<span class='lineno'> 3</span> 
-<span class='lineno'> 4</span> <span class='c'># Non-standard layout.</span>
-<span class='lineno'> 5</span> ~ <span class='nv'>$ </span>git svn clone <span class='nv'>$SVN_REPOSITORY_ROOT_URL</span>
-<span class='lineno'> 6</span> 
-<span class='lineno'> 7</span> <span class='c'># &#39;git svn clone ...&#39; is basically a shortcut for these commands:</span>
-<span class='lineno'> 8</span> ~ <span class='nv'>$ </span>mkdir REPOSITORY
-<span class='lineno'> 9</span> ~ <span class='nv'>$ </span><span class='nb'>cd </span>REPOSITORY
-<span class='lineno'>10</span> ~ <span class='nv'>$ </span>git svn init <span class='nv'>$SVN_REPOSITORY_TRUNK_URL</span> .
-<span class='lineno'>11</span> ~ <span class='nv'>$ </span>git svn fetch -r HEAD
-</code></pre></div>
-<h3 id="updating_and_commiting">Updating and commiting</h3>
+# 'git svn clone ...' is basically a shortcut for these commands:
+~ $ mkdir REPOSITORY
+~ $ cd REPOSITORY
+~ $ git svn init $SVN_REPOSITORY_TRUNK_URL .
+~ $ git svn fetch -r HEAD</code></pre></div>
 
-<p>Besides <code>pull</code> and <code>push</code> (or <code>update</code> and <code>commit</code> in SVN terminology) everything works like in classical <em><code>git</code></em>. First line represents <em><code>svn update</code></em> command, second - series of <code>svn commit</code> commands with messages collected inside local <em><code>git</code></em> repository.</p>
-<div class='highlight'><pre><code class='bash'><span class='lineno'>1</span> ~ <span class='nv'>$ </span>git svn rebase
-<span class='lineno'>2</span> ~ <span class='nv'>$ </span>git svn dcommit
-</code></pre></div>
+<h3 id="updating-and-commiting">Updating and commiting</h3>
+
+<p>Besides <code>pull</code> and <code>push</code> (or <code>update</code> and <code>commit</code> in SVN terminology) everything works like in classical <em><code>git</code></em>.
+First line represents <em><code>svn update</code></em> command, second - series of <code>svn commit</code> commands with messages collected inside local <em><code>git</code></em> repository.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~ $ git svn rebase
+~ $ git svn dcommit</code></pre></div>
+
 <h3 id="ignores">Ignores</h3>
 
 <p>If you cannot store your <em><code>.gitignore</code></em> file in the SVN repository you can exclude these files locally:</p>
-<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>git svn show-ignore &gt;&gt; .git/info/exclude
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~ $ git svn show-ignore &gt;&gt; .git/info/exclude</code></pre></div>
+
 <p>But <code>.gitignore</code> file can be very convenient - you can easily share exclusions with other members of the team which also use this bridged approach. <em>Moreover</em>, this command is really slow for bigger repositories, so that is another advantage of having this file.</p>
 
 <h3 id="branches">Branches</h3>
 
 <p>If your repository does not have standard layout you can still easily associate SVN branch in your <em><code>.git/config</code></em> by adding new <em><code>svn-remote</code></em> section:</p>
-<div class='highlight'><pre><code class='bash'><span class='o'>[</span>svn-remote <span class='s2'>&quot;sample_branch&quot;</span><span class='o'>]</span>
-    <span class='nv'>url</span> <span class='o'>=</span> https://svn_repository/branches/sample_branch
-    <span class='nv'>fetch</span> <span class='o'>=</span> :refs/remotes/sample_branch
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">[svn-remote &quot;sample_branch&quot;]
+    url = https://svn_repository/branches/sample_branch
+    fetch = :refs/remotes/sample_branch</code></pre></div>
+
 <p>Then you should run (and <em>develop the habit of running</em>):</p>
-<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>git svn fetch --fetch-all
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~ $ git svn fetch --fetch-all</code></pre></div>
+
 <p>As the last step, you need to <em><code>checkout</code></em> new branch:</p>
-<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>git checkout -b sample_branch remotes/sample_branch
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~ $ git checkout -b sample_branch remotes/sample_branch</code></pre></div>
+
 <p>After that your branch will be available like normal <em><code>git</code></em> branch. Remember that your <em><code>trunk</code></em> is actually a <em><code>git</code></em> <em><code>master</code></em> branch.</p>
 
-<h3 id="removing_empty_directories">Removing empty directories</h3>
+<h3 id="removing-empty-directories">Removing empty directories</h3>
 
 <p>Regarding the <em><code>git-svn</code></em> bridge, dangling empty directories are my nightmare. Fortunately, someone thought about it and we can enable deleting empty directories on commit (<em>globally</em> via <em><code>git-config</code></em> or <em>on demand</em> just for certain commit):</p>
-<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>git config svn.rmdir <span class='nb'>true</span>
-~ <span class='nv'>$ </span>git svn dcommit --rmdir
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~ $ git config svn.rmdir true
+~ $ git svn dcommit --rmdir</code></pre></div>
+
 <h3 id="problems">Problems</h3>
 
 <p>There are still a few problems with the newest SVN clients for such combination. The most annoying is <em>assertion … failed</em> related to the renaming operation. This error looks like this example:</p>
-<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>git svn dcommit
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~ $ git svn dcommit
 Committing to http://...
-    C      path/to/file/a.js <span class='o'>=</span>&gt; other/path/to/file/b.js
-assertion <span class='s2'>&quot;svn_fspath__is_canonical(child_fspath)&quot;</span> failed: file <span class='s2'>&quot;dirent_uri.c&quot;</span>, line 2502, <span class='k'>function</span>: svn_fspath__skip_ancestor
-</code></pre></div>
+    C      path/to/file/a.js =&gt; other/path/to/file/b.js
+assertion &quot;svn_fspath__is_canonical(child_fspath)&quot; failed: file &quot;dirent_uri.c&quot;, line 2502, function: svn_fspath__skip_ancestor</code></pre></div>
+
 <p>At first glance you may think that the only (and the <em>worst possible</em> - lost information and mess in history) option is to split your commit into two. Happily, you can perform your commit normally but you need to turn off rename detection:</p>
-<div class='highlight'><pre><code class='bash'>~ <span class='nv'>$ </span>git svn dcommit -C1 -l1
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~ $ git svn dcommit -C1 -l1</code></pre></div>
+
 <p>Unfortunately you will still commit two changes, this time in one batch (as a <em>deletion the old file</em> and <em>creation file with the new name</em>), instead of just a file rename, so you will still loose information in the process.</p>
 
 <p>To avoid this completely the only option is to downgrade SVN client to the latest version on <em><code>1.7.X</code></em> branch.</p>
 
 <h3 id="credits">Credits</h3>
 
-<p>Big thanks to <a href="https://twitter.com/skremiec">@skremiec</a> for undeceiving me in some cases and pointing out <em><code>svn.rmdir</code></em> option <img alt="wink" src="/images/emoji/wink.png" class="emoji" />.</p>
+<p>Big thanks to <a href="https://twitter.com/skremiec">@skremiec</a> for undeceiving me in some cases and pointing out <em><code>svn.rmdir</code></em> option <img class="emoji" title=":wink:" alt=":wink:" src="https://assets.github.com/images/icons/emoji/unicode/1f609.png" height="20" width="20" align="absmiddle" />.</p>
 
 <h3 id="references">References</h3>
 
 <ol>
-<li><a href="https://www.kernel.org/pub/software/scm/git/docs/git-svn.html">Manual for <code>git-svn</code> on kernel.org</a></li>
-
-<li><a href="http://git-scm.com/book/en/Git-and-Other-Systems-Git-and-Subversion">Chapter about <code>git-svn</code> in <code>Pro Git</code> book</a></li>
+  <li><a href="https://www.kernel.org/pub/software/scm/git/docs/git-svn.html">Manual for <code>git-svn</code> on kernel.org</a></li>
+  <li><a href="http://git-scm.com/book/en/Git-and-Other-Systems-Git-and-Subversion">Chapter about <code>git-svn</code> in <code>Pro Git</code> book</a></li>
 </ol>
+
     </article>
 
     <section class="container">
