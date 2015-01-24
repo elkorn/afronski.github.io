@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <meta name="author" content="Wojtek Gawroński (afronski)" />
+    <meta name="description" content="Personal blog of Wojtek Gawroński, a passionate software developer." />
+
+    <meta name="keywords" content="HTML,HTML5,JavaScript,CSS,CSS3,Canvas,WebGL,C#,.NET,Mono,Erlang,Vagrant,Node.js" />
+
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="alternate" type="application/rss+xml" title="afronski.pl" href="http://www.afronski.pl/feed.xml" />
+
+    <title>How to store and examine custom business metrics?</title>
+
+    <link rel="stylesheet" href="/stylesheets/syntax.min.css" />
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+    <article class="container post">
+      <a href="/">Home</a>
+
+<h1 id="how-to-store-and-examine-custom-business-metrics">How to store and examine custom business metrics?</h1>
+
+<p>Recently, I spent some time looking for an ideal provider, which will deliver storage and graphing capabilities for our custom business metrics. Each growing business need to track your <code>KPIs</code> but also other values, on the internal and much more granular level. It was not an easy job to do, because we have got very specific requirements.</p>
+
+<h2 id="requirements">Requirements</h2>
+
+<ul>
+  <li>We need <em>schemaless</em> storage with support for JSON.</li>
+  <li>We need a possibility to query, group, filter by plain fields and nested object structure.</li>
+  <li>We need to deliver multiple and custom data series, represented as business metrics.</li>
+  <li>We need to deliver them over <code>HTTPS</code>.</li>
+  <li>We need a possibility to create graphs, tables and dashboards.</li>
+  <li>We need at most one hour delay when displaying graphs from actual data.</li>
+</ul>
+
+<p>Obviously, it looks like too many requirements for one tool, especially that we were focused on the <em>SaaS</em> solutions - for obvious reasons we don’t want to host anything by ourselves. Moreover, it will be nice to have a dedicated <em>Node.js</em> client available for such service.</p>
+
+<h2 id="services">Services</h2>
+
+<p>We have evaluated numerous solutions (<em>around 25 providers</em>) and we have found these mentioned below as these which match our requirements:</p>
+
+<ul>
+  <li><a href="https://keen.io/">Keen IO</a> - That is the most complete solution for us. It has everything (even a nice <em>Node.js</em> client), however it does not host dashboards and charts in their place. It is a very nice storage and API only. Fortunately, there is a <a href="http://keen.github.io/dashboards/">project</a> which provides nice, <em>Bootstrap</em> powered, templates for <a href="https://keen.io">Keen IO</a>. Unfortunately you have to host them on your own.</li>
+  <li><a href="https://datahero.com/">DataHero</a> - It is the most impressive solution, with amazing charting abilities, but without any kind of storage and API for pushing metrics. They are specializing in visualization and data analysis. It is possible to integrate <a href="https://keen.io">Keen IO</a> with it, however you can schedule update of your data only once a day. Second possibility is to use the <em>Google Drive Spreadsheet</em> in order to achieve real-time integration for your dashboards, but it feels like a <em>hack</em>.</li>
+  <li><a href="https://statsmix.com/">StatsMix</a> - Very nice complete solution, which has dashboards, metrics storage. Unfortunately bugs related with <code>CSV</code> export, lack of JSON metadata filtering and grouping and plenty of UI glitches destroy the overall experience.</li>
+  <li><a href="http://newrelic.com/insights">New Relic Insights</a> - Again, nice and complete solution but without support for JSON metadata (lack of filtering, storage and grouping). If you would like to store plain, flat structure it is a very nice solution to do that.</li>
+  <li><a href="https://segment.com/">Segment</a> - It is a nice tool, but it is only a <em>black-box</em> which eases integration across multiple services. You can basically insert data into <a href="https://segment.com">Segment</a> (with a nice <em>Node.js</em> client) and forward them automatically to the other integrated services (like <em>Google Analytics</em>, <a href="https://keen.io">Keen IO</a> and so on). They do not have dashboards and export API.</li>
+  <li><a href="https://www.librato.com/">Librato</a> - Again, very nice and complete solution without support for nested JSON objects. If you need to store and display graphs from only flat and plain metrics it is a nice tool to check.</li>
+</ul>
+
+<h2 id="summary">Summary</h2>
+
+<p>Our choice focused on <a href="https://keen.io">Keen IO</a> integrated via <a href="https://segment.com">Segment</a>. It has an API and JavaScript library for drawing charts (which uses <em>Google Charts</em> underneath), however it does not host your charts and dashboards in one place, so it is not a complete solution. So why we chosen that one? Simply because of that the rest of solutions have far more problems than <a href="https://keen.io">Keen IO</a> with our requirements.</p>
+
+    </article>
+
+    <section class="container">
+      <a href="/" class="mobile-link">Home</a>
+      <div id="disqus_thread"></div>
+    </section>
+
+    <aside class="menu">
+
+      <a href="http://afronski.pl">
+        <img id="avatar" src="/images/avatar.png" alt="My avatar" />
+      </a>
+
+      Hello! I'm <a href="/about.html">Wojtek Gawroński</a>.<br/>
+      I'm a <a href="http://pl.linkedin.com/pub/wojtek-gawroński/58/879/5b0/">software developer</a>.<br/>
+      Besides working
+      <ul class="interests">
+        <li>I write <a href="https://github.com/afronski">code</a></li>
+        <li>I <a href="https://twitter.com/afronski">tweet</a></li>
+        <li>I give <a href="http://afronski.pl/presentations">talks</a></li>
+        <li>I <a href="/feed.xml">blog</a></li>
+        <li>I <a href="https://www.goodreads.com/user/show/16145105-wojtek-gawro-ski">read books</a></li>
+        <li>I <a href="http://www.last.fm/user/afronski">listen music</a></li>
+      </ul>
+
+      <footer>
+        <section>© Copyright 2014, Wojciech Gawroński</section>
+        <section>
+          Except where otherwise noted, content on this site<br/>
+          is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/pl/legalcode">CC BY-NC-ND 3.0</a>.
+        </section>
+      </footer>
+    </aside>
+
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-44633104-1','afronski.pl');ga('require', 'displayfeatures');ga('send','pageview');</script>
+    <noscript>
+      Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <script type="text/javascript">var disqus_shortname="afronskipl";(function(){var dsq=document.createElement("script");dsq.type="text/javascript";dsq.async=true;dsq.src="//"+disqus_shortname+".disqus.com/embed.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(dsq);})();</script>
+  </body>
+</html>

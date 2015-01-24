@@ -7,6 +7,47 @@
     <atom:link href="http://www.afronski.pl/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>How to store and examine custom business metrics?</title>
+        <description>&lt;h1 id=&quot;how-to-store-and-examine-custom-business-metrics&quot;&gt;How to store and examine custom business metrics?&lt;/h1&gt;
+
+&lt;p&gt;Recently, I spent some time looking for an ideal provider, which will deliver storage and graphing capabilities for our custom business metrics. Each growing business need to track your &lt;code&gt;KPIs&lt;/code&gt; but also other values, on the internal and much more granular level. It was not an easy job to do, because we have got very specific requirements.&lt;/p&gt;
+
+&lt;h2 id=&quot;requirements&quot;&gt;Requirements&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We need &lt;em&gt;schemaless&lt;/em&gt; storage with support for JSON.&lt;/li&gt;
+  &lt;li&gt;We need a possibility to query, group, filter by plain fields and nested object structure.&lt;/li&gt;
+  &lt;li&gt;We need to deliver multiple and custom data series, represented as business metrics.&lt;/li&gt;
+  &lt;li&gt;We need to deliver them over &lt;code&gt;HTTPS&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;We need a possibility to create graphs, tables and dashboards.&lt;/li&gt;
+  &lt;li&gt;We need at most one hour delay when displaying graphs from actual data.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Obviously, it looks like too many requirements for one tool, especially that we were focused on the &lt;em&gt;SaaS&lt;/em&gt; solutions - for obvious reasons we don’t want to host anything by ourselves. Moreover, it will be nice to have a dedicated &lt;em&gt;Node.js&lt;/em&gt; client available for such service.&lt;/p&gt;
+
+&lt;h2 id=&quot;services&quot;&gt;Services&lt;/h2&gt;
+
+&lt;p&gt;We have evaluated numerous solutions (&lt;em&gt;around 25 providers&lt;/em&gt;) and we have found these mentioned below as these which match our requirements:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://keen.io/&quot;&gt;Keen IO&lt;/a&gt; - That is the most complete solution for us. It has everything (even a nice &lt;em&gt;Node.js&lt;/em&gt; client), however it does not host dashboards and charts in their place. It is a very nice storage and API only. Fortunately, there is a &lt;a href=&quot;http://keen.github.io/dashboards/&quot;&gt;project&lt;/a&gt; which provides nice, &lt;em&gt;Bootstrap&lt;/em&gt; powered, templates for &lt;a href=&quot;https://keen.io&quot;&gt;Keen IO&lt;/a&gt;. Unfortunately you have to host them on your own.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://datahero.com/&quot;&gt;DataHero&lt;/a&gt; - It is the most impressive solution, with amazing charting abilities, but without any kind of storage and API for pushing metrics. They are specializing in visualization and data analysis. It is possible to integrate &lt;a href=&quot;https://keen.io&quot;&gt;Keen IO&lt;/a&gt; with it, however you can schedule update of your data only once a day. Second possibility is to use the &lt;em&gt;Google Drive Spreadsheet&lt;/em&gt; in order to achieve real-time integration for your dashboards, but it feels like a &lt;em&gt;hack&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://statsmix.com/&quot;&gt;StatsMix&lt;/a&gt; - Very nice complete solution, which has dashboards, metrics storage. Unfortunately bugs related with &lt;code&gt;CSV&lt;/code&gt; export, lack of JSON metadata filtering and grouping and plenty of UI glitches destroy the overall experience.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://newrelic.com/insights&quot;&gt;New Relic Insights&lt;/a&gt; - Again, nice and complete solution but without support for JSON metadata (lack of filtering, storage and grouping). If you would like to store plain, flat structure it is a very nice solution to do that.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://segment.com/&quot;&gt;Segment&lt;/a&gt; - It is a nice tool, but it is only a &lt;em&gt;black-box&lt;/em&gt; which eases integration across multiple services. You can basically insert data into &lt;a href=&quot;https://segment.com&quot;&gt;Segment&lt;/a&gt; (with a nice &lt;em&gt;Node.js&lt;/em&gt; client) and forward them automatically to the other integrated services (like &lt;em&gt;Google Analytics&lt;/em&gt;, &lt;a href=&quot;https://keen.io&quot;&gt;Keen IO&lt;/a&gt; and so on). They do not have dashboards and export API.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.librato.com/&quot;&gt;Librato&lt;/a&gt; - Again, very nice and complete solution without support for nested JSON objects. If you need to store and display graphs from only flat and plain metrics it is a nice tool to check.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;Our choice focused on &lt;a href=&quot;https://keen.io&quot;&gt;Keen IO&lt;/a&gt; integrated via &lt;a href=&quot;https://segment.com&quot;&gt;Segment&lt;/a&gt;. It has an API and JavaScript library for drawing charts (which uses &lt;em&gt;Google Charts&lt;/em&gt; underneath), however it does not host your charts and dashboards in one place, so it is not a complete solution. So why we chosen that one? Simply because of that the rest of solutions have far more problems than &lt;a href=&quot;https://keen.io&quot;&gt;Keen IO&lt;/a&gt; with our requirements.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 24 Feb 2015 11:00:00 +0000</pubDate>
+        <link>http://www.afronski.pl/2015/02/24/the-ideal-storage-for-custom-metrics.html</link>
+        <guid isPermaLink="true">http://www.afronski.pl/2015/02/24/the-ideal-storage-for-custom-metrics.html</guid>
+      </item>
+    
+      <item>
         <title>My picks of NDC 2014 - part II</title>
         <description>&lt;h1 id=&quot;my-picks-of-ndc-2014---part-ii&quot;&gt;My picks of NDC 2014 - part II&lt;/h1&gt;
 
@@ -589,113 +630,6 @@ function uploadToSftpServer(options, fileName, callback) {
         <pubDate>Tue, 04 Feb 2014 23:00:00 +0100</pubDate>
         <link>http://www.afronski.pl/2014/02/04/ssh2-nodejs-module-of-the-week.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2014/02/04/ssh2-nodejs-module-of-the-week.html</guid>
-      </item>
-    
-      <item>
-        <title>Reconciling cat and dog - the most productive git-svn setup</title>
-        <description>&lt;h2 id=&quot;reconciling-cat-and-dog---the-most-productive-git-svn-setup&quot;&gt;Reconciling cat and dog - the most productive &lt;em&gt;&lt;code&gt;git-svn&lt;/code&gt;&lt;/em&gt; setup&lt;/h2&gt;
-
-&lt;p&gt;I would like to present productive and effective setup for the &lt;em&gt;&lt;code&gt;git-svn&lt;/code&gt;&lt;/em&gt; bridge which removes most of the obstacles and fixes some problems which occur with this &lt;em&gt;bridged&lt;/em&gt; approach.&lt;/p&gt;
-
-&lt;h3 id=&quot;configuration&quot;&gt;Configuration&lt;/h3&gt;
-
-&lt;p&gt;Before we start - one remark: if you installed &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt; on your machine first time ever, please remember about setting up proper user, email and &lt;em&gt;one-more-thing just for convinience&lt;/em&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~ $ git config --global user.name &amp;quot;Your Name Here&amp;quot;
-~ $ git config --global user.email &amp;quot;your_email@example.com&amp;quot;
-~ $ git config --global credential.helper cache&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;starting&quot;&gt;Starting&lt;/h3&gt;
-
-&lt;p&gt;At first, you need to &lt;code&gt;clone&lt;/code&gt; (or &lt;code&gt;checkout&lt;/code&gt; in SVN terminology) repository. You can do in three different ways:
-- First way (&lt;em&gt;2nd line&lt;/em&gt;) checkouts repository with a standard SVN layout (&lt;code&gt;trunk&lt;/code&gt;, &lt;code&gt;branches&lt;/code&gt;, &lt;code&gt;tags&lt;/code&gt;) and associates branches, tags and &lt;em&gt;&lt;code&gt;trunk&lt;/code&gt;&lt;/em&gt; with &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt; &lt;em&gt;&lt;code&gt;master&lt;/code&gt;&lt;/em&gt;.
-- Second way (&lt;em&gt;5th line&lt;/em&gt;) checkouts whole repository as it is.
-- Third way (&lt;em&gt;starts in 8th line&lt;/em&gt;) is really an expansion for &lt;code&gt;git-svn clone&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;# Standard layout.
-~ $ git svn clone -s $SVN_REPOSITORY_ROOT_URL
-
-# Non-standard layout.
-~ $ git svn clone $SVN_REPOSITORY_ROOT_URL
-
-# 'git svn clone ...' is basically a shortcut for these commands:
-~ $ mkdir REPOSITORY
-~ $ cd REPOSITORY
-~ $ git svn init $SVN_REPOSITORY_TRUNK_URL .
-~ $ git svn fetch -r HEAD&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;updating-and-commiting&quot;&gt;Updating and commiting&lt;/h3&gt;
-
-&lt;p&gt;Besides &lt;code&gt;pull&lt;/code&gt; and &lt;code&gt;push&lt;/code&gt; (or &lt;code&gt;update&lt;/code&gt; and &lt;code&gt;commit&lt;/code&gt; in SVN terminology) everything works like in classical &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt;.
-First line represents &lt;em&gt;&lt;code&gt;svn update&lt;/code&gt;&lt;/em&gt; command, second - series of &lt;code&gt;svn commit&lt;/code&gt; commands with messages collected inside local &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt; repository.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~ $ git svn rebase
-~ $ git svn dcommit&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;ignores&quot;&gt;Ignores&lt;/h3&gt;
-
-&lt;p&gt;If you cannot store your &lt;em&gt;&lt;code&gt;.gitignore&lt;/code&gt;&lt;/em&gt; file in the SVN repository you can exclude these files locally:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~ $ git svn show-ignore &amp;gt;&amp;gt; .git/info/exclude&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;But &lt;code&gt;.gitignore&lt;/code&gt; file can be very convenient - you can easily share exclusions with other members of the team which also use this bridged approach. &lt;em&gt;Moreover&lt;/em&gt;, this command is really slow for bigger repositories, so that is another advantage of having this file.&lt;/p&gt;
-
-&lt;h3 id=&quot;branches&quot;&gt;Branches&lt;/h3&gt;
-
-&lt;p&gt;If your repository does not have standard layout you can still easily associate SVN branch in your &lt;em&gt;&lt;code&gt;.git/config&lt;/code&gt;&lt;/em&gt; by adding new &lt;em&gt;&lt;code&gt;svn-remote&lt;/code&gt;&lt;/em&gt; section:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;[svn-remote &amp;quot;sample_branch&amp;quot;]
-    url = https://svn_repository/branches/sample_branch
-    fetch = :refs/remotes/sample_branch&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Then you should run (and &lt;em&gt;develop the habit of running&lt;/em&gt;):&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~ $ git svn fetch --fetch-all&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;As the last step, you need to &lt;em&gt;&lt;code&gt;checkout&lt;/code&gt;&lt;/em&gt; new branch:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~ $ git checkout -b sample_branch remotes/sample_branch&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;After that your branch will be available like normal &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt; branch. Remember that your &lt;em&gt;&lt;code&gt;trunk&lt;/code&gt;&lt;/em&gt; is actually a &lt;em&gt;&lt;code&gt;git&lt;/code&gt;&lt;/em&gt; &lt;em&gt;&lt;code&gt;master&lt;/code&gt;&lt;/em&gt; branch.&lt;/p&gt;
-
-&lt;h3 id=&quot;removing-empty-directories&quot;&gt;Removing empty directories&lt;/h3&gt;
-
-&lt;p&gt;Regarding the &lt;em&gt;&lt;code&gt;git-svn&lt;/code&gt;&lt;/em&gt; bridge, dangling empty directories are my nightmare. Fortunately, someone thought about it and we can enable deleting empty directories on commit (&lt;em&gt;globally&lt;/em&gt; via &lt;em&gt;&lt;code&gt;git-config&lt;/code&gt;&lt;/em&gt; or &lt;em&gt;on demand&lt;/em&gt; just for certain commit):&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~ $ git config svn.rmdir true
-~ $ git svn dcommit --rmdir&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;problems&quot;&gt;Problems&lt;/h3&gt;
-
-&lt;p&gt;There are still a few problems with the newest SVN clients for such combination. The most annoying is &lt;em&gt;assertion … failed&lt;/em&gt; related to the renaming operation. This error looks like this example:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~ $ git svn dcommit
-Committing to http://...
-    C      path/to/file/a.js =&amp;gt; other/path/to/file/b.js
-assertion &amp;quot;svn_fspath__is_canonical(child_fspath)&amp;quot; failed: file &amp;quot;dirent_uri.c&amp;quot;, line 2502, function: svn_fspath__skip_ancestor&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;At first glance you may think that the only (and the &lt;em&gt;worst possible&lt;/em&gt; - lost information and mess in history) option is to split your commit into two. Happily, you can perform your commit normally but you need to turn off rename detection:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;~ $ git svn dcommit -C1 -l1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Unfortunately you will still commit two changes, this time in one batch (as a &lt;em&gt;deletion the old file&lt;/em&gt; and &lt;em&gt;creation file with the new name&lt;/em&gt;), instead of just a file rename, so you will still loose information in the process.&lt;/p&gt;
-
-&lt;p&gt;To avoid this completely the only option is to downgrade SVN client to the latest version on &lt;em&gt;&lt;code&gt;1.7.X&lt;/code&gt;&lt;/em&gt; branch.&lt;/p&gt;
-
-&lt;h3 id=&quot;credits&quot;&gt;Credits&lt;/h3&gt;
-
-&lt;p&gt;Big thanks to &lt;a href=&quot;https://twitter.com/skremiec&quot;&gt;@skremiec&lt;/a&gt; for undeceiving me in some cases and pointing out &lt;em&gt;&lt;code&gt;svn.rmdir&lt;/code&gt;&lt;/em&gt; option &lt;img class=&quot;emoji&quot; title=&quot;:wink:&quot; alt=&quot;:wink:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f609.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.kernel.org/pub/software/scm/git/docs/git-svn.html&quot;&gt;Manual for &lt;code&gt;git-svn&lt;/code&gt; on kernel.org&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://git-scm.com/book/en/Git-and-Other-Systems-Git-and-Subversion&quot;&gt;Chapter about &lt;code&gt;git-svn&lt;/code&gt; in &lt;code&gt;Pro Git&lt;/code&gt; book&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Sat, 25 Jan 2014 23:00:00 +0100</pubDate>
-        <link>http://www.afronski.pl/2014/01/25/reconciling-cat-and-dog-the-most-productive-git-svn-setup.html</link>
-        <guid isPermaLink="true">http://www.afronski.pl/2014/01/25/reconciling-cat-and-dog-the-most-productive-git-svn-setup.html</guid>
       </item>
     
   </channel>
