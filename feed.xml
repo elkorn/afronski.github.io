@@ -43,8 +43,8 @@
 &lt;p&gt;Our choice focused on &lt;a href=&quot;https://keen.io&quot;&gt;Keen IO&lt;/a&gt; integrated via &lt;a href=&quot;https://segment.com&quot;&gt;Segment&lt;/a&gt;. It has an API and JavaScript library for drawing charts (which uses &lt;em&gt;Google Charts&lt;/em&gt; underneath), however it does not host your charts and dashboards in one place, so it is not a complete solution. So why we chosen that one? Simply because of that the rest of solutions have far more problems than &lt;a href=&quot;https://keen.io&quot;&gt;Keen IO&lt;/a&gt; with our requirements.&lt;/p&gt;
 </description>
         <pubDate>Tue, 24 Feb 2015 11:00:00 +0000</pubDate>
-        <link>http://www.afronski.pl/2015/02/24/the-ideal-storage-for-custom-metrics.html</link>
-        <guid isPermaLink="true">http://www.afronski.pl/2015/02/24/the-ideal-storage-for-custom-metrics.html</guid>
+        <link>http://www.afronski.pl/2015/02/24/how-to-store-and-examine-custom-business-metrics.html</link>
+        <guid isPermaLink="true">http://www.afronski.pl/2015/02/24/how-to-store-and-examine-custom-business-metrics.html</guid>
       </item>
     
       <item>
