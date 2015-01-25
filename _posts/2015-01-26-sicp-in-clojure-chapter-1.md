@@ -18,7 +18,7 @@ Metaphorically we may say that instead of getting profits from *Moore's Law*, we
 
 Besides that, *functional programming* exceeds your toolbox and enhances your programming skills, by bending them and enforcing to use them in a different way. By adding value to your toolbox, it introduces many powerful elements such as *referential transparency*, *mathematical conciseness*, *immutability*, *composability*, designing and thinking about parts of the system which are *pure* (side-effect free) and *impure* (abstracting side-effects away into different constructs like *Monads*). Afterwards, these are much more important than an ability to execute your code in a *parallel environment*, in many cases for free. What is event more important, you will see that this is a positive side effect of the all previously mentioned features.
 
-I would like to introduce some amazing concepts from this book by emphasising them in the series of articles posted on this blog. Starting from this one, I will speak about each chapter separately, mentioning important concepts, documented with a code samples written in *Clojure*. Let's start!
+I would like to introduce some amazing concepts from this book by emphasising them in the series of articles posted on this blog. Starting from this one, I will speak about each chapter separately, mentioning important concepts, documented with a code samples written in *Clojure*. I will not focus on documenting things from the beginners point of view, but rather looking for analogies which an experienced programmer should understand. Let's start!
 
 ## Function as a *first-class citizen*
 
