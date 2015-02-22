@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Books that changed my career - Introduction
-date: 2015-02-22T18:00:00Z-02:00
+date: 2015-02-22T22:00:00Z-02:00
 ---
 
 # Books that changed my career - Introduction
@@ -30,11 +30,27 @@ Today I would like to start with a very interesting book, but at the first sight
 
 #### Why this book?
 
+We live in interesting times - [software is eating world](http://www.wsj.com/articles/SB10001424053111903480904576512250915629460), now even more than in the 2011. Being a *software engineer* means that you have *solve various business problems*. The more advanced topics you will grab, the more complex problems appear. Up to some point, using a well-known *hammer* is very pragmatic and good choice.
+
+But someday you will hit the wall. You will see, that it is not enough to know just one technology or one programming language well in order to solve them. This is especially true when you are building a distributed system, which should handle significant traffic and at the same time solve complicated business problem. In such environment you need to adapt - improve your skills by continuous learning.
+
+There is another term, highly connected with earlier concept, called *polyglot programming* (coined by Neal Ford). It does not mean that you should put every single language into your project, but rather you should try to enhance your perspective, skills, try to think in a different way, build and interact with completely new ideas. That experience will influence your existing capabilities, it will create new pathways inside your brain and it may open your senses to the new patterns. Obviously, it requires *curiosity*, *small dose of courage* and *humility* (because nobody likes to feel stupid and this is inevitable at the beginning).
+
+I found this book (polish edition) in the middle of 2012. At that time I was mostly a web and front-end developer (only *JavaScript*) with significant *.NET* experience and some smaller *Python* and *Node.js* episodes. I have tried both flavors, *back-end* and *front-end*, and only this kind of partition in IT world have a significant meaning for me before. But the transition already started - I heard about *functional programming*, I started looking for different experiences - I have just discovered *Erlang* and started getting familiar with it, I worked for a while with *Scala* because of Coursera's course guided by *Martin Odersky*. At the studies I worked twice with *Prolog* and that's it - I have seen every non-obvious technology as an impractical and not worth looking. Being a *clean coder* in the enterprise that was a *thing* back then. At least I have seen it as a fully professional requirement. But it changed when I have started reading this book - it just literally sucked me in.
+
+At first, it was not a pleasant ride. As a huge fan of *JavaScript*, I felt insecure and wronged because of choosing different prototypes-based language as a representative of this group. But suddenly, when I finished first 3 chapters, a really strange thing happened - I just realized how narrow my mindset was, how ineffective is to use single tool to the every problem that you try to solve. There are plenty of problems from very interesting domains that can be relatively easy solved (in comparison to the *my favorite well-known* language) just by choosing a *screwdriver* instead a *hammer* again. I have soaked completely in *polyglot programming* movement and after a while I have seen the first effects.
+
+I started thinking in the categories that were previously fixed, sometimes even not considered as a point for change or improvement. I have understood theory underneath many patterns and behaviors previously subconsciously used or implemented (e.g. I have used early versions of RxJS just because it was convenient - already built, packaged and well-tested). This book definitely changed my approach related with the programming languages and I can honestly say, without exaggeration, that thanks to this book I have started treating programming language as a *tool*, instead of treating it as a *dogma*.
+
+If you are aware of that simple fact, that your life is oriented around 1-2 programming languages, connected with only one programming paradigm (e.g. *OOP*) I strongly recommend to buy this book and read it. With very high probability, you will not write next back-end system in *Haskell*, you will not use *Prolog* inside your application, but your mindset will change.
+
+I would say that the only drawback of this book, is the incomprehensible explanation about *the monads* (yes, there are the *m-words* there). Besides that, this book is really well-written, it contains nice set of homework assignments and for me was an *eye-opening* book, which significantly enhanced my toolbox.
+
 ### What's next?
 
-Obviously mentioned book cannot be described in just one blog post, so I would like to announce that second blog post series will start immediately. There we will talk about each language presented in publication separately.
+Obviously mentioned book cannot be described in just one blog post, so I would like to announce second blog post series, which will start immediately after this one. There we will talk about each language presented in that publication separately.
 
-Regarding this series, next books are waiting, ready in the pipeline and I would like to share them with you. Next one, is a *must-read* book for every programmer, but in a different sense that you might think. If you have an idea about which one I am talking about, please post the title in the comment below. Either way - stay tuned! :wink:
+Regarding this series, next books are ready, waiting in the pipeline and I would like to share them with you. Next one, is a *must-read* book for every programmer, but in a different way that you might initially think. If you have an idea about which one I am talking about, please post the title in the comment below. Either you know or don't - stay tuned! :wink:
 
 ### Credits
 
