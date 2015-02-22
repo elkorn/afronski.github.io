@@ -102,6 +102,21 @@ h1, h2, h3, h4, h5, h6 {
   color: #482C21;
 }
 
+.post .disclaimer {
+  font-style: italic;
+  color: #888888;
+}
+
+.post .center {
+  text-align: center;
+}
+
+.post img.book {
+  width: 300px;
+  display: block;
+  margin: 10px auto;
+}
+
 .container {
   padding: 0 15px;
   margin: 40px 0 0 20em;
