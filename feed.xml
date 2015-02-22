@@ -7,6 +7,69 @@
     <atom:link href="http://www.afronski.pl/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Books that changed my career - Introduction</title>
+        <description>&lt;h1 id=&quot;books-that-changed-my-career---introduction&quot;&gt;Books that changed my career - Introduction&lt;/h1&gt;
+
+&lt;quote class=&quot;disclaimer&quot;&gt;This blog post is a starting point of a series which contains the most influential books that I have read in my programming career. This is my private ranking, each post will contain a good dose of my private opinions (you have been warned &lt;img class=&quot;emoji&quot; title=&quot;:wink:&quot; alt=&quot;:wink:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f609.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;), but besides that I hope that you will find it valuable.&lt;/quote&gt;
+
+&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;If you are a programmer and you like your profession, it is very likely that you are reading a lot of technical books. There are plenty of them on the market - related with craftsmanship, oriented fully around technology, patterns or methodologies and more. Besides practicing in your spare time - reading is probably the most important way of learning new stuff.&lt;/p&gt;
+
+&lt;p&gt;I read a lot of books, what is even more important - my reading queue is growing faster than my reading capabilities - and what I found after while is that merely only a couple of them can be marked as a highly influential on my career. It is not only related with frequency that I am returning to it - there are some books which I find really valuable, but I have read it only once. So, what makes a book &lt;em&gt;good&lt;/em&gt;?&lt;/p&gt;
+
+&lt;p&gt;Before we define that set of features, I would like to divert a bit - &lt;strong&gt;learning is hard&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/LearningIsHard.jpg&quot; alt=&quot;Learning is hard&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Especially if you are doing it in isolation (this is directly related with reading a book - you can do it within a book club, but still - it can uncomfortable or not enjoyable for someone). There is a very important concept related with learning new skill, when you are selecting a task which is only just slightly more difficult than your regular task, but still doable - it is the &lt;em&gt;sweet spot&lt;/em&gt; where you can learn in the most effective way by yourself (learning in group is fundamentally different).&lt;/p&gt;
+
+&lt;p&gt;What I have observed is related with that &lt;em&gt;sweet spot&lt;/em&gt; - books which I grouped in my private &lt;em&gt;the best of&lt;/em&gt; list are related with that &lt;em&gt;observation&lt;/em&gt; &lt;strong&gt;and&lt;/strong&gt; with a particular &lt;em&gt;time&lt;/em&gt; when I read it. Context is a king! That is why this list is perfectly viable for me, and can be irritating for you - especially if we are on the different levels of skill acquisition for the particular set of features, covered in the publication.&lt;/p&gt;
+
+&lt;p&gt;Today I would like to start with a very interesting book, which at the first sight looks just like a classic example of &lt;i&gt;XYZ for dummies&lt;/i&gt; guide. Such omission can result in that you can miss very good publication.&lt;/p&gt;
+
+&lt;h3 class=&quot;center&quot;&gt;&lt;em&gt;Seven Languages in Seven Weeks&lt;/em&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img alt=&quot;Seven Languages in Seven Weeks&quot; src=&quot;/assets/SevenLanguagesInSevenWeeks.jpg&quot; class=&quot;book&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;why-this-book&quot;&gt;Why this book?&lt;/h4&gt;
+
+&lt;p&gt;We live in interesting times - &lt;a href=&quot;http://www.wsj.com/articles/SB10001424053111903480904576512250915629460&quot;&gt;software is eating world&lt;/a&gt;, now even more than in the 2011. Being a &lt;em&gt;software engineer&lt;/em&gt; means that you have &lt;em&gt;solve various business problems&lt;/em&gt;. The more advanced topics you will grab, the more complex problems appear. Up to some point, using a well-known &lt;em&gt;hammer&lt;/em&gt; is very pragmatic and good choice.&lt;/p&gt;
+
+&lt;p&gt;But someday you will hit the wall. You will see, that it is not enough to know just one technology or one programming language well in order to solve them. This is especially true when you are building a distributed system, which should handle significant traffic and at the same time solve complicated business problem. In such environment you need to adapt - improve your skills by continuous learning.&lt;/p&gt;
+
+&lt;p&gt;There is another term, highly connected with earlier concept, called &lt;em&gt;polyglot programming&lt;/em&gt; (coined by Neal Ford). It does not mean that you should put every single language into your project, but rather you should try to enhance your perspective, skills, try to think in a different way, build and interact with completely new ideas. That experience will influence your existing capabilities, it will create new pathways inside your brain and it may open your senses and thinking to the new patterns. Obviously, it requires &lt;em&gt;curiosity&lt;/em&gt;, &lt;em&gt;small dose of courage&lt;/em&gt; and &lt;em&gt;humility&lt;/em&gt; (because nobody likes to feel stupid and this is inevitable at the beginning).&lt;/p&gt;
+
+&lt;p&gt;I found this book (polish edition) in the middle of 2012. At that time I was mostly a web and front-end developer (only &lt;em&gt;JavaScript&lt;/em&gt;) with significant &lt;em&gt;.NET&lt;/em&gt; experience and some smaller &lt;em&gt;Python&lt;/em&gt; and &lt;em&gt;Node.js&lt;/em&gt; episodes. I have tried both flavors of programming, &lt;em&gt;back-end&lt;/em&gt; and &lt;em&gt;front-end&lt;/em&gt;, and only this kind of partition in IT world have a significant meaning for me back then. But the transition already started - I heard about &lt;em&gt;functional programming&lt;/em&gt;, I started looking for different experiences - I have just discovered &lt;em&gt;Erlang&lt;/em&gt; and started getting familiar with it, I worked for a while with &lt;em&gt;Scala&lt;/em&gt; because of Coursera’s course guided by &lt;em&gt;Martin Odersky&lt;/em&gt;. At the studies I worked twice with &lt;em&gt;Prolog&lt;/em&gt; and that’s it - I have seen every non-obvious technology as an impractical and not worth looking. Being a &lt;em&gt;clean coder&lt;/em&gt; in the enterprise world, that was a &lt;em&gt;thing&lt;/em&gt; back then. At least I have seen it as a fully professional requirement. But it changed when I have started reading this book - it just literally sucked me in.&lt;/p&gt;
+
+&lt;p&gt;At first, it was not a pleasant ride. As a huge fan of &lt;em&gt;JavaScript&lt;/em&gt;, I felt insecure and wronged because of choosing different prototypes-based language as a representative of this group. But suddenly, when I finished first 3 chapters, a really strange thing happened - I just realized how narrow my mindset was, how ineffective is to use single tool to the every problem that you try to solve. There are plenty of problems from very interesting domains that can be relatively easy solved (in comparison to the &lt;em&gt;my favorite well-known&lt;/em&gt; language) just by choosing a &lt;em&gt;screwdriver&lt;/em&gt; instead a &lt;em&gt;hammer&lt;/em&gt; again. I have soaked completely in &lt;em&gt;polyglot programming&lt;/em&gt; movement and after a while I have seen the first effects.&lt;/p&gt;
+
+&lt;p&gt;I started thinking in the categories that were previously fixed, sometimes even not considered as a point for change or improvement. I have understood theory underneath many patterns and behaviors previously subconsciously used or implemented (e.g. I have used early versions of &lt;em&gt;RxJS&lt;/em&gt; just because it was convenient - already built, packaged and well-tested). This book definitely changed my approach related with the programming languages and I can honestly say, without exaggeration, that thanks to this book I have started treating programming language as a &lt;em&gt;tool&lt;/em&gt;, instead of treating it as a &lt;em&gt;dogma&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you are aware of that simple fact, that your life is oriented around 1-2 programming languages, connected with only one programming paradigm (e.g. &lt;em&gt;OOP&lt;/em&gt;) I strongly recommend to buy this book and read it. With very high probability, you will not write next back-end system in &lt;em&gt;Haskell&lt;/em&gt;, you will not use &lt;em&gt;Prolog&lt;/em&gt; inside your application, but your mindset will change.&lt;/p&gt;
+
+&lt;p&gt;I would say that the only drawback of this book, is the incomprehensible explanation about &lt;em&gt;the monads&lt;/em&gt; (yes, there are the &lt;em&gt;m-words&lt;/em&gt; there). Besides that, this book is really well-written, it contains nice set of homework assignments and for me was an &lt;em&gt;eye-opening&lt;/em&gt; book, which significantly enhanced my toolbox.&lt;/p&gt;
+
+&lt;h3 id=&quot;whats-next&quot;&gt;What’s next?&lt;/h3&gt;
+
+&lt;p&gt;Obviously mentioned book cannot be described in just one blog post, so I would like to announce second blog post series, which will start immediately after this one. We will talk there about each language presented in that publication separately.&lt;/p&gt;
+
+&lt;p&gt;Regarding this series, next books are ready, waiting in the pipeline and I would like to share my opinions about them with you. Next one, is a &lt;em&gt;must-read&lt;/em&gt; book for every programmer, but in a different context that you might initially think. If you have an idea about which one I am talking about, please post the title in the comment below. Either you know or don’t - stay tuned! &lt;img class=&quot;emoji&quot; title=&quot;:wink:&quot; alt=&quot;:wink:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f609.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;credits&quot;&gt;Credits&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pragprog.com/book/btlang/seven-languages-in-seven-weeks&quot;&gt;Seven Languages in Seven Weeks, The Pragmatic Bookshelf&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://martinfowler.com/bliki/OneLanguage.html&quot;&gt;One Language, Martin Fowler&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.flickr.com/photos/cote/94256599/in/photolist-9k6cM-nMfaY2-nMxn12-4Wyyg-pPzTdM-f4fhb-ojhTc-9PY9Uk-9PYaxc-qQb56p-qhZZ5T-9vpW4P-qaQqEc-nerTPS-ngcZsg-3WzyA-7Hxgmw-5EyP2b-mZXyzn-h5bQ9g-eCod2H-dAgeQa-q6Vgj-q6Ver-4vQgFr-cHPbL-9Q1ZxL-ngcXRS-dAmHEY-dAmHJj-tGzJq-9Q22fh-cToBD3-G4y8C-4TyQRZ-dAgeAT-dAmHpU-dAmHum-dAgeqD-dAgewk-dAmGXL-dAgeia-9aagv6-9PY9v2-4qcY6P-efwp43-efqE1K-efqEdg-efqDPH-efwoWq&quot;&gt;Pile of books (CC BY 2.0)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 22 Feb 2015 22:30:00 +0000</pubDate>
+        <link>http://www.afronski.pl/2015/02/22/books-that-changed-my-career-introduction.html</link>
+        <guid isPermaLink="true">http://www.afronski.pl/2015/02/22/books-that-changed-my-career-introduction.html</guid>
+      </item>
+    
+      <item>
         <title>How to store and examine custom business metrics?</title>
         <description>&lt;h1 id=&quot;how-to-store-and-examine-custom-business-metrics&quot;&gt;How to store and examine custom business metrics?&lt;/h1&gt;
 
@@ -541,95 +604,6 @@ SyntaxError: not a chance
         <pubDate>Wed, 02 Apr 2014 17:00:00 +0200</pubDate>
         <link>http://www.afronski.pl/2014/04/02/using-jira-from-the-command-line.html</link>
         <guid isPermaLink="true">http://www.afronski.pl/2014/04/02/using-jira-from-the-command-line.html</guid>
-      </item>
-    
-      <item>
-        <title>ssh2 - Node.js module of the week</title>
-        <description>&lt;h2 id=&quot;ssh2---nodejs-module-of-the-week&quot;&gt;&lt;code&gt;ssh2&lt;/code&gt; - Node.js module of the week&lt;/h2&gt;
-
-&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
-
-&lt;p&gt;In this series of articles I would like to show interesting, sometimes solid, sometimes just working and really useful &lt;em&gt;Node.js&lt;/em&gt; modules which helps me in the last week (or earlier). Each post will describe a reason why I chosen this module, an API description or sample usage. It will also describe &lt;em&gt;health&lt;/em&gt; (in other words - what it supports and answer for question &lt;em&gt;“Is it actively developed?”&lt;/em&gt;) and &lt;em&gt;quality&lt;/em&gt; (documentation, tests and overall code quality).&lt;/p&gt;
-
-&lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;ssh2&lt;/code&gt; is a &lt;code&gt;SSH2&lt;/code&gt; client module written in pure JavaScript.&lt;/p&gt;
-
-&lt;p&gt;In this case mentioned module helps me bootstrap the simple tool a while ago. The main goal of this tool is to automate create, download and upload a backup to &lt;code&gt;SFTP&lt;/code&gt; for &lt;em&gt;one-of-the-most-popular-services-for-project-management&lt;/em&gt; which in cheapest version does not provide an API for that.&lt;/p&gt;
-
-&lt;p&gt;For the first part (&lt;em&gt;UI automation script&lt;/em&gt; which will create the backup and download an archive) I have used a &lt;em&gt;&lt;code&gt;node-chimera&lt;/code&gt;&lt;/em&gt; module (which I will describe in the next blog post) and for second part (&lt;em&gt;uploading previously downloaded &lt;code&gt;ZIP&lt;/code&gt; archive&lt;/em&gt; to two different &lt;code&gt;SFTP&lt;/code&gt; servers) I have used a &lt;em&gt;&lt;code&gt;ssh2&lt;/code&gt;&lt;/em&gt; module.&lt;/p&gt;
-
-&lt;h3 id=&quot;api&quot;&gt;API&lt;/h3&gt;
-
-&lt;p&gt;In the most basic case you need only to &lt;em&gt;&lt;code&gt;require&lt;/code&gt;&lt;/em&gt; this module and create new connection. It is useful to use &lt;em&gt;domains&lt;/em&gt; for error handling, but it is not an obligatory practice.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;var fs = require(&amp;quot;fs&amp;quot;),
-    util = require(&amp;quot;util&amp;quot;),
-    domain = require(&amp;quot;domain&amp;quot;),
-
-    Connection = require(&amp;quot;ssh2&amp;quot;),
-
-    OptionsForSFTP = {
-      host: &amp;quot;X.Y.Z.U&amp;quot;,
-      port: 22,
-      username: &amp;quot;backup&amp;quot;,
-      // password: &amp;quot;password&amp;quot;
-      privateKey: fs.readFileSync(&amp;quot;/path/to/privateKey&amp;quot;)
-    };
-
-// ...
-
-function uploadToSftpServer(options, fileName, callback) {
-  var connection = new Connection(),
-      handler = domain.create();
-
-  handler.on(&amp;quot;error&amp;quot;, function (error) {
-    console.error(&amp;quot;Error occurred: %s&amp;quot;, error);
-    process.exit(-1);
-  });
-
-  // Handling &amp;quot;error&amp;quot; event inside domain handler.
-  handler.add(connection);
-
-  connection.on(&amp;quot;ready&amp;quot;, function () {
-    connection.sftp(handler.intercept(function (sftp) {
-      var providedFileName = util.format(&amp;quot;./%s&amp;quot;, fileName);
-
-      sftp.fastPut(providedFileName, providedFileName,
-                   handler.intercept(connection.end.bind(connection)));
-    }));
-  });
-
-  connection.on(&amp;quot;end&amp;quot;, callback);
-  connection.connect(options);
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;When connection is &lt;em&gt;&lt;code&gt;ready&lt;/code&gt;&lt;/em&gt; we need to open a &lt;em&gt;&lt;code&gt;SFTP&lt;/code&gt;&lt;/em&gt; channel and &lt;em&gt;&lt;code&gt;PUT&lt;/code&gt;&lt;/em&gt; file to the server. As you can see in example presented above, authentication via password or private key is a piece of cake and it is handled by module internals.&lt;/p&gt;
-
-&lt;h3 id=&quot;health&quot;&gt;Health&lt;/h3&gt;
-
-&lt;p&gt;Module is under active development, bugs are quickly resolved. Besides bug fixing and merging pull requests author incrementally improves design and code quality.&lt;/p&gt;
-
-&lt;p&gt;It is supported on &lt;em&gt;Node.js&lt;/em&gt; version &lt;code&gt;0.8&lt;/code&gt; and higher (probably also on &lt;code&gt;0.11&lt;/code&gt; because it does not have any kind of binary extensions).&lt;/p&gt;
-
-&lt;h3 id=&quot;quality&quot;&gt;Quality&lt;/h3&gt;
-
-&lt;p&gt;Unfortunately &lt;em&gt;module is not&lt;/em&gt; an any kind of reference in terms of quality:
-- &lt;em&gt;It does not have any kind of tests&lt;/em&gt; (unit or even integration tests).
-- Documentation is delivered inside single &lt;em&gt;&lt;code&gt;README.md&lt;/code&gt;&lt;/em&gt; file in form of source code examples.
-- Overall code quality is not too high, module still makes an impression of &lt;em&gt;hacked&lt;/em&gt; in the hurry.&lt;/p&gt;
-
-&lt;p&gt;But it works and it has just a few bugs &lt;img class=&quot;emoji&quot; title=&quot;:wink:&quot; alt=&quot;:wink:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f609.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/mscdex/ssh2&quot;&gt;&lt;code&gt;ssh2&lt;/code&gt; github page&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Tue, 04 Feb 2014 23:00:00 +0100</pubDate>
-        <link>http://www.afronski.pl/2014/02/04/ssh2-nodejs-module-of-the-week.html</link>
-        <guid isPermaLink="true">http://www.afronski.pl/2014/02/04/ssh2-nodejs-module-of-the-week.html</guid>
       </item>
     
   </channel>
