@@ -8,8 +8,8 @@ gems:
 
 emoji:
   dir: "/images/emoji"
-  
-highlighter: true
+
+highlighter: pygments
 
 exclude: [
   "Gemfile",
