@@ -103,11 +103,12 @@ As you may see, *multi-head function clauses* are anyway compiled to the *case* 
 How we took a peek under the hood? It is simple, you can start new *Erlang* shell and then execute:
 
 {% highlight erl %}
+% Compiler will spit out the
+% Core Erlang representation
+% to the 'after.core' file.
+
 1> c(after, to_core).
 ok
-2> % Compiler will spit out the
-   % Core Erlang representation
-   % to the 'after.core' file.
 {% endhighlight %}
 
 ### Summary
