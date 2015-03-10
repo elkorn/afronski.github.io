@@ -82,7 +82,7 @@ But what about performance? Would not it be slower, because additional functions
 Before we will take a peek under the hood, we need to briefly explain the structure of the *Erlang* compiler. Before the *Erlang* gets interpreted on the VM it is transformed to the *Core Erlang* representation and after that to the *BEAM* code (which is a equivalent of *bytecode* from *JVM*). It turns out that our *named case expressions* (functions with multiple heads and pattern matching, a logical construct) are directly transformed to the syntactical construct - *case* expression - in the first phase of compilation.
 
 {% highlight erlang linenos %}
-% Function 'valueOrDefault' after compilation
+% Function 'getValueOrDefault' after compilation
 % to the Core Erlang representation, which will be
 % afterwards compiled to the BEAM code:
 
