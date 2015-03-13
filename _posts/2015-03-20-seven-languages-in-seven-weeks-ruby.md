@@ -1,0 +1,43 @@
+---
+layout: post
+title: Seven Languages in Seven Weeks - Ruby
+date: 2015-03-20T16:00:00Z-02:00
+---
+
+# Seven Languages in Seven Weeks - Ruby
+
+<quote class="disclaimer">This blog post is a starting point of a series related with books "Seven Languages in Seven Weeks" and its sequel. Each post will describe a single language chosen by this book and its most interesting and influencing feature, from my point of view and experience. I hope that you will find this series interesting. Do not hesitate sharing your feedback and comments below!</quote>
+
+### Introduction
+
+<img class="right ruby-logo" alt="Ruby Logo" src="/assets/RubyLogo.png" />
+
+Aforementioned book has a very controversial concept called an *ugly child*. One of presented languages is presented as a *necessary evil*, used in the old era. The choice fell on *Ruby*. And I totally agree with that choice.
+
+Do not get me wrong - *Ruby* is a wonderful language, it brings multiple merits and valuable tools to us. In many cases it rescued many programming careers from boredom and daily routine. It restored *happiness* to the job of many programmers. But in this book, this language is surrounded by many other languages - better, relative to the era that is coming (or rather - that is already here).
+
+It is an old language - created in 1995 (the same year that *Java* was created). It does not matter, when you have to get your job done, but it matters when it comes to the evolution, that has taken place since then. Author chosen that language because of joy and happiness that it brings to him. **<em>Ruby is optimized for developer happiness</em>**. Moreover, many tools that just get the job done are written in it (*Rails*, *Sinatra*, *Capistrano*, *Chef*, *Vagrant* and many, many more). That tools definitely influenced many other communities (try to count how many *Sinatra* forks are created in multiple different communities :wink:).
+
+From the community itself we can learn also multiple things. Initiatives like [Rails Girls](http://railsgirls.com/), [Ruby Tapas](http://www.rubytapas.com/), supporting diversity, embracing the beginners and *greenhorns* in the community, examples that comes from the top - from core contributors, people like [@yukihiro_matz](https://twitter.com/yukihiro_matz), [@josevalim](https://twitter.com/josevalim) or [@tenderlove](https://twitter.com/tenderlove) - that really make a *change*.
+
+Besides that, language itself have many interesting features that brings joy, but also enables nice use cases, hard to implement in other mainstream programming languages.
+
+### Why this language?
+
+*TODO*:
+
+- Metaprogramming.
+- Fun, Fun, Fun.
+- Blocks.
+- Mixins.
+
+### Summary
+
+*TODO*:
+
+- Small summary about chapter.
+- Next programming language.
+
+### Credits
+
+- [Seven Languages in Seven Weeks](https://pragprog.com/book/btlang/seven-languages-in-seven-weeks), *Bruce A. Tate*
