@@ -24,19 +24,48 @@ Besides that, language itself have many interesting features that brings joy, bu
 
 ### Why this language?
 
-*TODO*:
+I would like to start with a *metaprogramming*. It is a key thing that enables many use cases - starting from crazy things, like that one presented below, ending with various *Domain Specific Languages*.
 
-- Metaprogramming.
-- Fun, Fun, Fun.
-- Blocks.
-- Mixins.
+{% highlight ruby linenos %}
+class Roman
+  def self.method_missing name, *args
+    roman = name.to_s
+    roman.gsub!("IV", "IIII")
+    roman.gsub!("IX", "VIIII")
+    roman.gsub!("XL", "XXXX")
+    roman.gsub!("XC", "LXXXX")
+
+    (roman.count("I") +
+     roman.count("V") * 5 +
+     roman.count("X") * 10 +
+     roman.count("L") * 50 +
+     roman.count("C") * 100)
+  end
+end
+{% endhighlight %}
+
+How it works? Lets look on the *`REPL`* output:
+
+{% highlight ruby %}
+irb(main):001:0> Roman.X
+=> 10
+irb(main):002:0> Roman.XCII
+=> 92
+irb(main):003:0> Roman.XII
+=> 12
+irb(main):004:0> Roman.XIV
+=> 14
+{% endhighlight%}
+
+For each undefined method in that class, we are calling entrypoint called *`method_missing`*. Then you can react and do whatever you want with the actual input arguments and invoked method name. This features connected with very flexible and liberal syntax enables any kind of *DSL* creation that you can possible imagine.
+
+Among that, additional features like *mixins*, *blocks* or very complete, cohesive and well-documented *standard library* really lets you still enjoy programming. This is very significant, because that feeling attracts creative people. And these people are the creators very vibrant and active community, these people are creators of amazing tools and libraries.
+
+**It is just simple as that**.
 
 ### Summary
 
-*TODO*:
-
-- Small summary about chapter.
-- Next programming language.
+In the next blog post we will talk about not so popular, but still very elegant and interesting programming language described in aforementioned book - we are talking about [Io](http://iolanguage.org).
 
 ### Credits
 
