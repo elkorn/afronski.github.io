@@ -57,7 +57,7 @@ irb(main):004:0> Roman.XIV
 => 14
 {% endhighlight%}
 
-For each undefined method in that class, we are calling entrypoint called *`method_missing`*. Then you can react and do whatever you want with the actual input arguments and invoked method name. This features connected with very flexible and liberal syntax enables any kind of *DSL* creation that you can possible imagine.
+For each undefined method in that class, we are calling entry point called *`method_missing`*. Then you can react and do whatever you want with the actual input arguments and invoked method name. This features connected with very flexible and liberal syntax enables any kind of *DSL* creation that you can possible imagine.
 
 Among that, additional features like *mixins*, *blocks* or very complete, cohesive and well-documented *standard library* really lets you still enjoy programming. This is very significant, because that feeling attracts creative people. And these people are the creators very vibrant and active community, these people are creators of amazing tools and libraries.
 
@@ -65,7 +65,7 @@ Among that, additional features like *mixins*, *blocks* or very complete, cohesi
 
 ### Summary
 
-In the next blog post we will talk about not so popular, but still very elegant and interesting programming language described in aforementioned book - we are talking about [Io](http://iolanguage.org).
+In the next blog post we will talk about not so popular, but still very elegant and interesting prototype-based programming language described in aforementioned book at second chapter - we are talking about [Io](http://iolanguage.org).
 
 ### Credits
 
