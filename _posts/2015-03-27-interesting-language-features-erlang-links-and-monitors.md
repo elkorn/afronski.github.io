@@ -1,10 +1,12 @@
 ---
 layout: post
 title: Interesting Language Features - Erlang II
-date: 2015-03-25T20:00:00Z-02:00
+date: 2015-03-27T16:00:00Z-02:00
 ---
 
 # Interesting Language Features - Erlang II
+
+<quote class="disclaimer">This blog post is an article of a series which contains examples, explanations and details about interesting features of various programming languages. I have collected several examples of different characteristics, which definitely extended my view regarding programming, architecture and structure in general. I would love to hear your feedback about presented choices or description of yours favorite programming language feature.</quote>
 
 ### Introduction
 
