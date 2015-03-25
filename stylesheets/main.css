@@ -107,6 +107,19 @@ h1, h2, h3, h4, h5, h6 {
   vertical-align: middle;
 }
 
+.post img.half-sized-image {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.post .picture-section {
+  text-align: center;
+}
+
+.post .picture-section img {
+  display: block;
+}
+
 .post em {
   font-style: normal;
   color: #482C21;
@@ -117,6 +130,13 @@ h1, h2, h3, h4, h5, h6 {
   text-align: justify;
   font-style: italic;
   color: #888888;
+}
+
+.post .foreign {
+  color: #2F615E;
+  font-style: italic;
+  text-align: justify;
+  display: block;
 }
 
 .post .center {
