@@ -163,6 +163,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .social-buttons .fb-share-button {
+  padding-left: 30px;
   top: -4px;
 }
 
