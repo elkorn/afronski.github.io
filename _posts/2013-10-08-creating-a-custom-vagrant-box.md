@@ -13,6 +13,7 @@ date: 2013-10-08T21:50:00Z
 # It is not a common path...
 
 Do not start the creation of a new box from scratch without checking both of these sites:
+
 - [vagrantbox.es](http://www.vagrantbox.es/)
 - [veewee](https://github.com/jedi4ever/veewee)
 

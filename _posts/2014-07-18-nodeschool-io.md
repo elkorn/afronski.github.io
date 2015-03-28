@@ -21,6 +21,7 @@ Learning process could be easier if we have one source of truth and best practic
 Nodeschool is a series of interactive workshops, divided into two sections - core concepts and electives.
 
 In the main concepts we have:
+
 - [basic asynchronous programming and introduction to the core Node.js concepts](http://nodeschool.io/#learn-you-node)
 - [introduction to the streams](http://nodeschool.io/#stream-adventure)
 - [bytes and buffers manipulation](http://nodeschool.io/#bytewiser)
@@ -28,6 +29,7 @@ In the main concepts we have:
 - [how to work effectively with git and github](http://nodeschool.io/#git-it)
 
 Electives are oriented around:
+
 - [use of node.js binding and modules related with LevelDB](http://nodeschool.io/#levelmeup)
 - [hapi.js framework](http://nodeschool.io/#makemehapi)
 - [express.js framework](http://nodeschool.io/#expressworks)

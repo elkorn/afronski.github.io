@@ -76,6 +76,7 @@ It is supported on *Node.js* version `0.8` and higher (probably also on `0.11` b
 ### Quality
 
 Unfortunately *module is not* an any kind of reference in terms of quality:
+
 - *It does not have any kind of tests* (unit or even integration tests).
 - Documentation is delivered inside single *`README.md`* file in form of source code examples.
 - Overall code quality is not too high, module still makes an impression of *hacked* in the hurry.

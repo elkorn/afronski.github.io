@@ -21,6 +21,7 @@ Before we start - one remark: if you installed *`git`* on your machine first tim
 ### Starting
 
 At first, you need to `clone` (or `checkout` in SVN terminology) repository. You can do in three different ways:
+
 - First way (*2nd line*) checkouts repository with a standard SVN layout (`trunk`, `branches`, `tags`) and associates branches, tags and *`trunk`* with *`git`* *`master`*.
 - Second way (*5th line*) checkouts whole repository as it is.
 - Third way (*starts in 8th line*) is really an expansion for `git-svn clone`.
