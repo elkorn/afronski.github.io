@@ -10,14 +10,22 @@ date: 2015-04-10T16:00:00Z-02:00
 
 # Introduction
 
-- Syntax - small concrete example.
+- Syntax - small and concrete (LISP similarity).
 - Semantics:
-  - Prototypes.
-  - Message passing and dynamic.
+  - Slots and messages (example).
+  - Prototype chains (example).
+  - Message passing (example).
 - Features:
-  - Actors and Futures for concurrency.
+  - Coroutines and Futures for concurrency.
   - Small, embedded language.
 - *Hidden Beauty*.
+  - Singleton example:
+    - Overriding clone method.
+  - Concurrency example:
+    - Futures, Coroutines and building an *Actor* from them.
+  - OperatorTable example:
+    - Modifying interpreter in order to support JSON-like objects.
+- Next language: *Prolog*.
 
 ### Credits
 
