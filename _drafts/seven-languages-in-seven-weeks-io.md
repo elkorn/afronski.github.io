@@ -10,6 +10,7 @@ date: 2015-04-10T16:00:00Z-02:00
 
 # Introduction
 
+- Not to be confused with io.js - it is a programming language, not a platform (created in 2002).
 - Syntax - small and concrete (LISP similarity).
 - Semantics:
   - Slots and messages (example).
