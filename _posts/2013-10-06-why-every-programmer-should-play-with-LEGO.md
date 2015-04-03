@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Why every programmer should play with LEGO?
-date: 2013-10-06T17:30:00Z
+date: 2013-10-06T17:30+0200
 ---
 
 # Why every programmer should play with LEGO?

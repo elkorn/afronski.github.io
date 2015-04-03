@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Books that changed my career - Pragmatic Thinking and Learning
-date: 2015-03-07T16:00:00Z-02:00
+date: 2015-03-07T16:00+0100
 ---
 
 # Books that changed my career - Pragmatic Thinking and Learning

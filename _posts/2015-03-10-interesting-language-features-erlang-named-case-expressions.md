@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Interesting Language Features - Erlang I
-date: 2015-03-10T16:00:00Z-02:00
+date: 2015-03-10T16:00+0100
 ---
 
 # Interesting Language Features - Erlang I

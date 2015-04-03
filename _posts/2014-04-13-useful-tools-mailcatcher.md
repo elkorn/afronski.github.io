@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Useful tools - mailcatcher
-date: 2014-04-13T14:00:00Z
+date: 2014-04-13T14:00+0200
 ---
 
 # Useful tools - `mailcatcher`

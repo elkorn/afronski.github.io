@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Small talk about productivity
-date: 2014-01-18T17:30:00Z
+date: 2014-01-18T16:30+0100
 ---
 
 # Small talk about productivity...

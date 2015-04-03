@@ -1,7 +1,7 @@
 ---
 layout: post
 title: My picks of NDC 2014 - part I
-date: 2014-06-16T22:10:00Z-02:00
+date: 2014-06-16T22:10+0200
 ---
 
 # My picks of NDC 2014 - part I

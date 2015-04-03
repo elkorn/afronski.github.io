@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Easter Eggs in Python's REPL
-date: 2014-06-08T12:10:00Z-02:00
+date: 2014-06-08T10:10+0200
 ---
 
 # Easter Eggs in Python's `REPL`

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: And you? What are you doing for the community?
-date: 2015-04-14T16:00:00Z-02:00
+date: 2015-04-14T16:00+0200
 ---
 
 # And you? What are you doing for the community?

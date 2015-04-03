@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Low-level Node.js debugging on production
-date: 2013-11-02T10:45:00Z
+date: 2013-11-02T10:45+0100
 ---
 
 # Low-level Node.js debugging on production

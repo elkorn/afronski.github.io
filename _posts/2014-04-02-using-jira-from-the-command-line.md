@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using JIRA from the command line
-date: 2014-04-02T15:00:00Z
+date: 2014-04-02T15:00+0200
 ---
 
 # Using `JIRA` from the command line

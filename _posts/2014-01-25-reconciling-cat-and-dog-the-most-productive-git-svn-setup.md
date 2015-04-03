@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Reconciling cat and dog - the most productive git-svn setup
-date: 2014-01-25T22:00:00Z
+date: 2014-01-25T22:00+0100
 ---
 
 ## Reconciling cat and dog - the most productive *`git-svn`* setup

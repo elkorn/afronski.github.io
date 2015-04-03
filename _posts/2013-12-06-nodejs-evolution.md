@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Node.js evolution
-date: 2013-12-06T18:15:00Z
+date: 2013-12-06T18:15+0100
 ---
 
 # Node.js evolution

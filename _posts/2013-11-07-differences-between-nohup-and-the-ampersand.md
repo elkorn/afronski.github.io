@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Differences between nohup and ampersand
-date: 2013-11-07T18:45:00Z
+date: 2013-11-07T18:45+0100
 ---
 
 # Differences between `nohup` and the ampersand

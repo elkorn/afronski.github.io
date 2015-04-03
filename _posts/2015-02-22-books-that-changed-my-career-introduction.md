@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Books that changed my career - Introduction
-date: 2015-02-22T22:30:00Z-02:00
+date: 2015-02-22T22:30+0100
 ---
 
 # Books that changed my career - Introduction

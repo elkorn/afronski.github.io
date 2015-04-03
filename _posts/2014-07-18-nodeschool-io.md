@@ -1,7 +1,7 @@
 ---
 layout: post
 title: nodeschool.io
-date: 2014-07-18T15:00:00Z-02:00
+date: 2014-07-18T15:00+0200
 ---
 
 # nodeschool.io

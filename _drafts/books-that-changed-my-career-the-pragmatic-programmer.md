@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Books that changed my career - The Pragmatic Programmer
-date: 2015-04-18T16:00:00Z-02:00
+date: 2015-04-18T16:00+0200
 ---
 
 # Books that changed my career - The Pragmatic Programmer

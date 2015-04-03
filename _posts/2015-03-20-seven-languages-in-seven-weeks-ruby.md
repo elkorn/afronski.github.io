@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Seven Languages in Seven Weeks - Ruby
-date: 2015-03-20T16:00:00Z-02:00
+date: 2015-03-20T16:00+0100
 ---
 
 # Seven Languages in Seven Weeks - Ruby
