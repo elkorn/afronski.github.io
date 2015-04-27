@@ -66,6 +66,12 @@ a:hover {
   padding: 15px;
 }
 
+.post img.io-logo {
+  width: 128px;
+  height: 128px;
+  padding: 35px;
+}
+
 /* Main page. */
 
 .posts-list {
