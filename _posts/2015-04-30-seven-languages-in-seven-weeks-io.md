@@ -38,17 +38,38 @@ I would like to bring some light to the most interesting language features, star
 
 ## Slots and messages
 
-*TODO*: Example
+{% highlight io linenos %}
+Car := Object clone
+Car desc := "A simple car."
+
+Car slotNames
+// list("type", "desc")
+{% endhighlight %}
 
 ## Prototype chains
 
-*TODO*: Example
+{% highlight io linenos %}
+Car := Object clone
+Car desc := "A simple car."
+
+Ferrari := Car clone
+Ferrari type
+// Ferrari
+
+testarossa := Ferrari clone
+testarossa type
+// Ferrari
+
+testarossa slotNames
+// list()
+
+testarossa desc
+// "A simple car."
+{% endhighlight %}
 
 ## Message passing
 
-*TODO*: Example
-
-## Standard library
+Everything is a message - even the method invocation is represented as a message passing.
 
 ## Nice examples
 
