@@ -6,17 +6,17 @@ date: 2015-04-30T16:00+0200
 
 # Seven Languages in Seven Weeks - Io
 
-<quote class="disclaimer">This blog post is a next article of a series related with books "Seven Languages in Seven Weeks" and its sequel. Each post will describe a single language chosen by this book and its most interesting and influencing feature, from my point of view and previous experiences. I hope that you will find this series interesting. Do not hesitate with sharing your feedback and comments below!</quote>
+<quote class="disclaimer">This blog post is a next article from series related with books "Seven Languages in Seven Weeks" and its sequel. Each post will describe a single language chosen by this book and its most interesting and influencing features, from my point of view and previous experiences. I hope that you will find this series interesting. Do not hesitate with sharing your feedback and comments below!</quote>
 
 # Introduction
 
 <img class="right io-logo" alt="Io Logo" src="/assets/IoLogo.png" />
 
-At first you may think that blog post is about *io.js*, a recent *node.js* fork - but is not, we are talking here about programming languages. :wink:
+At first you may think that blog post is about *io.js*, a recent *node.js* fork - but it is not, we are talking here about programming languages. :wink:
 
-*Io* is a programming language created by *Steve Dekorte* in 2002. It is described as second in the aforementioned book *Seven Languages in Seven Weeks*. The only thing that it has in common<br/>with *io.js* / *node.js* and other *JavaScript* based platforms is its prototypical nature.
+*Io* is a programming language created by *Steve Dekorte* in 2002. It is described as second one in the aforementioned book *Seven Languages in Seven Weeks*. The only thing that it has in common<br/>with *io.js* / *node.js* and other *JavaScript* based platforms is its prototypical nature.
 
-It means that like in *Self* (or *JavaScript*) everything is a *clone* of another object and like in *Smalltalk* everything is an object. In other words - **there is no distinction between class and instance** and you can build *classes* and its schema during *run-time* execution.
+It means, that like in *Self* (or *JavaScript*) everything is a *clone* of another object and like in *Smalltalk* everything is an object. In other words - **there is no distinction between class and instance** and you can build *classes* and its schema during *run-time* execution.
 
 {% highlight io linenos %}
 Car := Object clone
@@ -32,11 +32,11 @@ Car drive
 // Vroom!
 {% endhighlight %}
 
-As you can observe above - *syntax is pretty minimal*. It is often compared to the *Lisp-like* languages. Besides that, language has really clear semantics, which is easy to grasp, powerful features in the standard library (also related with the *concurrency* support) and small, portable *virtual machine* (which is often used in the *embedded systems* domain).
+As you can observe above - *syntax is pretty minimal*. It is often compared to the *Lisp-like* languages. Besides that, language has really clear semantics (which is easy to grasp), powerful features in the standard library (also related with the *concurrency* support) and small, portable *virtual machine* (which is often used in the *embedded systems* domain).
 
 I would like to bring some light to the most interesting language features, starting from the basic things.
 
-## Slots and messages
+## Slots and Message Passing
 
 {% highlight io linenos %}
 Car := Object clone
@@ -45,6 +45,8 @@ Car desc := "A simple car."
 Car slotNames
 // list("type", "desc")
 {% endhighlight %}
+
+After creating new clone, you can create new slots (with an operator `:=`) or assign value to the existing one (with simple `=` operator). Getting value from the slot is simple. Underneath everything is a message - even the method invocation is represented as a *message passing* to the actual object.
 
 ## Prototype chains
 
@@ -67,9 +69,7 @@ testarossa desc
 // "A simple car."
 {% endhighlight %}
 
-## Message passing
-
-Everything is a message - even the method invocation is represented as a message passing.
+In presented example you can see how the message passing related with method invocation, propagates to the top of the prototype chain. Also, in *Io* there is a difference between instances and types regarding syntax - capitalized names means *types* from which you can clone an *instance* (and its name is in small caps).
 
 ## Nice examples
 
@@ -86,7 +86,26 @@ In presented case, each clone invoked on the *Single* object will return always 
 
 ### Concurrency support
 
-*TODO*: Futures, Coroutines and building an *Actor* from them.
+{% highlight io linenos %}
+a := Object clone
+a say := method(
+    "A" println
+    yield
+    "A" println
+    yield)
+
+b := Object clone
+b say := method(
+    yield
+    "B" println
+    yield
+    "B" println)
+
+a @@say; b @@say
+Coroutine currentCoroutine pause
+{% endhighlight %}
+
+On the basic level related with concurrency, *Io* supports *coroutines*. As in the example, two *coroutines* are switching back-and-forth thanks the message `yield`. Last line will wait until all other coroutines will finish, and after it will let the execution flow. Having this piece and message passing it is very simple and intuitive to build on top the *actor model*. Besides that we also have *futures* implementation available in the standard library.
 
 ### Extending interpreter and VM
 
