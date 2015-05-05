@@ -162,6 +162,10 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 800px;
 }
 
+.post .center-tweet iframe {
+  margin: 0 auto !important;
+}
+
 .highlight {
   border-radius: 5px;
   font-family: monospace;
