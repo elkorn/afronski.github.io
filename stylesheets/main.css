@@ -166,6 +166,11 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto !important;
 }
 
+.post .citation {
+  font-style: italic;
+  color: #707070;
+}
+
 .highlight {
   border-radius: 5px;
   font-family: monospace;
