@@ -72,6 +72,11 @@ a:hover {
   padding: 35px;
 }
 
+.post img.prolog-logo {
+  width: 180px;
+  padding: 5px;
+}
+
 /* Main page. */
 
 .posts-list {
