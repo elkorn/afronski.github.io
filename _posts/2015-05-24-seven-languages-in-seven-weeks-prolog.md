@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Seven Languages in Seven Weeks - Prolog
-date: 2015-05-24T16:00+0200
+date: 2015-05-24T22:00+0200
 ---
 
 # Seven Languages in Seven Weeks - Prolog
@@ -12,10 +12,9 @@ date: 2015-05-24T16:00+0200
 
 <img class="right prolog-logo" alt="SWI Prolog Logo" src="/assets/SWIPrologLogo.png" />
 
-In this blog post I would like to spent some time with one of the most interesting programming languages ever - *Prolog*. In *Bruce Tate's* book this language is compared to the *Raymond* from the *Rain Man* movie. For most people *Prolog* is mostly known as a language that answers `no` to everything. :wink: It has very nice characteristics and often it is used in various domains and applications when other languages miserably failed.
+In this blog post I would like to spent some time with one of the most interesting programming languages ever - with *Prolog*. In *Bruce Tate's* book this language is compared to the *Raymond* from the *Rain Man* movie. For most people *Prolog* is mostly known as a language that answers `no` to everything. :wink: It has very nice characteristics and often it is used in various domains and applications when other languages miserably failed.
 
 Logo on the right is representing the most popular *Prolog* distribution called *SWI Prolog*, but in this blog post we will take a slightly different approach - we will use *Erlog*, which is a *Prolog* implementation on top of *Erlang VM*. We will use *Elixir* as a *glue* for everything.
-
 
 ### Facts, Relations, Rules and Queries
 
@@ -30,7 +29,7 @@ loves(honey_bunny, pumpkin).
 jealous(X, Y):- loves(X, Z), loves(Y, Z).
 {% endhighlight %}
 
-In this example `loves` defines a *fact* between two entities (in our case represented by *atoms*, a unique symbols) - so we defined *relations* there. At the *6th* line we defined rule, which uses previous relations between two facts, represented as variables `X` and `Z` (as in the *Erlang* variables should be started with *capital letter*).
+In this example `loves` defines a *fact* between two entities (in our case represented by *atoms*, a unique symbols) - so we defined *relations* there. At the *6th* line we defined rule, which uses previous relations between two facts, represented as variables `X` and `Z` (as in the *Erlang* variables should be started with a *capital letter*).
 
 Then if we *query* such database basing on rule `jealous` we will receive:
 
@@ -39,7 +38,7 @@ Then if we *query* such database basing on rule `jealous` we will receive:
 W = vincent.
 {% endhighlight %}
 
-Which obviously true - fans of <i>*Pulp Fiction*</i> will already know why :wink:.
+Which obviously true - fans of <i>*Pulp Fiction*</i> will already know why. :wink:
 
 ### Unification
 
@@ -108,11 +107,11 @@ solve(L) :-
     sudoku(L).
 {% endhighlight %}
 
-**And that is it**. As you may noticed - we defined only rules of the game, rest is done thanks to the *backtracking algorithms* implemented in the interpreter, which are searching and pruning all paths build on top of *knowledge base* made from *facts*, *relations* and *rules*. This example can be even more concise and clear, if you have module like [`clpfd`](http://www.swi-prolog.org/man/clpfd.html) - you can find an example [here](https://github.com/afronski/playground-other/blob/master/prolog/sudoku-resolver/sudoku-resolver.pro).
+**And that is it**. As you may noticed - we defined only rules for the game, rest is done thanks to the *backtracking algorithms* implemented in the interpreter, which are searching and pruning all paths build on top of *knowledge base* made from *facts*, *relations* and *rules*. This example can be even more concise and clear, if you have module like [`clpfd`](http://www.swi-prolog.org/man/clpfd.html), as I mentioned before - you can find an example which uses aforementioned module [here](https://github.com/afronski/playground-other/blob/master/prolog/sudoku-resolver/sudoku-resolver.pro).
 
 ### Summary
 
-In the next blog post we will talk about relatively new, but very popular *hybrid* programming language - *[Scala](http://www.scala-lang.org)*. It was my starting point with world of functional programming languages, and it is also often recommended as a starting point - especially if you have background as an *object oriented programmer*. See you soon! :wink:
+In the next blog post we will talk about relatively new (compared to the other languages described in the book), but very popular *hybrid* programming language called *[Scala](http://www.scala-lang.org)*. It was my starting point with world of functional programming languages, and it is also often recommended as a starting point - especially if you have background as an *object oriented programmer*. See you soon! :wink:
 
 ### Credits
 
