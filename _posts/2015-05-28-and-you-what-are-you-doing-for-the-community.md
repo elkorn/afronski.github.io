@@ -41,5 +41,6 @@ I have also prepared links to many aforementioned initiatives (I focused more on
 - [Build with us a community around HackerSpace Silesia](hs-silesia.pl)
 - [Participate in DWO](http://2015.dwo.mikstura.it/)
 - [Look at other silesian events](https://slaskit.pl/)
+- [How to create a meet-up?](https://www.youtube.com/watch?v=gpSn9yUf2wM)
 
 And many, many others - you probably know better which projects need help. *It is matter of time, there is nothing more precious than your time that you can give to others*.
