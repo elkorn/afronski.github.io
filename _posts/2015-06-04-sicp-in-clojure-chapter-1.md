@@ -1,20 +1,20 @@
 ---
 layout: post
 title: SICP in Clojure - Chapter 1
-date: 2015-06-04T16:00+0200
+date: 2015-06-04T11:00+0200
 ---
 
 # SICP in Clojure - Chapter 1
 
-### What is a *SICP* and why should you care?
+<quote class="disclaimer">In one of the <a href="http://www.afronski.pl/2015/06/01/books-that-changed-my-career-structure-and-interpretation-of-computer-programs.html">previous blog posts</a> I have announced that I would like to start a new series of posts. It is a persistent journal from my journey through aforementioned book. I hope that you will enjoy it and find it useful - the main goal is to make this series a place where we can return in future, recall ideas and thoughts that accompanied reading process.</quote>
 
-<quote class="disclaimer">In one of the <a href="http://www.afronski.pl/2015/06/01/books-that-changed-my-career-structure-and-interpretation-of-computer-programs.html">previous blog posts</a> I have announced that I would like to start a new series of posts. It is a persistent journal from my journey through aforementioned book. I hope that you will enjoy it and find it useful - the main goal is to make this series a place where we can return in future and recall ideas and thoughts that accompanied reading process.</quote>
+### What is a *SICP* and why should you care?
 
 *SICP* is an acronym which represents a classic computer science book and stands for *"Structure and Interpretation of Computer Programs"*. It is written by Harold Abelson, Gerald Jay Sussman and Julie Sussman. It is a base book for [an introductory course in programming on MIT](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005). Original examples are written in *Scheme*, which is still a very popular *Lisp* dialect. Well, it is not so popular as *Clojure* these days, so I would like to convert prepared examples to that language instead.
 
-At the beginning, I would like to focus on one thing - I will tell you, why this book is different, and why you should care about it. There are plenty books out there, which are doing a fairly well introduction to the programming, why do we even care about another one? Especially, if you are more than beginner. *You should care because of two things*.
+At the beginning, I would like to focus on one thing - I will tell you, why this book is different, and why you should care about it. There are plenty books out there, which are doing a fairly well introduction to the programming, why do we even care about another one? Especially, if you are more than a beginner. *You should care because of two things*.
 
-As every book related with teaching programming from the scratch, it introduces you to the topic from the ground up. It starts from the most basic concepts related with programming. Actually, if you are an experienced programmer, you will be disappointed by a first few dozens of pages. It will not introduce anything new, however it is written in very interesting way - during the process you may think *"Well, at least it feels interesting when I am reading it"*. After first 50 pages, you will start seeing the first benefits of that book - it introduces you to the topic from the side of functional programming. In this book, assignment operator is introduced around 250 page. Every single concept introduced before that (e.g. various data structures, interesting assignments and algorithms) is literally pure (*free from shared state and side effects*) and immutable. Why this is an important thing? *Well, now I would like to introduce a second reason*.
+As every book related with teaching programming from the scratch, it introduces you to the topic from the ground up. It starts from the most basic concepts related with programming. Actually, if you are an experienced programmer, you will be disappointed by a first few dozens of pages. It will not introduce anything new, however it is written in a very interesting way - during the process you may think *"Well, at least it feels interesting when I am reading it"*. After first 50 pages, you will start seeing the first benefits of that book - it introduces you to the topic from the side of functional programming. In this book, assignment operator is introduced around 250 page. Every single concept introduced before that (e.g. various data structures, interesting tasks and algorithms) is literally pure (*free from shared state and side effects*) and immutable. Why this is an important thing? *Well, now I would like to introduce a second reason*.
 
 [Free lunch is over](http://www.gotw.ca/publications/concurrency-ddj.htm). Last few decades we surf on top of huge wave directed by *Moore's Law*. Computer chips are getting smaller, faster and more effective in terms of power usage. But everything has its limits. Laws of physics are inexorable. We cannot bend the basic laws of nature, so instead making chips faster and smaller, we have to make *more* of them. And when I say *more*, I mean dozens, not only couple of them. In that case, not every responsibility can be dropped on the operating system and many of our programs should have notion of a *parallel execution* inside. But too many things related with *software engineering* today - programming languages, paradigms, solutions - are oriented around mutable and shared state.
 
@@ -86,19 +86,19 @@ I would like to introduce to you a set of examples which will be a base for our 
 
 #### Function as a *first-class citizen*
 
-It is not a new concept. Literally every single mainstream programming language these days introduced the concept of *lambdas* (even Java :wink:). And prerequisite for that concept is having a notion of functions which are the *first-class citizens*. They can be passed around via variables and arguments, they can be returned and thanks to that - *they can be built* almost dynamically.
+It is not a new concept. Literally every single mainstream programming language these days introduced the concept of *lambdas* (even Java :wink:). And prerequisite for that concept is having a notion of functions which are the *first-class citizens* in the language. It means that they can be passed around via variables and arguments, they can be returned and thanks to that - *they can be built* almost in a dynamic manner.
 
-I you have experience and background in the *OOP*, you may often work with interfaces, which define only the protocol how rest of the code is using a specific part. If you worked with *C* you worked with *function pointers* - it is also a definition of a protocol. Those concepts are the poor replacement of described mechanism.
+I you have experience and background in the *OOP*, you often worked with interfaces, which define only the protocol how rest of the code is using that specific part. If you worked with *C*, you used *function pointers* - it is also a definition of the protocol. Those concepts are the poor replacement of aforementioned mechanism.
 
 #### *Just-enough* abstraction
 
-Function is a *smallest possible abstraction*. Everything is transparent - it should have meaningful name, input arguments and returns a result. Function will not mutate any global state, it will not mutate its arguments and propagate this change outside. In the pure functional programming languages it cannot have even a single side-effect (e.g. using *I/O*). If we add that to the previous point - we have almost infinite possibilities to build and modify our *just-enough abstraction*. Constructs like currying, recurrency, partial application are your daily tool.
+Function is a *smallest possible abstraction*. Everything is transparent - it should have meaningful name, it has input arguments and it returns a result. Function will not mutate any global state, it will not mutate its arguments either. This means that it will not propagate any change outside of function. In the pure functional programming languages it cannot have even a single side-effect (e.g. using *I/O*). If we add that to the previous point - we have almost infinite possibilities to build and modify our *just-enough abstraction*, which will be safe and clean. Constructs like currying, recurrency, partial application will be our daily tool (we will talk about them in later posts).
 
 I would like to point out one more thing. Many abstractions described as *a design patterns* can be represented as a such *just-enough abstractions* - e.g. decorator, facade, adapter. All of them can be represented as a single function.
 
 #### Gentle start into *composability*
 
-Composition is a very powerful mechanism. It is as a primary way to create new behaviours from the others. We can defer the execution by constructing the pipeline - it is a definition of *lazy computation*. Also composition is often useful, when we have to deal with transformations. In that case we are focusing on building the algorithm in a declarative way, modelling the purpose of the algorithm (*what should be done*) instead describing every single bit and piece (*how it should be done*).
+Composition is a very powerful mechanism. It is as a primary way to create new behaviours from the others. We can defer the execution by constructing the pipeline - it is a definition of *lazy computation*. Also composition is often useful, when we have to deal with transformations. In that case we are focusing on building the algorithm in a declarative way, modelling the purpose of it (*what should be done or calculated*) instead of describing every single bit and piece (*how it should be done*).
 
 ### *Interesting Examples*
 
@@ -127,7 +127,7 @@ At the end I would like to present the power of conciseness:
 (println (count-change 100))
 {% endhighlight %}
 
-This is the algorithm which calculates how many combinations of coin exchanges we can have from a given amount. Thanks to the recurrency and splitting responsibilities into small functions code is very readable and self explanatory.
+That algorithm calculates how many combinations of coin exchanges we can have from a given amount. Thanks to the recurrency and splitting responsibilities into small functions, code is very readable and self explanatory.
 
 ### Credits
 
