@@ -77,6 +77,11 @@ a:hover {
   padding: 5px;
 }
 
+.post img.scala-logo {
+  width: 180px;
+  padding: 5px;
+}
+
 .post img.sicp-logo {
   width: 180px;
   margin: 25px;
