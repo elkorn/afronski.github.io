@@ -39,6 +39,8 @@ After that I dove into that topic deeper. I have worked with other programming l
 *TODO*
 
 - (+) Popularity...
+  - [In 20015, 5 out of 6 books in the functional programming space are about *Scala*](https://youtu.be/HLCFJ9hnR1M?t=808)
+  - During last 4 years [Programming in Scala](http://www.artima.com/shop/programming_in_scala_2ed) was the most popular book in the functional programming space.
 - (-) has the price.
 - (-) It directly influences language design.
 - (-) Tooling - `sbt`, really? In XXI century?
