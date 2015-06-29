@@ -88,6 +88,12 @@ a:hover {
   padding: 5px;
 }
 
+.post img.lysefgg-logo {
+  width: 180px;
+  margin: 25px;
+  padding: 5px;
+}
+
 .post img.rabbitmq-logo {
   width: 180px;
   padding: 5px;
