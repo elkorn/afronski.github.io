@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Interesting Language Features - Elm I
-date: 2015-07-27T16:00+0200
+date: 2015-07-29T16:00+0200
 ---
 
 # Interesting Language Features - Elm I
