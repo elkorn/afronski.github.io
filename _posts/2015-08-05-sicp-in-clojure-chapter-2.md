@@ -10,7 +10,39 @@ date: 2015-08-05T16:00+0200
 
 ### Introduction
 
-*TODO*
+- Sum up whole chapter - it is all about clear and reasonable abstractions.
+- Establishing barriers upfront helps evolution and builds a contract.
+- Freedom and minimalist approach results in huge expression power.
+- Recursion is not only important regarding flow control, but also for data structures.
+
+### Compound Data Structures
+
+- Clean interface.
+- Constructors and selectors.
+- Thanks to the abstraction, after establishing a contract, it is easy to change implementation underneath.
+
+### Barriers
+
+- Conventional interface.
+- Contracts.
+
+### Freedom and Elasticity
+
+- *DSL*
+- Building type systems.
+- Minimal syntax can result with introducing rules on the semantic level.
+
+### Introduction to *homoiconicity*
+
+- Operating on symbols.
+- A small step before transforming an *AST*.
+
+### *Interesting Examples*
+
+- Rational numbers.
+- Symbolical operations - derivation.
+- Set implementation.
+- Graphical language as a *DSL*.
 
 ### Credits
 
