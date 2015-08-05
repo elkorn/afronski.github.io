@@ -1,7 +1,7 @@
 ---
 layout: post
 title: SICP in Clojure - Chapter 2
-date: 2015-08-05T16:00+0200
+date: 2015-08-06T16:00+0200
 ---
 
 # SICP in Clojure - Chapter 2
@@ -10,10 +10,13 @@ date: 2015-08-05T16:00+0200
 
 ### Introduction
 
-- Sum up whole chapter - it is all about clear and reasonable abstractions.
-- Establishing barriers upfront helps evolution and builds a contract.
-- Freedom and minimalist approach results in huge expression power.
-- Recursion is not only important regarding flow control, but also for data structures.
+In the [previous blog post](http://www.afronski.pl/2015/06/04/sicp-in-clojure-chapter-1.html) we have started with an interesting example. In this case we will start with a small summary of the whole chapter and then we will move to couple very interesting examples.
+
+Basically it is all about having clear and reasonable abstractions. Authors introduced a term called *barriers*, which help you building a contract and clear abstractions from the beginning. A separate place in the chapter is dedicated to the minimal syntax - which enables elasticity and freedom when constructing *new data types*, *type systems* and *domain specific languages.
+
+The power of expression and also treating *code as data* has another benefit - you can easily transform your syntax, in order to change existing syntax to be more expressive, rewrite the human-friendly representation directly to the compiler-friendly one. 
+
+Last but not least, composition and recursion is also important when it comes to the data structures, and building *compound data types*. And with that topic we will start.
 
 ### Compound Data Structures
 
