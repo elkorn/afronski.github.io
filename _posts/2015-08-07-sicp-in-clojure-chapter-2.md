@@ -1,7 +1,7 @@
 ---
 layout: post
 title: SICP in Clojure - Chapter 2
-date: 2015-08-06T16:00+0200
+date: 2015-08-07T16:00+0200
 ---
 
 # SICP in Clojure - Chapter 2
