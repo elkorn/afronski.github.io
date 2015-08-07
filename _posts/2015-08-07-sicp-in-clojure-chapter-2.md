@@ -6,7 +6,7 @@ date: 2015-08-07T16:00+0200
 
 # SICP in Clojure - Chapter 2
 
-<quote class="disclaimer">In one of the <a href="http://www.afronski.pl/2015/06/01/books-that-changed-my-career-structure-and-interpretation-of-computer-programs.html">previous blog posts</a> I have announced that I would like to start a new series of posts. It is a persistent journal of my journey through the aforementioned book. I hope that you will enjoy it and find it useful - the main goal is to make this series a place where we can return to in the future, recall ideas and thoughts that accompanied the reading process.</quote>
+<quote class="disclaimer">In one of the <a href="http://www.afronski.pl/2015/06/01/books-that-changed-my-career-structure-and-interpretation-of-computer-programs.html">previous blog posts</a> I have announced that I would like to start a new series of posts. It is a persistent journal of my journey through the aforementioned book. I hope that you will enjoy it and find it useful - the main goal is to make this series a place we can return to in the future, recall ideas and thoughts that accompanied the reading process.</quote>
 
 ### Introduction
 
