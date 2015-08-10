@@ -5,7 +5,6 @@ date: 2014-02-04T22:00+0100
 categories:
   - nodejs-module-of-the-week
 tags:
-  - series
   - nodejs
   - ssh2
 ---
