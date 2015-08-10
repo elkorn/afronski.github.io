@@ -11,9 +11,6 @@ layout: default
 {% if category == page.category %}
         <li>
           <time datetime>{{ post.date | date: "%d %b %Y" }}</time><a href="{{ post.url }}">{{ post.title }}</a>
-          <div class="other-entities">
-            <em>Categories</em>: {% for category in post.categories %}<span><a href="/category/{{ category }}">{{ category }}</a></span>{% endfor %}
-         </div>
         </li>
 {% endif %}
 {% endfor %}
