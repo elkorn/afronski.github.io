@@ -5,7 +5,7 @@ layout: default
       <a href="/">Home</a>
 
       <h1>{{ page.title }}</h1>
-      <ul class="blog-entities-list with-details">
+      <ul class="blog-entities-list">
 {% for post in site.posts %}
 {% for category in post.categories %}
 {% if category == page.category %}
