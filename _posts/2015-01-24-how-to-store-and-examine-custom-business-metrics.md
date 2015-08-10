@@ -2,6 +2,10 @@
 layout: post
 title: How to store and examine custom business metrics?
 date: 2015-01-24T22:00+0100
+tags:
+  - SaaS
+  - comparison
+  - business-metrics
 ---
 
 # How to store and examine custom business metrics?

@@ -2,6 +2,10 @@
 layout: post
 title: Creating a custom Vagrant box
 date: 2013-10-08T21:50+0200
+tags:
+  - vagrant
+  - devops
+  - tutorial
 ---
 
 # Creating a custom Vagrant box

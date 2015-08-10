@@ -1,0 +1,21 @@
+---
+layout: default
+title: Tags - afronski.pl
+sitemap:
+  priority: 0.7
+  changefreq: weekly
+  lastmod: 2015-08-10T22:00+020
+---
+
+    <nav class="container">
+      <a href="/">Home</a>
+
+      <h1>Tags:</h1>
+      <ul class="blog-entities-list">
+{% for tag in site.tags %}
+        <li>
+          <a href="/tag/{{ tag | first }}">{{ tag | first }}</a>
+        </li>
+{% endfor %}
+      </ul>
+    </nav>

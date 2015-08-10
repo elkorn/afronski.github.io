@@ -2,6 +2,10 @@
 layout: post
 title: Low-level Node.js debugging on production
 date: 2013-11-02T10:45+0100
+tags:
+  - nodejs
+  - debugging
+  - tutorial
 ---
 
 # Low-level Node.js debugging on production

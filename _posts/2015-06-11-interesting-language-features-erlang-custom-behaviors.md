@@ -2,6 +2,13 @@
 layout: post
 title: Interesting Language Features - Erlang IV
 date: 2015-06-11T16:00+0200
+categories:
+  - interesting-language-features
+tags:
+  - series
+  - programming-languages
+  - erlang
+  - erlang-behaviours
 ---
 
 # Interesting Language Features - Erlang IV

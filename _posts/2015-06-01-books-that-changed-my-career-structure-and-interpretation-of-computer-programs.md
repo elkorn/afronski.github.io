@@ -2,6 +2,13 @@
 layout: post
 title: Books that changed my career - Structure and Interpretation of Computer Programs 
 date: 2015-06-01T16:00+0200
+categories:
+  - books-that-changed-my-career
+tags:
+  - series
+  - books
+  - lisp
+  - scheme
 ---
 
 # Books that changed my career - Structure and Interpretation of Computer Programs

@@ -2,6 +2,13 @@
 layout: post
 title: Seven Languages in Seven Weeks - Scala
 date: 2015-06-29T16:00+0200
+categories:
+  - 7-languages-in-7-weeks
+tags:
+  - series
+  - programming-languages
+  - scala
+  - books
 ---
 
 # Seven Languages in Seven Weeks - Scala

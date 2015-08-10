@@ -2,6 +2,13 @@
 layout: post
 title: Seven Languages in Seven Weeks - Erlang
 date: 2015-07-13T18:15+0200
+categories:
+  - 7-languages-in-7-weeks
+tags:
+  - series
+  - programming-languages
+  - erlang
+  - books
 ---
 
 # Seven Languages in Seven Weeks - Erlang

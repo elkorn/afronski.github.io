@@ -2,6 +2,10 @@
 layout: post
 title: And you? What are you doing for the community?
 date: 2015-05-28T16:00+0200
+tags:
+  - community
+  - nodeschool
+  - call-to-action
 ---
 
 # And you? What are you doing for the community?

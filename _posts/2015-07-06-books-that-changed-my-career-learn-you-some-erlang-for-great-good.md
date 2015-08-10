@@ -2,6 +2,12 @@
 layout: post
 title: Books that changed my career - Learn You Some Erlang For Great Good! 
 date: 2015-07-06T16:00+0200
+categories:
+  - books-that-changed-my-career
+tags:
+  - series
+  - books
+  - erlang
 ---
 
 # Books that changed my career - Learn You Some Erlang For Great Good!

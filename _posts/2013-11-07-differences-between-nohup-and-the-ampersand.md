@@ -2,6 +2,9 @@
 layout: post
 title: Differences between nohup and ampersand
 date: 2013-11-07T18:45+0100
+tags:
+  - shell
+  - unix
 ---
 
 # Differences between `nohup` and the ampersand

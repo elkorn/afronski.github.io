@@ -2,6 +2,12 @@
 layout: post
 title: Interesting Language Features - Erlang III
 date: 2015-05-14T16:00+0200
+categories:
+  - interesting-language-features
+tags:
+  - series
+  - programming-languages
+  - erlang
 ---
 
 # Interesting Language Features - Erlang III

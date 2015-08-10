@@ -2,6 +2,11 @@
 layout: post
 title: Useful tools - mailcatcher
 date: 2014-04-13T14:00+0200
+categories:
+  - useful-tools
+tags:
+  - series
+  - tools
 ---
 
 # Useful tools - `mailcatcher`

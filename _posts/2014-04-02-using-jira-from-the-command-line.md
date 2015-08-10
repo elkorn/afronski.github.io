@@ -2,6 +2,10 @@
 layout: post
 title: Using JIRA from the command line
 date: 2014-04-02T15:00+0200
+tags:
+  - jira
+  - nodejs
+  - shell
 ---
 
 # Using `JIRA` from the command line

@@ -2,6 +2,14 @@
 layout: post
 title: Books that changed my career - Pragmatic Thinking and Learning
 date: 2015-03-07T16:00+0100
+categories:
+  - books-that-changed-my-career
+tags:
+  - series
+  - books
+  - cognitive-science
+  - learning
+  - pragmatic-programmer
 ---
 
 # Books that changed my career - Pragmatic Thinking and Learning

@@ -1,0 +1,21 @@
+---
+layout: default
+title: Categories - afronski.pl
+sitemap:
+  priority: 0.7
+  changefreq: weekly
+  lastmod: 2015-08-10T22:00+020
+---
+
+    <nav class="container">
+      <a href="/">Home</a>
+
+      <h1>Categories:</h1>
+      <ul class="blog-entities-list">
+{% for category in site.categories %}
+        <li>
+          <a href="/category/{{ category | first }}">{{ category | first }}</a>
+        </li>
+{% endfor %}
+      </ul>
+    </nav>

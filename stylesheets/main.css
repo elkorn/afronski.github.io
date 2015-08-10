@@ -312,6 +312,17 @@ h1, h2, h3, h4, h5, h6 {
   list-style: none;
 }
 
+.menu .additional-navigation {
+  margin-top: 40px;
+}
+
+.menu .additional-navigation ul {
+  padding: 0 0 0 5px;
+  margin: 0;
+
+  list-style: none;
+}
+
 /* Footer */
 
 footer {
@@ -322,6 +333,51 @@ footer {
   color: #888888;
   font-size: 0.8em;
   text-align: center;
+}
+
+/* Additional pages */
+
+.blog-entities-list {
+  margin: 20px 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.blog-entities-list .other-entities {
+  margin-left: 25px;
+}
+
+.blog-entities-list .other-entities span:before {
+  content: " ";
+}
+
+.blog-entities-list .other-entities span:first-child:before {
+  content: "";
+}
+
+.blog-entities-list .other-entities span:after {
+  color: #1C140D;
+  content: ",";
+}
+
+.blog-entities-list .other-entities span:last-child:after {
+  content: "";
+}
+
+.with-details li {
+  margin-bottom: 25px;
+}
+
+.blog-entities-list li time {
+  display: inline-block;
+
+  width: 90px;
+  margin-right: 15px;
+
+  color: #888888;
+
+  text-align: right;
 }
 
 /* Bigger view. */

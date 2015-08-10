@@ -2,6 +2,10 @@
 layout: post
 title: My picks of NDC 2014 - part II
 date: 2014-08-28T20:00+0200
+tags:
+  - conferences
+  - videos
+  - NDC
 ---
 
 # My picks of NDC 2014 - part II

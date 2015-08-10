@@ -2,6 +2,10 @@
 layout: post
 title: Gibberish Game
 date: 2014-04-24T21:00+0200
+tags:
+  - DDD
+  - communication
+  - linguistic-techniques
 ---
 
 # Gibberish Game

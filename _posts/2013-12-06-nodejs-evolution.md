@@ -2,6 +2,10 @@
 layout: post
 title: Node.js evolution
 date: 2013-12-06T18:15+0100
+tags:
+  - nodejs
+  - community
+  - evolution
 ---
 
 # Node.js evolution

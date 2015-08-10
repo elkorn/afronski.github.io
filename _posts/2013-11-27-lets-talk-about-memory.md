@@ -2,6 +2,10 @@
 layout: post
 title: Let's talk about memory
 date: 2013-11-27T23:35+0100
+tags:
+  - browsers
+  - firefox
+  - debugging
 ---
 
 # Let's talk `about:memory`

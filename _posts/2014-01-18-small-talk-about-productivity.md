@@ -2,6 +2,9 @@
 layout: post
 title: Small talk about productivity
 date: 2014-01-18T16:30+0100
+tags:
+  - programming-practice
+  - productivity
 ---
 
 # Small talk about productivity...

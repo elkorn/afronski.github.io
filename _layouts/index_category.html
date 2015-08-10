@@ -1,0 +1,22 @@
+---
+layout: default
+---
+    <nav class="container">
+      <a href="/">Home</a>
+
+      <h1>{{ page.title }}</h1>
+      <ul class="blog-entities-list with-details">
+{% for post in site.posts %}
+{% for category in post.categories %}
+{% if category == page.category %}
+        <li>
+          <time datetime>{{ post.date | date: "%d %b %Y" }}</time><a href="{{ post.url }}">{{ post.title }}</a>
+          <div class="other-entities">
+            <em>Categories</em>: {% for category in post.categories %}<span><a href="/category/{{ category }}">{{ category }}</a></span>{% endfor %}
+         </div>
+        </li>
+{% endif %}
+{% endfor %}
+{% endfor %}
+      </ul>
+    </nav>

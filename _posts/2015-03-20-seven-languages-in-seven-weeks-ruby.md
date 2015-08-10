@@ -2,6 +2,13 @@
 layout: post
 title: Seven Languages in Seven Weeks - Ruby
 date: 2015-03-20T16:00+0100
+categories:
+  - 7-languages-in-7-weeks
+tags:
+  - series
+  - programming-languages
+  - ruby
+  - books
 ---
 
 # Seven Languages in Seven Weeks - Ruby

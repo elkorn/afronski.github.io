@@ -2,6 +2,9 @@
 layout: post
 title: Easter Eggs in Python's REPL
 date: 2014-06-08T10:10+0200
+tags:
+  - python
+  - easter-eggs
 ---
 
 # Easter Eggs in Python's `REPL`

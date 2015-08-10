@@ -2,6 +2,10 @@
 layout: post
 title: Tips and tricks for chef-solo and vagrant
 date: 2013-10-18T20:10+0200
+tags:
+  - chef
+  - devops
+  - tutorial
 ---
 
 # Tips and tricks for chef-solo and vagrant

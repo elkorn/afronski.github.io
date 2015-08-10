@@ -2,6 +2,13 @@
 layout: post
 title: Books that changed my career - The Pragmatic Programmer
 date: 2015-04-12T16:00+0200
+categories:
+  - books-that-changed-my-career
+tags:
+  - series
+  - books
+  - agile
+  - pragmatic-programmer
 ---
 
 # Books that changed my career - The Pragmatic Programmer

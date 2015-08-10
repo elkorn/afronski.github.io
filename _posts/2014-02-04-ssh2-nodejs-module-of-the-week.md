@@ -2,6 +2,12 @@
 layout: post
 title: ssh2 - Node.js module of the week
 date: 2014-02-04T22:00+0100
+categories:
+  - nodejs-module-of-the-week
+tags:
+  - series
+  - nodejs
+  - ssh2
 ---
 
 ## `ssh2` - Node.js module of the week

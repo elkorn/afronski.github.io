@@ -2,6 +2,12 @@
 layout: post
 title: SICP in Clojure - Chapter 1
 date: 2015-06-04T11:00+0200
+categories:
+  - sicp-in-clojure
+tags:
+  - series
+  - sicp
+  - clojure
 ---
 
 # SICP in Clojure - Chapter 1

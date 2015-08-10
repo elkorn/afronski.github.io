@@ -2,6 +2,12 @@
 layout: post
 title: Books that changed my career - Introduction
 date: 2015-02-22T22:30+0100
+categories:
+  - books-that-changed-my-career
+tags:
+  - series
+  - books
+  - programming-languages
 ---
 
 # Books that changed my career - Introduction

@@ -2,6 +2,11 @@
 layout: post
 title: Elixir Conf EU 2015 - Afterthoughts
 date: 2015-05-07T16:00+0200
+tags:
+  - conferences
+  - elixir-conf-eu
+  - participating-in-2015
+  - afterthoughts
 ---
 
 # Elixir Conf EU 2015 - Afterthoughts

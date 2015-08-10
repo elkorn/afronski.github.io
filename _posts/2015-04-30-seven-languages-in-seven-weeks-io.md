@@ -2,6 +2,13 @@
 layout: post
 title: Seven Languages in Seven Weeks - Io
 date: 2015-04-30T16:00+0200
+categories:
+  - 7-languages-in-7-weeks
+tags:
+  - series
+  - programming-languages
+  - io-lang
+  - books
 ---
 
 # Seven Languages in Seven Weeks - Io

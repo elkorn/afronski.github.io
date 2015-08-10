@@ -2,6 +2,11 @@
 layout: post
 title: The best of Lambda Days 2015
 date: 2015-04-06T19:15+0200
+tags:
+  - conferences
+  - lambda-days
+  - participating-in-2015
+  - afterthoughts
 ---
 
 # The best of Lambda Days 2015
