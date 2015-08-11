@@ -12,9 +12,9 @@ sitemap:
 
       <h1>Categories:</h1>
       <ul class="blog-entities-list">
-{% for category in site.categories %}
+{% for category in page.sorted_categories %}
         <li>
-          <a href="/category/{{ category | first }}">{{ category | first }}</a>
+          <a href="/category/{{ category }}">{{ category }}</a>
         </li>
 {% endfor %}
       </ul>

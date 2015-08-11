@@ -12,9 +12,9 @@ sitemap:
 
       <h1>Tags:</h1>
       <ul class="blog-entities-list">
-{% for tag in site.tags %}
+{% for tag in page.sorted_tags %}
         <li>
-          <a href="/tag/{{ tag | first }}">{{ tag | first }}</a>
+          <a href="/tag/{{ tag }}">{{ tag }}</a>
         </li>
 {% endfor %}
       </ul>
