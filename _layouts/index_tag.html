@@ -1,7 +1,15 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html>
+  <head>
+{% include meta.html %}
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ page.title }}" href="{{ site.url }}/tag/{{ page.tag }}/feed.xml" />
 
+    <title>{{ page.title }}</title>
+
+    <link rel="stylesheet" href="/stylesheets/syntax.min.css" />
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
     <nav class="container">
       <a href="/">Home</a>
 
@@ -21,3 +29,8 @@ layout: default
 {% endfor %}
       </ul>
     </nav>
+
+{% include menu.html %}
+{% include google-analytics.html %}
+  </body>
+</html>

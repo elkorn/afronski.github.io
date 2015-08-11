@@ -17,14 +17,37 @@ module Jekyll
     end
   end
 
+  class TagFeed < Page
+    def initialize(site, base, dir, tag)
+      @site = site
+      @base = base
+      @dir = dir
+      @name = 'feed.xml'
+
+      self.process(@name)
+      self.read_yaml(File.join(base, '_layouts'), 'index_tag_feed.xml')
+
+      self.data['tag'] = tag
+
+      tag_title_prefix = site.config['tag_title_prefix'] || 'Tag: '
+      self.data['title'] = "#{tag_title_prefix}#{tag}"
+
+      self.data['tagged_posts'] = site.posts
+        .select { |p| p.tags.include? tag }
+        .map { |p| p.render(site.layouts, site.site_payload); p }
+    end
+  end
+
   class TagGenerator < Generator
     safe true
+    priority :lowest
 
     def generate(site)
       if site.layouts.key? 'index_tag'
         dir = site.config['tag_dir'] || 'tag'
         site.tags.keys.each do |tag|
           write_tag_index(site, File.join(dir, tag), tag)
+          write_tag_feed(site, File.join(dir, tag), tag)
         end
       end
     end
@@ -35,6 +58,14 @@ module Jekyll
       index.write(site.dest)
 
       site.pages << index
+    end
+
+    def write_tag_feed(site, dir, tag)
+      feed = TagFeed.new(site, site.source, dir, tag)
+      feed.render(site.layouts, site.site_payload)
+      feed.write(site.dest)
+
+      site.pages << feed
     end
   end
 
