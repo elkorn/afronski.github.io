@@ -19,6 +19,11 @@ published: false
 
 In the [previous blog post](http://www.afronski.pl/sicp-in-clojure/2015/06/04/sicp-in-clojure-chapter-2.html) ...
 
+*TODO*:
+
+- Short note about idiomatic Clojure, and why it is not purely idiomatic version.
+- Use quote from Rich Hickey: "I personally don't think SICP will help you much with Clojure. YMMV." and address your point of view.
+
 ### Summary
 
 ### Credits
