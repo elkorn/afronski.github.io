@@ -380,11 +380,37 @@ footer {
   text-align: right;
 }
 
+.multiple-columns {
+  max-width: 760px;
+  overflow: hidden;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.multiple-columns li {
+  display: inline;
+  float: left;
+  width: 33.33%;
+}
+
 /* Bigger view. */
 
 @media screen and (min-width: 90em) {
   .container {
     margin: 0 auto;
+  }
+}
+
+/* Medium view. */
+
+@media screen and (max-width: 60em) {
+  .multiple-columns li {
+    display: block;
+    float: none;
+    width: auto;
   }
 }
 
