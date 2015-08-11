@@ -230,8 +230,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .social-buttons .fb-share-button {
-  padding-left: 30px;
-  top: -4px;
+  margin-right: 5px;
+  top: -6px;
 }
 
 @-moz-document url-prefix() {
@@ -261,13 +261,26 @@ h1, h2, h3, h4, h5, h6 {
   color: #482C21;
 }
 
-.about img {
+.about .photo {
   display: inline-block;
 
   width: 120px;
   height: 120px;
 
   border: 2px solid #482C21;
+}
+
+.about .contact {
+  margin-bottom: 25px;
+}
+
+.about form {
+  display: inline;
+  margin-left: 20px;
+}
+
+.about form input[type='image'] {
+  margin-bottom: -5px;
 }
 
 /* Aside menu. */
