@@ -21,7 +21,7 @@ tags:
 
 If you did not sleep under a rock in the past 30 years or this post is not a first one which you have read on this blog, you are probably familiar what *Erlang* is and which features are making it uniquely suited in certain class of applications. :wink:
 
-I do not want to cover any interesting language features, because I have already written [several](http://www.afronski.pl/2015/03/10/interesting-language-features-erlang-named-case-expressions.html) [posts](http://www.afronski.pl/2015/03/27/interesting-language-features-erlang-links-and-monitors.html) [about](http://www.afronski.pl/2015/05/14/interesting-language-features-erlang-application-behavior.html) [that](http://www.afronski.pl/2015/06/11/interesting-language-features-erlang-custom-behaviors.html). Instead, I would like to introduce to you a small story about origin of the *actor model* in that particular case.
+I do not want to cover any interesting language features, because I have already written [several](http://www.afronski.pl/interesting-language-features/2015/03/10/interesting-language-features-erlang-named-case-expressions.html) [posts](http://www.afronski.pl/interesting-language-features/2015/03/27/interesting-language-features-erlang-links-and-monitors.html) [about](http://www.afronski.pl/interesting-language-features/2015/05/14/interesting-language-features-erlang-application-behavior.html) [that](http://www.afronski.pl/interesting-language-features/2015/06/11/interesting-language-features-erlang-custom-behaviors.html). Instead, I would like to introduce to you a small story about origin of the *actor model* in that particular case.
 
 ### A small story about the *actor model* in *Erlang*
 

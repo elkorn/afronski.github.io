@@ -1,6 +1,6 @@
 # afronski.pl
 
-Personal technical blog http://afronski.pl (available also on http://afronski.github.io).
+Personal technical blog http://www.afronski.pl (available also on http://afronski.github.io).
 
 *Disclaimer*: The opinions expressed herein are my own personal opinions and do not represent my employer's view in any way.
 

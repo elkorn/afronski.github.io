@@ -12,11 +12,11 @@ tags:
 
 # SICP in Clojure - Chapter 2
 
-<quote class="disclaimer">In one of the <a href="http://www.afronski.pl/2015/06/01/books-that-changed-my-career-structure-and-interpretation-of-computer-programs.html">previous blog posts</a> I have announced that I would like to start a new series of posts. It is a persistent journal of my journey through the aforementioned book. I hope that you will enjoy it and find it useful - the main goal is to make this series a place we can return to in the future, recall ideas and thoughts that accompanied the reading process.</quote>
+<quote class="disclaimer">In one of the <a href="http://www.afronski.pl/books-that-changed-my-career/2015/06/01/books-that-changed-my-career-structure-and-interpretation-of-computer-programs.html">previous blog posts</a> I have announced that I would like to start a new series of posts. It is a persistent journal of my journey through the aforementioned book. I hope that you will enjoy it and find it useful - the main goal is to make this series a place we can return to in the future, recall ideas and thoughts that accompanied the reading process.</quote>
 
 ### Introduction
 
-In the [previous blog post](http://www.afronski.pl/2015/06/04/sicp-in-clojure-chapter-1.html) we have started with an interesting example. In this case we will start with a small summary of the whole chapter and then we will move to a couple very interesting examples.
+In the [previous blog post](http://www.afronski.pl/sicp-in-clojure/2015/06/04/sicp-in-clojure-chapter-1.html) we have started with an interesting example. In this case we will start with a small summary of the whole chapter and then we will move to a couple very interesting examples.
 
 Basically it is all about having clear and reasonable abstractions. Authors introduced a term called *barriers*, which help you build a contract and clear abstractions from the beginning. A separate place in the chapter is dedicated to the minimal syntax - which enables elasticity and freedom when constructing *new data types*, *type systems* and *domain specific languages*.
 

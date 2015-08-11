@@ -17,7 +17,7 @@ tags:
 
 ### Introduction
 
-In the [previous blog post](http://www.afronski.pl/2015/05/14/interesting-language-features-erlang-application-behavior.html) we talked about *behaviors*, in particular about *application* behavior. It is a primary way of reusing common abstractions.
+In the [previous blog post](http://www.afronski.pl/interesting-language-features/2015/05/14/interesting-language-features-erlang-application-behavior.html) we talked about *behaviors*, in particular about *application* behavior. It is a primary way of reusing common abstractions.
 
 It may look limiting at the first sight that we have only couple of them available by default. But fortunately, we are not limited only to the abstractions prepared by the *OTP* team. *We can easily create new ones* - and many *Erlang* teams willingly takes that opportunity. In this blog post I would like to show you various abstractions hidden inside RabbitMQ.
 

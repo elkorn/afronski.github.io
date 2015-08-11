@@ -36,7 +36,7 @@ The last, but not least - as I said in the previous paragraph - author [Fred Tro
 
 **The shortest and simplest answer is no**. The longer one, needs much more investigation of problem's root.
 
-*May I ask you why you don't like Erlang?* If you are already interested in any other language that is *functional* and *built with concurrency in mind*, then it is fine. But if not, you should learn a new one (pick any - `Clojure`, `F#` or `Erlang`). Just use a different language than your daily tool. You can read about that [here](http://www.afronski.pl/2015/06/04/sicp-in-clojure-chapter-1.html). And I will leave you with that till the next time! :smiley:
+*May I ask you why you don't like Erlang?* If you are already interested in any other language that is *functional* and *built with concurrency in mind*, then it is fine. But if not, you should learn a new one (pick any - `Clojure`, `F#` or `Erlang`). Just use a different language than your daily tool. You can read about that [here](http://www.afronski.pl/sicp-in-clojure/2015/06/04/sicp-in-clojure-chapter-1.html). And I will leave you with that till the next time! :smiley:
 
 ### Credits
 
