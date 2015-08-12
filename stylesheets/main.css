@@ -283,6 +283,13 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: -5px;
 }
 
+/* Style related with Ads. */
+
+.ads {
+  padding: 0 50px;
+  margin-left: 18.8em;
+}
+
 /* Aside menu. */
 
 #avatar {
@@ -430,6 +437,10 @@ footer {
 /* Smaller view. */
 
 @media screen and (max-width: 50em) {
+  .ads {
+    margin-left: 0;
+  }
+
   .about img {
     display: none;
   }
