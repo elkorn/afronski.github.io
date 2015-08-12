@@ -22,7 +22,10 @@ As you may know, In *Erlang* you are building *systems* which consists of *multi
 
 One of the parts in aforementioned complexity is an entity called **application_controller**. Whenever the *VM* starts up, this process is started and it starts *applications*. It supervises most of them (but not in the literal way). If you have couple of them, it will look like this:
 
-![Application Controller and multiple applications with application masters](/assets/ApplicationController.png)
+<section class="picture-section">
+  <img alt="Application Controller and multiple applications with application masters." src="/assets/ApplicationController.png" />
+  <small>Image shamelessly taken from the amazing book <em>Learn You Some Erlang For Great Good!</em></small>
+</section>
 
 Everything that I have told you before you can find in the books (and again - I especially recommend the amazing book from [@mononcqc](https://twitter.com/mononcqc) - [Learn You Some Erlang For Great Good!](http://learnyousomeerlang.com)), but there is a small understatement regarding *applications*. :wink:
 
