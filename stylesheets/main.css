@@ -288,6 +288,7 @@ h1, h2, h3, h4, h5, h6 {
 .ads {
   padding: 0 50px;
   margin-left: 18.8em;
+  max-height: 100px;
 }
 
 /* Aside menu. */
