@@ -71,11 +71,9 @@ I would like to introduce to you a set of examples which will be a base for our 
 ;; the others.
 
 (defn pi-sum [ a b ]
-  (defn pi-term [ x ]
-    (/ 1.0 (* x (+ x 2))))
-  (defn pi-next [ x ]
-    (+ x 4))
-  (sum pi-term a pi-next b))
+  (letfn [ (pi-term [ x ] (/ 1.0 (* x (+ x 2))))
+           (pi-next [ x ] (+ x 4)) ]
+  (sum pi-term a pi-next b)))
 
 (println (* 8 (pi-sum 1 1000)))
 
@@ -84,8 +82,8 @@ I would like to introduce to you a set of examples which will be a base for our 
 ;; scope.
 
 (defn integral [ f a b dx ]
-  (defn add-dx [ x ] (+ x dx))
-  (* (sum f (+ a (/ dx 2.0)) add-dx b) dx))
+  (letfn [ (add-dx [ x ] (+ x dx)) ]
+  (* (sum f (+ a (/ dx 2.0)) add-dx b) dx)))
 
 (println (integral cube 0 1 0.001))
 {% endhighlight %}
