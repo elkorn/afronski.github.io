@@ -87,6 +87,11 @@ a:hover {
   padding: 5px;
 }
 
+.post img.clojure-logo {
+  width: 100px;
+  padding: 5px;
+}
+
 .post img.sicp-logo {
   width: 180px;
   margin: 25px;
