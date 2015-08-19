@@ -35,6 +35,7 @@ module Jekyll
       self.data['posts_with_that_category'] = site.posts
         .select { |p| p.categories.include? category }
         .map { |p| p.render(site.layouts, site.site_payload); p }
+        .sort_by { |p| -p.date.to_i }
     end
   end
 

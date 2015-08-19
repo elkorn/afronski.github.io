@@ -35,6 +35,7 @@ module Jekyll
       self.data['tagged_posts'] = site.posts
         .select { |p| p.tags.include? tag }
         .map { |p| p.render(site.layouts, site.site_payload); p }
+        .sort_by { |p| -p.date.to_i }
     end
   end
 
