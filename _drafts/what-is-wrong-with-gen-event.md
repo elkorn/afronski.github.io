@@ -19,6 +19,7 @@ published: false
 - How to handle handler failure? ;)
 - Hides the complexity underneath (where are the handlers in `observer:start().`, oh it is not a proces).
 - Not widely used in the core and OTP.
+- Source: https://www.youtube.com/watch?v=UUvU8cjCIcs
 
 ### What's next?
 
