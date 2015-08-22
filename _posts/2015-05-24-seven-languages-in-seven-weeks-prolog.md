@@ -6,6 +6,7 @@ categories:
   - 7-languages-in-7-weeks
 tags:
   - series
+  - 7-languages-in-7-weeks
   - programming-languages
   - prolog
   - books
