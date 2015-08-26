@@ -153,7 +153,7 @@ postOrderList = F.foldMap (\x -> [ x ]) postOrder
 
 We reached the end of the first book. But it does not mean that there are no more languages to talk about. We will do a small break, maybe we will describe one or two more representatives which are not present in the sequel, and after that we will restart the same series, with a first language described in the [Seven More Languages in Seven Weeks](https://pragprog.com/book/7lang/seven-more-languages-in-seven-weeks).
 
-I can tell you right now, that it will be *Lua* (which is *BTW* silently omitted in that blog post - [Awesome](https://en.wikipedia.org/wiki/Awesome_(window_manager)) is partially written in that language and you are writing a configuration in it as well). I hope to see you at the beginning of the *old* / *new* series! :smile:
+I can tell you right now, that it will be *Lua* (which is *BTW* silently omitted in that blog post - [Awesome](https://en.wikipedia.org/wiki/Awesome_(window_manager)) is partially written in that language and configuration is also in that language). I hope to see you at the beginning of the *old* / *new* series! :smile:
 
 ### Credits
 
