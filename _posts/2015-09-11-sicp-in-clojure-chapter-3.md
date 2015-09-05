@@ -23,6 +23,21 @@ In the [previous blog post](http://www.afronski.pl/sicp-in-clojure/2015/06/04/si
 
 - Short note about idiomatic Clojure, and why it is not purely idiomatic version.
 - Use quote from Rich Hickey: "I personally don't think SICP will help you much with Clojure. YMMV." and address your point of view.
+- Irreversible result of mutability.
+  - Side effects.
+  - Mutability breaks referential transparency and substitution model.
+  - Concurrency with mutability.
+    - Significance of time with concurrency.
+  - Be pragmatic about mutability - side-effect free core, data transformations - and peripherals with side-effects and mutable, encapsulated local state.
+- Concurrency in Clojure.
+  - Atoms.
+  - Agents.
+  - Critical sections and mutexes.
+- Streams and laziness.
+  - Clojure version of that.
+- Examples - simulations, data structures, accounts with mutable state.
+  - State-full computation objects.
+  - Time-aware simulations and concurrent systems.
 
 ### Summary
 
