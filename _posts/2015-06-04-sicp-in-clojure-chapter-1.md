@@ -8,6 +8,7 @@ tags:
   - series
   - sicp
   - clojure
+  - books
 ---
 
 # SICP in Clojure - Chapter 1
@@ -28,7 +29,7 @@ As every book related with teaching programming from the scratch, it introduces 
 
 Metaphorically, we may say that instead of getting profits from *Moore's Law*, we have to deal with *Amdahl's Law* now. And that one of the basics truths inside computer science is also inexorable. It says that the maximum speedup in parallel environment is strictly related with its sequential part. Obviously, some parts have to be sequential, because of the inherent complexity related with the problem domain, however putting more and more constraints (related with mutability and shared state) increases this factor significantly. And in that case our parallel environment will be used inefficiently, or even worse - we are blocking resources which can be utilized in other parts of the system.
 
-*Functional programming* exceeds your toolbox and enhances your programming skills, by bending them and enforcing to use them in a different way. By adding value to your toolbox, it introduces many powerful elements such as *referential transparency*, *mathematical conciseness*, *immutability*, *composability*, designing and thinking about parts of the system which are *pure* (side-effect free) and *impure* (abstracting side-effects away into different constructs like *Monads*). Those benefits are key factors when we have to deal with a concurrency and parallel environment - it is just easier to manage complexity in that way. Certain classes of problems, also related with concurrency, will disappear after choosing proper tool. Inferring the execution flow in such languages is also easier, because it is transparent (*no side effects*). 
+*Functional programming* exceeds your toolbox and enhances your programming skills, by bending them and enforcing to use them in a different way. By adding value to your toolbox, it introduces many powerful elements such as *referential transparency*, *mathematical conciseness*, *immutability*, *composability*, designing and thinking about parts of the system which are *pure* (side-effect free) and *impure* (abstracting side-effects away into different constructs like *Monads*). Those benefits are key factors when we have to deal with a concurrency and parallel environment - it is just easier to manage complexity in that way. Certain classes of problems, also related with concurrency, will disappear after choosing proper tool. Inferring the execution flow in such languages is also easier, because it is transparent (*no side effects*).
 
 I would like to introduce some amazing concepts from this book by emphasizing them in a series of articles posted on the blog. Starting from this one, I will speak about each chapter separately, mentioning important concepts, documented with a code samples written in *Clojure*. I will not focus on documenting things from the beginners point of view, but rather looking for analogies which an experienced programmer should understand. Let's start!
 
@@ -118,7 +119,7 @@ At the end I would like to present the power of conciseness:
     5 50))
 
 (defn cc [ amount kinds-of-coins ]
-  (cond (= amount 0) 1 
+  (cond (= amount 0) 1
         (or (< amount 0) (= kinds-of-coins 0)) 0
         :else (+ (cc amount
                      (- kinds-of-coins 1))

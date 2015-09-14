@@ -8,6 +8,7 @@ tags:
   - series
   - sicp
   - clojure
+  - books
 ---
 
 # SICP in Clojure - Chapter 2
@@ -20,7 +21,7 @@ In the [previous blog post](http://www.afronski.pl/sicp-in-clojure/2015/06/04/si
 
 Basically it is all about having clear and reasonable abstractions. Authors introduced a term called *barriers*, which help you build a contract and clear abstractions from the beginning. A separate place in the chapter is dedicated to the minimal syntax - which enables elasticity and freedom when constructing *new data types*, *type systems* and *domain specific languages*.
 
-The power of expression and also treating *code as data* has another benefit - you can easily transform your syntax, in order to change existing syntax to be more expressive, rewrite the human-friendly representation directly to the compiler-friendly one. 
+The power of expression and also treating *code as data* has another benefit - you can easily transform your syntax, in order to change existing syntax to be more expressive, rewrite the human-friendly representation directly to the compiler-friendly one.
 
 Last but not least, composition and recursion is also important when it comes to the data structures, and building *compound data types*. And with that topic we will start.
 
