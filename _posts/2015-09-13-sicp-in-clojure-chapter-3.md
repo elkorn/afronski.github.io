@@ -94,9 +94,9 @@ There is a very nice example presented in the book, which implements circuit boa
 {% highlight clojure linenos %}
 {% endhighlight %}
 
-### Another approach to simulation - Streams
+### Why laziness is good - Streams
 
-When you read previous section, you probably have a feeling that it must be a better way. Indeed, that is a *better way* to approach that problem - in the last section of the chapter authors are introducing new implementation of the *circuit board simulator*, which use *streams* and *laziness*:
+When you read previous section, you probably have a feeling that it must be a better way. Indeed, that is a *better way* to approach problems of succession of states - in the last section of the chapter authors are introducing interesting concepts which use *streams* - *lazy sequences* with succession of states:
 
 {% highlight clojure linenos %}
 {% endhighlight %}
@@ -107,7 +107,7 @@ When you read previous section, you probably have a feeling that it must be a be
 
 It was a long article, with a lot of twists and groundbreaking truths. For developers with some experience (especially related with *multi-threading* and *concurrency*) it is probably a bread and butter. And probably by that we are unconsciously got used to it. Change and reflection about state of our tools requires fresh point of view. New perspective, I hope that by reading those kind of books I will easily get one. And thanks to that I will be able to rethink my daily practices, and obviously learn new stuff.
 
-See you next time, in the penultimate, 4th chapter of the book! :wink:
+See you next time, in the blog post about 4th chapter! :wink:
 
 ### Credits
 
