@@ -38,7 +38,18 @@ And it is hard to argue with that as well - it is *true*, SICP has nothing to do
 Returning to the main topic - we went more than 200 pages through the book, we built various data structures, simple and not so simple programs which solve certain problems. And around the 215 page (in *Polish* edition :wink:) authors introduced concept of *mutable state*. You may think *"oh come on, we are dealing with that on the daily basis"*. Why it is dangerous? Let's look at the example:
 
 {% highlight clojure linenos %}
+(defn make-accumulator [start]
+  (let [acc (atom start)]
+    (fn [x]
+      (swap! acc + x))))
+
+(def A (make-accumulator 5))
+
+(A 10) ;; 15
+(A 10) ;; 25
 {% endhighlight %}
+
+If you do not understand what an `atom` is, do not worry - we will get [there](#mutability-in-clojure).
 
 Now, I would like to refer to some features that functions without mutable state have. Till now, our functions were fully and only dependent on the input arguments. Taking that values, and body of the function you could clearly reason about the result of the function. Output of that operation could be calculated with the simple substitution method. In other words - our programs were *referentially transparent* - we could substitute one part of the program with its calculated, simpler version and the result will be the same. In the example presented above we are not passing state from the previous invocation explicitly - it is buried inside the *computation object*.
 
@@ -56,56 +67,207 @@ Language philosophy encourages you to write pure, functional core (by that I mea
 
 There is one more consequence of mutability. If we will think for a moment, by introducing *mutable state*, we are introducing notions of *time* and *resource ownership* (someone is an owner of that mutable state, it does not flow from one call to another via input and output). It means that someone is an owner of a particular state, it can be changed there, but others can also read it. Or even worse - sometimes multiple actors can modify the state. In both cases *sharing* introduces some really nasty consequences, because it means that time and access to that resource need to synchronized between multiple parties. **And, as you can imagine, that causes awful lot of problems**.
 
-### Concurrency and mutability in Clojure
+### Mutability in Clojure
 
-*TODO*: defs, Vars - isolated, changing state between threads (binding).
-
-{% highlight clojure linenos %}
-{% endhighlight %}
-
-*TODO*: Refs - shared, synchronous, coordinated (STM).
+When you approach *Clojure* for a first time (especially if you are approaching it with an *imperative programming languages* experience), you may think that by creating a *global* or *local* `vars` via `def` it can be shared between multiple execution contexts. Thankfully, you cannot share them - all `vars` are isolated. It means that you cannot change it from a different execution context e.g. *different thread*. Changing state is possible only by rebinding it locally for that execution context, via `binding`:
 
 {% highlight clojure linenos %}
+(def ^:dynamic x 1)
+(def ^:dynamic y 1)
+
+(+ x y)             ;; 2
+
+(binding [x 2 y 3]
+  (+ x y))          ;; 5
+
+(+ x y)             ;; 2
 {% endhighlight %}
 
-*TODO*: Atoms - shared, synchronous, independent.
+In other words `vars` ensure safe use of mutable storage locations via thread isolation. And one more remark - it reminds much more an *imperative style* of programming, and you have available more of those constructs like `with-local-vars` - but, it is not a recommended way to deal with problems.
+
+Probably you have heard that *Clojure* has *STM* (*Software Transactional Memory*, exact details which type are gathered [here](http://clojure.org/refs)) support. And that is true, you can ensure shared use of mutable storage thanks to that. But you have to use a different concept for that - it is called a `ref`. They are bound to a single storage location through their lifetime, and allow only to mutate value in that location to happen only within a *transaction*. Sound familiar, right? Let's look at the example:
 
 {% highlight clojure linenos %}
+(def pending-jobs (ref #{4 3 2}))
+(def active-jobs (ref #{1}))
+(def done-jobs (ref #{}))
+
+(def start-job [n]
+  (dosync
+    (commute pending-jobs disj id)
+    (commute active-jobs conj id)))
+
+(def finish-job [n]
+  (dosync
+    (commute active-job disj id)
+    (commute done-jobs conj id)))
+
+@pending-jobs     ;; #{4 3 2}
+@active-jobs      ;; #{1}
+@done-jobs        ;; #{}
+
+(finish-job 1)
+
+@pending-jobs     ;; #{4 3 2}
+@active-jobs      ;; #{}
+@done-jobs        ;; #{1}
+
+(start-job 2)
+
+@pending-jobs     ;; #{4 3}
+@active-jobs      ;; #{2}
+@done-jobs        ;; #{1}
 {% endhighlight %}
 
-*TODO*: Agents - shared, asynchronous, independent.
+In other words - it is a *synchronous* and *synchronized* way of altering *shared* mutable state. Keep in mind that values placed inside a `ref` should be *immutable*. Otherwise something outside of transaction scope attached to mutable storage can change value inside, and language will not help you in managing that part (in our example we have used plain and immutable *Clojure* data structure - a *set*).
+
+In the first example attached in that blog post we have used an `atom` as a local state representation. It is an easy way to handle *shared* state in a *synchronous* and *independent* manner. It means that it is an ideal way of having an *internal*, *shared* state encapsulated somewhere in the *function closure*:
 
 {% highlight clojure linenos %}
+(defn make-monitored [f]
+  (let [counter (atom 0)]
+      (fn [arg]
+        (condp = arg
+          'reset-count (reset! counter 0)
+          'how-many-calls? @counter
+          (do (swap! counter inc) (f arg))))))
+
+(def sqr (make-monitored (fn [x] (Math/sqrt x))))
+
+(println (sqrt 100))
+(println (sqrt 'how-many-calls?))
+(println (sqrt 25))
+(println (sqrt 'how-many-calls?))
+(println (sqrt 'reset-count))
+(println (sqrt 'how-many-calls?))
 {% endhighlight %}
 
-### Simulations with mutability
-
-There is a very nice example presented in the book, which implements circuit board simulation. First authors implement it with use of mutable state. Let's look at part of that implementation (whole can be found [here](https://github.com/afronski/sicp-examples)):
+*Agents* are last option which *Clojure* has regarding the mutable storage mechanisms. They are different from the *atoms*, because state application is *asynchronous*. You can think about `agent` as a sink, into which we are sending messages. They will be applied asynchronously in the order of receiving them. Let's look at the example:
 
 {% highlight clojure linenos %}
+(def log-sink (agent '()))
+
+(defn debug [msg]
+  (send log-sink conj (str "DEBUG: " msg)))
+
+(defn info [msg]
+  (send log-sink conj (str "INFO: " msg)))
+
+;; Example presented here is of course simplified, but
+;; imagine that multiple threads are executing those
+;; logging statements - in that case, all of them will return
+;; immediately, and changes will be applied in the order of
+;; receiving them on the `agent` side.
+
+(debug "1")
+(debug "2")
+(info "3")
+(debug "4")
+
+@log-sink     ;; ("DEBUG: 4" "INFO: 3" "DEBUG: 2" "DEBUG: 1")
 {% endhighlight %}
 
-*TODO*: Explain why it is wrong.
+We have talked about all options related with *mutability*, now it is time to check and verify them in practice. Authors of the book prepared something special for us.
+
+### Designing system with mutability - Electronic Circuit Simulator
+
+There is a very nice example presented in the book, which implements circuit board simulation. Authors implement it with use of mutable state, represented as an encapsulated *computation objects*. Let's look at part of that implementation (whole can be found [here](https://github.com/afronski/sicp-examples/blob/master/chapters/3/3.3.4/electronic-circuit.clj)):
+
+{% highlight clojure linenos %}
+;; Wires - one of the computational objects in the example.
+;;
+;; It represents a *signal state* and list of actions called *effects*
+;; which are executed after the signal propagates through the wire.
+
+(defn make-wire []
+  (let [signal (atom false)
+        effects (atom (list))]
+    (letfn [(set-signal! [new]
+              (if (not (= signal new))
+                (do (swap! signal new)
+                    (invoke-all @effects))
+                :done))
+
+            (accept-action! [procedure]
+              (swap! effects conj procedure)
+              (procedure))
+
+            (dispatch [action]
+              (condp = action
+                :get-signal @signal
+                :set-signal! set-signal!
+                :add-action! add-action!
+                assert false (str "Unknown operation " action " in make-wire.")))]
+      dispatch)))
+
+;; ...
+
+;; Adders - the functional composition of previously defined smaller elements, with
+;; use of local computational objects with state, represented by wires.
+
+(defn half-adder [a b s c]
+  (let [d (make-wire)
+        e (make-wire)]
+    (or-gate a b d)
+    (and-gate a b c)
+    (not-gate c e)
+    (and-gate d e s)
+    :ok))
+
+(defn full-adder [a b c-in sum c-out]
+  (let [s (make-wire)
+        c1 (make-wire)
+        c2 (make-wire)]
+    (half-adder b c-in s c1)
+    (half-adder a s sum c2)
+    (or-gate c1 c2 c-out)
+    :ok))
+
+;; Simulation - the actual use of the system. Scheduling, gate propagation
+;; delay and agenda are hidden underneath the `step` and `set-signal!` functions.
+
+(defn input-1 (make-wire))
+(defn input-2 (make-wire))
+(defn sum (make-wire))
+(defn carry (make-wire))
+
+(probe :sum sum)
+(probe :carry carry)
+
+(half-adder input-1 input2 sum carry)
+
+(set-signal! input-1 true)
+(step)
+
+(set-signal! input-2 true)
+(step)
+{% endhighlight %}
+
+Even if using the system, is really easy (last part is actually a very pleasant and simple *DSL*) - reasoning about state is definitely harder. I encourage you to analyze the actual implementation (and how the *agenda* mechanism works).
 
 ### Laziness
 
 *TODO*: How to build lazy sequence, `lazy-seq`, `memoize`, data structures and sequences.
 
 {% highlight clojure linenos %}
+TODO
 {% endhighlight %}
+
+*TODO*: Explain example.
 
 ### Why laziness is good - Streams
 
-When you read previous section, you probably have a feeling that it must be a better way. Indeed, that is a *better way* to approach problems of succession of states - in the last section of the chapter authors are introducing interesting concepts which use *streams* - *lazy sequences* with succession of states:
+When you read previous section, you probably have a feeling that laziness introduces a better way for handling changing states. Indeed, that is a *better way* to approach problem of state succession - in the last section of the chapter authors are introducing interesting concepts which underneath use *streams* (*lazy sequences*):
 
 {% highlight clojure linenos %}
+TODO
 {% endhighlight %}
 
-*TODO*: Explain why it is better.
+TODO: Explain example.
 
 ### Summary
 
-It was a long article, with a lot of twists and groundbreaking truths. For developers with some experience (especially related with *multi-threading* and *concurrency*) it is probably a bread and butter. And probably by that we are unconsciously got used to it. Change and reflection about state of our tools requires fresh point of view. New perspective, I hope that by reading those kind of books I will easily get one. And thanks to that I will be able to rethink my daily practices, and obviously learn new stuff.
+It was a *very long article*, with a lot of twists and some groundbreaking truths. For developers with some experience (especially related with *multi-threading* and *concurrency*) it is probably a bread and butter. And probably by that we are unconsciously got used to it. Change and reflection about state of our tools requires fresh point of view. New perspective, I hope that by reading those kind of books I will easily get one. And thanks to that I will be able to rethink my daily practices, and obviously learn new stuff.
 
 See you next time, in the blog post about 4th chapter! :wink:
 
