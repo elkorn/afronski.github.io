@@ -1,7 +1,7 @@
 ---
 layout: post
 title: SICP in Clojure - Chapter 3
-date: 2015-09-15T16:30+0200
+date: 2015-09-18T16:00+0200
 categories:
   - sicp-in-clojure
 tags:
@@ -247,23 +247,41 @@ Even if using the system, is really easy (last part is actually a very pleasant 
 
 ### Laziness
 
-*TODO*: How to build lazy sequence, `lazy-seq`, `memoize`, data structures and sequences.
+Before we will move to the next chapter, authors introduced *stream* concept, which is a lazy sequence. It means that only the first value is available and tail will be calculated on demand afterwards (or will not - depends on the further requirements). In *Scheme* you have to build such thing by yourself, in *Clojure* - you have got all facilities in place already:
 
 {% highlight clojure linenos %}
-TODO
+(defn integers-from [n]
+  (cons n (lazy-seq (integers-from (inc n)))))
+
+(def integers (integers-from 1))
+
+(println (take 10 integers))
 {% endhighlight %}
 
-*TODO*: Explain example.
+Keep in mind that we are using the same functions from the `Seq` interface (`first`, `rest` and `cons`) despite that the actual sequence is evaluated lazily. In more comprehensive [example](https://github.com/afronski/sicp-examples/blob/master/chapters/3/3.5.2/infinite-streams.clj) you can see how you can use filtering or mapping together with laziness.
 
 ### Why laziness is good - Streams
 
-When you read previous section, you probably have a feeling that laziness introduces a better way for handling changing states. Indeed, that is a *better way* to approach problem of state succession - in the last section of the chapter authors are introducing interesting concepts which underneath use *streams* (*lazy sequences*):
+When you read previous section, you probably have a feeling that laziness introduces a better way for handling state mutation. It optimizes certain use cases, because often we do not want to calculate and proceed operations on all elements. Indeed, that is a *better way* to approach problem of state succession - but, keep in mind that all performed operations that have side effects can be problematic. It means that some parts of code would not be evaluated, so side effects will not be applied either - what if something, down in the guts of the system relies on that? That is also a reason why mutation causes unexpected problems.
+
+In the last section of the chapter authors compared modularity of the *functional design* and *objects*. They have prepared an [interesting example](https://github.com/afronski/sicp-examples/blob/master/chapters/3/3.5.5/monte-carlo.clj) which combines *computational object* and underneath use *streams* (and in consequence, *lazy sequences*):
 
 {% highlight clojure linenos %}
-TODO
+;; Monte Carlo method as a stream (you are increasing number
+;; of iterations by taking more elements from the stream).
+
+(defn monte-carlo [experiment-as-stream passed failed]
+  (letfn [(next [passed failed]
+            (cons (/ passed (+ passed failed))
+                  (lazy-seq (monte-carlo (rest experiment-as-stream)
+                                         passed
+                                         failed))))]
+    (if (first experiment-as-stream)
+      (next (inc passed) failed)
+      (next passed (inc failed)))))
 {% endhighlight %}
 
-TODO: Explain example.
+It is an implementation of [Monte Carlo simulation method](https://en.wikipedia.org/wiki/Monte_Carlo_method). It is based on the streams - they are responsible for transformation and representing simulation mechanism, and has simple *computational object* which represents *random number generator* (with internal and *mutable* state).
 
 ### Summary
 
