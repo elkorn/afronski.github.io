@@ -179,16 +179,20 @@ There is a very nice example presented in the book, which implements circuit boa
 ;; It represents a *signal state* and list of actions called *effects*
 ;; which are executed after the signal propagates through the wire.
 
+(defn get-signal [wire] (wire :get-signal))
+(defn set-signal! [wire v] ((wire :set-signal!) v))
+(defn add-action! [wire p] ((wire :add-action!) p))
+
 (defn make-wire []
   (let [signal (atom false)
         effects (atom (list))]
     (letfn [(set-signal! [new]
               (if (not (= signal new))
-                (do (swap! signal new)
+                (do (reset! signal new)
                     (invoke-all @effects))
                 :done))
 
-            (accept-action! [procedure]
+            (add-action! [procedure]
               (swap! effects conj procedure)
               (procedure))
 
@@ -197,7 +201,7 @@ There is a very nice example presented in the book, which implements circuit boa
                 :get-signal @signal
                 :set-signal! set-signal!
                 :add-action! add-action!
-                assert false (str "Unknown operation " action " in make-wire.")))]
+                (assert false (str "Unknown operation " action " in make-wire."))))]
       dispatch)))
 
 ;; ...
@@ -226,15 +230,15 @@ There is a very nice example presented in the book, which implements circuit boa
 ;; Simulation - the actual use of the system. Scheduling, gate propagation
 ;; delay and agenda are hidden underneath the `step` and `set-signal!` functions.
 
-(defn input-1 (make-wire))
-(defn input-2 (make-wire))
-(defn sum (make-wire))
-(defn carry (make-wire))
+(def input-1 (make-wire))
+(def input-2 (make-wire))
+(def sum (make-wire))
+(def carry (make-wire))
 
 (probe :sum sum)
 (probe :carry carry)
 
-(half-adder input-1 input2 sum carry)
+(half-adder input-1 input-2 sum carry)
 
 (set-signal! input-1 true)
 (step)
