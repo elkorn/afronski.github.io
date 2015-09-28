@@ -1,7 +1,7 @@
 ---
 layout: post
 title: SICP in Clojure - Chapter 4
-date: 2015-09-28T16:00+0200
+date: 2015-10-05T16:00+0200
 categories:
   - sicp-in-clojure
 tags:
