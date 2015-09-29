@@ -28,3 +28,9 @@ In the [previous blog post](http://www.afronski.pl/sicp-in-clojure/2015/10/05/si
   - Tail-recursion.
   - List processing.
   - Laziness.
+
+### Credits
+
+- [Structure and Interpretation of Computer Programs](http://mitpress.mit.edu/books/structure-and-interpretation-computer-programs), *Harold Abelson*, *Gerald Jay Sussman* and *Julie Sussman*
+- [Full book available online](https://mitpress.mit.edu/sicp/full-text/book/book.html)
+- [afronski/sicp-examples](https://github.com/afronski/sicp-examples)
