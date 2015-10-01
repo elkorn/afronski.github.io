@@ -56,7 +56,7 @@ In *Lisp*, the core of the evaluator is often called a `eval`-`apply` cycle. If 
 (eval (read-string "(+ 1 1)"))
 {% endhighlight %}
 
-TODO: Explanation.
+Evaluation means that we take fragment of the code (in form of a *quoted expression* or parsed from a string) and evaluate that, using all rules of the language. In other word it *calculates* the result of a certain expression. Keep in mind that a delivered expression is just a data structure - list of keywords, other tokens, and other data structures. **And it looks exactly the same as the language itself**. That is a practical implication of the homoiconicity.
 
 #### `apply`
 
@@ -77,17 +77,44 @@ TODO: Explanation.
 (str "str1" "str2" "str3")
 {% endhighlight %}
 
-TODO: Explanation.
+At the first sight you will find that `apply` is only a strange syntax for a function invocation. But then, the obvious reflection strikes in - **it is exactly the opposite**. Function call is a syntax sugar on top of `apply` function. Moreover, having this function in your toolbox opens a different ways of thinking about invoking unknown functions, and build other concepts like *partial application* and *currying* based on that.
 
 #### Combining both powers together
 
 Process of interpreting a program is an interaction between them. How it looks like? Here is an excerpt from an implementation (again full version is inside [afronski/sicp-in-examples](https://github.com/afronski/sicp-examples/blob/master/chapters/4/4.1.1/eval-apply.clj)):
 
 {% highlight clojure linenos %}
-;; TODO: Excerpt from an example implementation.
+(defn my-eval [exp env]
+  (cond (self-evaluating? exp) exp
+        (variable? exp)        (lookup-variable-value exp env)
+        (quoted? exp)          (text-of-quotation exp)
+        (assignment? exp)      (my-eval-assignment exp env)
+        (definition? exp)      (my-eval-definition exp env)
+        (if? exp)              (my-eval-if exp env)
+        (lambda? exp)          (make-procedure (lambda-parameters exp)
+                                               (lambda-body exp)
+                                               env)
+        (do? exp)              (my-eval-sequence (do-actions exp) env)
+        (cond? exp)            (my-eval (cond->if exp) env)
+        (application? exp)     (my-apply (my-eval (operator exp) env)
+                                         (list-of-values (operands exp) env))
+
+        :else                  (assert false "Unknown expression in `my-eval`.")))
+
+(defn my-apply [proc args]
+  (cond (primitive-procedure? proc)
+          (my-apply-primitive-procedure proc args)
+        (compound-procedure? proc)
+          (my-eval-sequence (procedure-body proc)
+                            (extend-environment (procedure-parameters proc))
+                            args
+                            (procedure-environment proc))
+
+        :else
+          (assert false "Unknown procedure type in `my-apply`.")))
 {% endhighlight %}
 
-As we can see *evaluation* requires in certain cases an *application*, and *application* requires *evaluation* of function *body* and *arguments*. They are often expressed as a *yin* and *yang* symbol, because they are complement each other.
+Even without exact definitions of the used functions, code is pretty self-explanatory. As we can see *evaluation* requires in certain cases an *application*, and *application* requires *evaluation* of function *body* and *arguments*. They are often expressed as a *yin-yang* symbol, because they are complement each other.
 
 ### Different evaluation models
 
@@ -95,7 +122,72 @@ Instead of *reimplementing* different evaluation models, I have prepared differe
 
 #### Laziness
 
-TODO: `lazy-seq`, `repeatedly` and other functions in more details.
+We have met this concept earlier already. In the previous chapter we worked with *streams* and infinite collections which simulate e.g. computation process. But built-in mechanisms in *Clojure* have much more to offer in that matter. We have already created some infinite collections, but let us remind how it works:
+
+{% highlight clojure linenos %}
+(import java.util.UUID)
+
+(defn uuid-seq []
+  (lazy-seq
+    (cons (str (UUID/randomUUID))
+          (uuid-seq))))
+
+(println (take 3 (uuid-seq)))
+
+; (b09b2a29-2cad-4cda-8e4c-8a9a5c136f05
+;  8ece35e6-202f-4977-9987-7292239833e4
+;  0a336e55-5e42-4312-87ea-24e86ba4311e)
+{% endhighlight %}
+
+First we have defining a `lazy-seq` then we use standard mechanism of constructing the collection from the first, *evaluated* element and the rest which evaluation will be deferred. What I mean by deferring? If you will try to put the first line inside a file (but not inside the *REPL* - it will force the evaluation) you will receive nothing:
+
+{% highlight clojure linenos %}
+; This returns a lazy collection, which
+; is not evaluated yet.
+(map inc [1 2 3 4])
+
+; You can force evaluation either by
+; enforcing simple run (and wait for
+; side-effects) or return the result
+; of the operation.
+
+(dorun (map inc [1 2 3 4])) ; nil
+(doall (map inc [1 2 3 4])) ; (2 3 4 5)
+{% endhighlight %}
+
+But it is not an only way of creating lazy sequences. You can use also `repeat`, `repeatedly`, `cycle` or `iterate` in a following way:
+
+{% highlight clojure linenos %}
+; `repeat` and `repeatedly` creates an infinite sequence
+; either of elements or results of a function call. You can
+; create infinite sequence or a limited one by passing an
+; argument or not.
+
+(println (str (clojure.string/join (take 5 (repeat "Na "))) "Batman!"))
+  ; "Na Na Na Na Na Batman!"
+
+(println (repeatedly 5 #(rand-int 100)))
+  ; 34 23 12 1 23
+
+; `cycle` returns a lazy collection with repetitions
+; of a delivered collection.
+
+(println (take 5 (cycle [1 2 3])))
+  ; (1 2 3 1 2)
+
+; `iterate` is a more generic constructor. It returns
+; a lazy sequence, which has the following values:
+;
+;   x, f(x), f(f(x)), ...
+;
+; This also means, that used `f` functions should be
+; *pure* (no side-effects).
+
+(println (take 5 (iterate (partial * 3) 1)))
+  ; (1 3 9 27 81)
+{% endhighlight %}
+
+But laziness can be also used in a different way.
 
 #### Ambiguous operator
 
