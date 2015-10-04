@@ -191,11 +191,130 @@ But laziness can be also used in a different way.
 
 #### Ambiguous operator
 
-TODO: Example implementation here: https://github.com/abeppu/toychest, http://www.randomhacks.net/2005/10/11/amb-operator/
+Around 1961, John McCarthy (the inventor of LISP) described an interesting mathematical operator called `amb` (from *ambiguous*). Essentially, `amb` have to be called with arguments, but thanks to that - it can look into the future to *keep that from happening*. It does that by *rewinding* into the past whenever it sees trouble, and try a different choice.
+
+It is called a [*backtracking algorithm*](https://en.wikipedia.org/wiki/Backtracking). This technique is often used for solving problems with huge search space. The most canonical example is called [*8 queens puzzle*](https://en.wikipedia.org/wiki/Eight_queens_puzzle). Whole approach is partially based on top of *laziness* and searching problem space in a lazy way, basing on the constraints and then doing a *backtracking*.
+
+In example presented below, we are trying to find all *Pythagorean triples* solutions in a specific range, passed as an argument:
+
+{% highlight clojure linenos %}
+; Both `amb-let` and `amb-let-helper` implementations
+; are shamelessly taken from:
+;   https://github.com/abeppu/toychest
+
+(defn amb-let-helper [bindings body]
+  (if (< 0 (count bindings))
+    (let [[form expression] (take 2 bindings)
+          more-bindings (drop 2 bindings)
+
+          filtered-recurse (if (= :where (first more-bindings))
+                             `(when ~(second more-bindings)
+                                ~(amb-let-helper (drop 2 more-bindings) body))
+                             (amb-let-helper more-bindings body))
+
+          res (if (and (seq? expression)
+                       (= 'amb (first expression)))
+                `(apply concat (for [~form ~(second expression)]
+                                 ~filtered-recurse))
+                `(let [~form ~expression]
+                   ~filtered-recurse))]
+      res)
+    [body]))
+
+; Macro definition.
+
+(defmacro amb-let [bindings body]
+  (amb-let-helper bindings body))
+
+; Defining problem and its constraints.
+; We would like to calculate all triples in range 100 that
+; fullfilling following conditions:
+;
+;   2 < a < MAX
+;   a <= b < MAX
+;   b <= c < MAX
+;
+;   a^2 + b^2 = c^2
+
+(defn triple [max]
+  (amb-let [a (amb (range 1 max)) :where (> a 2)
+            b (amb (range a max))
+            c (amb (range b max))
+
+            :where (= (+ (* a a) (* b b))
+                      (* c c))]
+           [a b c]))
+
+(println (triple 20))
+;  ([3 4 5] [5 12 13] [6 8 10] [8 15 17] [9 12 15])
+{% endhighlight %}
+
+Talking about *backtracking*, we can again building on top of that concept, power our next *evaluator extension*. We can use it for *logic programming* and it is described in the book as a last enhancement.
 
 #### Logic programming
 
-TODO: Logic Evaluator - implement examples and exercises in `core.logic` from *Clojure*.
+Book takes that concept as a last one, by implementing own version of *logic* engine in the *Scheme*. In *Clojure* and *ClojureScript* there is no point of doing that, because we have it in the set of additional libraries. It is called `core.logic` and it is delivered as a separate [library](https://github.com/clojure/core.logic).
+
+In prepared example we will take the most common problem when it comes to the *logic programming kindergarten* - simple genealogy questions. It may sound simple, but the provided *relations*, *facts* and *queries* will show the basic unification mechanism.
+
+{% highlight clojure linenos %}
+(ns logic-example.core
+  (:use [clojure.core.logic.pldb]))
+
+; In the logic programming we are creating *relations* and *facts*.
+; Relation describes how to interpret *facts*, with certain associations.
+
+(db-rel father Father Child)
+(db-rel mother Mother Child)
+
+; *Facts* are the truths, nothing more than a specific data structure
+; which describes our state of knowledge.
+
+(def genealogy
+  (db
+   [father 'Adam 'Wiliam]
+   [father 'Adam 'Thomas]
+   [father 'Andrew 'Jessica]
+   [father 'Andrew 'Mark]
+   ; We are deliberately omitting Dorothy's father here.
+
+   [mother 'Eve 'Wiliam]
+   [mother 'Eve 'Thomas]
+   [mother 'Eve 'Jessica]
+   [mother 'Angie 'Mark]
+   [mother 'Angie 'Dorothy]))
+
+; Having *facts* and *relations* we can query them and thanks to them
+; `unification` mechanism, based on defined relations and facts available
+; in the database our logic engine will answer to that query with one,
+; more or no results.
+
+(defn jessica-mother[]
+  (with-db genealogy
+    (run* [q]
+      (mother q 'Jessica))))
+
+; user=> (logic-example.core/jessica-mother)
+; (Eve)
+
+(defn adam-children []
+  (with-db genealogy
+      (run* [q]
+        (father 'Adam q))))
+
+; user=> (logic-example.core/dorothy-father)
+; (Thomas Wiliam)
+
+(defn dorothy-father []
+  (with-db genealogy
+    (run* [q]
+      (father q 'Dorothy))))
+
+; user=> (logic-example.core/dorothy-father)
+; ()
+{% endhighlight %}
+
+Depending on the knowledge and environment, answers to the prepared questions are different. Query can return either one, more or no results. Everything is related with previously defined *facts* and *relations*. It looks pretty amazing, and that is only an introduction to that topic. For more, I will recommend you to read either about *Prolog* (you can start from [here](http://www.afronski.pl/7-languages-in-7-weeks/2015/05/24/seven-languages-in-seven-weeks-prolog.html)) or play with this [tutorial](https://github.com/swannodette/logic-tutorial).
 
 ### Summary
 
