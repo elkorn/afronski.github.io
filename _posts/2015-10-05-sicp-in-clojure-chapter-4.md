@@ -25,19 +25,19 @@ Chapter which will be discussed today is focused on *Lisp* core values built aro
 
 Very concise, I would say a *mathematical*, definition will explain it as a isomorphic relation between language *AST* (*Abstract Syntax Tree*) and its syntax. In more human friendly words - it is a property of a programming language in which the program structure is similar to its syntax. If such language is *homoiconic*, it allows all code in the language to be accessed and transformed as data, using the same representation - because *AST* is exactly the same as the language itself.
 
-All languages from *Lisp* family have this property, also languages like [*Io*](http://www.afronski.pl/7-languages-in-7-weeks/2015/04/30/seven-languages-in-seven-weeks-io.html), *Julia* or [*Prolog*](http://www.afronski.pl/7-languages-in-7-weeks/2015/05/24/seven-languages-in-seven-weeks-prolog.html) also have this ability. Keep in mind that it does not mean that having a *macros system* in the language makes it *homoiconic*.
+All languages from *Lisp* family have this property, also languages like [*Io*](http://www.afronski.pl/7-languages-in-7-weeks/2015/04/30/seven-languages-in-seven-weeks-io.html), *Julia* or [*Prolog*](http://www.afronski.pl/7-languages-in-7-weeks/2015/05/24/seven-languages-in-seven-weeks-prolog.html) also have this ability (to a certain degree of course). Keep in mind that it does not mean that having a *macros system* in the language makes it *homoiconic*.
 
 ### Metalinguistic abstraction
 
-Title of this section sounds like a difficult concept, where the core idea is really simple. Aforementioned abstraction is an ability to *create new languages*. We have done that previously (e.g. by creating various *DSL*, *Domain Specific Languages* as an examples). By the creation, authors also mean ability to *evaluate* (or *interpret*) constructs written in that newly created dialect, by calculating values from the prepared expressions. Program which does such thing is called *an evaluator* (or *interpreter*).
+Title of this section sounds like a difficult concept, where the core idea is really simple. Aforementioned abstraction is an ability to *create new languages*. We have done that previously (e.g. by creating various *Domain Specific Languages* when solving exercises). By the creation, authors also mean ability to *evaluate* (or *interpret*) constructs written in that newly created dialect, by calculating values from the prepared expressions. Program which does such thing is called *an evaluator* (or *interpreter*).
 
-If we go one level deeper in the abstraction tree, a *metacircular evaluator* (or also often called a *metacircular interpreter*) is an evaluator written in the same language that it will interpret. It means that you can write an interpreter of any *Lisp* dialect in the chosen *Lisp* language dialect.
+If we go one level deeper in the abstraction tree, a *metacircular evaluator* (or also often called a *metacircular interpreter*) is an evaluator written in the same language that it will interpret. It means that you can write an interpreter of any *Lisp* dialect in that chosen language.
 
 ### Core of metacircular evaluator
 
 *Clojure* REPL (actually any kind of *REPL*) is an *evaluator*. But also, our run-time environments are also built on top of such constructs.
 
-In *Lisp*, the core of the evaluator is often called a `eval`-`apply` cycle. If we will dive into implementations presented in the book, we will immediately see a symmetry between them. Authors defined both of them as follows.
+In *Lisp*, the core of the evaluator is often called an `eval`-`apply` cycle. If we will dive into implementations presented in the book, we will immediately see a symmetry between them. Authors defined both of them as follows.
 
 #### `eval`
 
@@ -56,7 +56,7 @@ In *Lisp*, the core of the evaluator is often called a `eval`-`apply` cycle. If 
 (eval (read-string "(+ 1 1)"))
 {% endhighlight %}
 
-Evaluation means that we take fragment of the code (in form of a *quoted expression* or parsed from a string) and evaluate that, using all rules of the language. In other word it *calculates* the result of a certain expression. Keep in mind that a delivered expression is just a data structure - list of keywords, other tokens, and other data structures. **And it looks exactly the same as the language itself**. That is a practical implication of the homoiconicity.
+Evaluation means that we take fragment of the code (in form of a *quoted expression* or parsed from a string) and evaluate that, using all rules of the language. In other words, it *calculates* the result of a certain expression. Keep in mind that a delivered expression is just a data structure - list of keywords, other tokens, and other data structures. **And it looks exactly the same as the language itself**. That is a practical implication of the homoiconicity.
 
 #### `apply`
 
@@ -81,7 +81,7 @@ At the first sight you will find that `apply` is only a strange syntax for a fun
 
 #### Combining both powers together
 
-Process of interpreting a program is an interaction between them. How it looks like? Here is an excerpt from an implementation (again full version is inside [afronski/sicp-in-examples](https://github.com/afronski/sicp-examples/blob/master/chapters/4/4.1.1/eval-apply.clj)):
+Process of interpreting a program is an interaction between them. How it looks like? Here is an excerpt from an implementation (again full version is inside my repository - [afronski/sicp-in-examples](https://github.com/afronski/sicp-examples/blob/master/chapters/4/4.1.1/eval-apply.clj)):
 
 {% highlight clojure linenos %}
 (defn my-eval [exp env]
@@ -114,11 +114,11 @@ Process of interpreting a program is an interaction between them. How it looks l
           (assert false "Unknown procedure type in `my-apply`.")))
 {% endhighlight %}
 
-Even without exact definitions of the used functions, code is pretty self-explanatory. As we can see *evaluation* requires in certain cases an *application*, and *application* requires *evaluation* of function *body* and *arguments*. They are often expressed as a *yin-yang* symbol, because they are complement each other.
+Even without exact definitions of the used functions, code is pretty self-explanatory. As we can see *evaluation* requires in certain cases an *application*, and *application* requires *evaluation* of function *body* and *arguments*. They are often expressed as a *yin-yang* symbol, because they are complementing each other.
 
 ### Different evaluation models
 
-Instead of *reimplementing* different evaluation models, I have prepared different examples of such, built on top of *Clojure* standard library (or sometimes with additional custom facility). We will start with the concept which we already know from the previous chapter.
+Instead of *reimplementing* different evaluation models, I have prepared different examples of such, built on top of *Clojure* standard library (or sometimes with additional custom facilities). We will start with the concept which we already know from the previous chapter.
 
 #### Laziness
 
@@ -139,7 +139,7 @@ We have met this concept earlier already. In the previous chapter we worked with
 ;  0a336e55-5e42-4312-87ea-24e86ba4311e)
 {% endhighlight %}
 
-First we have defining a `lazy-seq` then we use standard mechanism of constructing the collection from the first, *evaluated* element and the rest which evaluation will be deferred. What I mean by deferring? If you will try to put the first line inside a file (but not inside the *REPL* - it will force the evaluation) you will receive nothing:
+First we are defining a `lazy-seq` then we use standard mechanism of constructing the collection from the first, *evaluated* element and the rest, which evaluation will be deferred. What I mean by deferring? If you will try to put the following lines inside a file (but not inside the *REPL* - it will force the evaluation) you will receive nothing:
 
 {% highlight clojure linenos %}
 ; This returns a lazy collection, which
@@ -195,7 +195,7 @@ Around 1961, John McCarthy (the inventor of LISP) described an interesting mathe
 
 It is called a [*backtracking algorithm*](https://en.wikipedia.org/wiki/Backtracking). This technique is often used for solving problems with huge search space. The most canonical example is called [*8 queens puzzle*](https://en.wikipedia.org/wiki/Eight_queens_puzzle). Whole approach is partially based on top of *laziness* and searching problem space in a lazy way, basing on the constraints and then doing a *backtracking*.
 
-In example presented below, we are trying to find all *Pythagorean triples* solutions in a specific range, passed as an argument:
+In example presented below, we are trying to find all *Pythagorean triple* solutions in a specific range, passed as an argument:
 
 {% highlight clojure linenos %}
 ; Both `amb-let` and `amb-let-helper` implementations
@@ -249,13 +249,13 @@ In example presented below, we are trying to find all *Pythagorean triples* solu
 ;  ([3 4 5] [5 12 13] [6 8 10] [8 15 17] [9 12 15])
 {% endhighlight %}
 
-Talking about *backtracking*, we can again building on top of that concept, power our next *evaluator extension*. We can use it for *logic programming* and it is described in the book as a last enhancement.
+Talking about *backtracking*, we can again building on top of that concept power our next *evaluator extension*. We can use it for *logic programming* and it is described in the book as a last enhancement.
 
 #### Logic programming
 
 Book takes that concept as a last one, by implementing own version of *logic* engine in the *Scheme*. In *Clojure* and *ClojureScript* there is no point of doing that, because we have it in the set of additional libraries. It is called `core.logic` and it is delivered as a separate [library](https://github.com/clojure/core.logic).
 
-In prepared example we will take the most common problem when it comes to the *logic programming kindergarten* - simple genealogy questions. It may sound simple, but the provided *relations*, *facts* and *queries* will show the basic unification mechanism.
+In prepared example we will take the most common problem when it comes to the *logic programming kindergarten* - simple genealogy questions. It may sound simple, but the provided *relations*, *facts* and *queries* will show the basic unification mechanism:
 
 {% highlight clojure linenos %}
 (ns logic-example.core
@@ -314,11 +314,11 @@ In prepared example we will take the most common problem when it comes to the *l
 ; ()
 {% endhighlight %}
 
-Depending on the knowledge and environment, answers to the prepared questions are different. Query can return either one, more or no results. Everything is related with previously defined *facts* and *relations*. It looks pretty amazing, and that is only an introduction to that topic. For more, I will recommend you to read either about *Prolog* (you can start from [here](http://www.afronski.pl/7-languages-in-7-weeks/2015/05/24/seven-languages-in-seven-weeks-prolog.html)) or play with this [tutorial](https://github.com/swannodette/logic-tutorial).
+Depending on the knowledge and the environment, answers to the prepared questions are different. Query can return either one, more or no results. Everything is related with previously defined *facts* and *relations*. It looks pretty amazing, and that is only an introduction to that topic. For more, I will recommend you to read either about *Prolog* (you can start from [here](http://www.afronski.pl/7-languages-in-7-weeks/2015/05/24/seven-languages-in-seven-weeks-prolog.html)) or play with this [tutorial](https://github.com/swannodette/logic-tutorial).
 
 ### Summary
 
-We have managed to finish 4th chapter of the book. In the last part we will attack problems with which we are already familiar, but on the lowest possible level. We will focus on hardware specifics of *Lisp* implementations, including designing constraints related with those topics.
+We have managed to finish 4th chapter of the book. In the last part we will attack problems with which we are already familiar, but on the lowest possible level. We will focus on hardware specifics of *Lisp* evaluator implementations, including design constraints and limitations related with those topics.
 
 I hope that we will meet there again! :smile:
 
