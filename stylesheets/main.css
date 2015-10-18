@@ -114,6 +114,37 @@ a:hover {
   padding: 5px;
 }
 
+.post .register-machines {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.post .register-machines img {
+  display: inline-block;
+  padding: 5px 10px;
+  vertical-align: middle;
+  background-color: white;
+}
+
+.post .register-machines img.data-paths {
+  width: 205px;
+  height: 265px;
+  padding: 35px 10px;
+}
+
+.post .register-machines img.controller {
+  width: 152px;
+  height: 265px;
+}
+
+.post .legend {
+  width: 100%;
+  display: inline-block;
+  color: #707070;
+  font-style: italic;
+  text-align: center;
+}
+
 /* Main page. */
 
 .posts-list {
