@@ -17,6 +17,9 @@ published: false
 
 - Hard supervision.
 - How to handle handler failure? ;)
+- The same process for the all handlers.
+- GenRouter for the rescue?
+  - Link to the Jose Valim's talk.
 - Hides the complexity underneath (where are the handlers in `observer:start().`, oh it is not a proces).
 - Not widely used in the core and OTP.
 - Source: https://www.youtube.com/watch?v=UUvU8cjCIcs
