@@ -113,6 +113,9 @@ terminate(_Args, _State) ->
 ### It is the same process for the all handlers
 
 - TODO: Lack of concurrency!
+- TODO: `notify`, `ack_notify` and `sync_notify` - Second one is a better version which applies back-pressure, but still runs asynchronously.
+
+This problem is also very nicely described in the [Nick DeMonner talk](https://www.youtube.com/watch?v=yBReonQlfL4) from this year ElixirConf US. Check this out if you are interested.
 
 ### Not widely used in the core and `OTP`
 
