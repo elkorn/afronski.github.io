@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What is wrong with gen_event?
-date: 2015-11-02T16:00+0200
+date: 2015-11-02T16:00+0100
 tags:
   - erlang
   - erlang-behaviours
