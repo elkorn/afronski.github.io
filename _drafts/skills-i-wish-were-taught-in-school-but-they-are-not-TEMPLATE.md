@@ -22,6 +22,11 @@ published: false
 - Humble Programmer - Edsger Dijkstra
 - Not Just Code Monkeys - Martin Fowler (and Uncle Bob - about ethics of computer scientist)
 - Physical Limits of Computation and Computer Science (The Mess We're In - https://www.youtube.com/watch?v=lKXe3HUG2l4)
+- Designing for worst case scenario improve the average (Peter Bailis - https://www.youtube.com/watch?v=ZGIAypUUwoQ)
+  - Accessibility
+  - Capacity Planning in terms of scaling out strategies
+  - Universal Design (HCI)
+  - Stable, Robust Solution in optimization processes vs. optimum
 
 ### What's next?
 
