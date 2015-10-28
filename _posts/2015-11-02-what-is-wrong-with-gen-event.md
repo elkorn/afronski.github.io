@@ -13,14 +13,21 @@ tags:
 
 <quote class="citation">I never used gen_event, I think it is a bad pattern.</quote>
 
-At first it may look like a controversial statement, but I heard a lot of those complaints from other people. Originally, I heard that exact statement in the presentation [made by Garrett Smith about pattern language](https://www.youtube.com/watch?v=UUvU8cjCIcs) during the question time. More recently I heard similar thing in [José Valim's presentation about what will come next in Elixir](https://www.youtube.com/watch?v=9RB1JCKe3GY).
+At first it may look like a controversial statement, but I heard a lot of those complaints from other people. Originally, I heard that exact statement during the presentation [made by Garrett Smith about pattern language](https://www.youtube.com/watch?v=UUvU8cjCIcs) - someone asked about that behavior at the end. More recently I heard similar thing in [José Valim's presentation about what will come next in Elixir](https://www.youtube.com/watch?v=9RB1JCKe3GY).
 
-It baffles me every time I hear that, so I would like to investigate the topic more deeply. But before we will dive into reasons and explanations, let's recall what is the purpose of this behavior.
+It confused me every time I heard that, so I wanted to investigate the topic more deeply. But before we will dive into reasons and explanations, let's recall what is the purpose of this behavior.
 
 ## What is `gen_event`?
 
-- TODO: Event manager.
-- TODO: Event handlers.
+OTP introduces two different terms regarding that behavior - an *event manager* and *event handler*.
+
+Responsibility of *event manager* is being a named object which can receive events. An *event* can be, for example: an error, an alarm, or some information that is to be logged. Inside manager we can have 0, 1 or many *event handlers* installed. Responsibility of the handler is to process an *event*.
+
+When the *event manager* is notified about an event, it will be processed by all installed handlers. The easiest way to imagine that is to think about manager as a sink for incoming messages and handlers different implementations which are writing messages to disk, database or terminal.
+
+Another example can be taken from my implementation of Francesco Cesarini's assignment called [Wolves, Rabbits and Carrots simulation](https://github.com/afronski/wolves-and-rabbits-world-simulation). Main purpose of that task is to introduce concurrency, but internally it is a simulation - so certain events are happening, and they will be broadcasted to the rest of the interested entities.
+
+In that case `simulation_event_stream` is an *event manager*:
 
 {% highlight erlang linenos %}
 -module(simulation_event_stream).
@@ -54,6 +61,10 @@ attach_handler(Handler) ->
 remove_handler(Handler) ->
     gen_event:delete_handler(?MODULE, Handler, []).
 {% endhighlight %}
+
+We can easily add and remove *event handlers*. The *event manager* essentially maintains a list of `{Module, State}` pairs, where each `Module` is an event handler, and `State` is the internal state of that event handler.
+
+One of the *handlers* implementation - `simulation_cli_handler` - is related with writing messages to the console. It is the actual `gen_event` behavior implementation, so all event handlers are the representatives of that abstraction:
 
 {% highlight erlang linenos %}
 -module(simulation_cli_handler).
@@ -91,6 +102,8 @@ handle_info(_Info, State) ->
 terminate(_Args, _State) ->
     ok.
 {% endhighlight %}
+
+And the very important part in terms of the aforementioned complaints is that: an *event manager* is implemented as a process and each *event handler* is implemented as a callback module. But whole logic it will be executed and instantiated inside that manager process.
 
 ## Why it is problematic?
 
@@ -132,7 +145,7 @@ This problem is also very nicely described in the [Nick DeMonner talk](https://w
 
 ## Summary
 
-It is not a particularly useful behavior, it has very limited capabilities and responsibilities. Maybe that is the reason why it is used internally so rarely. It means also, that we should not bend it to our use cases, because it will cause different issues. If the particular use case is very similar to the one used inside *OTP* (I mean the `error_logger`) and we do not need concurrency when it comes to the handlers processing logic, we can safely use it. Otherwise, we are asking for trouble. :wink:
+If you think more wisely about that, it is not a particularly useful behavior, because it has very limited capabilities and responsibilities. Maybe that is the reason why it is used internally so rarely. It means also, that we should not bend it to our use cases. If the specific application is very similar to the one used inside *OTP* (I mean the `error_logger`) and we do not need concurrency support when it comes to the processing logic, we can safely use it. Otherwise, we incur troubles on ourselves. :wink:
 
 ### Credits
 
