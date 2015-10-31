@@ -7,6 +7,7 @@ tags:
   - erlang-behaviours
   - patterns
   - programming-languages
+  - gen_event
 ---
 
 # What is wrong with `gen_event`?
@@ -107,41 +108,56 @@ And the very important part in terms of the aforementioned complaints is that: a
 
 ## Why it is problematic?
 
-- TODO: After creating `gen_event` and installing handlers on it, handlers are in the same process that gen_event is, they are not concurrent, they are not isolated.
-- TODO: Garrett said explicitly "I never used gen_event, I think it is a bad pattern" and arguments that by:
-  - It is not used anywhere besides `error_handler` and alerts mechanism in OTP.
-  - It causes problems with supervision.
-  - It is tricky to use in fault tolerant way.
-  - It is tricky to manage state in manager, it may be tempting to use e.g. process dictionary. You should be rather push it down to handlers.
-- TODO: My aside - try to do a synchronous event dispatching, horrible.
+After creating `gen_event` and installing handlers on it, handlers are in the same process that the manager exists.
 
-### It is hard to supervise
+That causes two biggest issues - handlers are not executed concurrently and they are not isolated one from each other. But there is more - we heard explicitly that <em>I never used `gen_event`, I think it is a bad pattern</em> and whole statement can be summed by:
 
-- TODO: Hides the complexity underneath (where are the handlers in `observer:start().`, oh it is not a process).
+  - That aforementioned behavior it is not used anywhere besides `error_handler` and alerts mechanism in OTP.
+  - It causes problems with supervision (because of not so natural approach for Erlang about combining manager and handlers together in one process).
+  - It is tricky to use in fault tolerant way (as above - all handlers are bound together in single process).
+  - It is tricky to manage state in manager, it may be tempting to use e.g. process dictionary, but you should be rather push it down to handlers (which is not obvious on the first sight).
 
-### Failure handling
+So let's try to analyze the root causes of each complaint separately.
 
-- TODO: https://erlangcentral.org/wiki/index.php/Gen_event_behavior_demystified
+### Not widely used in the `erts` and `OTP`
+
+First objection related to that behavior is that it is not widely used in the Erlang core libraries and platform itself. And that's partially true - as a behavior it is used for `error_logger`, `alarm_handler` and `error_handler` facilities. Is that a major reason to drop the behavior completely? No, but I think that it is a guide that responsibilities and use cases of that behavior are kind of limited, and narrower than we might think.
 
 ### It is the same process for the all handlers
 
-- TODO: Lack of concurrency!
-- TODO: `notify`, `ack_notify` and `sync_notify` - Second one is a better version which applies back-pressure, but still runs asynchronously.
+This one was not explicitly stated on the list but it manifests it itself when it comes to failure handling and supervision. But also it has one more really significant drawback - which is obvious when you will think about it - all handlers are processed synchronously and sequentially in one process.
 
-This problem is also very nicely described in the [Nick DeMonner talk](https://www.youtube.com/watch?v=yBReonQlfL4) from this year ElixirConf US. Check this out if you are interested.
+In order to dispatch an event to manager you can use one of two `gen_event` functions - `notify` and `sync_notify`. With first you can dispatch all events as quickly as possible, but you have no backpressure applied, and you can end up in the situation when events are incoming really fast, but processing is slower. That will cause process queue to grow and eventually it can cause a crash. It does not check also the manager presence, so you can easily throw messages to the void. From the other hand - synchronous dispatch waits until event will be processed by all handlers, which in will be slow and eventually will be a system bottleneck.
 
-### Not widely used in the core and `OTP`
+This problem is also very nicely described in the [Nick DeMonner talk](https://www.youtube.com/watch?v=yBReonQlfL4) from this year ElixirConf US. Check this out if you are interested. Elixir `GenEvent` implementation has also third function - `ack_notify` which acknowledges the incoming messages, which something softer than `sync_notify`, but still asynchronous when it comes to processing.
 
-- TODO: http://learnyousomeerlang.com/event-handlers
-- TODO: `error_logger`
-- TODO: `alarms`?
+### It is hard to supervise
 
-## Alternatives
+When you are approaching Erlang as a newcomer and you are really fascinated the mantra *everything should be a process*, the worst possible thing that can happen is to have some thoughts about event handling from other platforms or languages. Why? Well my *"oh crap" moment about how things really work come when I started an `observer`, and looked for the handler processes. And then I realized, <em>oh crap, they are processes</em>.
 
-- TODO: GenRouter for the rescue?
-- TODO: Jose Valim talk - an incoming GenRouter with DynamicIn - BroadcastOut can be a process based replacement for GenRouter.
+This behavior hides the complexity underneath, and it has really good assumptions regarding that model of dispatching (if we separate handlers from manager, reliable dispatch is much harder to achieve e.g. when it comes to fault tolerance), but it is simply counterintuitive when it comes to the *Erlang* philosophy, especially for the newcomers.
+
+### Failure handling
+
+Another obvious thought when you realize that handlers and manager coexist in the same process is that: *What happen if there is a fault in the installed event handler module?*
+
+It may sound strange at the beginning, but **faulty event handler will be silently removed**. It does produce an error report printed on terminal, but nothing more. Moreover, well known monitoring techniques, such as link or monitors cannot be used with the event handler module, because it is not a process. And a faulty event handler code does not crash the manager.
+
+But we can use different facility exposed by `gen_event` called `add_sup_handler`. It means that the connection between process that wants to dispatch an event and the handler will be supervised. What does it mean? If the event handler is deleted due to a fault, the manager sends a message `{gen_event_EXIT, Handler, Reason}` to the caller. It means that we need to provide additional process, often called a *guard* for the possibly faulty handler. Then, dispatching of an event will happen through that *guardian* process, and when it receives the failure message (via `handle_info`) we can act accordingly to the requirements.
+
+Keep in mind that underneath it uses *links*, not monitors - [Learn You Some Erlang For Great Good!](http://learnyousomeerlang.com/event-handler) event handlers chapter has really good explanation why it may be dangerous and what issues it causes. Long story short, after using `add_sup_handler` you need to be cautious when it comes to the event manager shutdown.
+
+### State management
+
+One more thing that I think is not emphasized enough is the state management and that you should always pass down state to your handlers. It is really well described in the example code above, but also when it comes to the fault tolerance - each handler can be removed due to failure operation and after restoring it we can pass the new state. If we will preserve state of that handler in the manager (and we will build facility for exposing that), it may cause very strange and hard to debug behavior related with the state of the newly created handler.
+
+## Alternatives?
+
+Is there something that we can use instead? Without using third parties I am afraid that there is nothing like that in the core.
 
 ![GenRouter example from José Valim's presentation.](/assets/GenRouterExample.png)
+
+If you are interested in *Elixir* incoming *GenRouter* behavior looks really promising. Of course, it is still really far away from the core and its future is uncertain, but whole concept is described in the [José Valim's talk](https://www.youtube.com/watch?v=9RB1JCKe3GY) - there is even an example for that particular use case with `DynamicIn` - `BroadcastOut`, which will represent a process based replacement for `GenEvent`.
 
 ## Summary
 
