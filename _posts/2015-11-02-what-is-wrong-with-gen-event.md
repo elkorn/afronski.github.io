@@ -16,7 +16,7 @@ tags:
 
 At first it may look like a controversial statement, but I heard a lot of those complaints from other people. Originally, I heard that exact statement during the presentation [made by Garrett Smith about pattern language](https://www.youtube.com/watch?v=UUvU8cjCIcs) - someone asked about that behavior at the end. More recently I heard similar thing in [José Valim's presentation about what will come next in Elixir](https://www.youtube.com/watch?v=9RB1JCKe3GY).
 
-It confused me every time I heard that, so I wanted to investigate the topic more deeply. But before we will dive into reasons and explanations, let's recall what is the purpose of this behavior.
+It confuses me every time I hear that, so I want to investigate topic more deeply. But before we will dive into reasons and explanations, let's recall what is the purpose of this behavior.
 
 ## What is `gen_event`?
 
@@ -24,9 +24,9 @@ OTP introduces two different terms regarding that behavior - an *event manager* 
 
 Responsibility of *event manager* is being a named object which can receive events. An *event* can be, for example: an error, an alarm, or some information that is to be logged. Inside manager we can have 0, 1 or more *event handlers* installed. Responsibility of the handler is to process an *event*.
 
-When the *event manager* is notified about an event, it will be processed by all installed handlers. The easiest way to imagine that is to think about manager as a sink for incoming messages and handlers different implementations which are writing messages to disk, database or terminal.
+When the *event manager* is notified about an event, it will be processed by all installed handlers. The easiest way to imagine that is to think about manager as a sink for incoming messages and handlers as different implementations which are writing messages to disk, database or terminal.
 
-Another example can be taken from my implementation of Francesco Cesarini's assignment called [Wolves, Rabbits and Carrots simulation](https://github.com/afronski/wolves-and-rabbits-world-simulation). Main purpose of that task is to introduce concurrency, but internally it is a simulation - so certain events are happening, and they will be broadcasted to the rest of the interested entities.
+Another example can be taken from my implementation of Francesco Cesarini's assignment called [Wolves, Rabbits and Carrots simulation](https://github.com/afronski/wolves-and-rabbits-world-simulation). Main purpose of that task is to introduce concurrency, but internally it is a simulation - so certain events are happening, and they will be broadcasted to the rest of entities.
 
 In that case `simulation_event_stream` is an *event manager*:
 
@@ -65,7 +65,7 @@ remove_handler(Handler) ->
 
 We can easily add and remove *event handlers*. The *event manager* essentially maintains a list of `{Module, State}` pairs, where each `Module` is an event handler, and `State` is the internal state of that event handler.
 
-One of the *handlers* implementation - `simulation_cli_handler` - is related with writing messages to the console. It is the actual `gen_event` behavior implementation, so all event handlers are the representatives of that abstraction:
+One of the *handlers* implementation - `simulation_cli_handler` - is related with writing messages to the console. It is the actual `gen_event` callback module, so all handlers are implementations of that abstraction:
 
 {% highlight erlang linenos %}
 -module(simulation_cli_handler).
@@ -108,28 +108,28 @@ And the very important part in terms of the aforementioned complaints is that: w
 
 ## Why it is problematic?
 
-Let me reiterate on that - after spawning `gen_event` manager and installing handlers on it, handlers exist in the same process that the manager.
+Let me reiterate on that - after spawning `gen_event` manager and installing handlers on it, handlers exist in the same process as the manager.
 
-That causes two biggest issues - handlers are not executed concurrently and they are not isolated from each other, in the process sense. But there is more - we heard explicitly that <em>I never used `gen_event`, I think it is a bad pattern</em> and whole statement can be summed by:
+That causes two biggest issues - handlers are not executed concurrently and they are not isolated from each other, in the process sense. But there is more - we heard explicitly that <em>I never used `gen_event`, I think it is a bad pattern</em> and whole argumentation about that can be summed by:
 
   - That aforementioned behavior it is not used anywhere besides `error_handler` and alerts mechanism in OTP.
   - It causes problems with supervision (because of not so natural approach for Erlang about combining manager and handlers together in one process).
   - It is tricky to use in fault tolerant way (as above - all handlers are bound together in single process).
   - It is tricky to manage state in manager, it may be tempting to use e.g. process dictionary, but you should be rather push it down to handlers (which is not obvious on the first sight).
 
-So let's try to analyze the root causes of each complaint separately.
+So let's analyze the root causes of each complaint separately.
 
 ### Not widely used in the `erts` and `OTP`
 
-First objection related to that behavior is that it is not widely used in the Erlang core libraries and platform itself. And that's partially true - as a behavior it is used for `error_logger`, `alarm_handler` and `error_handler` facilities. Is that a major reason to drop the behavior completely? No, but I think that it is a guide that responsibilities and use cases of that behavior are kind of limited, and narrower than those we assigned to it.
+First objection related to that behavior is that it is not widely used in the Erlang core libraries and platform itself. And that's partially true - as a behavior it is used for `error_logger`, `alarm_handler` and `error_handler` facilities. Is that a major reason to drop the behavior completely? No, but I think that it is a guide that responsibilities and use cases of that behavior are kind of limited, and much narrower than those we are trying to assign them.
 
 ### It is the same process for all handlers
 
-This one was not explicitly stated on the list but it manifests it itself when it comes to failure handling and supervision. And also it has another, really significant drawback - which is obvious when you will think about it - all handlers are invoked synchronously and sequentially in one process.
+This one was not explicitly stated on the list, but it manifests itself when it comes to failure handling and supervision. And also it has another, really significant drawback - which is obvious when you will think about it - all handlers are invoked synchronously and sequentially in one process.
 
 In order to dispatch an event to manager you can use one of two `gen_event` functions - `notify` and `sync_notify`. With first you can dispatch event as quickly as possible, but you have no backpressure applied, and you can end up in the situation when events are incoming really fast, but processing is slower. That will cause process queue to grow and eventually it can cause even a crash. It does not check also the manager presence, so you can easily throw messages to the void. From the other hand - synchronous dispatch waits until event will be processed by all handlers, which can be slow and eventually will become a system bottleneck.
 
-This problem is also very nicely described in the [Nick DeMonner talk](https://www.youtube.com/watch?v=yBReonQlfL4) from this year's *ElixirConf US* conference - check this out if you are interested. Elixir `GenEvent` implementation has also third function - `ack_notify` which acknowledges the incoming messages, and it is something softer than `sync_notify`, but still asynchronous when it comes to processing.
+This problem is also very nicely described in the [Nick DeMonner talk](https://www.youtube.com/watch?v=yBReonQlfL4) from this year *ElixirConf US* conference - check this out if you are interested. Elixir `GenEvent` implementation has also third function - `ack_notify` which acknowledges the incoming messages, and it is something softer than `sync_notify`, but still asynchronous when it comes to processing.
 
 ### It is hard to supervise
 
@@ -145,11 +145,11 @@ It may sound strange at the beginning, but **faulty event handler will be silent
 
 But we can use different facility exposed by `gen_event` called `add_sup_handler`. It means that the connection between process that wants to dispatch an event and the handler will be supervised. What does it mean? If the event handler is deleted due to a fault, the manager sends a message `{gen_event_EXIT, Handler, Reason}` to the caller. It means that we need to provide additional process, often called a *guard* for the possibly faulty handler. Then, dispatching of an event will happen through that *guardian* process, and when it receives the failure message (via `handle_info`) we can act accordingly to the requirements.
 
-Keep in mind that underneath it uses *links*, not monitors - [Learn You Some Erlang For Great Good!](http://learnyousomeerlang.com/event-handler) event handler chapter has really good explanation why it may be dangerous and what issues it causes. Long story short, after using `add_sup_handler` you need to be cautious when it comes to the event manager shutdown.
+Keep in mind that underneath it uses *links*, not monitors - event handler chapter from [Learn You Some Erlang For Great Good!](http://learnyousomeerlang.com/event-handler) has really good explanation why it may be dangerous and what issues it causes. Long story short, after using `add_sup_handler` you need to be cautious when it comes to the event manager shutdown.
 
 ### State management
 
-One more thing that I think is not emphasized enough is the state management and that you should always pass down state to your handlers. It is really well described in the example code above, but also when it comes to the fault tolerance - each handler can be removed due to failure operation and after restoring it we can pass the new state. If we will preserve state of that handler in the manager (and we will build facility for exposing that), it may cause very strange and hard to debug behavior related with the state of the newly created handler.
+One more thing that I think is not emphasized enough is the state management and that you should always pass down state to your handlers. It is really well described in the example code above, but also when it comes to the fault tolerance - each handler can be removed due to failure operation and after restoring it we can pass the new state. If we will preserve state of that handler in the manager (and we will build facility for exposing that), it may cause strange and hard to debug side effects related with the state of the newly created handler.
 
 ## Alternatives?
 
