@@ -20,9 +20,9 @@ It confused me every time I heard that, so I wanted to investigate the topic mor
 
 ## What is `gen_event`?
 
-OTP introduces two different terms regarding that behavior - an *event manager* and *event handler*.
+OTP introduces two different terms regarding that behavior - an *event manager* and *event handler* modules.
 
-Responsibility of *event manager* is being a named object which can receive events. An *event* can be, for example: an error, an alarm, or some information that is to be logged. Inside manager we can have 0, 1 or many *event handlers* installed. Responsibility of the handler is to process an *event*.
+Responsibility of *event manager* is being a named object which can receive events. An *event* can be, for example: an error, an alarm, or some information that is to be logged. Inside manager we can have 0, 1 or more *event handlers* installed. Responsibility of the handler is to process an *event*.
 
 When the *event manager* is notified about an event, it will be processed by all installed handlers. The easiest way to imagine that is to think about manager as a sink for incoming messages and handlers different implementations which are writing messages to disk, database or terminal.
 
@@ -104,13 +104,13 @@ terminate(_Args, _State) ->
     ok.
 {% endhighlight %}
 
-And the very important part in terms of the aforementioned complaints is that: an *event manager* is implemented as a process and each *event handler* is implemented as a callback module. But whole logic it will be executed and instantiated inside that manager process.
+And the very important part in terms of the aforementioned complaints is that: when starting *event manager*, it is spawned as a process and each *event handler* is implemented as a callback module. But whole processing logic will be executed inside the same manager process.
 
 ## Why it is problematic?
 
-After creating `gen_event` and installing handlers on it, handlers are in the same process that the manager exists.
+Let me reiterate on that - after spawning `gen_event` manager and installing handlers on it, handlers exist in the same process that the manager.
 
-That causes two biggest issues - handlers are not executed concurrently and they are not isolated one from each other. But there is more - we heard explicitly that <em>I never used `gen_event`, I think it is a bad pattern</em> and whole statement can be summed by:
+That causes two biggest issues - handlers are not executed concurrently and they are not isolated from each other, in the process sense. But there is more - we heard explicitly that <em>I never used `gen_event`, I think it is a bad pattern</em> and whole statement can be summed by:
 
   - That aforementioned behavior it is not used anywhere besides `error_handler` and alerts mechanism in OTP.
   - It causes problems with supervision (because of not so natural approach for Erlang about combining manager and handlers together in one process).
@@ -121,19 +121,19 @@ So let's try to analyze the root causes of each complaint separately.
 
 ### Not widely used in the `erts` and `OTP`
 
-First objection related to that behavior is that it is not widely used in the Erlang core libraries and platform itself. And that's partially true - as a behavior it is used for `error_logger`, `alarm_handler` and `error_handler` facilities. Is that a major reason to drop the behavior completely? No, but I think that it is a guide that responsibilities and use cases of that behavior are kind of limited, and narrower than we might think.
+First objection related to that behavior is that it is not widely used in the Erlang core libraries and platform itself. And that's partially true - as a behavior it is used for `error_logger`, `alarm_handler` and `error_handler` facilities. Is that a major reason to drop the behavior completely? No, but I think that it is a guide that responsibilities and use cases of that behavior are kind of limited, and narrower than those we assigned to it.
 
-### It is the same process for the all handlers
+### It is the same process for all handlers
 
-This one was not explicitly stated on the list but it manifests it itself when it comes to failure handling and supervision. But also it has one more really significant drawback - which is obvious when you will think about it - all handlers are processed synchronously and sequentially in one process.
+This one was not explicitly stated on the list but it manifests it itself when it comes to failure handling and supervision. And also it has another, really significant drawback - which is obvious when you will think about it - all handlers are invoked synchronously and sequentially in one process.
 
-In order to dispatch an event to manager you can use one of two `gen_event` functions - `notify` and `sync_notify`. With first you can dispatch all events as quickly as possible, but you have no backpressure applied, and you can end up in the situation when events are incoming really fast, but processing is slower. That will cause process queue to grow and eventually it can cause a crash. It does not check also the manager presence, so you can easily throw messages to the void. From the other hand - synchronous dispatch waits until event will be processed by all handlers, which in will be slow and eventually will be a system bottleneck.
+In order to dispatch an event to manager you can use one of two `gen_event` functions - `notify` and `sync_notify`. With first you can dispatch event as quickly as possible, but you have no backpressure applied, and you can end up in the situation when events are incoming really fast, but processing is slower. That will cause process queue to grow and eventually it can cause even a crash. It does not check also the manager presence, so you can easily throw messages to the void. From the other hand - synchronous dispatch waits until event will be processed by all handlers, which can be slow and eventually will become a system bottleneck.
 
-This problem is also very nicely described in the [Nick DeMonner talk](https://www.youtube.com/watch?v=yBReonQlfL4) from this year ElixirConf US. Check this out if you are interested. Elixir `GenEvent` implementation has also third function - `ack_notify` which acknowledges the incoming messages, which something softer than `sync_notify`, but still asynchronous when it comes to processing.
+This problem is also very nicely described in the [Nick DeMonner talk](https://www.youtube.com/watch?v=yBReonQlfL4) from this year's *ElixirConf US* conference - check this out if you are interested. Elixir `GenEvent` implementation has also third function - `ack_notify` which acknowledges the incoming messages, and it is something softer than `sync_notify`, but still asynchronous when it comes to processing.
 
 ### It is hard to supervise
 
-When you are approaching Erlang as a newcomer and you are really fascinated the mantra *everything should be a process*, the worst possible thing that can happen is to have some thoughts about event handling from other platforms or languages. Why? Well my *"oh crap" moment about how things really work come when I started an `observer`, and looked for the handler processes. And then I realized, <em>oh crap, they are processes</em>.
+When you are approaching Erlang as a newcomer and you are really fascinated by the mantra *everything should be a process*, the worst possible thing that can happen is to have some thoughts about event handling from other platforms or languages. Why? Well my *"oh crap"* moment about how things really work, came when I started an `observer`, and looked for the handler processes. And then I realized, <em>oh crap, they are not processes at all</em>.
 
 This behavior hides the complexity underneath, and it has really good assumptions regarding that model of dispatching (if we separate handlers from manager, reliable dispatch is much harder to achieve e.g. when it comes to fault tolerance), but it is simply counterintuitive when it comes to the *Erlang* philosophy, especially for the newcomers.
 
@@ -145,7 +145,7 @@ It may sound strange at the beginning, but **faulty event handler will be silent
 
 But we can use different facility exposed by `gen_event` called `add_sup_handler`. It means that the connection between process that wants to dispatch an event and the handler will be supervised. What does it mean? If the event handler is deleted due to a fault, the manager sends a message `{gen_event_EXIT, Handler, Reason}` to the caller. It means that we need to provide additional process, often called a *guard* for the possibly faulty handler. Then, dispatching of an event will happen through that *guardian* process, and when it receives the failure message (via `handle_info`) we can act accordingly to the requirements.
 
-Keep in mind that underneath it uses *links*, not monitors - [Learn You Some Erlang For Great Good!](http://learnyousomeerlang.com/event-handler) event handlers chapter has really good explanation why it may be dangerous and what issues it causes. Long story short, after using `add_sup_handler` you need to be cautious when it comes to the event manager shutdown.
+Keep in mind that underneath it uses *links*, not monitors - [Learn You Some Erlang For Great Good!](http://learnyousomeerlang.com/event-handler) event handler chapter has really good explanation why it may be dangerous and what issues it causes. Long story short, after using `add_sup_handler` you need to be cautious when it comes to the event manager shutdown.
 
 ### State management
 
@@ -157,7 +157,7 @@ Is there something that we can use instead? Without using third parties I am afr
 
 ![GenRouter example from José Valim's presentation.](/assets/GenRouterExample.png)
 
-If you are interested in *Elixir* incoming *GenRouter* behavior looks really promising. Of course, it is still really far away from the core and its future is uncertain, but whole concept is described in the [José Valim's talk](https://www.youtube.com/watch?v=9RB1JCKe3GY) - there is even an example for that particular use case with `DynamicIn` - `BroadcastOut`, which will represent a process based replacement for `GenEvent`.
+If you are interested - in *Elixir* incoming *GenRouter* behavior looks really promising. Of course, it is still really far away from the core and its future is uncertain, but whole concept is described in the [José Valim's talk](https://www.youtube.com/watch?v=9RB1JCKe3GY) - there is even an example for that particular use case with `DynamicIn` - `BroadcastOut`, which will represent a process based replacement for `GenEvent`.
 
 ## Summary
 
