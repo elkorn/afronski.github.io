@@ -147,13 +147,15 @@ But we can use different facility exposed by `gen_event` called `add_sup_handler
 
 Keep in mind that underneath it uses *links*, not monitors - event handler chapter from [Learn You Some Erlang For Great Good!](http://learnyousomeerlang.com/event-handler) has really good explanation why it may be dangerous and what issues it causes. Long story short, after using `add_sup_handler` you need to be cautious when it comes to the event manager shutdown.
 
+What is interesting, Elixir's version of that behavior (`GenEvent`) has solved this problem by exposing [`add_mon_handler/3`](http://elixir-lang.org/docs/v1.0/elixir/GenEvent.html#add_mon_handler/3), which uses monitor under the hood. Still both solutions have another problem - `{gen_event_EXIT, Handler, Reason}` message will not be delivered if manager process will crash. It is another edge case for which you have to be prepared - you either need to monitor manager or link it and trap exits in all handlers.
+
 ### State management
 
 One more thing that I think is not emphasized enough is the state management and that you should always pass down state to your handlers. It is really well described in the example code above, but also when it comes to the fault tolerance - each handler can be removed due to failure operation and after restoring it we can pass the new state. If we will preserve state of that handler in the manager (and we will build facility for exposing that), it may cause strange and hard to debug side effects related with the state of the newly created handler.
 
 ## Alternatives?
 
-Is there something that we can use instead? Without using third parties I am afraid that there is nothing like that in the core.
+Is there something that we can use instead? Without using third parties (like [uwiger/gproc](https://github.com/uwiger/gproc)) I am afraid that there is nothing like that in the core.
 
 ![GenRouter example from José Valim's presentation.](/assets/GenRouterExample.png)
 
