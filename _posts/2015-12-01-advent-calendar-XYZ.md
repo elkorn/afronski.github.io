@@ -58,6 +58,7 @@ Topics:
 
 4. AWS?
 5. Emacs?
+6. Networking + d3.js (with examples, TCP, UDP, HTTP)
 
 ## Summary
 
