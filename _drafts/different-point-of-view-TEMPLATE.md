@@ -25,6 +25,9 @@ published: false
 - Universal Scalability Law
 - Queuing Theory
 - Little's Law
+  - CPU load averages calculation and related topic to queuing theory.
+- NTP and Skewed Clocks
+- Distributed Locking
 - Networking:
   - Three-way handshake (TCP).
   - Congestion (TCP).
