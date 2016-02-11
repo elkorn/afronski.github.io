@@ -31,6 +31,11 @@ published: false
 - Networking:
   - Three-way handshake (TCP).
   - Congestion (TCP).
+- Good examples:
+  - http://biecek.pl/Eseje/indexDane.html
+  - http://www.nytimes.com/interactive/2012/05/17/business/dealbook/how-the-facebook-offering-compares.html
+  - https://jackschaedler.github.io/circles-sines-signals/
+  - https://blog.risingstack.com/history-of-node-js/
 - Distributed Systems:
   - [The Byzantine Generals Problem - Lamport, Shostak, Pease (Microsoft Research)](http://research.microsoft.com/en-us/um/people/lamport/pubs/byz.pdf)
   - Two Generals Paradox.
