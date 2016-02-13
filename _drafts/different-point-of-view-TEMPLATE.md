@@ -17,54 +17,86 @@ published: false
 
 # [TEMPLATE]
 
-- Percentiles
-  - Different definitions, different results for smaller population.
-  - Decile, Quantile, Percentile.
-  - Difference between Percentage and Percentile.
-  - Visualization on normal distribution.
-    - What about other distributions?
-  - Z-score and percentiles relationship.
-    - How to calculate percentile from z-score?
-  - Why averaging percentiles is wrong?
-  - Population, stupid!
 
-## *TODO* - Possible topics
 
-- Latency - distribution, percentiles, calculations
-- Amdahl's Law
-- Universal Scalability Law
-- Queuing Theory
-- Little's Law
-  - CPU load averages calculation and related topic to queuing theory.
-- NTP and Skewed Clocks
-- Distributed Locking
-- Networking:
-  - Three-way handshake (TCP).
-  - Congestion (TCP).
-- Good examples:
+## What's next?
+
+## Credits
+
+- [TEMPLATE]
+
+
+---
+
+## Tools
+
+  - https://github.com/pyramation/LaTeX2HTML5
+  - https://github.com/worrydream/Tangle
+
+## Materials
+
+  - https://bost.ocks.org/mike/algorithms/
   - http://biecek.pl/Eseje/indexDane.html
   - http://www.nytimes.com/interactive/2012/05/17/business/dealbook/how-the-facebook-offering-compares.html
   - https://jackschaedler.github.io/circles-sines-signals/
   - https://blog.risingstack.com/history-of-node-js/
-- LaTeX + Rendering to HTML?
-  - How to embed interactive JS?
-  - Clean sheet, no distractions, single column, fixed width, margins for asides
-    and other non important stuff & visualizations.
+  - http://world.mathigon.org/Sequences
+  - http://setosa.io/ev/
+
+## Current topic
+
+- Percentiles
+  - Materials:
+    - My book from studies.
+    - https://en.wikipedia.org/wiki/Percentile
+    - http://greenteapress.com/thinkstats/thinkstats.pdf
+  - Observations:
+    - Different definitions, different results for smaller population.
+    - Decile, Quantile, Percentile.
+      - Difference between Percentage and Percentile.
+      - Visualization on normal distribution.
+        - What about other distributions?
+        - Visualization together: https://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/
+          - Shiny + MathJax?
+      - Z-score and percentiles relationship.
+        - How to calculate percentile from z-score?
+      - Why averaging percentiles is wrong?
+    - Population, stupid!
+
+## Possible future topics
+
+- Latency - distribution, percentiles, calculations
+
+- Boids
+
+- Amdahl's Law
+- Universal Scalability Law
+
+- Queuing Theory
+- Little's Law
+  - CPU load averages calculation and related topic to queuing theory.
+
+- NTP and Skewed Clocks
+
+- Distributed Locking
+
+- Networking:
+  - Three-way handshake (TCP).
+  - Congestion (TCP).
+
 - Distributed Systems:
   - [The Byzantine Generals Problem - Lamport, Shostak, Pease (Microsoft Research)](http://research.microsoft.com/en-us/um/people/lamport/pubs/byz.pdf)
   - Two Generals Paradox.
     - [Lecture Notes in Computer Science - Gray (Microsoft Research, starting on page 465)](http://research.microsoft.com/en-us/um/people/gray/papers/DBOS.pdf)
+
 - ASN.1
   - Old useful technologies: http://ttsiodras.github.io/asn1.html
+
 - UNIX tools:
   - How they work underneath?
+
 - Erlang:
   - Virtual Machine visualization.
+
 - AWS:
   - Visualization and associations.
-
-### What's next?
-
-### Credits
-
-- [TEMPLATE]
