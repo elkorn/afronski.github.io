@@ -17,9 +17,19 @@ published: false
 
 # [TEMPLATE]
 
-*TODO*: Possible topics:
-
 - Percentiles
+  - Different definitions, different results for smaller population.
+  - Decile, Quantile, Percentile.
+  - Difference between Percentage and Percentile.
+  - Visualization on normal distribution.
+    - What about other distributions?
+  - Z-score and percentiles relationship.
+    - How to calculate percentile from z-score?
+  - Why averaging percentiles is wrong?
+  - Population, stupid!
+
+## *TODO* - Possible topics
+
 - Latency - distribution, percentiles, calculations
 - Amdahl's Law
 - Universal Scalability Law
