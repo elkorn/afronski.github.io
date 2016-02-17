@@ -32,6 +32,7 @@ published: false
 
   - https://github.com/pyramation/LaTeX2HTML5
   - https://github.com/worrydream/Tangle
+  - https://github.com/bookiza/bookiza
 
 ## Materials
 
