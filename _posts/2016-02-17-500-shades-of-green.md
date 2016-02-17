@@ -42,9 +42,9 @@ I cannot overlook the *fun factor* and that *all the small things* delivered dai
 
 Obviously, if you know `git` well you can cheat with the dates (e.g. when you skipped a day or two) - especially if that repository (or branch) is not used by anyone:
 
-```
+{% highlight bash %}
 ~ (my-private-branch) $ git commit --amend --date="Wed Feb 01 23:50 2016 +0100"
-```
+{% endhighlight %}
 
 All rules regarding rewriting commit history of pushed shared branches are applicable also in this case, so you have been warned. :wink:
 
