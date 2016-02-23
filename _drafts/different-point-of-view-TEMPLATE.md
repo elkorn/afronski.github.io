@@ -43,6 +43,7 @@ published: false
   - https://blog.risingstack.com/history-of-node-js/
   - http://world.mathigon.org/Sequences
   - http://setosa.io/ev/
+  - http://harry.me/blog/2014/12/27/neat-algorithms-paxos/
 
 ## Current topic
 
