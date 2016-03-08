@@ -17,14 +17,11 @@ published: false
 
 # [TEMPLATE]
 
-
-
 ## What's next?
 
 ## Credits
 
 - [TEMPLATE]
-
 
 ---
 
@@ -67,6 +64,21 @@ published: false
       - Fastest case? Only viable for benchmarks, but it doesn't say anything else.
       - Why averaging percentiles is wrong?
     - Population, stupid!
+
+- Article flow:
+  - Show example of latency chart.
+  - Prepare:
+    1. Tangle.js + D3.js (with average, median).
+    2. Then apply min and max.
+    3. Oh shit, what happened?
+    4. What is an average, what is hiding.
+  - Let's look on the distribution, show directly the tail latency.
+    - Population.
+  - So, what is percentile? Decile? Quantile? Median?
+    - Different between percentage and percentile.
+    - Why it is crucial in this case?
+    - Why averaging percentiles is wrong?
+  - Difference between latency chart and normal distribution.
 
 ## Possible future topics
 
