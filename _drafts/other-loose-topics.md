@@ -44,16 +44,6 @@ tags:
 - What scares me the most are critical places that I've seen Node.js used. I feel pain of those poor people that'll have to maintain it. Do you want to track GC pauses? You've to add a 3rd party C++ addon in version 0.0.1, which blows up stability of your single-threaded server, because doh - it is hooking up into VM internals and does C++ in a hazardous environment like V8.
 - https://twitter.com/knewter/status/713673979429568516
 
-# Writing custom module for Ansible
-
-- Erlang (escript) + XML parser + outputting JSON.
-- Use case: consuming XML stats page.
-
-http://docs.ansible.com/ansible/developing_modules.html
-https://github.com/ansible/ansible-modules-extras
-https://github.com/ansible/ansible-modules-extras/pull/1755/files
-https://blog.lelonek.me/how-to-write-ansible-module-in-clojure-5b340df90f5a#.f5aqkjrlk
-
 # EHS of Erlang shell - How to safely quit?
 
 - Development and plain shell.
