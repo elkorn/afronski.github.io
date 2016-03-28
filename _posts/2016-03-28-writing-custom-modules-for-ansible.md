@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Writing custom modules for Ansible
-date: 2016-03-28T18:00+0200
+date: 2016-03-28T21:00+0200
 tags:
   - ansible
   - erlang
@@ -15,9 +15,9 @@ tags:
 
 ### What is Ansible and what is a `module`?
 
-- TODO: Ansible description.
-- TODO: Image for agent-less way of provisioning.
-- TODO: Module description.
+If you are a big fan of *automation*, if you are focused on spreading and building software in line with *DevOps* culture tools related with automation / configuration management like *Chef* or *Ansible* are probably well known to you. Differences between various types of those tools is a topic for a next blog post. Let's briefly zoom into details for those people which do not know what *Ansible* and *modules* are.
+
+*Ansible* is a free-software platform for configuring and managing machines. It combines deployment, ad hoc tasks execution and configuration management. This tool uses *YAML* and declarative way of defining steps, which are modifying state of your fleet. *Module* is a single piece of those steps, well defined way of executing certain tasks on remote infrastructure. It works by outputting JSON to standard output, and it can be written in any programming language.
 
 ## Development
 
@@ -25,13 +25,13 @@ Before we'll start actual implementation we need to know how it works underneath
 
 ### Requirements
 
-If you want to write a custom module, you have to be aware of two things. Your module code will be executed on the provisioned machine, **so all dependencies which your module requires, have to be there**. Second, your module communicates over specific input and output protocols. It uses certain syntax for sending input parameters (either sent as a `stdin` or file) and JSON protocol which will be consumed as an output of the module. And nothing more - any other, non-JSON compliant output will be treated as an error, and would not be consumed by *Ansible* properly.
+If you want to write a custom module, we stated above that you have to be aware of two things. Your module code will be executed on the provisioned machine, **so all dependencies which your module requires, have to be there**. Second, your module communicates over specific input and output protocols. It uses certain syntax for sending input parameters (either sent as a `stdin` or file) and JSON protocol which will be consumed as an output of the module. And nothing more - any other, non-JSON compliant output will be treated as an error, and would not be consumed by *Ansible* properly.
 
 ### Case Study
 
 We would like to consume *XMLified* status pages and do certain actions based on checked and exposed facts, scraped from aforementioned place. Because I like Erlang, I will use that language to implement that module. We will do it using `escript`. What is it? Quoting official documentation:
 
-<quote class="citation">`escript` provides support for running short Erlang programs without having to compile them first and an easy way to retrieve the command line arguments.</quote>
+<quote class="citation"><code>escript</code> provides support for running short Erlang programs without having to compile them first and an easy way to retrieve the command line arguments.</quote>
 
 Besides way of executing code, we need to have XML parser and HTTP client - in both cases we will use built-in thins from Erlang library - `xmerl` and `httpc`.
 
@@ -39,19 +39,23 @@ Besides way of executing code, we need to have XML parser and HTTP client - in b
 
 First we need to setup our environment for Ansible. The easiest way to do it in Python world is to spin up a `virtualenv`:
 
-{% highlight bash linenos %}
+{% highlight bash %}
 playground $ virtualenv -p python2.7 .local
 playground $ source .local/bin/activate
-(.local) playground $ pip install ansible==1.9.4
+playground $ pip install ansible==1.9.4                                            (.local)
 {% endhighlight %}
 
 Then we can fiddle with it.
 
 #### Input arguments
 
+How to pass an arguments to it? You can observe it either when you define task parameters inside *YAML* file or when you invoke ad hoc task in *Ansible*:
+
 {% highlight bash %}
-ansible host[001-002] -i production_hosts -m stat -a "path=/etc/passwd"
+playground $ ansible host[001-002] -i production_hosts -m stat -a "path=/etc/passwd"
 {% endhighlight %}
+
+Everything stated inside `-a` attribute defines list of named parameters. In that case an argument named `path` has value `/etc/passwd`. This will be formatted and printed to a file. Path and name will be delivered as a first argument of command line invocation of our module.
 
 #### Output format
 
@@ -81,8 +85,16 @@ Further implementation is pretty straightforward, especially that we're writing 
 
 ### Testing with Ansible
 
-TODO: How to test this module with Ansible.
-TODO: How to add it as a local module only.
+When you want to test your module with Ansible, you can set it up from source inside your `virtualenv` and then invoke it by this series of commands:
+
+{% highlight bash %}
+playground $ git clone git://github.com/ansible/ansible.git --recursive
+playground $ source ansible/hacking/env-setup
+playground $ chmod +x ansible/hacking/test-module
+playground $ ansible/hacking/test-module
+               -m ./xml_status_page
+               -a "host=localhost port=9999 xpath=//statistics name=version"
+{% endhighlight %}
 
 ## Summary
 
