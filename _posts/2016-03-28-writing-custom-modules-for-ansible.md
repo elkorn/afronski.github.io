@@ -15,9 +15,9 @@ tags:
 
 ### What is Ansible and what is a `module`?
 
-If you are a big fan of *automation*, if you are focused on spreading and building software in line with *DevOps* culture tools related with automation / configuration management like *Chef* or *Ansible* are probably well known to you. Differences between various types of those tools is a topic for a next blog post. Let's briefly zoom into details for those people which do not know what *Ansible* and *modules* are.
+If you are a big fan of *automation*, if you are focused on spreading and building software in line with *DevOps* culture, tools related with automation / configuration management like *Chef* or *Ansible* are probably well known to you. From the other hand that what differentiates those tools is a topic for a next blog post. Without diving into those differences, let's briefly zoom into details for those people which do not know what *Ansible* and *modules* are.
 
-*Ansible* is a free-software platform for configuring and managing machines. It combines deployment, ad hoc tasks execution and configuration management. This tool uses *YAML* and declarative way of defining steps, which are modifying state of your fleet. *Module* is a single piece of those steps, well defined way of executing certain tasks on remote infrastructure. It works by outputting JSON to standard output, and it can be written in any programming language.
+*Ansible* is a free-software platform for configuring and managing machines. It combines deployment, ad-hoc tasks execution and configuration management. This tool uses *YAML* and declarative way of defining steps, which are modifying state of your fleet. *Module* is a single piece of those steps, a well defined way of executing certain tasks on the remote infrastructure. It executes commands, and communicates by outputting JSON to standard output - it means that it can be written in any programming or scripting language.
 
 ## Development
 
@@ -25,7 +25,7 @@ Before we'll start actual implementation we need to know how it works underneath
 
 ### Requirements
 
-If you want to write a custom module, we stated above that you have to be aware of two things. Your module code will be executed on the provisioned machine, **so all dependencies which your module requires, have to be there**. Second, your module communicates over specific input and output protocols. It uses certain syntax for sending input parameters (either sent as a `stdin` or file) and JSON protocol which will be consumed as an output of the module. And nothing more - any other, non-JSON compliant output will be treated as an error, and would not be consumed by *Ansible* properly.
+If you want to write a custom module, we stated above that you have to be aware of two things. Your module code will be executed on the provisioned machine, **so all dependencies which your module requires, have to be there**. Second, your module communicates over specific input and output protocols. It uses certain syntax for sending input parameters (either sent as a `stdin` or a file) and JSON protocol which will be consumed as an output of the module. And nothing more - any other, non-JSON compliant output will be treated as an error, and would not be consumed by *Ansible* properly.
 
 ### Case Study
 
@@ -33,11 +33,11 @@ We would like to consume *XMLified* status pages and do certain actions based on
 
 <quote class="citation"><code>escript</code> provides support for running short Erlang programs without having to compile them first and an easy way to retrieve the command line arguments.</quote>
 
-Besides way of executing code, we need to have XML parser and HTTP client - in both cases we will use built-in thins from Erlang library - `xmerl` and `httpc`.
+Besides way of executing code, we need to use an XML parser and HTTP client - in both cases we will use built-in thins from Erlang library - `xmerl` and `httpc`.
 
 ### Developing outside Ansible
 
-First we need to setup our environment for Ansible. The easiest way to do it in Python world is to spin up a `virtualenv`:
+First we need to setup our environment for Ansible. The easiest way to do it in Python world is to spin up a new `virtualenv`:
 
 {% highlight bash %}
 playground $ virtualenv -p python2.7 .local
@@ -104,9 +104,10 @@ Also nice structure of this tool and ability to combine it with `virtalenv` allo
 
 ## Credits
 
+- [`afronski/playground-infrastructure` - Implementation](https://github.com/afronski/playground-infrastructure/tree/master/ansible/custom_modules/xml_status_page)
 - [Developing modules - Ansible documentation](http://docs.ansible.com/ansible/developing_modules.html)
 - [Modules Extras - Ansible](https://github.com/ansible/ansible-modules-extras)
-- [How to write Ansible module in Clojure? - Kamil Lelonek's blog](https://blog.lelonek.me/how-to-write-ansible-module-in-clojure-5b340df90f5a#.f5aqkjrlk)
+- [How to write Ansible module in Clojure? - Kamil Lelonek's blog](https://blog.lelonek.me/how-to-write-ansible-module-in-clojure-5b340df90f5a)
 - [`escript` - Erlang Documentation](http://erlang.org/doc/man/escript.html)
 - [`xmerl` - Erlang Documentation](http://erlang.org/doc/man/xmerl.html)
 - [`httpc` - Erlang Documentation](http://erlang.org/doc/man/httpc.html)

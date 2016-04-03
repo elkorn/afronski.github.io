@@ -57,14 +57,3 @@ http://learnyousomeerlang.com/distribunomicon
 http://stackoverflow.com/questions/12926291/erlang-detach-shell-from-node-quit-shell-without-killing-node
 http://stefanalfbo.github.io/blog/2013/04/23/erlang-shell-cheat-sheet/
 http://erlang.org/doc/man/shell.html
-
-# Jenkins 2.0 - what's new?
-
-- Docker
-- What's new?
-  - Pipelines as code.
-  - New UI.
-
-https://jenkins.io/2.0/
-
-docker run --name jenkins2 -p 8080:8080 -d jenkinsci/jenkins:2.0-beta-1
