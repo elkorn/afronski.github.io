@@ -22,13 +22,6 @@ tags:
 - Chef - agent, server-client architecture, Ruby.
   - Ruby, full blown framework, extending only with that language.
 
-# V8 and compilation cache
-
-- V8, Compilation Cache, Function.prototype.toString (it returns everything),
-  trick with UID in the comment of function body (for distinguishing JITed
-  functions) and why functions with huge comments are de-optimized by V8 (they
-  are too big for cache).
-
 # Maintainability hell on your own wish
 
 - No standards, no common idioms. Everyone is solving the same problem in multiple different ways. Do you want an example - let's talk about asynchronous flows? Callbacks, promises, generators and incoming standard `async` / `await`. Each one is significantly different.
