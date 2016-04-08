@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A mythical beast called JIT
-date: 2016-04-08T18:00+0200
+date: 2016-04-08T19:45+0200
 tags:
   - v8
   - javascript
@@ -11,7 +11,7 @@ tags:
 
 # A mythical beast called `JIT`
 
-I have recently bumped into one of those articles which title sounds rather like ["one weird trick"](https://top.fse.guru/nodejs-a-quick-optimization-advice-7353b820c92e) ad. Guiding just from it, you can imagine how small amount of information is contained there, and by actually going through that link there you will definitely make sure that it has something, but no explanations are in place.
+I have recently bumped into one of those articles which title sounds rather like ["one weird trick"](https://top.fse.guru/nodejs-a-quick-optimization-advice-7353b820c92e) ad. Guiding just from it, you can imagine how small amount of information is contained there, and by actually going through that link there you will definitely make sure that it has some knowledge, but no real explanations are in place.
 
 Of course, a final explanation is indeed really simple - `Function.prototype.toString()` returns everything even the comments inside the function body, size of that string is a feature that allows the optimizing compiler inside *V8* to make a decision to inline that particular function or not. There is even a command line switch which to use to modify a limit and a default value. Simple enough? Not really.
 
