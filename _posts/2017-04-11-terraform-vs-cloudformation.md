@@ -20,7 +20,7 @@ Immediately after another question pops up - how we should do it? Should we use 
 
 As a grown up, you know that like the *ORM* does not let you change database on the fly, *Terraform* will not let you automatically switch cloud provider for your entire system (assuming no upfront investment into design and architect your system). From the other hand - you are afraid of *vendor lock-in*, and for sure you are considering how to design and prepare disaster recovery scenarios. A lot of unknowns, isn't it?
 
-I would like to show our rationale for new project and infrastructure for which we were responsible. That motivation which driven us into pure *CloudFormation* setup, why we bet on *AWS*, and why we decided to drop *Terraform* assuming that certain conditions will stay with us for a long time.
+I would like to show our rationale for a new project and infrastructure for which we were responsible. That motivation which driven us into pure *CloudFormation* setup, why we bet on *AWS*, and why we decided to drop *Terraform* assuming that certain conditions will stay with us for a long time.
 
 Please have in mind that all remarks and comments pointed in this article are constructive criticism - it does not change my opinion about companies that created those tools at all. I have huge respect for both for *AWS* and *HashiCorp* - work they have done, especially in tooling and cloud computing landscape is outstanding. As a user of *AWS Services* and *HashiCorp* tools (mostly `Packer`, `Vagrant`, `Vault` and `Consul`) I am grateful for the work they did.
 
